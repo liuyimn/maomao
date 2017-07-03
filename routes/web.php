@@ -15,6 +15,7 @@
 //     return view('welcome');
 // });
 
+
 //----------------------用户禁言功能-----------------
 //主页路由
 Route::get('admin/index','Admin\IndexController@index');
