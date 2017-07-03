@@ -15,4 +15,6 @@
 //     return view('welcome');
 // });
 
-Route::get('admin/index','Admin\IndexController@index');
+//后台主页
+Route::get('admin/index', 'Admin\IndexController@index');
+
