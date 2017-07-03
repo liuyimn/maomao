@@ -362,7 +362,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>分类列表</a></li>
+            <li><a href="{{ url('/admin/category') }}"><i class="fa fa-circle-o"></i>分类列表</a></li>
+            <li><a href="{{ url('/admin/category/create') }}"><i class="fa fa-circle-o"></i>分类添加</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -397,8 +398,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>拍卖列表</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>拍卖添加</a></li>
+            <li><a href="{{ url('/admin/auct') }}"><i class="fa fa-circle-o"></i>拍卖列表</a></li>
+            <li><a href="{{ url('/admin/auct/create') }}"><i class="fa fa-circle-o"></i>拍卖添加</a></li>
           </ul>
         </li>
 
@@ -433,8 +434,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 投诉列表</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 投诉信息</a></li>
+            <li><a href="{{ url('/admin/cpt') }}"><i class="fa fa-circle-o"></i> 投诉列表</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -696,7 +696,7 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ asset('admin/project/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="{{ asset('admin/project/bootstrap/js/raphael-min.js') }}"></script>
 <script src="{{ asset('admin/project/plugins/morris/morris.min.js') }}"></script>
 <!-- Sparkline -->
 <script src="{{ asset('admin/project/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
@@ -722,5 +722,37 @@
 <script src="{{ asset('admin/project/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin/project/dist/js/demo.js') }}"></script>
+
+  
+@yield('js')
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="delete" class="btn btn-primary">删除</button>
+        <button type="button" id="close" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    
+    $("#delete").click(function(){
+        location.href="{{ url('/admin/auction/delete') }}"+ '/' + id;
+    });
+
+
+</script>
 </body>
 </html>
