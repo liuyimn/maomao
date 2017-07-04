@@ -11,11 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
-=======
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 
 //----------------------用户禁言功能-----------------
@@ -84,4 +79,4 @@ Route::get('admin/advert/index','Admin\AdvertController@index');
 //添加广告页面路由
 Route::get('admin/advert/add','Admin\AdvertController@add');
 //----------------------广告管理---------------------
->>>>>>> 980125e5555e0e7b04c7da2f8891106a8fe3d5ed
+
