@@ -34,26 +34,26 @@
                 </div>
               @endif
 
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="example2" class="table table-bordered table-hover" style="table-layout:fixed;">
                 <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>用户名</th>
-                  <th>邮箱</th>
-                  <th>最后登录时间</th>
-                  <th>操作</th>
+                  <th style="text-align:center;">ID</th>
+                  <th style="text-align:center;">用户名</th>
+                  <th style="text-align:center;">邮箱</th>
+                  <th style="text-align:center;">最后登录时间</th>
+                  <th style="text-align:center;">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                     
                 @foreach($data as $key=>$val)			
                 <tr class="parent">
-                  <td class="ids">{{ $val->id }}</td>
-                  <td class="name">{{ $val->username }}</td>
-                  <td>{{ $val->email }}</td>
-                  <td>{{ date('Y-m-d H:i:s', $val->lastlogin) }}</td>
-                  <td><a href="{{ url('/admin/user/edit') }}/{{ $val->id }}">编辑</a> | 
-                      <a href="#" class="del" data-toggle="modal" data-target="#myModal">删除</a>
+                  <td class="ids" style="text-overflow:ellipsis;text-align:center;">{{ $val->id }}</td>
+                  <td class="name" style="text-overflow:ellipsis;text-align:center;">{{ $val->username }}</td>
+                  <td style="text-overflow:ellipsis;text-align:center;">{{ $val->email }}</td>
+                  <td style="text-overflow:ellipsis;text-align:center;">{{ date('Y-m-d H:i:s', $val->lastlogin) }}</td>
+                  <td style="text-overflow:ellipsis;text-align:center;"><a href="{{ url('/admin/user/edit') }}/{{ $val->id }}">编辑</a> | 
+                      <a href="{{ url('/admin/user/delete') }}/{{ $val->id }}">删除</a>
                   </td>
                 </tr>
                 @endforeach

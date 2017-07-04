@@ -8,12 +8,12 @@
     <section class="content-header">
       <h1>
         广告管理
-        <small>添加</small>
+        <small>修改</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">广告管理</a></li>
-        <li class="active">添加广告</li>
+        <li class="active">修改广告</li>
       </ol>
     </section>
 
@@ -26,14 +26,14 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">快速添加</h3>
+              <h3 class="box-title">快速修改</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ url('/admin/advert/insert') }}" method="post" enctype="multipart/form-data">
+            <form role="form" action="{{ url('/admin/advert/update') }}" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div class="box-body"  style="width:50%">
-              
+              <input type="hidden" name="id" value="{{ $data->id }}">
               @if(session('info'))
               <div class="alert alert-danger">
                   {{ session('info') }}
@@ -52,11 +52,11 @@
                 
                 <div class="form-group">
                   <label for="exampleInputName">广告标题</label>
-                  <input type="text" name="title" class="form-control" value="{{ old('title') }}" id="exampleInputName" placeholder="请输入广告名">
+                  <input type="text" name="title" class="form-control" value="{{ $data->title }}" id="exampleInputName" placeholder="请输入广告名">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">广告内容</label>
-                  <input type="text" name="connect" class="form-control" value="{{ old('connect') }}" id="exampleInputEmail1" placeholder="请输入广告内容">
+                  <input type="text" name="connect" class="form-control" value="{{ $data->connect }}" id="exampleInputEmail1" placeholder="请输入广告内容">
                 </div>
                  <div class="form-group">
                   <label for="exampleInputPassword1">广告图片上传:</label><br/>
@@ -64,21 +64,14 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword4">广告结束时间</label>
-                  <input type="text" name="e_time" class="form-control" value="{{ old('e_time') }}" id="exampleInputPassword4" placeholder="请输入时间">
-                </div>
-               <div class="form-group">
-                  <label for="exampleInputPassword5">是否开启</label>
-                  <select class="form-control" id="exampleInputPassword5" name="status">
-                      <option value="0">开启</option>
-                      <option value="1">关闭</option>
-                  </select>
+                  <input type="text" name="e_time" class="form-control" value="{{ $data->e_time }}" id="exampleInputPassword4" placeholder="请输入时间">
                 </div>
               </div>
               <!-- /.box-body -->
 
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">添加</button>
+                <button type="submit" class="btn btn-primary">修改</button>
               </div>
             </form>
           </div>
