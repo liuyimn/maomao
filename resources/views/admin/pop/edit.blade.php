@@ -1,18 +1,18 @@
 @extends('admin.layout')
 
 @section('content')
- <!-- Content Wrapper. Contains page content -->
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        评论管理
-        <small>添加禁言用户</small>
+        活动发布
+        <small>添编辑活动</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-        <li><a href="#">评论管理</a></li>
-        <li class="active">添加禁言用户</li>
+        <li><a href="#">活动发布</a></li>
+        <li class="active">编辑活动</li>
       </ol>
     </section>
 
@@ -24,7 +24,7 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">快速添加</h3>
+              <h3 class="box-title">快速编辑</h3>
             </div>
 			
 
@@ -46,33 +46,37 @@
 			    </div>
 			@endif
             <!-- form start -->
-            <form role="form" method="post" action="{{ url('/admin/gog/insert') }}">
-            {{ csrf_field() }}
+            <form role="form" method="post" enctype="multipart/form-data" action="{{ url('/admin/pop/update') }}">
+              <input type="hidden" name="id" value="{{ $data->id }}">
+             {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">禁言用户名</label>
-                  <input type="text" class="form-control" name="name"  value="" id="exampleInputEmail1" placeholder="禁言用户名">
+                  <label for="exampleInputEmail1">活动规则</label>
+                  <input type="text" class="form-control" name="rule"  value="{{ $data->rule }}" id="exampleInputEmail1" style="width:500px;">
+                </div>
+                  <div class="form-group">
+                  <label for="exampleInputPassword1">活动内容</label><br/>
+                  <textarea name="content" id="" cols="30" rows="10" style="resize: none; width:500px; height:150px;" >{{ $data->content }}</textarea>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">开始禁言事件</label>
-                  <input type="text" class="form-control" name="starttime" value="" id="exampleInputPassword1" placeholder="开始禁言事件">
+                  <label for="exampleInputPassword1">活动图片:</label><br/>
+                  <a href="javascript:;" class="file">选择文件<input type="file" name="pic" id=""></a><br/>
+                  <label for="exampleInputPassword1">当前图片</label><br/>
+                  <img style="width:120px;height:50px;" src="/uploads/avatar/{{ $data->pic }}" alt="活动美图">
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">结束禁言事件</label>
-                  <input type="text" class="form-control" name="endtime" value="" id="exampleInputPassword1" placeholder="结束禁言事件">
-                </div>
+              
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">添加</button>
+                <button type="submit" class="btn btn-primary">编辑</button>
               </div>
             </form>
           </div>
-          <!-- /.box -->    
+ 
       </div>
       <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
-@endsection
+@endsection 

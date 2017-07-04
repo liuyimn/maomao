@@ -6,13 +6,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        评论管理
-        <small>添加禁言用户</small>
+        活动发布
+        <small>添加活动</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-        <li><a href="#">评论管理</a></li>
-        <li class="active">添加禁言用户</li>
+        <li><a href="#">活动发布</a></li>
+        <li class="active">添加活动</li>
       </ol>
     </section>
 
@@ -26,10 +26,7 @@
             <div class="box-header with-border">
               <h3 class="box-title">快速添加</h3>
             </div>
-			
-
-     		<!-- 验证字段 -->
-
+			<!-- 验证字段 -->
      		@if(session('info'))
      			<div class="alert alert-danger">
      				{{ session('info') }}
@@ -46,21 +43,22 @@
 			    </div>
 			@endif
             <!-- form start -->
-            <form role="form" method="post" action="{{ url('/admin/gog/insert') }}">
+            <form role="form" method="post" enctype="multipart/form-data" action="{{ url('/admin/pop/insert') }}">
             {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">禁言用户名</label>
-                  <input type="text" style="width:500px;" class="form-control" name="name"  value="" id="exampleInputEmail1" placeholder="禁言用户名">
+                  <label for="exampleInputEmail1">活动规则</label>
+                  <input type="text" class="form-control" name="rule"  value="" id="exampleInputEmail1" style="width:500px;">
+                </div>
+                  <div class="form-group">
+                  <label for="exampleInputPassword1">活动内容</label><br/>
+                  <textarea name="content" id="" cols="30" rows="10" style="resize: none; width:500px; height:150px;" ></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">开始禁言时间</label>
-                  <input type="text" style="width:500px;" class="form-control" name="starttime" value="" id="exampleInputPassword1" placeholder="开始禁言时间">
+                  <label for="exampleInputPassword1">活动图片:</label><br/>
+                  <a href="javascript:;" class="file">选择文件<input type="file" name="pic" id=""></a>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">结束禁言时间</label>
-                  <input type="text" style="width:500px;" class="form-control" name="endtime" value="" id="exampleInputPassword1" placeholder="结束禁言时间">
-                </div>
+              
               </div>
               <!-- /.box-body -->
 
@@ -69,16 +67,10 @@
               </div>
             </form>
           </div>
-          <!-- /.box -->
-
-   
-     
-
-       
-       
+ 
       </div>
       <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
-@endsection
+@endsection 
