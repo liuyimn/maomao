@@ -51,15 +51,15 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">禁言用户名</label>
-                  <input type="text" class="form-control" name="name"  value="" id="exampleInputEmail1" placeholder="禁言用户名">
+                  <input type="text" style="width:500px;" class="form-control" name="name"  value="" id="exampleInputEmail1" placeholder="禁言用户名">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">开始禁言事件</label>
-                  <input type="text" class="form-control" name="starttime" value="" id="exampleInputPassword1" placeholder="开始禁言事件">
+                  <label for="exampleInputPassword1">开始禁言时间</label>
+                  <input type="text" style="width:500px;" class="form-control" name="starttime" value="" id="exampleInputPassword1" placeholder="开始禁言时间">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">结束禁言事件</label>
-                  <input type="text" class="form-control" name="endtime" value="" id="exampleInputPassword1" placeholder="结束禁言事件">
+                  <label for="exampleInputPassword1">结束禁言时间</label>
+                  <input type="text" style="width:500px;" class="form-control" name="endtime" value="" id="exampleInputPassword1" placeholder="结束禁言时间">
                 </div>
               </div>
               <!-- /.box-body -->
