@@ -20,16 +20,16 @@ class AuctionController extends Controller
         $num = $request->input('num', 10);
         
         //默认关键字为空
-        $keywords = $request->input('keywords', '');
+        $keywords = $request->input('keywords', '');   
 
         //拍卖列表
-        $data = \DB::table('auction')->get();
+        $data = \DB::table('auction')->orderBy('starttime','desc')->get();
 
         //获取搜索字段
         $data = \DB::table('auction')->where('name', 'like', '%'.$keywords.'%')->paginate($num);
 
         //将数据返回到页面
-        return view('admin.auction.index', ['title' => '拍卖列表',  'request' => $request->all() , 'data' => $data]);
+        return view('admin.auction.index', ['title' => '拍卖列表', 'request' => $request->all(), 'data' => $data]);
     }
 
     /**
@@ -39,7 +39,7 @@ class AuctionController extends Controller
      */
     public function create()
     {
-        //
+        //加载添加页面
         return view('admin.auction.add', ['title' => '添加拍卖']);
     }
 
@@ -53,30 +53,62 @@ class AuctionController extends Controller
     {   
 
         //检测是否合法
-        // $this->validate($request, [
-        //         'name' => 'required|unique:auction|min:6|max:18',
-        //         'oldpage' => 'required',
-        //         'newpage' => 'required',
-        //         'pic' => 'required',
-        //         'content' => 'required',
-        //     ],[
-        //         'name.min' => '商品名最短6个字符',
-        //         'name.max' => '商品名最长18个字符',
-        //         'name.required' => '商品名不能为空',
-        //         'name.unique' => '商品名已存在',
-        //         'oldpage.required' => '原价不能为空',
-        //         'newpage.required' => '现价名不能为空',
-        //         'pic.required' => '商品图片不能为空',
-        //         'content.required' => '商品描述不能为空',
-        //     ]);
+        $this->validate($request, [
+                'name' => 'required|unique:auction|max:18',
+                'oldpage' => 'required',
+                'newpage' => 'required',
+                'pic' => 'required',
+                'content' => 'required',
+                'endtime' => 'required',
+            ],[
+                'name.max' => '商品名最长18个字符',
+                'name.required' => '商品名不能为空',
+                'name.unique' => '商品名已存在',
+                'oldpage.required' => '原价不能为空',
+                'newpage.required' => '现价名不能为空',
+                'pic.required' => '商品图片不能为空',
+                'content.required' => '商品描述不能为空',
+                'endtime.required' => '拍卖时间不能为空',
+            ]);
 
+        
 
         //过滤无效字段
         $data = $request->except('_token');
 
-        $data['endtime'] = time();
+        //处理图片
+        if($request->hasFile('pic')){
 
-        dd($data);
+            //判断上传图片的名称
+            if($request->file('pic')->isValid()){
+
+                //获取扩展名
+                $ext = $request->file('pic')->extension();
+
+                //图片新名称
+                $filename = time().mt_rand(1000000,9999999).'.'.$ext;
+
+                //移动
+                $request->file('pic')->move('./uploads/auction',$filename);
+
+                //往数组里添加新名字
+                $data['pic'] = $filename;
+
+            }
+        }
+
+        //制造添加时的时间戳
+        $data['starttime'] = time();
+
+        //执行添加
+        $res = \DB::table('auction')->insert($data);
+
+        //判断添加是否成功
+        if($res){
+            return redirect('/admin/auct')->with(['info' => '添加成功']);
+        }else{
+            return back()->with(['info' => '添加失败!请检查']);
+        }
     }
 
     /**
@@ -100,6 +132,11 @@ class AuctionController extends Controller
     public function edit($id)
     {
         //
+
+        $data = \DB::table('auction')->where('id', $id)->first();
+
+
+        return view('admin.auction.edit',['title' => '编辑拍卖品', 'data' => $data]);
     }
 
     /**
@@ -111,7 +148,69 @@ class AuctionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //检测是否合法
+        $this->validate($request, [
+                'name' => 'required|unique:auction|max:18',
+                'oldpage' => 'required',
+                'newpage' => 'required',
+                'pic' => 'required',
+                'content' => 'required',
+                'endtime' => 'required',
+            ],[
+                'name.max' => '商品名最长18个字符',
+                'name.required' => '商品名不能为空',
+                'name.unique' => '请修改商品名',
+                'oldpage.required' => '原价不能为空',
+                'newpage.required' => '现价名不能为空',
+                'pic.required' => '商品图片不能为空',
+                'content.required' => '商品描述不能为空',
+                'endtime.required' => '拍卖时间不能为空',
+            ]);
+
+        //去除无效字段
+        $data = $request->except('_token', 'id', '_method');
+
+        // 查询老图片
+        $oldpic = \DB::table('auction')->where('id', $id)->first()->pic;
+
+        //判断是否存在图片
+        if($request->hasFile('pic')) 
+        {
+            //判断提交的pic图片
+            if($request->file('pic')->isValid()) 
+            {
+                // 获取扩展名
+                $ext = $request->file('pic')->extension();
+                
+                // 随机文件名
+                $filename = time().mt_rand(1000000,9999999).'.'.$ext;
+
+                // 移动到uploads文件夹
+                $request->file('pic')->move('./uploads/auction',$filename);
+
+                // 判断这个路径里面老图片是否存在
+                if(file_exists('./uploads/auction/'.$oldpic) && $oldpic != 'default.jpg')
+                {   
+                    //删除图片
+                    unlink('./uploads/auction/'.$oldpic);
+                }
+
+                // 添加到data数据
+                $data['pic'] = $filename;
+            }
+        }
+
+        //更新到数据库
+        $res = \DB::table('auction')->where('id', $id)->update($data);
+
+        //判断是否更新成功
+        if($res)
+        {
+            return redirect('/admin/auct')->with(['info' => '更新成功']);
+        }else
+        {
+            return back()->with(['info' => '更新失败']);
+        }
     }
 
     /**

@@ -11,12 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
-=======
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 
 //----------------------用户禁言功能-----------------
 //主页路由
@@ -49,6 +43,12 @@ Route::resource('/admin/category', 'Admin\CategoryController');
 
 //拍卖列表
 Route::resource('/admin/auct', 'Admin\AuctionController');
+
+//积分页面
+Route::get('/admin/nums/index', 'Admin\NumController@index');
+
+//积分状态修改
+Route::get('/admin/nums/update/{id}', 'Admin\NumController@update');
 
 //===================================================
 
@@ -84,4 +84,3 @@ Route::get('admin/advert/index','Admin\AdvertController@index');
 //添加广告页面路由
 Route::get('admin/advert/add','Admin\AdvertController@add');
 //----------------------广告管理---------------------
->>>>>>> 980125e5555e0e7b04c7da2f8891106a8fe3d5ed
