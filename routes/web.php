@@ -31,7 +31,7 @@ Route::get('admin/gog/out/{id}','Admin\GogController@out');
 
 //----------------------用户禁言功能-----------------
 
-//===================后台模块========================
+//===================后台模块========================//
 
 //投诉列表
 Route::get('/admin/cpt', 'Admin\ComplaintController@index');
@@ -45,7 +45,7 @@ Route::resource('/admin/category', 'Admin\CategoryController');
 //拍卖列表
 Route::resource('/admin/auct', 'Admin\AuctionController');
 
-//===================================================
+//===================后台模块========================//
 
 
 /*======================用户管理路由===================*/
@@ -72,11 +72,50 @@ Route::get('/admin/user/delete/{id}', 'Admin\UserController@delete');
 
 /*======================用户管理路由=========================*/
 
-//----------------------广告管理（未完成）---------------------
-//广告主页路由
-Route::get('admin/advert/index','Admin\AdvertController@index');
+/*======================活动发布管理=========================*/
+//活动展示页路由
+Route::get('/admin/pop/index','Admin\PopController@index');
 
-//添加广告页面路由
-Route::get('admin/advert/add','Admin\AdvertController@add');
-//----------------------广告管理---------------------
+//活动添加页路由
+Route::get('/admin/pop/add','Admin\PopController@add');
+
+//活动添加动作路由
+Route::post('/admin/pop/insert','Admin\PopController@insert');
+
+//改变活动状态的路由
+Route::get('/admin/pop/upp/{id}/{status}','Admin\PopController@upp');
+
+//删除活动路由
+Route::get('/admin/pop/delete/{id}','Admin\PopController@delete');
+
+//编辑页面路由
+Route::get('/admin/pop/edit/{id}','Admin\PopController@edit');
+
+//执行编辑
+Route::post('/admin/pop/update','Admin\PopController@update');
+
+/*======================活动发布管理=========================*/
+
+/*======================友情链接管理=========================*/
+
+//展示友情链接
+Route::get('/admin/friendlink/index','Admin\FriendlinkController@index');
+
+//添加友情链接
+Route::get('/admin/friendlink/add','Admin\FriendlinkController@add');
+
+//执行用户添加路由
+Route::post('/admin/friendlink/insert','Admin\FriendlinkController@insert');
+
+//用户编辑页面
+Route::get('/admin/friendlink/edit/{id}','Admin\FriendlinkController@edit');
+
+//执行编辑动作路由
+Route::post('/admin/friendlink/update','Admin\FriendlinkController@update');
+
+//执行删除友情练级路由
+Route::get('/admin/friendlink/delete/{id}','Admin\FriendlinkController@delete');
+
+
+
 
