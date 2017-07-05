@@ -85,7 +85,7 @@ Route::get('/admin/user/delete/{id}', 'Admin\UserController@delete');
 
 /*======================用户管理路由=========================*/
 
-<<<<<<< HEAD
+
 /*======================活动发布管理=========================*/
 //活动展示页路由
 Route::get('/admin/pop/index','Admin\PopController@index');
@@ -132,7 +132,7 @@ Route::get('/admin/friendlink/delete/{id}','Admin\FriendlinkController@delete');
 
 
 
-=======
+
 //----------------------广告管理---------------------
 //广告主页路由
 Route::get('admin/advert/index', 'Admin\AdvertController@index');
@@ -157,5 +157,5 @@ Route::get('admin/advert/delete/{id}', 'Admin\AdvertController@delete');
 
 
 //----------------------广告管理---------------------
->>>>>>> 954216cc41cc06c4c6a03c30211f7cc8b4e6703d
+
 
