@@ -30,7 +30,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ url('/admin/user/insert') }}" method="post" enctype="multipart/form-data">
+            <form role="form" action="{{ url('/admin/user/insert') }}" style="width:50%" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div class="box-body">
               
@@ -60,7 +60,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword3">手机号</label>
-                  <input type="text" name="phone" value="{{ old('phone') }}" class="form-control" id="exampleInputPassword3" placeholder="请输入手机号">
+                  <input  type="text" name="phone" value="{{ old('phone') }}" class="form-control" id="exampleInputPassword3" placeholder="请输入手机号">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword4">添加管理员</label>
@@ -71,11 +71,11 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">密码</label>
-                  <input type="password" name="password" value="{{ old('password') }}" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
+                  <input style="width:500px" type="password" name="password" value="{{ old('password') }}" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
                 </div>
                  <div class="form-group">
                   <label for="exampleInputPassword2">确认 密码</label>
-                  <input type="password" name="re_password" value="{{ old('re_password') }}" class="form-control" id="exampleInputPassword2" placeholder="请输入密码">
+                  <input style="width:500px" type="password" name="re_password" value="{{ old('re_password') }}" class="form-control" id="exampleInputPassword2" placeholder="请输入密码">
                 </div>
               </div>
               <!-- /.box-body -->

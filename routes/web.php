@@ -11,7 +11,20 @@
 |
 */
 
+// ----------------------登录功能-------------------------
+// 登陆
+Route::get('/admin/login', 'Admin\LoginController@login');
 
+// 退出登录 
+Route::get('/admin/logout', 'Admin\LoginController@logout');
+
+// 执行登陆
+Route::post('/admin/dologin', 'Admin\LoginController@doLogin');
+
+// 验证码
+Route::get('/kit/captcha/{tmp}', 'Admin\KitController@captcha');
+
+// ------------------------登录功能--------------------------------
 
 //----------------------用户禁言功能-----------------
 //主页路由
@@ -72,6 +85,7 @@ Route::get('/admin/user/delete/{id}', 'Admin\UserController@delete');
 
 /*======================用户管理路由=========================*/
 
+<<<<<<< HEAD
 /*======================活动发布管理=========================*/
 //活动展示页路由
 Route::get('/admin/pop/index','Admin\PopController@index');
@@ -118,4 +132,30 @@ Route::get('/admin/friendlink/delete/{id}','Admin\FriendlinkController@delete');
 
 
 
+=======
+//----------------------广告管理---------------------
+//广告主页路由
+Route::get('admin/advert/index', 'Admin\AdvertController@index');
+
+//添加广告页面路由
+Route::get('admin/advert/add', 'Admin\AdvertController@add');
+
+// 广告执行添加
+Route::post('admin/advert/insert', 'Admin\AdvertController@insert');
+
+// 修改权限
+Route::get('admin/advert/upstatus/{id}/{status}', 'Admin\AdvertController@upstatus');
+
+// 获取修改信息
+Route::get('admin/advert/edit/{id}', 'Admin\AdvertController@edit');
+
+// 执行修改
+Route::post('admin/advert/update', 'Admin\AdvertController@update');
+
+// 执行删除
+Route::get('admin/advert/delete/{id}', 'Admin\AdvertController@delete');
+
+
+//----------------------广告管理---------------------
+>>>>>>> 954216cc41cc06c4c6a03c30211f7cc8b4e6703d
 
