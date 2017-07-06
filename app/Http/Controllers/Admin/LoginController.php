@@ -16,9 +16,12 @@ class LoginController extends Controller
     // 执行登陆
      public function doLogin(Request $request){
 
+    
+        
     	$data = $request->except('_token');
     	// 验证是否记住我
     	$remember_token = \Cookie::get('remember_token');
+
     	if($remember_token) 
     	{
     		$admin = \DB::table('user')->where('remember_token', $remember_token)->first();
@@ -58,8 +61,7 @@ class LoginController extends Controller
 
     	// 对密码解密并进行对比
     	$password = decrypt($user->password);
-        // dd($password);
-
+    
     	if($password != $data['password']){
     		return back()->with(['info' => '用户名或密码错误']);
     	}

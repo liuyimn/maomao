@@ -55,11 +55,13 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">开始禁言时间</label>
-                  <input type="text" style="width:500px;" class="form-control" name="starttime" value="" id="exampleInputPassword1" placeholder="开始禁言时间">
+                  <!-- <input type="text" style="width:500px;" class="form-control" name="starttime" value="" id="exampleInputPassword1" placeholder="开始禁言时间"> -->
+                  <input class="form_datetime form-control" style="width:500px;" name="starttime" type="text" value="{{ date('Y-m-d') }}" size="16">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">结束禁言时间</label>
-                  <input type="text" style="width:500px;" class="form-control" name="endtime" value="" id="exampleInputPassword1" placeholder="结束禁言时间">
+                  <!-- <input type="text" style="width:500px;" class="form-control" name="endtime" value="" id="exampleInputPassword1" placeholder="结束禁言时间"> -->
+                  <input class="form_datetime form-control" style="width:500px;" name="endtime" type="text" value="" size="16">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -81,4 +83,20 @@
     </section>
     <!-- /.content -->
   </div>
+@endsection
+
+@section('js')
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayBtn: true,
+        todayHighlight: true,
+        showMeridian: true,
+        pickerPosition: "bottom-left",
+        language: 'zh-CN',//中文，需要引用zh-CN.js包
+        startView: 2,//月视图
+        minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
+    });    
+</script>
 @endsection

@@ -156,6 +156,9 @@ class PopController extends Controller
     			'pic.image' => '请上传图片格式',
     		]);
 
+		//获取原来的图片名
+    	$oldfilename = \DB::table('pop_list')->where('id',$id)->first()->pic;
+
 		//判断是否上传有效图片
 		if($request->hasFile('pic')){
 
@@ -167,7 +170,13 @@ class PopController extends Controller
 				//拼接图片名
 				$filename = time().mt_rand(000000,999999).'.'.$extension;
 
-				$request->file('pic')->move('./uploads/avatar',$filename);
+				//移动文件
+				$request->file('pic')->move('./uploads/pop',$filename);
+
+				//删除原文件
+    			if(file_exists('./uploads/avatar'.$oldfilename) && $oldfilename != 'default.jpg'){
+    				unlink('./uploads/avatar'.$oldfilename);
+    			}
 
 				//将图片名压入数组中
 				$data['pic'] = $filename;

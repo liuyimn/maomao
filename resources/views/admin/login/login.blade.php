@@ -44,7 +44,7 @@
         {{ csrf_field() }}
       <div class="form-group has-feedback">
         <input type="text" name="username" value="{{ old('username') }}" class="form-control" placeholder="用户名">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
         <input type="password" name="password" value="{{ old('password') }}" class="form-control" placeholder="密码">

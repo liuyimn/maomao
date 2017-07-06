@@ -98,7 +98,7 @@
 							<td style="text-overflow:ellipsis; line-height:50px;">{{ $val->id }}</td>
 							<td style="text-overflow:ellipsis; line-height:50px;">{{ $val->rule }}</td>
 							<td style="text-overflow:ellipsis; line-height:50px;">{{ mb_substr($val->content,0,8).'...' }}</td>
-							<td style="text-overflow:ellipsis; line-height:50px;"><img style="height:50px;" src="/uploads/avatar/{{ $val->pic }}"></td>
+							<td style="text-overflow:ellipsis; line-height:50px;"><img style="height:50px;" src="/uploads/pop/{{ $val->pic }}"></td>
 							<td style="text-overflow:ellipsis; line-height:50px;">{{ $arr[$val->status] }}</td>
 							@if($val->status==0)
 							<td style="text-overflow:ellipsis; line-height:50px;"><a href="{{ url('/admin/pop/upp') }}/{{ $val->id }}/{{ $val->status }}">下线</a> | <a href="{{ url('/admin/pop/edit') }}/{{ $val->id }}">编辑</a> | <a href="{{ url('/admin/pop/delete') }}/{{ $val->id }}">删除</a></td>
