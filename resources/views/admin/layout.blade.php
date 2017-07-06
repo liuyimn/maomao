@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="{{ asset('admin/project/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{ asset('admin/project/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+  <link href="{{ asset('admin/project/bootstrap/css/bootstrap.css') }}" rel="stylesheet"/>
+  <link href="{{ asset('admin/project/bootstrap/time/css/bootstrap-datetimepicker.css') }}" rel="stylesheet"/>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -72,15 +74,11 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-<<<<<<< HEAD
+
       <span class="logo-mini">猫猫</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>猫猫二手商城</b>后台</span>
-=======
-      <span class="logo-mini"><b>A</b>LT</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>二手</b>LTE</span>
->>>>>>> 954216cc41cc06c4c6a03c30211f7cc8b4e6703d
+
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -287,28 +285,15 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">用户名</span>
-
               <img src="{{ asset('/uploads/detail') }}/{{ session('detail')->photo }}" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ session('detail')->nickname }}</span>
-
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  Alexander Pierce - Web Developer
-
                 <img src="{{ asset('/uploads/detail') }}/{{ session('detail')->photo }}" class="img-circle" alt="User Image">
-
                 <p>
                   {{ session('detail')->nickname }}
-
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -333,11 +318,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-
                   <a href="/admin/logout" class="btn btn-default btn-flat">退出</a>
-
                 </div>
               </li>
             </ul>
@@ -357,12 +338,6 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>用户名</p>
-
           <img src="{{ asset('/uploads/detail') }}/{{ session('detail')->photo }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
@@ -393,10 +368,6 @@
             </span>
           </a>
           <ul class="treeview-menu">
-
-            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> 用户列表</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 用户添加</a></li>
-
             <li class="active"><a href="{{ url('/admin/user/index') }}"><i class="fa fa-circle-o"></i> 用户列表</a></li>
             <li><a href="{{ url('/admin/user/add') }}"><i class="fa fa-circle-o"></i> 用户添加</a></li>
             <li><a href="{{ url('/admin/user/manage') }}"><i class="fa fa-circle-o"></i> 管理员</a></li>
@@ -454,9 +425,6 @@
           </ul>
         </li>
 
-        <li class="treeview-menu">
-          <a href="#">
-            <i class="fa-cog"></i> <span>拍卖管理</span>
 
         <li class="treeview">
           <a href="#">
@@ -492,10 +460,6 @@
             </span>
           </a>
           <ul class="treeview-menu">
-
-            <li><a href=""><i class="fa fa-circle-o"></i> 广告信息</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i> 广告添加</a></li>
-
             <li><a href="/admin/advert/index"><i class="fa fa-circle-o"></i> 广告信息</a></li>
             <li><a href="/admin/advert/add"><i class="fa fa-circle-o"></i> 广告添加</a></li>
 
@@ -524,9 +488,6 @@
             <li><a href="{{ url('/admin/friendlink/index') }}"><i class="fa fa-circle-o"></i> 友情链接列表</a></li>
             <li><a href="{{ url('/admin/friendlink/add') }}"><i class="fa fa-circle-o"></i> 友情连接添加</a></li>
 
-            <li><a href="#"><i class="fa fa-circle-o"></i> 友情链接列表</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 有情连接添加</a></li>
-
           </ul>
         </li>
         <li class="treeview">
@@ -548,13 +509,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-
             <li><a href="{{ url('/admin/pop/index') }}"><i class="fa fa-circle-o"></i>活动列表</a></li>
             <li><a href="{{ url('/admin/pop/add') }}"><i class="fa fa-circle-o"></i>活动添加</a></li>
-
-            <li><a href="#"><i class="fa fa-circle-o"></i>活动列表</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>活动添加</a></li>
-
           </ul>
         </li>
       </ul>
@@ -807,6 +763,9 @@
 <script src="{{ asset('admin/project/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin/project/dist/js/demo.js') }}"></script>
+<!-- <script src="{{ asset('admin/project/bootstrap/js/bootstrap.js') }}"></script> -->
+<script src="{{ asset('admin/project/bootstrap/time/js/bootstrap-datetimepicker.js') }}"></script>
+<script src="{{ asset('admin/project/bootstrap/time/js/locales/bootstrap-datetimepicker.zh-CN.js') }}"></script>
 
 @yield('js')
 

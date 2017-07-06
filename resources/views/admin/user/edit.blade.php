@@ -65,7 +65,7 @@
                   <input type="text" name="phone" value="{{ $data->phone }}" class="form-control" id="exampleInputPassword3" placeholder="请输入手机号">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword4">添加管理员</label>
+                  <label for="exampleInputPassword4">更改管理员</label>
                   <select class="form-control" id="exampleInputPassword4" name="auth">
                       <option value="1">普通用户</option>
                       <option value="2">管理员</option>

@@ -17,17 +17,23 @@ class UserController extends Controller
         // 查询数据库
         $data = \DB::table('user')->where('username', 'like', '%'.$keywords.'%')->where('auth', 1)->paginate($num);
  		
+        $arr = [1 => '普通用户'];
+        $sta = [0 => '开启', 1 => '关闭'];
+
  		// 将数据发送到页面
-        return view('admin.user.index', ['request' => $request->all(), 'title' => '用户列表','data' => $data]);
+        return view('admin.user.index', ['request' => $request->all(), 'title' => '用户列表','data' => $data, 'arr' => $arr, 'sta' => $sta]);
     }
 
     // manage 管理员列表
     public function manage(){
     	// 查询数据库
-        $data = \DB::table('user')->where('auth', 2)->get();
+        $data = \DB::table('user')->where('auth', '>=', 2)->get();
+
+        $arr = [2 => '管理员', 3 => '超级管理员'];
+        $sta = [0 => '开启', 1 => '关闭'];
 
         // 将数据发送发到页面
-        return view('admin.user.manage', ['data' => $data, 'title' => '管理员列表']);
+        return view('admin.user.manage', ['data' => $data, 'title' => '管理员列表', 'arr' => $arr, 'sta' => $sta]);
     }
 
     // 添加页面
@@ -66,7 +72,7 @@ class UserController extends Controller
         $data = $request->except('_token','re_password');
 
         // 处理密码加密
-        $data['password'] = encrypt($data['password']);
+        $data['password'] = \Hash::make($data['password']);
 
         // 处理token
         $data['remember_token'] = str_random(50);
@@ -113,23 +119,58 @@ class UserController extends Controller
 
     	// 判断
     	if($res){
-            return redirect('/admin/user/index')->with(['info' => '删除成功']);
+            return redirect('/admin/user/index')->with(['info' => '更新成功']);
     	}else{
-    		return back()->with(['info' => '删除失败']);
+    		return back()->with(['info' => '更新失败']);
     	}
+
+    }
+
+    // 修改权限
+    public function upstatus($id, $status){
+
+        // 判断用户不能修改自己状态
+        if($id == session('user')->id){
+            return back()->with(['info' => '对不起不能修改自己状态']);
+        }
+
+        // 判断
+        if($status == 1){
+
+            // 修改stutus等于1的 
+            $res = \DB::table('user')->where('id', $id)->update(['status' => 0]);
+            
+        }else if($status == 0){
+            // 修改状态
+            $res = \DB::table('user')->where('id', $id)->update(['status' => 1]);
+        
+        }
+
+        // 判断是否修改成功 
+        if ($res) {
+            return back()->with(['info' => '状态修改成功']);
+        }else{
+            return back()->with(['info' => '状态修改失败']);
+        }
 
     }
 
     // 执行删除
     public function delete($id){
 
+        // 判断
+        if($id == session('user')->id){
+            return back()->with(['info' => '对不起你不能删除自己']);
+        }
+        // 删除用户详情表中的的信息
     	\DB::table('userdetail')->where('uid', $id)->delete();
 
        	// 执行删除
         $res = \DB::table('user')->where('id', $id)->delete();
 
+        // 判断是否执行成功
         if($res){
-        	return redirect('/admin/user/index')->with(['info' => '删除成功']);
+        	return back()->with(['info' => '删除成功']);
         }else{
         	return back()->with(['info' => '删除失败']);
         }

@@ -32,7 +32,8 @@ class AdvertController extends Controller
         $this->validate($request, [
                 'title' => 'required|unique:advert|min:6|max:18',
                 'connect' => 'required',
-                'e_time' => 'required',
+                'e_time' => 'required|date',
+                's_time' => 'required|date',
                 'pic' => 'required|image',
             ],[
                 'title.min' => '标题最短6个字符',
@@ -42,6 +43,9 @@ class AdvertController extends Controller
                 'pic.required' => '广告图片不能为空',
                 'pic.image' => '必须上传图片',
                 'e_time.required' => '广告结束时间不能为空',
+                's_time.required' => '广告开始时间不能为空',
+                'e_time.date' => '广告结束时间必须是时间格式',
+                's_time.date' => '广告开始时间必须是时间格式',
                 'connect.required' => '广告描述不能为空',
             ]);
 
@@ -64,11 +68,7 @@ class AdvertController extends Controller
                 $data['pic'] = $filename;
             }
         }
-
-        $time = time();
-
-        $data['s_time'] = $time;
-
+        // dd($data);
         // 执行添加
         $res = \DB::table('advert')->insert($data);
 
@@ -147,7 +147,8 @@ class AdvertController extends Controller
                 $data['pic'] = $filename;
             }
         }
-    
+        
+        // dd($data);
         // 执行修改
         $res = \DB::table('advert')->where('id', $request->id)->update($data);
 

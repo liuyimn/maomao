@@ -80,6 +80,8 @@
                   <th style="text-align:center;">ID</th>
                   <th style="text-align:center;">用户名</th>
                   <th style="text-align:center;">邮箱</th>
+                  <th style="text-align:center;">官位</th>
+                  <th style="text-align:center;">状态</th>
                   <th style="text-align:center;">最后登录时间</th>
                   <th style="text-align:center;">操作</th>
                 </tr>
@@ -91,9 +93,16 @@
                   <td class="ids" style="text-overflow:ellipsis;text-align:center;">{{ $val->id }}</td>
                   <td class="name" style="text-overflow:ellipsis;text-align:center;">{{ $val->username }}</td>
                   <td style="text-overflow:ellipsis;text-align:center;">{{ $val->email }}</td>
+                  <td style="text-overflow:ellipsis;text-align:center;">{{ $arr[$val->auth] }}</td>
+                  <td style="text-overflow:ellipsis;text-align:center;">{{ $sta[$val->status] }}</td>
                   <td style="text-overflow:ellipsis;text-align:center;">{{ date('Y-m-d H:i:s', $val->lastlogin) }}</td>
                   <td style="text-overflow:ellipsis;text-align:center;"><a href="{{ url('/admin/user/edit') }}/{{ $val->id }}">编辑</a> | 
-                      <a href="{{ url('/admin/user/delete') }}/{{ $val->id }}">删除</a>
+                      <a href="{{ url('/admin/user/delete') }}/{{ $val->id }}">删除</a>|
+                       @if($val->status == 1)
+                      <a href="{{ url('/admin/user/upstatus') }}/{{ $val->id }}/{{ $val->status }}">开启</a>
+                      @elseif($val->status == 0)
+                      <a href="{{ url('/admin/user/upstatus') }}/{{ $val->id }}/{{ $val->status }}">关闭</a>
+                      @endif
                   </td>
                 </tr>
                 @endforeach
@@ -123,12 +132,5 @@
 @endsection
 
 @section('js')
-<script>
 
-    var id = 0;
-    $(".del").on('click',function(){
-        id = $(this).parents('.parent').find('.ids').html();
-    });
-
-</script>
 @endsection

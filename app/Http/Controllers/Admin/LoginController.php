@@ -46,6 +46,7 @@ class LoginController extends Controller
     	// 查询用户
     	$user = \DB::table('user')->where('username', $data['username'])->first();
 
+        // dd($user);
         // 对用户进行
         if(isset($user->auth) && $user->auth < 2){
             return back()->with(['info' => '对不起你没有权限登录']);
@@ -57,12 +58,10 @@ class LoginController extends Controller
     	}
 
     	// 对密码解密并进行对比
-    	$password = decrypt($user->password);
-        // dd($password);
-
-    	if($password != $data['password']){
-    		return back()->with(['info' => '用户名或密码错误']);
-    	}
+        if(!\Hash::check($data['password'], $user->password))
+        {
+            return back()->with(['info' => '用户名或密码错误']);
+        }
 
     	// 更新登录时间
     	$lastlogin = time();
@@ -85,6 +84,11 @@ class LoginController extends Controller
 
         // 将用户数据存入session
         session(['detail' => $detail]);
+
+        // 判断用户是否被禁用
+        if($user->status == 1){
+            return back()->with(['info' => '你没有权限登陆']);
+        }
 
     	// 跳转到后台主页
     	return redirect('/admin/index')->with(['info' => '登录成功']);

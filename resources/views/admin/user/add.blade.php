@@ -71,11 +71,11 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">密码</label>
-                  <input style="width:500px" type="password" name="password" value="{{ old('password') }}" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
+                  <input type="password" name="password" value="{{ old('password') }}" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
                 </div>
                  <div class="form-group">
                   <label for="exampleInputPassword2">确认 密码</label>
-                  <input style="width:500px" type="password" name="re_password" value="{{ old('re_password') }}" class="form-control" id="exampleInputPassword2" placeholder="请输入密码">
+                  <input type="password" name="re_password" value="{{ old('re_password') }}" class="form-control" id="exampleInputPassword2" placeholder="请输入密码">
                 </div>
               </div>
               <!-- /.box-body -->

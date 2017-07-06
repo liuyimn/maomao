@@ -58,15 +58,24 @@
                   <label for="exampleInputEmail1">广告内容</label>
                   <input type="text" name="connect" class="form-control" value="{{ $data->connect }}" id="exampleInputEmail1" placeholder="请输入广告内容">
                 </div>
-                 <div class="form-group">
+                <div class="form-group">
+                  <label for="exampleInputPassword6">广告开始时间</label>
+                  <input class="form_datetime form-control" style="width:500px;" name="s_time" id="exampleInputPassword6" type="text" value="{{ $data->s_time }}" size="16">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword4">广告结束时间</label>
+                  <input class="form_datetime form-control" style="width:500px;" name="e_time" id="exampleInputPassword4" type="text" value="{{ $data->e_time }}" size="16">
+                </div>
+                <div class="form-group">
                   <label for="exampleInputPassword1">广告图片上传:</label><br/>
                   <a href="javascript:;" class="file">请选择图片<input type="file" name="pic" id="exampleInputPassword1"></a>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword4">广告结束时间</label>
-                  <input type="text" name="e_time" class="form-control" value="{{ $data->e_time }}" id="exampleInputPassword4" placeholder="请输入时间">
-                </div>
+                  <label for="imgpic">当前广告图片:</label><br/>
+                  <img src="{{ asset('/uploads/advert') }}/{{ $data->pic }}" width="60px;" style="margin-left:50px;">
+                  </div>
               </div>
+
               <!-- /.box-body -->
 
 
@@ -89,5 +98,21 @@
   <!-- /.content-wrapper -->
 
 
+@endsection
+
+@section('js')
+  <script type="text/javascript">
+      $(".form_datetime").datetimepicker({
+          format: "yyyy-mm-dd",
+          autoclose: true,
+          todayBtn: true,
+          todayHighlight: true,
+          showMeridian: true,
+          pickerPosition: "bottom-left",
+          language: 'zh-CN',//中文，需要引用zh-CN.js包
+          startView: 2,//月视图
+          minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
+      });    
+  </script>
 @endsection
 

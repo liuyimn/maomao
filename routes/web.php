@@ -91,6 +91,9 @@ Route::post('/admin/user/update', 'Admin\UserController@update');
 // 执行删除
 Route::get('/admin/user/delete/{id}', 'Admin\UserController@delete');
 
+// 
+Route::get('/admin/user/upstatus/{id}/{status}', 'Admin\UserController@upstatus');
+
 /*======================用户管理路由=========================*/
 
 
