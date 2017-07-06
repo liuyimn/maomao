@@ -24,66 +24,79 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition login-page" style="background:url('/admin/project/dist/img/login_bgx.gif')">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="#"><b>{{ config('app.name') }}</b></a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">请登录</p>
-    @if(session('info'))
-        <p class="text-denger">{{ session('info') }}</p>
-    @endif
-    @if (count($errors) > 0)
-        @foreach ($errors->all() as $error)
-           <p class="text-denger">{{ $error }}</p>
-        @endforeach
-    @endif
-    <form action="/admin/dologin" method="post">
-        {{ csrf_field() }}
-      <div class="form-group has-feedback">
-        <input type="text" name="username" value="{{ old('username') }}" class="form-control" placeholder="用户名">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" name="password" value="{{ old('password') }}" class="form-control" placeholder="密码">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-        <div class="row">
-            <div class="col-xs-7">
-              <div class="form-group has-feedback">
-                <input type="text" name="code" class="form-control" placeholder="验证码">
-              </div>
-            </div>
-            <div class="col-xs-5">
-                <a onclick="javascript:re_captcha();" ><img src="{{ URL('kit/captcha/1') }}"  alt="验证码" title="刷新图片" width="100" height="34" id="c2c98f0de5a04167a9e427d883690ff6" border="0"></a>
-            </div>
-        </div>
+<body class="hold-transition login-page" style="height:600px;background:url('/admin/project/dist/img/bj-xia.jpg');background-size: cover;background-repeat: no-repeat;background-position: center center;">
+    <div class="container" >
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input name="remember_me" type="checkbox"> 记住我
-            </label>
+        <div class="col-md-7">
+         
+        </div>
+          <div class="col-md-5" >
+            <div class="login-box" >
+              <div class="login-logo">
+                <a href="#"><b>{{ config('app.name') }}</b></a>
+              </div>
+              <!-- /.login-logo -->
+              <div class="login-box-body" style="height:350px;">
+                <div style="height:10px;"></div>
+                <p class="login-box-msg" style="font-size:20px;">请登录</p>
+                @if(session('info'))
+                    <p class="text-denger">{{ session('info') }}</p>
+                @endif
+                @if (count($errors) > 0)
+                    @foreach ($errors->all() as $error)
+                       <p class="text-denger">{{ $error }}</p>
+                    @endforeach
+                @endif
+                <form action="/admin/dologin" method="post">
+                    {{ csrf_field() }}
+                  <div class="form-group has-feedback">
+                    <input type="text" name="username" value="{{ old('username') }}" class="form-control" placeholder="用户名">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                  </div>
+                  <div style="height:10px;"></div>
+                  <div class="form-group has-feedback">
+                    <input type="password" name="password" value="{{ old('password') }}" class="form-control" placeholder="密码">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                  </div>
+                  <div style="height:10px;"></div>
+                    <div class="row">
+                        <div class="col-xs-7">
+                          <div class="form-group has-feedback">
+                            <input type="text" name="code" class="form-control" placeholder="验证码">
+                          </div>
+                        </div>
+                        <div class="col-xs-5">
+                            <a onclick="javascript:re_captcha();" ><img src="{{ URL('kit/captcha/1') }}"  alt="验证码" title="刷新图片" width="100" height="34" id="c2c98f0de5a04167a9e427d883690ff6" border="0"></a>
+                        </div>
+                    </div>
+                    <div style="height:10px;"></div>
+                      <div class="row">
+                        <div class="col-xs-8">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input name="remember_me" type="checkbox"> 记住我
+                            </label>
+                          </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-xs-4">
+                          <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+                        </div>
+                        <!-- /.col -->
+                      </div>
+                </form>
+                <!-- /.social-auth-links -->
+                  <div style="height:20px;"></div>
+                  <a href="#">忘记密码 ?</a><br>
+
+              </div>
+              <!-- /.login-box-body -->
+            </div>
           </div>
         </div>
-        <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+      <!-- /.login-box -->
         </div>
-        <!-- /.col -->
       </div>
-    </form>
-    <!-- /.social-auth-links -->
-
-    <a href="#">忘记密码 ?</a><br>
-
-  </div>
-  <!-- /.login-box-body -->
-</div>
-<!-- /.login-box -->
-
 <!-- jQuery 2.2.3 -->
 <script src="{{ asset('admin/project/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
 <!-- Bootstrap 3.3.6 -->

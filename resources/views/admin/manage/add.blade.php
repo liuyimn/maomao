@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('content')
-  <!-- Content Wrapper. Contains page content -->
+   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -47,6 +47,9 @@
 			@endif
             <!-- form start -->
             <form role="form" method="post" action="{{ url('/admin/gog/insert') }}">
+            <h5>JavaScript:</h5>
+<pre class="prettyprint"></pre>
+
             {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
@@ -86,17 +89,5 @@
 @endsection
 
 @section('js')
-<script type="text/javascript">
-    $(".form_datetime").datetimepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        todayBtn: true,
-        todayHighlight: true,
-        showMeridian: true,
-        pickerPosition: "bottom-left",
-        language: 'zh-CN',//中文，需要引用zh-CN.js包
-        startView: 2,//月视图
-        minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
-    });    
-</script>
+
 @endsection

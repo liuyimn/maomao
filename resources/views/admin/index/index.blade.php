@@ -309,13 +309,8 @@
         <!-- right col -->
       </div>
       <!-- /.row (main row) -->
-          
-          
-          
     </section>
     <!-- /.content -->
   </div>
-
-  
 
 @endsection

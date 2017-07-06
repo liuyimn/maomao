@@ -1,7 +1,6 @@
 @extends('admin.layout')
 
 @section('content')
-
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -30,7 +29,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ url('/admin/user/insert') }}" style="width:50%" method="post" enctype="multipart/form-data">
+            <form role="form" action="{{ url('/admin/config/update') }}" style="width:50%" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div class="box-body">
               
@@ -51,38 +50,38 @@
               @endif
                 
                 <div class="form-group">
-                  <label for="exampleInputName">用户名</label>
-                  <input type="text" name="username" class="form-control" value="{{ old('username') }}" id="exampleInputName" placeholder="请输入用户名">
+                  <label for="exampleInputName">网站名称</label>
+                  <input type="text" name="webname" class="form-control" value="{{ $data->webname }}" id="exampleInputName" placeholder="请输入网站名称">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">邮箱地址</label>
-                  <input type="email" name="email" class="form-control" value="{{ old('email') }}" id="exampleInputEmail1" placeholder="请输入邮箱地址">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword3">手机号</label>
-                  <input  type="text" name="phone" value="{{ old('phone') }}" class="form-control" id="exampleInputPassword3" placeholder="请输入手机号">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword4">添加管理员</label>
-                  <select class="form-control" id="exampleInputPassword4" name="auth">
-                      <option value="1">普通用户</option>
-                      <option value="2">管理员</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">密码</label>
-                  <input type="password" name="password" value="{{ old('password') }}" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
+                  <label for="exampleInputEmail1">网站关键字</label>
+                  <input type="text" name="keywords" class="form-control" value="{{ $data->keywords }}" id="exampleInputEmail1" placeholder="请输入网站关键字">
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputPassword2">确认 密码</label>
-                  <input type="password" name="re_password" value="{{ old('re_password') }}" class="form-control" id="exampleInputPassword2" placeholder="请输入密码">
+                  <label for="exampleInputEmail1">网站版权</label>
+                  <input type="text" name="copy" class="form-control" value="{{ $data->copy }}" id="exampleInputEmail1" placeholder="请输入网站版权">
+                </div>
+              	  <div class="form-group">
+                  <label for="exampleInputPassword4">网站状态</label>
+                  <select class="form-control" id="exampleInputPassword4" name="status">
+                      <option value="0" @if(!empty($data->status) && $data->status==0) selected="selected" @endif>关闭</option>
+                      <option value="1" @if(!empty($data->status) && $data->status==1) selected="selected" @endif>开启</option>
+                  </select>
+               	 </div>
+               	<div class="form-group">
+                  <label for="exampleInputPassword3">网站logo</label><br/>
+                 <a href="javascript:;" class="file">选择文件<input type="file" name="logo" id=""></a>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword3">当前logo</label><br/>
+                 <img style="width:50px; height:50px;" src="/uploads/config/{{ $data->logo }}" alt="">
                 </div>
               </div>
               <!-- /.box-body -->
 
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">添加</button>
+                <button type="submit" class="btn btn-primary">编辑</button>
               </div>
             </form>
           </div>
@@ -98,6 +97,5 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
 
 @endsection

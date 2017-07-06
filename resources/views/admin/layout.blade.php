@@ -3,13 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ config('app.name') }} - {{ $title }}</title>
+  <title>{{ config('app.name') }} - @if($title){{ $title }}@endif</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="{{ asset('admin/project/bootstrap/css/bootstrap.min.css') }}">
-
-  <!-- <link rel="stylesheet" href="{{ asset('admin/project/bootstrap/css/demo.css') }}"> -->
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('admin/project/bootstrap/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
@@ -33,6 +29,10 @@
   <link rel="stylesheet" href="{{ asset('admin/project/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
   <link href="{{ asset('admin/project/bootstrap/css/bootstrap.css') }}" rel="stylesheet"/>
   <link href="{{ asset('admin/project/bootstrap/time/css/bootstrap-datetimepicker.css') }}" rel="stylesheet"/>
+
+  <link href="{{ asset('admin/project/bootstrap/css/main.css') }}" rel="stylesheet">
+  <link href="{{ asset('admin/project/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -274,14 +274,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
               <img src="{{ asset('/admin/project/dist/img/avatar5.png') }}" class="user-image" alt="User Image">
               <span class="hidden-xs"></span>
-
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
+
                 <img src="{{ asset('/admin/project/dist/img/avatar5.png') }}" class="img-circle" alt="User Image">
                 <p>
                   <small>自2012年十一月起</small>
@@ -328,7 +327,6 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-
           <img src="{{ asset('/admin/project/dist/img/avatar5.png') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
@@ -415,11 +413,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/admin/auct"><i class="fa fa-circle-o"></i>市场信息</a></li>
-            <li><a href="/admin/auct/create"><i class="fa fa-circle-o"></i>添加管理</a></li>
+            <li><a href="{{ url('/admin/manage/index') }}"><i class="fa fa-circle-o"></i>市场信息</a></li>
+            <li><a href="{{ url('/admin/manage/add') }}"><i class="fa fa-circle-o"></i>添加管理</a></li>
           </ul>
         </li>
-        
         <li class="treeview">
           <a href="#">
             <i class="fa fa-cog"></i> <span>拍卖管理</span>
@@ -478,10 +475,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-
-            <li><a href="#"><i class="fa fa-circle-o"></i> 友情链接列表</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 有情连接添加</a></li>
-
+            <li><a href="{{ url('/admin/friendlink/index') }}"><i class="fa fa-circle-o"></i> 友情链接列表</a></li>
+            <li><a href="{{ url('/admin/friendlink/add') }}"><i class="fa fa-circle-o"></i> 友情连接添加</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -492,7 +487,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 网站信息</a></li>
+            <li><a href="{{ url('/admin/config/index') }}"><i class="fa fa-circle-o"></i> 网站信息</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -503,9 +498,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>活动列表</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>活动添加</a></li>
-
+            <li><a href="{{ url('/admin/pop/index') }}"><i class="fa fa-circle-o"></i>活动列表</a></li>
+            <li><a href="{{ url('/admin/pop/add') }}"><i class="fa fa-circle-o"></i>活动添加</a></li>
           </ul>
         </li>
       </ul>
@@ -759,9 +753,11 @@
 <script src="{{ asset('admin/project/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin/project/dist/js/demo.js') }}"></script>
-<!-- <script src="{{ asset('admin/project/bootstrap/js/bootstrap.js') }}"></script> -->
 <script src="{{ asset('admin/project/bootstrap/time/js/bootstrap-datetimepicker.js') }}"></script>
 <script src="{{ asset('admin/project/bootstrap/time/js/locales/bootstrap-datetimepicker.zh-CN.js') }}"></script>
+<script src="{{ asset('admin/project/bootstrap/select/dist/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('admin/project/bootstrap/select/dist/css/bootstrap-select.min.css') }}"></script>
+
 
 @yield('js')
 
@@ -791,6 +787,7 @@
     });
 
 </script>
+
 
 </body>
 </html>
