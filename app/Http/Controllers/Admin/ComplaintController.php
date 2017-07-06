@@ -23,7 +23,7 @@ class ComplaintController extends Controller
     	$data = \DB::table('complaint')->where('content', 'like', '%'.$keywords.'%')->paginate($num);
 
     	//将数据发送到页面
-    	return view('admin.complaint.index', ['request' => $request->all(), 'data' => $data]);
+    	return view('admin.complaint.index', ['title' => '投诉列表', 'request' => $request->all(), 'data' => $data]);
 
     }
 

@@ -11,6 +11,7 @@
 |
 */
 
+
 // ----------------------登录功能-------------------------
 // 登陆
 Route::get('/admin/login', 'Admin\LoginController@login');
@@ -25,6 +26,7 @@ Route::post('/admin/dologin', 'Admin\LoginController@doLogin');
 Route::get('/kit/captcha/{tmp}', 'Admin\KitController@captcha');
 
 // ------------------------登录功能--------------------------------
+
 
 //----------------------用户禁言功能-----------------
 //主页路由
@@ -58,7 +60,13 @@ Route::resource('/admin/category', 'Admin\CategoryController');
 //拍卖列表
 Route::resource('/admin/auct', 'Admin\AuctionController');
 
-//===================后台模块========================//
+//积分页面
+Route::get('/admin/nums/index', 'Admin\NumController@index');
+
+//积分状态修改
+Route::get('/admin/nums/update/{id}', 'Admin\NumController@update');
+
+//===================================================
 
 
 /*======================用户管理路由===================*/
@@ -158,6 +166,7 @@ Route::get('admin/advert/delete/{id}', 'Admin\AdvertController@delete');
 
 //----------------------广告管理---------------------
 
+<<<<<<< HEAD
 /*======================市场管理=========================*/
 Route::get('admin/manage/index','Admin\ManageController@index');
 
@@ -180,3 +189,5 @@ Route::post('admin/config/update','Admin\ConfigController@update');
 //修改网站状态路由
 Route::get('admin/config/change/{status}','Admin\ConfigController@change');
 
+=======
+>>>>>>> 8a6de0ba9377d9ff59295163d4188fdd193d751c

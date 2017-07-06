@@ -69,7 +69,7 @@
 				                {{ session('info') }}
 				            </div>
 				            @endif
-						  	<table id="example2" class="table table-bordered table-hover">
+						  	<table style="table-layout:fixed ;" id="example2" class="table table-bordered table-hover">
 						        <thead>
 						            <tr>
 						              <th style="text-align: center;">ID</th>
@@ -84,7 +84,7 @@
 							        <tr>
 							            <td>{{ $val->id }}</td>
 							            <td>{{ $val->uid }}</td>
-							            <td>{{ $val->content }}</td>
+							            <td>{{ mb_substr($val->content, 0, 20)."..." }}</td>
 							            <td>
 											<a href="{{ url('/admin/cpt/delete') }}/{{ $val->id }}">删除</a>
 							            </td>

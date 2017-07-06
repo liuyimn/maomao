@@ -41,7 +41,7 @@
             <!-- form start -->
             <form role="form" action="{{ url('/admin/category') }}" method="post" enctype="multipart/form-data">
             	
-              	<div class="box-body">
+              	<div class="box-body"  style="width: 50%;">
               	{{ csrf_field() }}
 	              	<div class="form-group">
       						@if(session('info'))

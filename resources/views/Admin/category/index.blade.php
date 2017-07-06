@@ -30,7 +30,7 @@
 				                {{ session('info') }}
 				            </div>
 				            @endif
-						  	<table id="example2" class="table table-bordered table-hover">
+						  	<table style="table-layout:fixed ;" id="example2" class="table table-bordered table-hover">
 						        <thead>
 						            <tr>
 						              <th style="text-align: center;">ID</th>
@@ -42,9 +42,9 @@
 	
 									@foreach($data as $key=>$val)
 							        <tr class="parent">
-							            <td style="text-align: center;">{{ $val->id }}</td>
-							            <td>{{ $val->name }}</td>
-							            <td style="text-align: center;">
+							            <td style="text-align: center; text-overflow:ellipsis;">{{ $val->id }}</td>
+							            <td style="text-overflow:ellipsis;">{{ $val->name }}</td>
+							            <td style="text-align: center; text-overflow:ellipsis;">
 								            <a href="{{ url('/admin/category') }}/{{ $val->id }}/edit">编辑</a> 
 								            <a class="del" href="#">删除</a> 
 							            </td>

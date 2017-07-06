@@ -286,6 +286,12 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
+<<<<<<< HEAD
+=======
+              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">用户名</span>
+
+>>>>>>> 8a6de0ba9377d9ff59295163d4188fdd193d751c
               <img src="{{ asset('/uploads/detail') }}/{{ session('detail')->photo }}" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ session('detail')->nickname }}</span>
 
@@ -293,7 +299,16 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
+<<<<<<< HEAD
 
+=======
+
+                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexander Pierce - Web Developer
+
+>>>>>>> 8a6de0ba9377d9ff59295163d4188fdd193d751c
                 <img src="{{ asset('/uploads/detail') }}/{{ session('detail')->photo }}" class="img-circle" alt="User Image">
 
                 <p>
@@ -348,6 +363,14 @@
       <div class="user-panel">
         <div class="pull-left image">
 
+<<<<<<< HEAD
+=======
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>用户名</p>
+
+>>>>>>> 8a6de0ba9377d9ff59295163d4188fdd193d751c
           <img src="{{ asset('/uploads/detail') }}/{{ session('detail')->photo }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
@@ -379,6 +402,12 @@
           </a>
           <ul class="treeview-menu">
 
+<<<<<<< HEAD
+=======
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> 用户列表</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 用户添加</a></li>
+
+>>>>>>> 8a6de0ba9377d9ff59295163d4188fdd193d751c
             <li class="active"><a href="{{ url('/admin/user/index') }}"><i class="fa fa-circle-o"></i> 用户列表</a></li>
             <li><a href="{{ url('/admin/user/add') }}"><i class="fa fa-circle-o"></i> 用户添加</a></li>
             <li><a href="{{ url('/admin/user/manage') }}"><i class="fa fa-circle-o"></i> 管理员</a></li>
@@ -420,7 +449,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 用户积分列表</a></li>
+            <li><a href="{{ url('/admin/nums/index') }}"><i class="fa fa-circle-o"></i> 用户积分列表</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -431,11 +460,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
+<<<<<<< HEAD
             <li><a href="{{ url('/admin/manage/index') }}"><i class="fa fa-circle-o"></i>市场信息</a></li>
             <li><a href="{{ url('/admin/manage/add') }}"><i class="fa fa-circle-o"></i>添加管理</a></li>
           </ul>
         </li>
 
+=======
+            <li><a href="#"><i class="fa fa-circle-o"></i>市场信息</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>添加管理</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview-menu">
+          <a href="#">
+            <i class="fa-cog"></i> <span>拍卖管理</span>
+>>>>>>> 8a6de0ba9377d9ff59295163d4188fdd193d751c
 
         <li class="treeview">
           <a href="#">
@@ -471,6 +511,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
+<<<<<<< HEAD
+=======
+
+            <li><a href=""><i class="fa fa-circle-o"></i> 广告信息</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i> 广告添加</a></li>
+
+>>>>>>> 8a6de0ba9377d9ff59295163d4188fdd193d751c
             <li><a href="/admin/advert/index"><i class="fa fa-circle-o"></i> 广告信息</a></li>
             <li><a href="/admin/advert/add"><i class="fa fa-circle-o"></i> 广告添加</a></li>
 
@@ -498,6 +545,13 @@
 
             <li><a href="{{ url('/admin/friendlink/index') }}"><i class="fa fa-circle-o"></i> 友情链接列表</a></li>
             <li><a href="{{ url('/admin/friendlink/add') }}"><i class="fa fa-circle-o"></i> 友情连接添加</a></li>
+<<<<<<< HEAD
+=======
+
+            <li><a href="#"><i class="fa fa-circle-o"></i> 友情链接列表</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 有情连接添加</a></li>
+
+>>>>>>> 8a6de0ba9377d9ff59295163d4188fdd193d751c
           </ul>
         </li>
         <li class="treeview">
@@ -522,6 +576,13 @@
 
             <li><a href="{{ url('/admin/pop/index') }}"><i class="fa fa-circle-o"></i>活动列表</a></li>
             <li><a href="{{ url('/admin/pop/add') }}"><i class="fa fa-circle-o"></i>活动添加</a></li>
+<<<<<<< HEAD
+=======
+
+            <li><a href="#"><i class="fa fa-circle-o"></i>活动列表</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>活动添加</a></li>
+
+>>>>>>> 8a6de0ba9377d9ff59295163d4188fdd193d751c
           </ul>
         </li>
       </ul>
@@ -748,7 +809,7 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ asset('admin/project/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="{{ asset('admin/project/bootstrap/js/raphael-min.js') }}"></script>
 <script src="{{ asset('admin/project/plugins/morris/morris.min.js') }}"></script>
 <!-- Sparkline -->
 <script src="{{ asset('admin/project/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
@@ -774,6 +835,7 @@
 <script src="{{ asset('admin/project/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin/project/dist/js/demo.js') }}"></script>
+<<<<<<< HEAD
 <script src="{{ asset('admin/project/bootstrap/time/js/bootstrap-datetimepicker.js') }}"></script>
 
 <script src="{{ asset('admin/project/bootstrap/time/js/locales/bootstrap-datetimepicker.zh-CN.js') }}"></script>
@@ -781,5 +843,38 @@
 <script src="{{ asset('admin/project/bootstrap/select/dist/css/bootstrap-select.min.css') }}"></script>
 
 @yield('js')
+=======
+
+@yield('js')
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="delete" class="btn btn-primary">删除</button>
+        <button type="button" id="close" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    
+    $("#delete").click(function(){
+        location.href="{{ url('/admin/user/delete') }}"+ '/' + id;
+    });
+
+
+</script>
+
+>>>>>>> 8a6de0ba9377d9ff59295163d4188fdd193d751c
 </body>
 </html>
