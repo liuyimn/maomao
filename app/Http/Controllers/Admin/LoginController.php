@@ -61,18 +61,11 @@ class LoginController extends Controller
     	}
 
     	// 对密码解密并进行对比
-<<<<<<< HEAD
         if(!\Hash::check($data['password'], $user->password))
         {
             return back()->with(['info' => '用户名或密码错误']);
         }
-=======
-    	$password = decrypt($user->password);
-    
-    	if($password != $data['password']){
-    		return back()->with(['info' => '用户名或密码错误']);
-    	}
->>>>>>> 768f7dbf3d9cd9e027475a44306348730be407f0
+
 
     	// 更新登录时间
     	$lastlogin = time();
