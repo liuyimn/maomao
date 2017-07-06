@@ -10,8 +10,10 @@ class UserController extends Controller
 	
     // index用户列表
     public function index(Request $request){
+
     	// 分页搜索所需的参数
     	$num = $request->input('num', 10);
+
         $keywords = $request->input('keywords', '');
 
         // 查询数据库

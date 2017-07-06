@@ -22,8 +22,16 @@ class AuctionController extends Controller
         //默认关键字为空
         $keywords = $request->input('keywords', '');   
 
-        //拍卖列表
-        $data = \DB::table('auction')->orderBy('starttime','desc')->get();
+        //设置缓存时间
+        $minutes = 20;
+
+        //启用缓存系统
+        $data = \Cache::remember('auction', $minutes, function(){
+
+            //拍卖列表
+            return \DB::table('auction')->orderBy('starttime','desc')->get();
+
+        });
 
         //获取搜索字段
         $data = \DB::table('auction')->where('name', 'like', '%'.$keywords.'%')->paginate($num);
@@ -105,9 +113,16 @@ class AuctionController extends Controller
 
         //判断添加是否成功
         if($res){
+
+            //删除该项redis数据
+            \Cache::forget('auction');
+
             return redirect('/admin/auct')->with(['info' => '添加成功']);
+
         }else{
+
             return back()->with(['info' => '添加失败!请检查']);
+
         }
     }
 
@@ -131,10 +146,9 @@ class AuctionController extends Controller
      */
     public function edit($id)
     {
-        //
-
+       
+        //修改
         $data = \DB::table('auction')->where('id', $id)->first();
-
 
         return view('admin.auction.edit',['title' => '编辑拍卖品', 'data' => $data]);
     }
@@ -147,7 +161,7 @@ class AuctionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
         //检测是否合法
         $this->validate($request, [
                 'name' => 'required|unique:auction|max:18',
@@ -204,8 +218,11 @@ class AuctionController extends Controller
         $res = \DB::table('auction')->where('id', $id)->update($data);
 
         //判断是否更新成功
-        if($res)
-        {
+        if($res){
+
+            //删除该项redis数据
+            \Cache::forget('auction');
+
             return redirect('/admin/auct')->with(['info' => '更新成功']);
         }else
         {
@@ -226,6 +243,9 @@ class AuctionController extends Controller
 
         //判断是否删除成功
         if($res){
+
+            //删除该项redis数据
+            \Cache::forget('auction');
 
             //成功跳转
             return redirect('/admin/auct')->with(['info' => '删除成功']);

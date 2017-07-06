@@ -16,8 +16,16 @@ class ComplaintController extends Controller
     	//定义默认关键字为空
         $keywords = $request->input('keywords', ''); 
 
-        //查询数据
-    	$data = \DB::table('complaint')->get();
+        //设置缓存时间
+        $minutes = 20;
+
+        //启用缓存系统
+        $data = \Cache::remember('complaint', $minutes, function(){
+
+            //查询数据
+            return \DB::table('complaint')->get();
+
+        });
 
     	//调用数据库中的模糊查询
     	$data = \DB::table('complaint')->where('content', 'like', '%'.$keywords.'%')->paginate($num);
@@ -35,6 +43,8 @@ class ComplaintController extends Controller
 
     	//判断是否成功
     	if($res){
+
+            \Cache::forget('complaint');
 
     		//删除成功跳转列表页
     		return redirect('/admin/cpt')->with(['info' => '删除成功']);

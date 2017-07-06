@@ -16,8 +16,16 @@ class NumController extends Controller
     	//定义默认关键字为空
         $keywords = $request->input('keywords', ''); 
 
-    	//查询userdetail表中所有数据
-    	$data = \DB::table('userdetail')->get();
+        //设置缓存时间
+        $minutes = 20;
+
+        //启用缓存系统
+        $data = \Cache::remember('userdetail', $minutes, function(){
+
+            //查询userdetail表中所有数据
+            $data = \DB::table('userdetail')->get();
+
+        });
 
     	//调用数据库中的模糊查询
     	$data = \DB::table('userdetail')->where('nickname', 'like', '%'.$keywords.'%')->paginate($num);
@@ -29,13 +37,9 @@ class NumController extends Controller
 
     //修改信息
     public function update($id){
-
-    	// dd($request->id);request->
-
+    	
     	//查询当前数据
     	$data = \DB::table('userdetail')->where('id', $id)->first();
-
-    	// dd($data);
 
     	//设定一个数组等于0
     	$arr['num_status'] = 0;
@@ -56,11 +60,15 @@ class NumController extends Controller
 
     	//判断是否成功
     	if($res){
+
+            //删除该数据缓存
+            \Cache::forget('userdetail');
+
     		return redirect('/admin/nums/index')->with(['info' => '已修改']);
+
     	}else{
+
     		return back()->with(['info' => '修改失败']);
     	}
-
     }
-
 }
