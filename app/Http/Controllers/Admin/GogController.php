@@ -34,7 +34,7 @@ class GogController extends Controller
 
     //执行添加禁言用户
     public function insert(Request $request){
-
+        
     	$this->validate($request, [
     		'name' => 'required',
     		'starttime' => 'required',
@@ -47,7 +47,7 @@ class GogController extends Controller
 
     	//获取用户发送过来的数据
     	$data = $request->except('_token');
-
+       
     	//获取用户名
     	$name = $data['name'];
 
@@ -62,8 +62,7 @@ class GogController extends Controller
     	}
 
     	$pop = \DB::table('gog')->where('name',$name)->first();
-   
-    	if($pop->status==1){
+    	if($pop!=false && $pop->status==1){
     		return back()->with(['info'=>'该用户已经被禁言']);
     	}
 

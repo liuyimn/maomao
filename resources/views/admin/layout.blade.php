@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ config('app.name') }} - {{ $title }}</title>
+  <title>{{ config('app.name') }} - @if($title){{ $title }}@endif</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="{{ asset('admin/project/bootstrap/css/bootstrap.min.css') }}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('admin/project/bootstrap/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
@@ -31,6 +30,9 @@
   <link rel="stylesheet" href="{{ asset('admin/project/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
   <link href="{{ asset('admin/project/bootstrap/css/bootstrap.css') }}" rel="stylesheet"/>
   <link href="{{ asset('admin/project/bootstrap/time/css/bootstrap-datetimepicker.css') }}" rel="stylesheet"/>
+  <link href="{{ asset('admin/project/bootstrap/css/main.css') }}" rel="stylesheet">
+  <link href="{{ asset('admin/project/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,11 +76,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-
       <span class="logo-mini">猫猫</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>猫猫二手商城</b>后台</span>
-
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -285,6 +285,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
               <img src="{{ asset('/uploads/detail') }}/{{ session('detail')->photo }}" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ session('detail')->nickname }}</span>
             </a>
@@ -368,6 +369,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
+
             <li class="active"><a href="{{ url('/admin/user/index') }}"><i class="fa fa-circle-o"></i> 用户列表</a></li>
             <li><a href="{{ url('/admin/user/add') }}"><i class="fa fa-circle-o"></i> 用户添加</a></li>
             <li><a href="{{ url('/admin/user/manage') }}"><i class="fa fa-circle-o"></i> 管理员</a></li>
@@ -420,11 +422,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>市场信息</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>添加管理</a></li>
+
+            <li><a href="{{ url('/admin/manage/index') }}"><i class="fa fa-circle-o"></i>市场信息</a></li>
+            <li><a href="{{ url('/admin/manage/add') }}"><i class="fa fa-circle-o"></i>添加管理</a></li>
           </ul>
         </li>
-
 
         <li class="treeview">
           <a href="#">
@@ -460,6 +462,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
+
             <li><a href="/admin/advert/index"><i class="fa fa-circle-o"></i> 广告信息</a></li>
             <li><a href="/admin/advert/add"><i class="fa fa-circle-o"></i> 广告添加</a></li>
 
@@ -484,10 +487,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-
             <li><a href="{{ url('/admin/friendlink/index') }}"><i class="fa fa-circle-o"></i> 友情链接列表</a></li>
             <li><a href="{{ url('/admin/friendlink/add') }}"><i class="fa fa-circle-o"></i> 友情连接添加</a></li>
-
           </ul>
         </li>
         <li class="treeview">
@@ -498,7 +499,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 网站信息</a></li>
+            <li><a href="{{ url('/admin/config/index') }}"><i class="fa fa-circle-o"></i> 网站信息</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -763,9 +764,12 @@
 <script src="{{ asset('admin/project/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin/project/dist/js/demo.js') }}"></script>
-<!-- <script src="{{ asset('admin/project/bootstrap/js/bootstrap.js') }}"></script> -->
 <script src="{{ asset('admin/project/bootstrap/time/js/bootstrap-datetimepicker.js') }}"></script>
 <script src="{{ asset('admin/project/bootstrap/time/js/locales/bootstrap-datetimepicker.zh-CN.js') }}"></script>
+<script src="{{ asset('admin/project/bootstrap/select/dist/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('admin/project/bootstrap/select/dist/css/bootstrap-select.min.css') }}"></script>
+
+
 
 @yield('js')
 
@@ -796,6 +800,7 @@
 
 
 </script>
+
 
 </body>
 </html>

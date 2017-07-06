@@ -141,7 +141,7 @@ Route::post('/admin/friendlink/update','Admin\FriendlinkController@update');
 //执行删除友情练级路由
 Route::get('/admin/friendlink/delete/{id}','Admin\FriendlinkController@delete');
 
-
+/*======================友情链接管理=========================*/
 
 
 //----------------------广告管理---------------------
@@ -168,4 +168,19 @@ Route::get('admin/advert/delete/{id}', 'Admin\AdvertController@delete');
 
 
 //----------------------广告管理---------------------
+
+/*======================市场管理=========================*/
+
+//展示网站配置路由
+Route::get('admin/config/index','Admin\ConfigController@index');
+
+//修改网站配置路由
+Route::get('admin/config/edit','Admin\ConfigController@edit');
+
+//执行网站修改路由
+Route::post('admin/config/update','Admin\ConfigController@update');
+
+//修改网站状态路由
+Route::get('admin/config/change/{status}','Admin\ConfigController@change');
+
 
