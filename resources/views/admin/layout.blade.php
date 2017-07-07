@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -6,7 +6,6 @@
   <title>{{ config('app.name') }} - @if($title){{ $title }}@endif</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.6 -->
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('admin/project/bootstrap/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
@@ -30,6 +29,7 @@
   <link rel="stylesheet" href="{{ asset('admin/project/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
   <link href="{{ asset('admin/project/bootstrap/css/bootstrap.css') }}" rel="stylesheet"/>
   <link href="{{ asset('admin/project/bootstrap/time/css/bootstrap-datetimepicker.css') }}" rel="stylesheet"/>
+
   <link href="{{ asset('admin/project/bootstrap/css/main.css') }}" rel="stylesheet">
   <link href="{{ asset('admin/project/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -62,11 +62,11 @@
       opacity: 0;
     }
     .file:hover {
-    background: #AADFFD;
-    border-color: #78C3F3;
-    color: #004974;
-    text-decoration: none;
-  }
+      background: #AADFFD;
+      border-color: #78C3F3;
+      color: #004974;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -74,17 +74,19 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{ url('/admin/index') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
+
       <span class="logo-mini">猫猫</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>猫猫二手商城</b>后台</span>
+
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">切换导航</span>
       </a>
 
       <div class="navbar-custom-menu">
@@ -96,74 +98,62 @@
               <span class="label label-success">4</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
+              <li class="header">你有4条信息</li>
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ asset('/Admin/project/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
-                        Support Team
+                        嘿,碧池
                         <small><i class="fa fa-clock-o"></i> 5 mins</small>
                       </h4>
-                      <p>Why not buy a new awesome theme?</p>
+                      <p>what are you 弄啥嘞</p>
                     </a>
                   </li>
                   <!-- end message -->
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ asset('/Admin/project/dist/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
-                        AdminLTE Design Team
+                        嘿,碧池
                         <small><i class="fa fa-clock-o"></i> 2 hours</small>
                       </h4>
-                      <p>Why not buy a new awesome theme?</p>
+                      <p>what are you 弄啥嘞</p>
                     </a>
                   </li>
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ asset('/Admin/project/dist/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
-                        Developers
+                        嘿,碧池
                         <small><i class="fa fa-clock-o"></i> Today</small>
                       </h4>
-                      <p>Why not buy a new awesome theme?</p>
+                      <p>what are you 弄啥嘞</p>
                     </a>
                   </li>
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ asset('/admin/project/dist/img/user5-128x128.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
-                        Sales Department
+                        嘿,碧池
                         <small><i class="fa fa-clock-o"></i> Yesterday</small>
                       </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Reviewers
-                        <small><i class="fa fa-clock-o"></i> 2 days</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
+                      <p>what are you 弄啥嘞</p>
                     </a>
                   </li>
                 </ul>
               </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
+              <li class="footer"><a href="#">查看所有信息</a></li>
             </ul>
           </li>
           <!-- Notifications: style can be found in dropdown.less -->
@@ -173,39 +163,38 @@
               <span class="label label-warning">10</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
+              <li class="header">您有10个通知</li>
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                   <li>
                     <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                      <i class="fa fa-users text-aqua"></i> 今天新加入5个成员
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                      page and may cause design problems
+                      <i class="fa fa-warning text-yellow"></i> 很长的描述
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fa fa-users text-red"></i> 5 new members joined
+                      <i class="fa fa-users text-red"></i> 5个新成员被添加
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                      <i class="fa fa-shopping-cart text-green"></i> 25位会员
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fa fa-user text-red"></i> You changed your username
+                      <i class="fa fa-user text-red"></i> 你可以改你的名字
                     </a>
                   </li>
                 </ul>
               </li>
-              <li class="footer"><a href="#">View all</a></li>
+              <li class="footer"><a href="#">查看所有</a></li>
             </ul>
           </li>
           <!-- Tasks: style can be found in dropdown.less -->
@@ -215,19 +204,19 @@
               <span class="label label-danger">9</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
+              <li class="header">您有9个任务</li>
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                   <li><!-- Task item -->
                     <a href="#">
                       <h3>
-                        Design some buttons
+                        设计一些按钮
                         <small class="pull-right">20%</small>
                       </h3>
                       <div class="progress xs">
                         <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
+                          <span class="sr-only">完成20%</span>
                         </div>
                       </div>
                     </a>
@@ -236,12 +225,12 @@
                   <li><!-- Task item -->
                     <a href="#">
                       <h3>
-                        Create a nice theme
+                        创建一个好的主题
                         <small class="pull-right">40%</small>
                       </h3>
                       <div class="progress xs">
                         <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">40% Complete</span>
+                          <span class="sr-only">完成40%</span>
                         </div>
                       </div>
                     </a>
@@ -250,12 +239,12 @@
                   <li><!-- Task item -->
                     <a href="#">
                       <h3>
-                        Some task I need to do
+                        我需要做的一些任务
                         <small class="pull-right">60%</small>
                       </h3>
                       <div class="progress xs">
                         <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">60% Complete</span>
+                          <span class="sr-only">完成60%</span>
                         </div>
                       </div>
                     </a>
@@ -264,12 +253,12 @@
                   <li><!-- Task item -->
                     <a href="#">
                       <h3>
-                        Make beautiful transitions
+                        做个漂亮的转换
                         <small class="pull-right">80%</small>
                       </h3>
                       <div class="progress xs">
                         <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">80% Complete</span>
+                          <span class="sr-only">完成80%</span>
                         </div>
                       </div>
                     </a>
@@ -278,37 +267,36 @@
                 </ul>
               </li>
               <li class="footer">
-                <a href="#">View all tasks</a>
+                <a href="#">查看所有任务</a>
               </li>
             </ul>
           </li>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-              <img src="{{ asset('/uploads/detail') }}/{{ session('detail')->photo }}" class="user-image" alt="User Image">
-              <span class="hidden-xs">{{ session('detail')->nickname }}</span>
+              <img src="{{ asset('/admin/project/dist/img/avatar5.png') }}" class="user-image" alt="User Image">
+              <span class="hidden-xs"></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{ asset('/uploads/detail') }}/{{ session('detail')->photo }}" class="img-circle" alt="User Image">
+
+                <img src="{{ asset('/admin/project/dist/img/avatar5.png') }}" class="img-circle" alt="User Image">
                 <p>
-                  {{ session('detail')->nickname }}
-                  <small>Member since Nov. 2012</small>
+                  <small>自2012年十一月起</small>
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
+                    <a href="#">追随者</a>
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
+                    <a href="#">销售额</a>
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
+                    <a href="#">朋友</a>
                   </div>
                 </div>
                 <!-- /.row -->
@@ -316,7 +304,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="#" class="btn btn-default btn-flat">简况</a>
                 </div>
                 <div class="pull-right">
                   <a href="/admin/logout" class="btn btn-default btn-flat">退出</a>
@@ -339,10 +327,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('/uploads/detail') }}/{{ session('detail')->photo }}" class="img-circle" alt="User Image">
+          <img src="{{ asset('/admin/project/dist/img/avatar5.png') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>{{ session('detail')->nickname }}</p>
+          <p></p>
 
           <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
         </div>
@@ -361,6 +349,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">管理中心</li>
+
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>用户管理</span>
@@ -369,13 +358,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-
             <li class="active"><a href="{{ url('/admin/user/index') }}"><i class="fa fa-circle-o"></i> 用户列表</a></li>
             <li><a href="{{ url('/admin/user/add') }}"><i class="fa fa-circle-o"></i> 用户添加</a></li>
             <li><a href="{{ url('/admin/user/manage') }}"><i class="fa fa-circle-o"></i> 管理员</a></li>
-
           </ul>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
@@ -389,6 +377,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i>鱼塘商品管理</a></li>
           </ul>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
@@ -402,6 +391,7 @@
             <li><a href="{{ url('/admin/category/create') }}"><i class="fa fa-circle-o"></i>分类添加</a></li>
           </ul>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
@@ -414,6 +404,7 @@
             <li><a href="{{ url('/admin/nums/index') }}"><i class="fa fa-circle-o"></i> 用户积分列表</a></li>
           </ul>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>市场管理</span>
@@ -422,16 +413,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-
             <li><a href="{{ url('/admin/manage/index') }}"><i class="fa fa-circle-o"></i>市场信息</a></li>
             <li><a href="{{ url('/admin/manage/add') }}"><i class="fa fa-circle-o"></i>添加管理</a></li>
           </ul>
         </li>
-
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-table"></i> <span>拍卖管理</span>
-
+            <i class="fa fa-cog"></i> <span>拍卖管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -737,6 +725,7 @@
 </script>
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ asset('admin/project/bootstrap/js/bootstrap.min.js') }}"></script>
+
 <!-- Morris.js charts -->
 <script src="{{ asset('admin/project/bootstrap/js/raphael-min.js') }}"></script>
 <script src="{{ asset('admin/project/plugins/morris/morris.min.js') }}"></script>
@@ -770,7 +759,6 @@
 <script src="{{ asset('admin/project/bootstrap/select/dist/css/bootstrap-select.min.css') }}"></script>
 
 
-
 @yield('js')
 
 <!-- Modal -->
@@ -797,7 +785,6 @@
     $("#delete").click(function(){
         location.href="{{ url('/admin/user/delete') }}"+ '/' + id;
     });
-
 
 </script>
 

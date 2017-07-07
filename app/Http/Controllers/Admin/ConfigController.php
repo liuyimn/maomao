@@ -20,6 +20,7 @@ class ConfigController extends Controller
 
     	//将这条数据查出来发送到模板
     	$data = \DB::table('config')->where('id',1)->first();
+        
     	// dd($data);
     	return view('admin.config.index',['title'=>'网站配置','data'=>$data,'arr'=>$arr]);
     }

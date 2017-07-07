@@ -27,11 +27,11 @@
             <!-- /.box-header -->
 
             <div class="box-body">
-		@if(session('info'))
-     			<div class="alert alert-danger">
-     				{{ session('info') }}
-     			</div>
-     		@endif
+      		  @if(session('info'))
+           			<div class="alert alert-danger">
+           				{{ session('info') }}
+           			</div>
+           		@endif
               <table style="table-layout:fixed ;" id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
@@ -49,7 +49,7 @@
 							<td style="text-overflow:ellipsis; line-height:50px;">{{ $data->webname }}</td>
 							<td style="text-overflow:ellipsis; line-height:50px;">{{ $data->keywords }}</td>
 							<td style="text-overflow:ellipsis; line-height:50px;"><img style="width:50px;" src="/uploads/config/{{ $data->logo }}" alt=""></td>
-							<td style="text-overflow:ellipsis; line-height:50px;">{{ $data->keywords }}</td>
+							<td style="text-overflow:ellipsis; line-height:50px;">{{ $data->copy }}</td>
               <td style="text-overflow:ellipsis; line-height:50px;">{{ $arr[$data->status] }}</td>
 							<td style="text-overflow:ellipsis; line-height:50px;"><a href="{{ url('admin/config/edit') }}">编辑</a> | 
               @if($data->status==0)

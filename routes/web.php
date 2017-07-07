@@ -169,7 +169,6 @@ Route::get('admin/advert/delete/{id}', 'Admin\AdvertController@delete');
 
 //----------------------广告管理---------------------
 
-/*======================市场管理=========================*/
 
 //展示网站配置路由
 Route::get('admin/config/index','Admin\ConfigController@index');
@@ -184,3 +183,17 @@ Route::post('admin/config/update','Admin\ConfigController@update');
 Route::get('admin/config/change/{status}','Admin\ConfigController@change');
 
 
+
+// --------------------前台注册-----------------------------
+
+// 注册页
+Route::get('home/regist/index', 'Home\RegistController@index');
+
+// ajax路由
+Route::get('home/regist/registajax', 'Home\RegistController@registajax');
+
+
+
+
+
+// -------------------前台注册-------------------------------

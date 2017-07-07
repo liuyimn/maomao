@@ -13,11 +13,20 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //分类列表
-        $data = \DB::table('type')->select("*", \DB::raw("concat(path,',',id) As sort_path"))->orderBy('sort_path')->get();
+    {   
 
-        //chuli
+        //设置缓存时间
+        $minutes = 20;
+
+        //启用缓存系统
+        $data = \Cache::remember('type', $minutes, function(){
+
+            //分类列表
+            return \DB::table('type')->select("*", \DB::raw("concat(path,',',id) As sort_path"))->orderBy('sort_path')->get();
+
+        });
+
+        //遍历数据
         foreach ($data as $key => $val) {
             
             $num = substr_count($val->path, ',');
@@ -35,7 +44,7 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         //创建分类
         $data = \DB::table('type')->select("*", \DB::raw("concat(path,',',id) As sort_path"))->orderBy('sort_path')->get();
 
@@ -48,8 +57,7 @@ class CategoryController extends Controller
 
         } 
 
-
-
+        //展示模版
         return view('admin.category.add', ['title' => '分类添加', 'data' => $data]);
     }
 
@@ -79,12 +87,15 @@ class CategoryController extends Controller
 
             //分类状态
             $data['status'] = 1;
-
         }
 
         $res = \DB::table('type')->insert($data);
 
         if($res){
+
+            //删除该数据库
+            \Cache::forget('type');
+
             return redirect('/admin/category/create')->with(['info' => '添加成功']);
         }else{
             return redirect('/admin/category/create')->with(['info' => '添加失败']);
@@ -110,9 +121,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
         //所有分类
-        $alldata = \DB::table('type')->select("*", \DB::raw("concat(path,',',id) As sort_path"))->orderBy('sort_path')->get();
+        $alldata =  \DB::table('type')->select("*", \DB::raw("concat(path,',',id) As sort_path"))->orderBy('sort_path')->get();
 
         //chuli
         foreach ($alldata as $key => $val) {
@@ -162,9 +172,16 @@ class CategoryController extends Controller
         $res = \DB::table('type')->where('id', $id)->update($data);
 
         if($res){
+
+            //删除该数据库
+            \Cache::forget('type');
+
             return redirect('/admin/category')->with(['info' => '更新成功']);
+
         }else{
+
             return back()->with(['info' => '更新失败']);
+
         }
     }
 
@@ -179,14 +196,24 @@ class CategoryController extends Controller
         //删除
         $res = \DB::table('type')->where('pid', $id)->first();
 
+        //判断是否有子分类
         if($res){
+
             return back()->with(['info'=>'有子分类,不能删除']);
         }
 
+        //执行删除
         $res = \DB::table('type')->delete($id);
+
+        //判断是否删除成功
         if($res){
+
+            //删除该数据库
+            \Cache::forget('type');
+
             return redirect('/admin/category')->with(['info' => '删除成功']);
         }else{
+
             return back()->with(['info' => '删除失败']);
         }
     }

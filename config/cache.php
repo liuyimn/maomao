@@ -86,6 +86,7 @@ return [
     |
     */
 
-    'prefix' => 'maomao',
+
+    'prefix' => 'mao',
 
 ];

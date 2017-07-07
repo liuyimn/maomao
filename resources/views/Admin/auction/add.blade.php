@@ -25,7 +25,7 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">快速添加</h3>
+              <h3 class="box-title"><a href="{{ url('/admin/category') }}">返回拍卖列表</a></h3>
             </div>
 			
       			@if (count($errors) > 0)

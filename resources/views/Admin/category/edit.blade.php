@@ -78,6 +78,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">修改</button>
+                <a href="{{ url('/admin/category') }}"><button type="button" class="btn btn-primary">返回</button></a>
               </div>
             </form>
           </div>
