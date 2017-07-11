@@ -6,13 +6,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        用户管理
-        <small>列表</small>
+        友情链接管理
+        <small>友情链接列表</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-        <li><a href="#">用户管理</a></li>
-        <li class="active">用户列表</li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="#">友情链接管理</a></li>
+        <li class="active">友情链接列表</li>
       </ol>
     </section>
 
@@ -22,59 +22,11 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">用户列表</h3>
+              <h3 class="box-title">友情链接列表</h3>
             </div>
             <!-- /.box-header -->
 
             <div class="box-body">
-		<form action="/admin/friendlink/index" method="get">
-            <div class="row">
-            	<div class="col-md-2">
-            		<!-- 下拉框 -->
-					<div class="form-group">
-						
-						<select name="num" class="form-control">
-							<option value="5"
-							@if(!empty($request['num']) && $request['num'] == 5)
-							selected="selected" 
-							@endif
-							>5</option>
-							<option value="15"
-							@if(!empty($request['num']) && $request['num'] == 15)
-							selected="selected" 
-							@endif
-							>15</option>
-							<option value="20"
-							@if(!empty($request['num']) && $request['num'] == 20)
-							selected="selected" 
-							@endif
-							>20</option>
-							<option value="30"
-							@if(!empty($request['num']) && $request['num'] == 30)
-							selected="selected"
-							@endif 
-							>40</option>
-							<option value="50"
-							@if(!empty($request['num']) && $request['num'] == 50)
-							selected="selected"
-							@endif 
-							>50</option>
-						</select>
-					</div>
-            	</div>
-          
-            	<div class="col-md-4 col-md-offset-6">
-            		<!-- 搜索框 -->
-					<div class="input-group input-group-sm">
-						<input  value="{{ $request['keywords'] or ''}}" name="keywords" class="form-control" type="text">
-						<span class="input-group-btn">
-						<button type="submit" class="btn btn-info btn-flat">搜索</button>
-						</span>
-					</div>	
-            	</div>
-				
-			</div>
-		</form>
 		@if(session('info'))
      			<div class="alert alert-danger">
      				{{ session('info') }}

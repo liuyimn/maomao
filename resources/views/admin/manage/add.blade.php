@@ -26,45 +26,36 @@
             <div class="box-header with-border">
               <h3 class="box-title">快速添加</h3>
             </div>
-			
-
-     		<!-- 验证字段 -->
-
-     		@if(session('info'))
-     			<div class="alert alert-danger">
-     				{{ session('info') }}
-     			</div>
-     		@endif
-            <!-- /.box-header -->
-      		@if (count($errors) > 0)
-			    <div class="alert alert-danger">
-			        <ul>
-			            @foreach ($errors->all() as $error)
-			                <li>{{ $error }}</li>
-			            @endforeach
-			        </ul>
-			    </div>
-			@endif
+           		<!-- 验证字段 -->
+           		@if(session('info'))
+           			<div class="alert alert-danger">
+           				{{ session('info') }}
+           			</div>
+           		@endif
+                  <!-- /.box-header -->
+            		@if (count($errors) > 0)
+      			    <div class="alert alert-danger">
+      			        <ul>
+      			            @foreach ($errors->all() as $error)
+      			                <li>{{ $error }}</li>
+      			            @endforeach
+      			        </ul>
+      			    </div>
+      			@endif
             <!-- form start -->
-            <form role="form" method="post" action="{{ url('/admin/gog/insert') }}">
-            <h5>JavaScript:</h5>
-<pre class="prettyprint"></pre>
-
+            <form role="form" method="post" action="{{ url('/admin/manage/insert') }}">
             {{ csrf_field() }}
               <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">禁言用户名</label>
-                  <input type="text" style="width:500px;" class="form-control" name="name"  value="" id="exampleInputEmail1" placeholder="禁言用户名">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">开始禁言时间</label>
-                  <!-- <input type="text" style="width:500px;" class="form-control" name="starttime" value="" id="exampleInputPassword1" placeholder="开始禁言时间"> -->
-                  <input class="form_datetime form-control" style="width:500px;" name="starttime" type="text" value="{{ date('Y-m-d') }}" size="16">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">结束禁言时间</label>
-                  <!-- <input type="text" style="width:500px;" class="form-control" name="endtime" value="" id="exampleInputPassword1" placeholder="结束禁言时间"> -->
-                  <input class="form_datetime form-control" style="width:500px;" name="endtime" type="text" value="" size="16">
+               <fieldset  id="city_china_val">
+                  <p>所在地区：
+                  <select class="province cxselect form-control" name="province" data-value="北京市" data-first-title="选择省" disabled="disabled" style="width:150px;"></select><br/>
+                  <select class="city cxselect form-control"  name="city" data-value="东城区" data-first-title="选择市" disabled="block" style="width:150px;"></select><br/>
+                  <!-- <select class="area cxselect form-control" name="area" data-value="" data-first-title="选择地区" disabled="disabled" style="width:150px;"></select><br/> -->
+                </p>
+              </fieldset>
+               <div class="form-group">
+                  <label for="exampleInputEmail1">代理人</label>
+                  <input type="text" style="width:500px;" class="form-control" name="uname"  value="" id="exampleInputEmail1" placeholder="代理人姓名名">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -89,5 +80,13 @@
 @endsection
 
 @section('js')
+<script>
+$.cxSelect.defaults.url = '/admin/project/bootstrap/js/cityData.min.json';
 
+$('#city_china_val').cxSelect({
+  selects: ['province', 'city'],
+  nodata: 'none'
+});
+
+</script>
 @endsection

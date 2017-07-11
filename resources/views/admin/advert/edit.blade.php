@@ -11,7 +11,7 @@
         <small>修改</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">广告管理</a></li>
         <li class="active">修改广告</li>
       </ol>

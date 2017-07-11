@@ -757,6 +757,7 @@
 <script src="{{ asset('admin/project/bootstrap/time/js/locales/bootstrap-datetimepicker.zh-CN.js') }}"></script>
 <script src="{{ asset('admin/project/bootstrap/select/dist/js/bootstrap-select.min.js') }}"></script>
 <script src="{{ asset('admin/project/bootstrap/select/dist/css/bootstrap-select.min.css') }}"></script>
+<script src="{{ asset('admin/project/bootstrap/js/jquery.cxselect.min.js') }}"></script>
 
 
 @yield('js')

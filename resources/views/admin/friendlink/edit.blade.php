@@ -10,7 +10,7 @@
         <small>编辑友情链接</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">友情链接</a></li>
         <li class="active">编辑友情链接</li>
       </ol>

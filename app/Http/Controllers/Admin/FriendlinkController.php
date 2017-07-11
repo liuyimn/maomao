@@ -16,16 +16,14 @@ class FriendlinkController extends Controller
     //展示主页方法
     public function index(Request $request){
 
-    	//获取页码数 默认为10
-    	$num = $request->input('num',10);
+        //缓存
+        $data = \Cache::remember('friendlink',10,function(){
 
-    	//获取搜索关键字 默认为空
-    	$keywords = $request->input('keywords','');
-
-    	$data = \DB::table('friendlink')->where('linkname','like','%'.$keywords.'%')->paginate($num);
+            return \DB::table('friendlink')->get();
+        });
 
     	//引入加载页面
-    	return view('admin.friendlink.index',['title'=>'友情链接主页','data'=>$data,'request'=>$request->all()]);
+    	return view('admin.friendlink.index',['title'=>'友情链接主页','data'=>$data]);
     }
 
     public function add(){
@@ -96,6 +94,10 @@ class FriendlinkController extends Controller
 
     	//判断是否添加成功并重定向
     	if($res){
+            \Cache::forget('friendlink');
+            \Cache::remember('friendlink',10,function(){
+                return \DB::table('friendlink')->get();
+            });
     		return redirect('/admin/friendlink/index')->with(['info'=>'恭喜您：添加成功']);
     	}else{
     		return back()->with(['info'=>'对不起：添加失败']);
@@ -195,6 +197,7 @@ class FriendlinkController extends Controller
     	//删除数据库中的该条id的数据
     	$res = \DB::table('friendlink')->where('id',$id)->delete();
     	if($res){
+            \Cache::forget('friendlink');
     		return back()->with(['info'=>'恭喜：删除友情链接成功']);
     	}else{
     		return back()->with(['info'=>'抱歉：删除失败']);

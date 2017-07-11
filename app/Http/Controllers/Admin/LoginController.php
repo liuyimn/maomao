@@ -16,8 +16,6 @@ class LoginController extends Controller
     // 执行登陆
      public function doLogin(Request $request){
 
-    
-        
     	$data = $request->except('_token');
     	// 验证是否记住我
     	$remember_token = \Cookie::get('remember_token');
@@ -92,6 +90,7 @@ class LoginController extends Controller
 
         // 判断用户是否被禁用
         if($user->status == 1){
+            
             return back()->with(['info' => '你没有权限登陆']);
         }
 
