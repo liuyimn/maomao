@@ -7,12 +7,19 @@ use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
+    /**
+    *   @return    加载后台登陆页面
+    */
     // 引入页面
     public function login(){
 
     	return view('admin.login.login');
     }
 
+    /**
+    *   @return    重定向返回结果
+    *   @param     $request 发送过来的结果集
+    */
     // 执行登陆
      public function doLogin(Request $request){
 
@@ -99,6 +106,10 @@ class LoginController extends Controller
 	
     }
 
+    /**
+    *   @return    重定向返回结果
+    *   @param     $request 发送过来的结果集
+    */
     // logout退出登录
     public function logout(Request $request)
     {

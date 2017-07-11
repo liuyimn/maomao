@@ -7,8 +7,11 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-	
-    // index用户列表
+    /**
+    *   @return    加载用户列表页
+    *   @param     $request 发送过来的结果集
+    */
+	// index用户列表
     public function index(Request $request){
 
     	// 分页搜索所需的参数
@@ -26,6 +29,9 @@ class UserController extends Controller
         return view('admin.user.index', ['request' => $request->all(), 'title' => '用户列表','data' => $data, 'arr' => $arr, 'sta' => $sta]);
     }
 
+    /**
+    *   @return    加载管理员页面
+    */
     // manage 管理员列表
     public function manage(){
     	// 查询数据库
@@ -38,6 +44,9 @@ class UserController extends Controller
         return view('admin.user.manage', ['data' => $data, 'title' => '管理员列表', 'arr' => $arr, 'sta' => $sta]);
     }
 
+    /**
+    *   @return    加载用户添加页面
+    */
     // 添加页面
     public function add(){
 
@@ -45,6 +54,10 @@ class UserController extends Controller
     	return view('admin.user.add', ['title' => '用户添加']);
     }
 
+    /**
+    *   @return    重定向返回结果
+    *   @param     $request 发送过来的结果集
+    */
     // 添加执行页
     public function insert(Request $request){
     	$this->validate($request, [
@@ -103,6 +116,10 @@ class UserController extends Controller
 
     }
 
+    /**
+    *    @return    加载用户修改ye
+    *    @param     $id 发送过来的id
+    */
     // 用户编辑页面
     public function edit($id){
     	// 查询数据库
@@ -111,6 +128,10 @@ class UserController extends Controller
         return view('admin.user.edit', ['title' => '用户编辑', 'data' => $data]);
     }
 
+    /**
+    *    @return    重定向返回结果
+    *    @param     $request 发送过来的结果集
+    */
     // 执行修改页面
     public function update(Request $request){
     	// 过滤字段 
@@ -128,6 +149,11 @@ class UserController extends Controller
 
     }
 
+    /**
+    *    @return    重定向返回结果
+    *    @param     $id 发送过来要修改的id
+    *    @param     $status 状态
+    */
     // 修改权限
     public function upstatus($id, $status){
 
@@ -157,6 +183,10 @@ class UserController extends Controller
 
     }
 
+    /**
+    *    @return   重定向返回结果
+    *    @param    $id int
+    */
     // 执行删除
     public function delete($id){
 

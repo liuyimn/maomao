@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)http://fushun.baixing.com/p/js_uploader.php?imageVendor=upyun&uploaderName=images -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Baixing Upload img page</title>
+	
+	<style>
+		* {
+			padding:0;
+			margin:0;
+		}
+		body {
+			color: #333;
+			font-family: 'Hiragino Sans GB', 'Microsoft YaHei', '黑体', sans-serif;
+		}
+		input[type="file"] {
+			color:#999;
+		}
+		#uploadForm {
+			float:left;
+			margin-right:10px;
+			position:relative;
+		}
+		.p-note {
+			color:#888;
+			font-size:12px;
+			line-height:28px;
+		}
+		.notips .p-note {
+			display:none;
+		}
+		.imgx-btn, #file {
+			width: 120px;
+			height: 40px;
+			line-height: 40px;
+			border: 1px solid #c4c4c4;
+			border-radius: 2px;
+			font-size: 16px;
+			text-align: center;
+			background-color: #fafafa;
+			cursor: pointer;
+		}
+		.imgx-btn {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.imgx-btn:hover {
+			background-color: #f0f0f0;
+		}
+		#file {
+			display:block;
+			position:relative;
+			opacity:0;
+			filter:alpha(opacity=0);
+		}
+</style>
+</head>
+
+<body>
+	<div id="uploadForm" style="display: block;"><form action="http://v0.api.upyun.com/bximg/" method="post" enctype="multipart/form-data" id="iframe_key_675160"><div class="imgx-btn"><span class="imgx-label">点击上传</span></div><input name="file" id="file" onchange="imgUploading.call(this);" type="file"><input type="hidden" name="iframe_key" id="iframe_key" value="iframe_key_675160"><input type="hidden" name="policy" value="eyJidWNrZXQiOiJieGltZyIsInNhdmUta2V5IjoiL3tmaWxlbWQ1fXsuc3VmZml4fSIsImNvbnRlbnQtc2VjcmV0Ijoib3JpZ2luYWwiLCJjb250ZW50LWxlbmd0aC1yYW5nZSI6IjAsMTA0ODU3NjAiLCJ4LWdta2VybC10eXBlIjoiZml4X21heCIsIngtZ21rZXJsLXZhbHVlIjoiNjQwIiwieC1nbWtlcmwtbm9pY2MiOiJ0cnVlIiwieC1nbWtlcmwtcXVhbGl0eSI6Ijc1IiwieC1nbWtlcmwtcm90YXRlIjoiYXV0byIsIngtZ21rZXJsLWV4aWYtc3dpdGNoIjoidHJ1ZSIsIm5vdGlmeS11cmwiOiJodHRwOi8vY2FsbGJhY2suaW1nLmJhaXhpbmcubmV0L3VweXVuLnBocD9idWNrZXQ9YnhpbWciLCJleHBpcmF0aW9uIjoxNDk5NjU2MTI5LCJyZXR1cm4tdXJsIjoiaHR0cDovL3d3dy5iYWl4aW5nLmNvbS9wL2pzX3VwbG9hZGVyLnBocD91cGxvYWRlck5hbWU9aW1hZ2VzIn0="><input type="hidden" name="signature" value="b0578db403a16aec21eded449c19dbe8"></form></div>
+	<script>
+		var reg = /\w+.(?:\w+.)?(baixing.(?:com|cn))/ig;
+		document.domain = window.location.host.replace(reg, '$1');
+
+		function creatForm(){
+			var uploadForm = document.getElementById('uploadForm');
+			uploadForm.style.display = 'none';
+			var iframeKey = 'iframe_key_' + Math.round (Math.random() * 1000000);
+			var html = '<form action="http://v0.api.upyun.com/bximg/" method="post" enctype="multipart/form-data" id="'+iframeKey+'">'
+					 	+ '<div class="imgx-btn"><span class="imgx-label">点击上传</span></div>'
+						+ '<input name="file" id="file" onChange="imgUploading.call(this);" type="file" />'
+						+ '<input type="hidden" name="iframe_key" id="iframe_key" value="'+iframeKey+'" />'
+						+ '<input type="hidden" name="policy" value="eyJidWNrZXQiOiJieGltZyIsInNhdmUta2V5IjoiL3tmaWxlbWQ1fXsuc3VmZml4fSIsImNvbnRlbnQtc2VjcmV0Ijoib3JpZ2luYWwiLCJjb250ZW50LWxlbmd0aC1yYW5nZSI6IjAsMTA0ODU3NjAiLCJ4LWdta2VybC10eXBlIjoiZml4X21heCIsIngtZ21rZXJsLXZhbHVlIjoiNjQwIiwieC1nbWtlcmwtbm9pY2MiOiJ0cnVlIiwieC1nbWtlcmwtcXVhbGl0eSI6Ijc1IiwieC1nbWtlcmwtcm90YXRlIjoiYXV0byIsIngtZ21rZXJsLWV4aWYtc3dpdGNoIjoidHJ1ZSIsIm5vdGlmeS11cmwiOiJodHRwOi8vY2FsbGJhY2suaW1nLmJhaXhpbmcubmV0L3VweXVuLnBocD9idWNrZXQ9YnhpbWciLCJleHBpcmF0aW9uIjoxNDk5NjU2MTI5LCJyZXR1cm4tdXJsIjoiaHR0cDovL3d3dy5iYWl4aW5nLmNvbS9wL2pzX3VwbG9hZGVyLnBocD91cGxvYWRlck5hbWU9aW1hZ2VzIn0=" /><input type="hidden" name="signature" value="b0578db403a16aec21eded449c19dbe8" />'
+						+'</form>';
+			uploadForm.innerHTML = html;
+			uploadForm.style.display = 'block';
+			return;
+		}
+
+		function imgUploading(){
+			if (!this.value.match(/(.jpg|.jpeg|.png)$/i)) {
+				return alert('图片格式错误，图片只能上传.jpg .jpeg .png 格式的！');
+			}
+
+			var $uploader = parent.Uploader["images"];
+			var swfuAddSet = parent.swfuAddSet["images"];
+
+			$uploader.setLiImg(document.getElementById('iframe_key').value);
+			document.getElementsByTagName ('form')[0].submit();
+			creatForm();
+			swfuAddSet && swfuAddSet.uploadSuccess && swfuAddSet.uploadSuccess();
+		}
+
+		window.onload = creatForm;
+		// post 数据后重新生成一个 form
+		window.onload = function() {
+			if (!document.getElementsByTagName('iframe').length) {
+				creatForm();
+			}
+		}
+	</script>
+
+
+</body></html>
