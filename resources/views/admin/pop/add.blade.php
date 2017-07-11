@@ -16,14 +16,14 @@
         <small>添加活动</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">活动发布</a></li>
         <li class="active">添加活动</li>
         广告管理
         <small>添加</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">广告管理</a></li>
         <li class="active">添加广告</li>
 
@@ -65,29 +65,30 @@
                 <div class="form-group">
                   <label for="exampleInputPassword1">活动图片:</label><br/>
                   <a href="javascript:;" class="file">选择文件<input type="file" name="pic" id=""></a>
-            <form role="form" action="{{ url('/admin/advert/insert') }}" method="post" enctype="multipart/form-data">
-              {{ csrf_field() }}
-              <div class="box-body"  style="width:50%">
-              
-              @if(session('info'))
-              <div class="alert alert-danger">
-                  {{ session('info') }}
-              </div>
-              @endif
-
-              @if (count($errors) > 0)
+                </div>
+                <form role="form" action="{{ url('/admin/advert/insert') }}" method="post" enctype="multipart/form-data">
+                  {{ csrf_field() }}
+                  <div class="box-body"  style="width:50%">
+                  
+                  @if(session('info'))
                   <div class="alert alert-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
+                      {{ session('info') }}
                   </div>
-              @endif
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">添加</button>
-              </div>
-            </form>
+                  @endif
+
+                  @if (count($errors) > 0)
+                      <div class="alert alert-danger">
+                          <ul>
+                              @foreach ($errors->all() as $error)
+                                  <li>{{ $error }}</li>
+                              @endforeach
+                          </ul>
+                      </div>
+                  @endif
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">添加</button>
+                  </div>
+                </form>
           </div>
  
           <!-- /.box -->

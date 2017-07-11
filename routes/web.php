@@ -11,7 +11,9 @@
 |
 */
 
-
+/**
+	后台路由
+*/
 // ----------------------登录功能-------------------------
 // 登陆
 Route::get('/admin/login', 'Admin\LoginController@login');
@@ -186,6 +188,29 @@ Route::group(['middleware' => 'adminlogin'], function(){
 	//修改网站状态路由
 	Route::get('admin/config/change/{status}','Admin\ConfigController@change');
 
+	
+	//----------------------市场管理---------------------
+
+	//市场管理代理人展示页
+	Route::get('admin/manage/index','Admin\ManageController@index');
+
+	//市场管理添加页面
+	Route::get('admin/manage/add','Admin\ManageController@add');
+
+	//市场管理添加动作
+	Route::post('admin/manage/insert','Admin\ManageController@insert');
+
+	//修改页面路由
+	Route::get('admin/manage/edit','Admin\ManageController@edit');
+
+	//删除动作路由
+	Route::get('admin/manage/delete','Admin\ManageController@delete');
+
+	//修改动作路由
+	Route::post('admin/manage/update','Admin\ManageController@update');
+
+	//----------------------市场管理---------------------
+
 });
 
 
@@ -194,8 +219,10 @@ Route::group(['middleware' => 'adminlogin'], function(){
 // 前台联系客服 
 Route::get('home/complaint/index', 'Home\ComplaintController@index');
 
+
 // 执行添加
 Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
+
 
 
 
@@ -233,5 +260,69 @@ Route::post('home/address/update', 'Home\AddressController@update');
 // 执行删除
 Route::get('home/address/delete/{id}', 'Home\AddressController@delete');
 
+//----------------------广告管理---------------------
+
+/**
+	前台路由
+*/
+//-------------------------主页----------------------
+
+Route::get('/','Home\IndexController@index');
+
+//-------------------------主页----------------------
+
+//-------------------------登录部分-----------------
+
+//登录主页路由
+Route::get('home/login/index','Home\LoginController@login');
+
+//登录动作路由
+Route::post('home/login/dologin','Home\LoginController@dologin');
+
+//表单验证ajax
+Route::get('home/login/ajax','Home\LoginController@ajax');
+
+//注销登录
+Route::get('home/login/outlogin','Home\LoginController@outlogin');
+
+//-------------------------登录部分-----------------
+
+//------------------------密码找回---------------------
+
+//找回密码页面
+Route::get('home/forgetpass','Home\ForgetController@forget');
+
+//找回密码动作
+Route::post('home/forget/forget','Home\ForgetController@doforget');
+
+//检查邮箱是否存在ajax
+Route::get('home/forget/ajax','Home\ForgetController@ajax');
+
+//声明验证token路由
+Route::get('home/link/{token}','Home\ForgetController@link');
+
+//不合法来源路由
+Route::get('home/info','Home\ForgetController@info');
+
+//修改密码模板路由
+Route::get('home/newpass/{id}','Home\ForgetController@newpass');
+
+//执行修改密码路由
+Route::post('home/forget/updatepass','Home\ForgetController@updatepass');
+
+//------------------------密码找回---------------------
+
+
+//-------------------------注册部分-----------------
+Route::get('home/register/register','Home\RegisterController@register');
+
+//验证手机号是否存在ajax路由
+Route::get('home/register/pajax','Home\RegisterController@pajax');
+
+//验证用户名是否存在
+Route::get('home/register/name','Home\RegisterController@name');
+
+//用户添加路由
+Route::post('home/register/insert','Home\RegisterController@insert');
 
 // -----------------------前台收货地址结束---------------------------

@@ -11,7 +11,7 @@
         <small>编辑</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">拍卖管理</a></li>
         <li class="active">编辑拍卖</li>
       </ol>
