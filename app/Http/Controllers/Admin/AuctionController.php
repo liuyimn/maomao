@@ -60,6 +60,9 @@ class AuctionController extends Controller
     public function store(Request $request)
     {   
 
+        //测试用户id
+        session(['id' => 2]);
+
         //检测是否合法
         $this->validate($request, [
                 'name' => 'required|unique:auction|max:18',
@@ -79,10 +82,22 @@ class AuctionController extends Controller
                 'endtime.required' => '拍卖时间不能为空',
             ]);
 
-        
+
+        $rep = '/^[0-9]+$/';
+
+
+        if(!preg_match_all($rep, $request->oldpage) || !preg_match_all($rep, $request->newpage) || !preg_match_all($rep, $request->endtime)){
+
+            return back()->with(['info' => '价格或时间请输入数字']);
+
+        }
 
         //过滤无效字段
         $data = $request->except('_token');
+
+
+        //测试
+        $data['uid'] = session('id');
 
         //处理图片
         if($request->hasFile('pic')){
@@ -134,8 +149,7 @@ class AuctionController extends Controller
      */
     public function show($id)
     {
-     
-        //
+       //
     }
 
     /**
@@ -164,22 +178,32 @@ class AuctionController extends Controller
     {   
         //检测是否合法
         $this->validate($request, [
-                'name' => 'required|unique:auction|max:18',
-                'oldpage' => 'required',
-                'newpage' => 'required',
-                'pic' => 'required',
-                'content' => 'required',
-                'endtime' => 'required',
-            ],[
-                'name.max' => '商品名最长18个字符',
-                'name.required' => '商品名不能为空',
-                'name.unique' => '请修改商品名',
-                'oldpage.required' => '原价不能为空',
-                'newpage.required' => '现价名不能为空',
-                'pic.required' => '商品图片不能为空',
-                'content.required' => '商品描述不能为空',
-                'endtime.required' => '拍卖时间不能为空',
-            ]);
+            'name' => 'required|unique:auction|max:18',
+            'oldpage' => 'required',
+            'newpage' => 'required',
+            'pic' => 'required',
+            'content' => 'required',
+            'endtime' => 'required',
+        ],[
+            'name.max' => '商品名最长18个字符',
+            'name.required' => '商品名不能为空',
+            'name.unique' => '请修改商品名',
+            'oldpage.required' => '原价不能为空',
+            'newpage.required' => '现价名不能为空',
+            'pic.required' => '商品图片不能为空',
+            'content.required' => '商品描述不能为空',
+            'endtime.required' => '拍卖时间不能为空',
+        ]);
+        
+
+        $rep = '/^[0-9]+$/';
+
+
+        if(!preg_match_all($rep, $request->oldpage) || !preg_match_all($rep, $request->newpage) || !preg_match_all($rep, $request->endtime)){
+
+            return back()->with(['info' => '价格或时间请输入数字']);
+
+        }
 
         //去除无效字段
         $data = $request->except('_token', 'id', '_method');

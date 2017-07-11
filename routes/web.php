@@ -63,6 +63,9 @@ Route::resource('/admin/auct', 'Admin\AuctionController');
 //积分页面
 Route::get('/admin/nums/index', 'Admin\NumController@index');
 
+//积分修改
+Route::post('/admin/num/edit', 'Admin\NumController@edit');
+
 //积分状态修改
 Route::get('/admin/nums/update/{id}', 'Admin\NumController@update');
 
@@ -183,3 +186,24 @@ Route::post('admin/config/update','Admin\ConfigController@update');
 Route::get('admin/config/change/{status}','Admin\ConfigController@change');
 
 
+
+
+
+
+
+//======================前台详情========================
+
+//商品列表
+Route::get('/home/list', 'Home\ListController@index');
+
+//购物车表
+Route::get('/home/details/shopcar', 'Home\ShopcarController@index');
+
+//商品详细列表
+Route::get('/home/details/{id}', 'Home\DetailController@index');
+
+//拍卖列表
+Route::get('/home/auct', 'Home\AuctionController@index');
+
+//添加购物车
+Route::get('/home/auct/create/{id}', 'Home\AuctionController@create');

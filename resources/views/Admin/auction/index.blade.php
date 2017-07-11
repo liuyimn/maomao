@@ -91,8 +91,32 @@
 							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->newpage }}元</td>
 							            <td><img style="height: 50px;text-overflow:ellipsis;" src="{{ url('/uploads/auction') }}/{{ $val->pic }}"></td>
 							            <td style="line-height: 50px;">{{ mb_substr($val->content, 0, 6)."..." }}</td>
-							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ date('Y-m-d H:i:s', $val->starttime) }}</td>
-							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->endtime }}分钟</td>
+							            <td style="line-height: 50px;text-overflow:ellipsis;">
+											
+											@if($val->status == 0)
+
+							            		{{ date('Y-m-d H:i:s', $val->starttime) }}
+											
+											@elseif($val->status == 1)
+											
+												已过期
+
+											@endif
+
+							            	</td>
+							            <td style="line-height: 50px;text-overflow:ellipsis;">
+										
+											@if($val->status == 0)
+
+							            		{{ $val->endtime }}分钟
+											
+											@elseif($val->status == 1)
+											
+												已过期
+
+											@endif
+
+							            </td>
 							            <td style="line-height: 50px;text-overflow:ellipsis;">
 											<a href="{{ url('/admin/auct') }}/{{ $val->id }}/edit">编辑</a>  
 											<a href="#" class="del">删除</a>

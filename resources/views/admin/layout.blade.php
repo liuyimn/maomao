@@ -67,6 +67,16 @@
       color: #004974;
       text-decoration: none;
     }
+    #put{
+      height: 300px;
+      position: absolute;
+      right: 50%;
+      display: none;
+      text-align: center;
+    }
+    #zhan{
+      height: 140px;
+    }
   </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -755,8 +765,7 @@
 <script src="{{ asset('admin/project/dist/js/demo.js') }}"></script>
 <script src="{{ asset('admin/project/bootstrap/time/js/bootstrap-datetimepicker.js') }}"></script>
 <script src="{{ asset('admin/project/bootstrap/time/js/locales/bootstrap-datetimepicker.zh-CN.js') }}"></script>
-<script src="{{ asset('admin/project/bootstrap/select/dist/js/bootstrap-select.min.js') }}"></script>
-<script src="{{ asset('admin/project/bootstrap/select/dist/css/bootstrap-select.min.css') }}"></script>
+
 
 
 @yield('js')
