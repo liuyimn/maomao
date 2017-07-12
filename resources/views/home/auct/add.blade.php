@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html class=" js">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="apple-itunes-app" content="app-id=591540113">
-<meta property="qc:admins" content="27606217656211016763757">
-<meta name="renderer" content="webkit">
-<meta name="applicable-device" content="pc">
-<title></title>
+@extends('home.layout')
+@section('content')
+<title>猫猫二手商城-拍卖商品添加</title>
 <link rel="stylesheet" href="/home/auction/index.34eb422c.css" onerror="tracker.resErr(this)">
 <link rel="stylesheet" href="/home/auction/baicons2.1657e729.css">
 <link rel="stylesheet" href="/home/auction/jquery-ui-1.9.1.custom.d3ae8ca1.css" onerror="tracker.resErr(this)">
@@ -84,16 +77,9 @@
 </head><!--[if lt IE 7 ]> <body class="ie6 lt-ie8"> <![endif]--><!--[if IE 7 ]>    <body class="ie7 lt-ie8"> <![endif]--><!--[if IE 8 ]>    <body class="ie8 "> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--> 
 <body> <!--<![endif]-->
 <div class="wrapper">
-<div class="slogan middle">简单，快速，搞得定！</div>
-<ul class="flow clearfix sep-big">
-  <li class="flow-item active">
-  <label class="i-badge">1</label>填写信息
-  </li>
-  <li class="flow-item"><label class="i-badge">2</label>完成发布</li>
-</ul>
 <div class="clearfix">
   <div id="publish" class="publish-detail">
-    <div class="separate">基本信息
+    <div class="separate">猫猫二手商城-拍卖商品添加
   </div>
   <form id="bxForm" action="{{ url('/home/auction/insert') }}" method="post" style="" enctype="multipart/form-data" class="form zengsong ershou">
      {{ csrf_field() }}
@@ -182,8 +168,5 @@
   </div>
 </div>
 </div>
+@endsection
 
-
-
-</body>
-</html>
