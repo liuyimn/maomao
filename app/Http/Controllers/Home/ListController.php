@@ -10,7 +10,6 @@ class ListController extends Controller
     //商品页
     public function index(Request $request){
 
-    	
     	//默认关键字为空
         $keywords = $request->input('keywords', '');   
 

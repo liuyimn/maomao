@@ -6,13 +6,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        用户管理
-        <small>列表</small>
+        评论管理
+        <small>评论列表</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-        <li><a href="#">用户管理</a></li>
-        <li class="active">用户列表</li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="#">评论管理</a></li>
+        <li class="active">禁言列表</li>
       </ol>
     </section>
 
@@ -22,7 +22,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">用户列表</h3>
+              <h3 class="box-title">禁言列表</h3>
             </div>
             <!-- /.box-header -->
 

@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 
 class AdvertController extends Controller
 {
+    /**
+    *   @return   加载网站广告页
+    *   @param     $data广告页的所有信息
+    *   @param     $arr 状态数组
+    */
     //加载广告页面主页
 	public function index(){
 
@@ -18,6 +23,9 @@ class AdvertController extends Controller
 		return view('admin.advert.index', ['title' => '广告列表', 'data' => $data, 'arr' => $arr]);
 	}	
 
+    /**
+    *   @return   加载网站添加广告页
+    */
 	//加载广告添加页面
 	public function add(){
 
@@ -25,6 +33,10 @@ class AdvertController extends Controller
 		return view('admin.advert.add',['title'=>'添加广告']);
 	}
 
+    /**
+    *   @return 页面重定向返回结果
+    *   @param   $request 发送过来的结果集
+    */
 	// 执行添加
 	public function insert(Request $request){
 		
@@ -68,7 +80,7 @@ class AdvertController extends Controller
                 $data['pic'] = $filename;
             }
         }
-        // dd($data);
+        
         // 执行添加
         $res = \DB::table('advert')->insert($data);
 
@@ -82,6 +94,10 @@ class AdvertController extends Controller
 
 	}
 
+    /**
+    *   @param    $status状态值为1位禁用为0开启
+    *   @param     $id发送过来的id    
+    */
 	// 修改权限
 	public function upstatus($id, $status){
 
@@ -105,6 +121,11 @@ class AdvertController extends Controller
 		}
 	}
 
+    /**
+    *   @return    加载广告修改页
+    *   @param      $id 发送过来要修改的id
+    *   @param      $data 查询到要修改的数据
+    */
 	// 修改页面
 	public function edit($id){
 		
@@ -115,6 +136,10 @@ class AdvertController extends Controller
 		return view('admin.advert.edit', ['title' => '广告修改', 'data' => $data]);
 	}
 
+    /**
+    *   @return    页面重定向返回结果
+    *   @param      $request 发送过来的结果集
+    */
 	// 执行修改
 	public function update(Request $request){
 		
@@ -148,7 +173,7 @@ class AdvertController extends Controller
             }
         }
         
-        // dd($data);
+        
         // 执行修改
         $res = \DB::table('advert')->where('id', $request->id)->update($data);
 
@@ -161,6 +186,10 @@ class AdvertController extends Controller
 
 	}
 
+    /**
+    *   @return    页面重定向返回结果
+    *   @param     $id 发送过来要删除的id
+    */
 	// 执行删除页
 	public function delete($id){
 		

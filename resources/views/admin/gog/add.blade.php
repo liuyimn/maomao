@@ -10,7 +10,7 @@
         <small>添加禁言用户</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">评论管理</a></li>
         <li class="active">添加禁言用户</li>
       </ol>

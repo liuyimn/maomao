@@ -10,7 +10,7 @@
         <small>添编辑活动</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">活动发布</a></li>
         <li class="active">编辑活动</li>
       </ol>

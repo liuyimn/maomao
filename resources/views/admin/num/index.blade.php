@@ -5,11 +5,11 @@
 	<div class="content-wrapper">
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
-			<h1>用户管理<small>列表</small></h1>
+			<h1>积分管理<small>积分列表</small></h1>
 				<ol class="breadcrumb">
-					<li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-					<li><a href="#">用户管理</a></li>
-					<li class="active">列表</li>
+					<li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
+					<li><a href="#">积分管理</a></li>
+					<li class="active">积分列表</li>
 				</ol>
 		</section>
 

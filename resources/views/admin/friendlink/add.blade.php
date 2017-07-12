@@ -10,7 +10,7 @@
         <small>添加友情链接</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">友情链接</a></li>
         <li class="active">添加友情链接</li>
       </ol>
@@ -59,7 +59,7 @@
                 </div>
                   <div class="form-group">
                   <label for="exampleInputPassword1">友情链接描述</label><br/>
-                  <textarea name="content" id="" cols="30" rows="10" style="resize: none; width:100%; height:150px;" ></textarea>
+                  <textarea name="content" class="form-control"  id="" cols="30" rows="10" style="resize: none; width:100%; height:150px;" ></textarea>
                 </div>
                  <div class="form-group">
                   <label for="exampleInputEmail1">友情链接排序</label>

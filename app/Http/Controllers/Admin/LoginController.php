@@ -7,17 +7,22 @@ use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
+    /**
+    *   @return    加载后台登陆页面
+    */
     // 引入页面
     public function login(){
 
     	return view('admin.login.login');
     }
 
+    /**
+    *   @return    重定向返回结果
+    *   @param     $request 发送过来的结果集
+    */
     // 执行登陆
      public function doLogin(Request $request){
 
-    
-        
     	$data = $request->except('_token');
     	// 验证是否记住我
     	$remember_token = \Cookie::get('remember_token');
@@ -61,7 +66,6 @@ class LoginController extends Controller
     	}
 
     	// 对密码解密并进行对比
-
         if(!\Hash::check($data['password'], $user->password))
         {
             return back()->with(['info' => '用户名或密码错误']);
@@ -92,6 +96,7 @@ class LoginController extends Controller
 
         // 判断用户是否被禁用
         if($user->status == 1){
+            
             return back()->with(['info' => '你没有权限登陆']);
         }
 
@@ -100,6 +105,10 @@ class LoginController extends Controller
 	
     }
 
+    /**
+    *   @return    重定向返回结果
+    *   @param     $request 发送过来的结果集
+    */
     // logout退出登录
     public function logout(Request $request)
     {

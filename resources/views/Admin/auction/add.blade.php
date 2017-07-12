@@ -11,7 +11,7 @@
         <small>添加</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">拍卖管理</a></li>
         <li class="active">添加拍卖</li>
       </ol>
@@ -62,23 +62,19 @@
                     <label for="exampleInputName3">商品现价</label>
                     <input type="text" name="newpage" class="form-control" id="exampleInputName3" placeholder="请输入商品现价" value="{{ old('newpage') }}">
                   </div>
-
-                  <input id="lefile" name="pic" type="file" style="display:none">
-                  <div class="input-append">
-                    <input id="photoCover" name="pic" class="input-large" type="text" style="width:300px; height:34px;" disabled="disabled">
-                    <a class="btn" onclick="$('input[id=lefile]').click();">选择商品图片</a>
-                  </div>
-
                   <div class="form-group">
                     <label for="exampleInputName5">商品描述</label>
                     <textarea name="content" style="resize: none; height: 100px;" class="form-control" id="exampleInputName5" placeholder="请输入商品描述">{{ old('content') }}</textarea>
                   </div>
-
                   <div class="form-group">
                     <label for="exampleInputName6">拍卖时间</label>
-                    <input type="text" name="endtime" class="form-control" id="exampleInputName6" placeholder="请输入拍卖时间" value="{{ old('endtime') }}">
+                    <input type="text" name="endtime" class="form_datetime form-control" id="exampleInputName6" placeholder="请输入拍卖时间" value="{{ old('endtime') }}">
                   </div>
-
+                    <input id="lefile" name="pic" type="file" style="display:none">
+                   <div class="form-group">
+                  <label for="exampleInputPassword1">商品图片:</label><br/>
+                  <a href="javascript:;" class="file">选择文件<input type="file" name="pic" id=""></a>
+                </div>
               	</div>
               <!-- /.box-body -->
 

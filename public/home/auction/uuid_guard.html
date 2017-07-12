@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://www.baixing.com/p/uuid_guard.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UUFLASH</title>
+<style>*{margin:0;padding:0;}</style>
+
+<script src="./cookie.81431fea.js.下载"></script>
+<script>
+function watchCookie(t){
+	if(t && t != 'null' && t != Cookie.read('__uuid')) Cookie.write('__uuid', t, 365 * 5);
+}
+</script>
+
+<script>
+var reg = /\w+.(?:\w+.)?(baixing.(?:com|cn))/ig;
+document.domain = window.location.host.replace(reg, '$1');
+
+var flName = "/static/swf/uuid_guard.swf"
+var flHeight = "1";
+var flWidth = "1";
+var flCname = Cookie.read('__uuid');
+var auto = 1; // 0 for debug
+
+var flSwf = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" ';
+flSwf += 'codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" ';
+flSwf += 'width="' + flWidth + '" height="' + flHeight + '">';
+flSwf += '<param name="movie" value="' + flName + '?c=' + flCname + '&auto=' + auto + '" />';
+flSwf += '<param name="quality" value="high" />';
+flSwf += '<embed src="' + flName + '?c=' + flCname + '&auto=' + auto + '" quality="high" ';
+flSwf += 'pluginspage="http://www.macromedia.com/go/getflashplayer" ';
+flSwf += 'type="application/x-shockwave-flash" ';
+flSwf += 'width="' + flWidth + '" height="' + flHeight + '"></embed>';
+flSwf += '</object>';
+
+document.write(flSwf);
+</script></head><body><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1" height="1"><param name="movie" value="/static/swf/uuid_guard.swf?c=114996517443121.aa2b6&amp;auto=1"><param name="quality" value="high"><embed src="/static/swf/uuid_guard.swf?c=114996517443121.aa2b6&amp;auto=1" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1" height="1"></object>
+
+
+</body></html>

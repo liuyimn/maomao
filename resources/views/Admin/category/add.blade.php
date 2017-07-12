@@ -11,7 +11,7 @@
         <small>添加</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">分类管理</a></li>
         <li class="active">添加分类</li>
       </ol>

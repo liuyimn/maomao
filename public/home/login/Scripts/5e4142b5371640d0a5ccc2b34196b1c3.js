@@ -1,0 +1,12 @@
+(function(){
+		$('#scanLogin').html('<dl id="qrcodeWrap">\r\n	<dt>\r\n	    <input type="hidden" id="qrcode_successFunction" value="">\r\n		<input type="hidden" value="" id="qrcode_token"\/>\r\n		<input type="hidden" value="http:\/\/bj.58.com\/diannao\/?zz=zz" id="qrcode_path"\/>\r\n		<input type="hidden" id="eventTracking" value="">\r\n		<input type="hidden" value="http:\/\/bj.58.com\/diannao\/?zz=zz" id="qrcode_path"\/>\r\n		<div class="erqceodeimg" style="display: block">\r\n			<div class="erqcodeimgwrap">\r\n				<img class="erqcode-img" id="scanimg" src="" alt="" width="120" height="120" \/>\r\n				<div class="erqcodefailbg" id="erqcodeFailbg" style="display: none"><\/div>\r\n				<div class="erqcodefail" id="erqcodeFail" style="display: none">\r\n					<p class="erqcodefail-info">二维码失效<\/p>\r\n					<p class="erqcode-refresh">刷新<\/p>\r\n				<\/div>\r\n			<\/div>\r\n			<div class="scanhover" style="display: none;" id="scanHover">\r\n				<div class="scanhoverimgwrap">\r\n					<img class="erqcode-img" id="scanimg2" src="" alt=""\/>\r\n				<\/div>\r\n				<div class="scan-img" id="scan-img">\r\n				<\/div>\r\n			<\/div>\r\n		<\/div>\r\n		<div class="scansuc" style="display: none;" id="scanSuc">\r\n			<div class="scansucbg" id="scansucbg">\r\n			<\/div>\r\n			<div class="scansuctips">\r\n				<p class="fsz1666">扫描成功！<\/p>\r\n				<p class="fsz1433">请在手机上确认登录<\/p>\r\n			<\/div>\r\n		<\/div>\r\n		<div class="scanfail" style="display: none;" id="scanFail">\r\n			<div class="scanfailimgbox" id="scanfailimgbox">\r\n			<\/div>\r\n			<div class="scanfailtips">\r\n				本次登录失败，<span id="erqcode-tryagain">请重试<\/span>\r\n			<\/div>\r\n		<\/div>\r\n	<\/dt>\r\n	<dd class="scanopenapptip" id="scanopenapptip">\r\n		打开58APP，扫描二维码 | 下载<a href="http:\/\/pic2.58.com\/m58\/app58\/m_static\/home.html?1470900452234"  onclick="clickLog(\'from=PC_tclogin_sm_58app\')"  target="_blank">58APP<\/a>\r\n	<\/dd>\r\n<\/dl>\r\n')
+		$('#qrcode_path').val('http://bj.58.com/diannao/?zz=zz');
+		var loadJS = function(url){
+		var div = document.getElementById('scanLogin');
+		var script = document.createElement('script');
+		script.src = url;
+		script.type = "text/javascript";
+		div.appendChild(script);
+	};
+ loadJS("https://passport.58.com/static_js/js/login/qrcodelogin_v20170525175149.js");
+})();

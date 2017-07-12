@@ -767,7 +767,6 @@
 <script src="{{ asset('admin/project/bootstrap/time/js/locales/bootstrap-datetimepicker.zh-CN.js') }}"></script>
 
 
-
 @yield('js')
 
 <!-- Modal -->

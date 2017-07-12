@@ -1,0 +1,2 @@
+var Cookie;Cookie=function(e){return e.read=function(e){for(var n=e+"=",o=document.cookie.split(";"),t=0;t<o.length;t++){for(var i=o[t];" "==i.charAt(0);)i=i.substring(1,i.length);if(0==i.indexOf(n))return decodeURIComponent(i.substring(n.length,i.length))}return null},e.write=function(e,n,o){var t="";if(o){var i=new Date;i.setTime(i.getTime()+864e5*o),t="; expires="+i.toGMTString()}document.cookie=e+"="+encodeURIComponent(n)+t+"; path=/; domain=.baixing.com"},e}(Cookie||{});
+//# sourceMappingURL=cookie.81431fea.js.map
