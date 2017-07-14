@@ -36,7 +36,7 @@
                 <a href="#"><b>{{ config('app.name') }}</b></a>
               </div>
               <!-- /.login-logo -->
-              <div class="login-box-body" style="height:350px;">
+              <div class="login-box-body" style="height:400px;">
                 <div style="height:10px;"></div>
                 <p class="login-box-msg" style="font-size:20px;">请登录</p>
                 @if(session('info'))

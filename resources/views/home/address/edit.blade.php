@@ -21,7 +21,7 @@
 
 <div class="breadcrumbs">
     <div class="container">
-        <a href="https://www.mi.com/index.html" data-stat-id="b0bcd814768c68cc" onclick="_msq.push([&#39;trackEvent&#39;, &#39;eec116fe8b6c555f-b0bcd814768c68cc&#39;, &#39;//www.mi.com/index.html&#39;, &#39;pcpid&#39;, &#39;&#39;]);">首页</a><span class="sep">&gt;</span><span>收货地址</span>    </div>
+        <a href="" >首页</a><span class="sep">&gt;</span><span>收货地址</span>    </div>
 </div>
 
 <div class="page-main user-main">
@@ -35,7 +35,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="https://static.mi.com/order/" data-stat-id="8f3d1bffd166dc22" onclick="_msq.push([&#39;trackEvent&#39;, &#39;eec116fe8b6c555f-8f3d1bffd166dc22&#39;, &#39;//static.mi.com/order/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">我的订单</a></li>
+                                <li><a href="" >我的订单</a></li>
                             </ul>
                         </div>
                     </div>
@@ -45,8 +45,8 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="" data-stat-id="e171266eb8fa4af6" onclick="_msq.push([&#39;trackEvent&#39;, &#39;eec116fe8b6c555f-e171266eb8fa4af6&#39;, &#39;https://order.mi.com/portal&#39;, &#39;pcpid&#39;, &#39;&#39;]);">我的个人中心</a></li>
-                                <li class="active"><a href="" data-stat-id="becec4bcb77b9d67" onclick="_msq.push([&#39;trackEvent&#39;, &#39;eec116fe8b6c555f-becec4bcb77b9d67&#39;, &#39;https://order.mi.com/user/address&#39;, &#39;pcpid&#39;, &#39;&#39;]);">收货地址</a></li>
+                                <li><a href="" >我的个人中心</a></li>
+                                <li class="active"><a href="" >收货地址</a></li>
                             </ul>
                         </div>
                     </div>
@@ -57,9 +57,9 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="" target="_blank" data-stat-id="35eef2fd7467d6ca" onclick="_msq.push([&#39;trackEvent&#39;, &#39;eec116fe8b6c555f-35eef2fd7467d6ca&#39;, &#39;https://account.xiaomi.com/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">个人信息</a></li>
-                                <li><a href="" target="_blank" data-stat-id="ae5ee0188510f1e6" onclick="_msq.push([&#39;trackEvent&#39;, &#39;eec116fe8b6c555f-ae5ee0188510f1e6&#39;, &#39;https://account.xiaomi.com/pass/auth/security/home#service=setPassword&#39;, &#39;pcpid&#39;, &#39;&#39;]);">修改密码</a></li>
-                                <li><a href="" target="_blank" data-stat-id="c130c3dbf41fd4d8" onclick="_msq.push([&#39;trackEvent&#39;, &#39;eec116fe8b6c555f-c130c3dbf41fd4d8&#39;, &#39;http://uvip.xiaomi.cn&#39;, &#39;pcpid&#39;, &#39;&#39;]);">社区VIP认证</a></li>
+                                <li><a href="" >个人信息</a></li>
+                                <li><a href="" >修改密码</a></li>
+                                <li><a href="" >社区VIP认证</a></li>
                             </ul>
                         </div>
                     </div>
@@ -102,8 +102,8 @@
     </div>
 </div>
       
-    </div>
-    </div>
+</div>
+</div>
 </div>
 
 

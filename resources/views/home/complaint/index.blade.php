@@ -1,16 +1,13 @@
-<!doctype html>
-<html lang="zh-CN" xml:lang="zh-CN">
-<head>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<meta charset="UTF-8" />
-<title>问题反馈 - 小米商城</title>
+@extends('home.layout')
+
+@section('content')
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=1226" />
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <meta http-equiv="Cache-Control" content="no-transform " />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<link rel="stylesheet" href="/home/complaint//css/base.min.css" />
+<link rel="stylesheet" href="/home/complaint/css/base.min.css" />
 <link rel="stylesheet" type="text/css" href="/home/complaint/css/feedback.min.css" />
 </head>
 <body>
@@ -18,7 +15,7 @@
 <div class="page-main">
     <div class="container feedback-box">
         <div class="row">
-            <div class="span15">
+            <div class="span14">
                 <form method="post" action="{{url('home/complaint/insert')}}">
                     <div class="feedback-main">
                         <ul class="feedback-nav  clearfix J_tabSwitch">
@@ -37,7 +34,7 @@
                                         {{ csrf_field() }}
                                     <div class="form-section">
                                         <label class="input-label" for="feedbackQuestion">在这里描述您遇到的问题</label>
-                                        <textarea class="input-text input-textarea" id="feedbackQuestion" name="content" placeholder="问题描述须大于10小于200个字"></textarea>
+                                        <textarea class="input-text input-textarea" style="resize:none;" id="feedbackQuestion" name="content" placeholder="问题描述须大于10小于200个字"></textarea>
                                     </div>
                                        @if (count($errors) > 0)
                                               <ul style="color:red;">
@@ -47,9 +44,6 @@
                                               </ul>
                                       @endif
                                     <button type="submit" class="btn btn-primary">提交问题</button>
-                                    <div class="login-tip hide" id="J_loginTip">
-                                        您尚未登录，请提前<a href="">登录</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -100,20 +94,6 @@
 </script>
 <script type="text/javascript" src="/home/complaint/js/feedback.min.js"></script>
 <script src="/home/complaint/js/xmsg_ti.js"></script>
-<script>
-var _msq = _msq || [];
-_msq.push(['setDomainId', 100]);
-_msq.push(['trackPageView']);
-(function() {
-    var ms = document.createElement('script');
-    ms.type = 'text/javascript';
-    ms.async = true;
-    ms.src = '//c1.mifile.cn/f/i/15/stat/js/xmst.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ms, s);
-})();
-
-
-</script>
 <!--mae_monitor--></body>
 </html>
+@endsection

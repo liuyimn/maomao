@@ -12,9 +12,9 @@ class AuctionController extends Controller
     *   @return    加载前台拍卖页面
     */
     //引入拍卖页面
-    public function index()
+    public function add()
     {
-    	return view('home.auction.index');
+    	return view('home.auction.add');
     }
 
     /**
@@ -24,6 +24,7 @@ class AuctionController extends Controller
     // 执行添加页面
     public function insert(Request $request){
 
+        // dd(session('user')->id);
     	// 表单验证
 		$this->validate($request, [
 	            'name' => 'required|unique:auction|max:18',
@@ -32,7 +33,6 @@ class AuctionController extends Controller
 	            'pic' => 'required',
 	            'content' => 'required',
 	            'endtime' => 'required',
-	            'agreement' => 'required',
 	        ],[
 	            'name.max' => '商品名最长18个字符',
 	            'name.required' => '商品名不能为空',
@@ -42,7 +42,6 @@ class AuctionController extends Controller
 	            'pic.required' => '商品图片不能为空',
 	            'content.required' => '商品描述不能为空',
 	            'endtime.required' => '拍卖时间不能为空',
-	            'agreement.required' => '请选中服务协议',
 	        ]);
     	
     	// 取出原价
@@ -99,6 +98,9 @@ class AuctionController extends Controller
                 $data['pic'] = $filename;
             }
         }
+
+        // 添加用户信息
+        $data['uid'] = session('user')->id;
 
     	// 创建添加时间
         $data['starttime'] = time();

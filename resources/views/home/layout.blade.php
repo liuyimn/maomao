@@ -14,7 +14,7 @@
 		
 <!-- start idle vmcommon assets 4.0-->
 <link rel="shortcut icon" type="image/x-icon" href="//www.taobao.com/favicon.ico" />
-
+<link rel="stylesheet" href="{{ asset('/home/index/bootstrap/bootstrap.min.css') }}">
 <link rel="search" type="application/opensearchdescription+xml" href="//assets.alicdn.com/plugins/opensearch/provider.xml" title="淘宝购物" />
 <!-- S GLOBAL CSS -->
 <link rel="stylesheet" href="{{ asset('/home/index/Css/global-min.css') }}">
@@ -24,6 +24,7 @@
 <script src="{{ asset('/home/index/Scripts/3e184c6718544466bc7c7def6ef3b6f8.js') }}"></script>
 <!-- E GLOBAL JS -->
 <script src="{{ asset('/home/index/Scripts/b4f74d71946043da93fca460b7edd7d3.js') }}"></script>
+<script src="{{ asset('/home/index/bootstrap/bootstrap.min.js') }}"></script>
 
 <style>
 	.topbar-nav{float:left;height:40px;line-height:40px;overflow:hidden;_zoom:1}
@@ -57,7 +58,7 @@
 
 		
 <!-- end idle vmcommon assets 4.0-->
-	<base target="_blank"/>
+	<!-- <base target="_blank"/> -->
 </head>
 
 	<body>

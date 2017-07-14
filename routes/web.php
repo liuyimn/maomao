@@ -213,17 +213,17 @@ Route::group(['middleware' => 'adminlogin'], function(){
 
 });
 
+/**
+	前台路由
+*/
 
 // -----------------------前台投诉----------------------------
 
 // 前台联系客服 
 Route::get('home/complaint/index', 'Home\ComplaintController@index');
 
-
 // 执行添加
 Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
-
-
 
 
 // -----------------------前台投诉----------------------------
@@ -231,7 +231,7 @@ Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
 // ----------------------前台拍卖-------------------------------
 
 // 前台拍卖路由
-Route::get('home/auction/index', 'Home\AuctionController@index');
+Route::get('home/auction/add', 'Home\AuctionController@add');
 
 // 执行添加页面
 Route::post('home/auction/insert', 'Home\AuctionController@insert');
@@ -262,9 +262,7 @@ Route::get('home/address/delete/{id}', 'Home\AddressController@delete');
 
 //----------------------广告管理---------------------
 
-/**
-	前台路由
-*/
+
 //-------------------------主页----------------------
 
 Route::get('/','Home\IndexController@index');
@@ -326,3 +324,14 @@ Route::get('home/register/name','Home\RegisterController@name');
 Route::post('home/register/insert','Home\RegisterController@insert');
 
 // -----------------------前台收货地址结束---------------------------
+
+// ----------------------------个人详情-------------------------
+// 修改页面
+Route::get('home/userdetail/edit', 'Home\UserdetailController@edit');
+
+// 执行修改页
+Route::post('home/userdetail/update', 'Home\UserdetailController@update');
+
+
+
+// ----------------------------个人详情-------------------------
