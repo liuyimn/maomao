@@ -1,8 +1,8 @@
 @extends('home.layout')
 @section('content')
 <title>猫猫二手商城-拍卖商品添加</title>
-<link rel="stylesheet" href="/home/auction/index.34eb422c.css" onerror="tracker.resErr(this)">
-<link rel="stylesheet" href="/home/auction/baicons2.1657e729.css">
+<!-- <link rel="stylesheet" href="/home/auction/index.34eb422c.css" onerror="tracker.resErr(this)">
+<link rel="stylesheet" href="/home/auction/baicons2.1657e729.css"> -->
 <link rel="stylesheet" href="/home/auction/jquery-ui-1.9.1.custom.d3ae8ca1.css" onerror="tracker.resErr(this)">
 <style type="text/css">
 

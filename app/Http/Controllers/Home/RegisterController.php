@@ -84,8 +84,10 @@ class RegisterController extends Controller
     	//获取传递过来的数据
     	$data = $request->except('_token');
 
+        //生成token
     	$data['remember_token'] = str_random(50);
     	
+        //使用hash加密密码
     	$data['password'] = \Hash::make($data['password']);
     	//添加数据到user表并返回添加的id
     	$res = \DB::table('user')->insertGetId($data);

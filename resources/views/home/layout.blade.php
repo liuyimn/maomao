@@ -13,9 +13,7 @@
 	
 		
 <!-- start idle vmcommon assets 4.0-->
-<link rel="shortcut icon" type="image/x-icon" href="//www.taobao.com/favicon.ico" />
-
-<link rel="search" type="application/opensearchdescription+xml" href="//assets.alicdn.com/plugins/opensearch/provider.xml" title="淘宝购物" />
+<link rel="shortcut icon" type="image/x-icon" href="" />
 <!-- S GLOBAL CSS -->
 <link rel="stylesheet" href="{{ asset('/home/index/Css/global-min.css') }}">
 <!-- S GLOBAL CSS -->
@@ -24,6 +22,13 @@
 <script src="{{ asset('/home/index/Scripts/3e184c6718544466bc7c7def6ef3b6f8.js') }}"></script>
 <!-- E GLOBAL JS -->
 <script src="{{ asset('/home/index/Scripts/b4f74d71946043da93fca460b7edd7d3.js') }}"></script>
+
+<script src="{{ asset('/home/index/bootstrap/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/home/index/bootstrap/jquery.cxselect.min.js') }}"></script>
+<script src="{{ asset('/home/index/bootstrap/jquery-1.7.2.min.js') }}"></script>
+
+
+
 
 <style>
 	.topbar-nav{float:left;height:40px;line-height:40px;overflow:hidden;_zoom:1}
@@ -57,7 +62,7 @@
 
 		
 <!-- end idle vmcommon assets 4.0-->
-	<base target="_blank"/>
+	<!-- <base target="_blank"/> -->
 </head>
 
 	<body>
@@ -71,7 +76,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 		<div class="container">
 
 				<div class="topbar-nav">
-						<a rel="nofollow" href="//www.mi.com/index.html" >当前城市：</a><span class="sep">|</span><a rel="nofollow" href="//www.mi.com/index.html" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="http://www.miliao.com/" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="http://www.duokan.com/" target="_blank">联系客服</a>
+						<a rel="nofollow" href="#" >当前城市：@if(!session('city')){{ $city }}@else{{ session('city') }}@endif</a><span class="sep">|</span><a rel="nofollow" href="//www.mi.com/index.html" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="http://www.miliao.com/" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="http://www.duokan.com/" target="_blank">联系客服</a>
 				</div>
 				<div class="topbar-cart" id="J_miniCartTrigger">
 						<a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href=""><i class="iconfont"></i>购物车</a>
@@ -84,7 +89,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 					</div>
 				@else
 					<div class="topbar-info" id="J_userInfo">
-						<a  rel="nofollow" class="link" href="{{ url('home/login/index') }}" data-needlogin="true">{{ session('userdetail')->nickname }}</a>
+						<a  rel="nofollow" class="link" href="{{ url('home/user/index') }}" data-needlogin="true">{{ session('userdetail')->nickname }}</a>
 						<span class="sep">|</span>
 						<a  id="out" rel="nofollow" class="link" href="{{ url('/home/login/outlogin') }}" >退出</a>
 					</div>
@@ -97,22 +102,22 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 <!-- S GLOBAL HTML -->
 <div class="idle-header-wrap" style="background-color:#fc5023;opacity:0.87;">
 	<div class="idle-header" id="J_IdleHeader">
-		<h1 class="idle-logo"><a href="http://2.taobao.com" target="_top"><img src="{{ asset('/home/index/Images/logoko.png') }}"  width="100px" height="100px" style="margin-top:-25px;margin-left:40px" /></a></h1>
+		<h1 class="idle-logo"><a href="" target="_top"><img src="{{ asset('/home/index/Images/logoko.png') }}"  width="100px" height="100px" style="margin-top:-25px;margin-left:40px;" /></a></h1>
 
 		<div class="idle-nav">
 			<div class="idle-menu">
 				<ul>
-					<li class="m-home"><a href="">首页</a></li>
-					<li class="m-auction"><a href="//2.taobao.com/auction/list">降降降</a></li>
+					<li class="m-home"><a href="{{ url('/') }}">首页</a></li>
+					<li class="m-auction"><a href="">降降降</a></li>
 				</ul>
 			</div>
 
 			<div class="idle-manage">
 				<span class="idle-manage-sp">|</span>
 				<ul>
-					<li><a class="pub-overlay-btn">发布商品</a></li>
+					<li><a class="pub-overlay-btn" href="{{ url('/home/addshop/index') }}">发布商品</a></li>
 					<li id="J_IdleLi" class="my-idle-li">
-						<a class="my-idle-link" id="J_IdleLink" href="//trade.2.taobao.com">我的发布<i class="iconfont icon-down">&#xe601;</i><i class="iconfont icon-up">&#xe600;</i></a>
+						<a class="my-idle-link" id="J_IdleLink" href="">我的发布</a>
 					</li>
 				</ul>
 			</div>

@@ -281,7 +281,7 @@
 
             //获取正在输入的值
             nums = $(this).val();
-            console.log(code);
+  
             //判断输入的验证码是否正确
             if(nums != code){
                 //如果不正确让样式显示，并提示错误信息
