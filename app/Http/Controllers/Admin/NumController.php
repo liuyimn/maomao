@@ -23,13 +23,13 @@ class NumController extends Controller
         $data = \Cache::remember('userdetail', $minutes, function(){
 
             //查询userdetail表中所有数据
-            $data = \DB::table('userdetail')->get();
-
+            return \DB::table('userdetail')->get();
+            
         });
 
     	//调用数据库中的模糊查询
     	$data = \DB::table('userdetail')->where('nickname', 'like', '%'.$keywords.'%')->paginate($num);
-
+        
 
     	return view('admin.num.index', ['title' => '用户积分',  'request' => $request->all(), 'data' => $data]);
 
@@ -71,4 +71,48 @@ class NumController extends Controller
     		return back()->with(['info' => '修改失败']);
     	}
     }
+
+    //冻结详细积分
+    public function edit(Request $request){
+
+        //去除_token无效字段
+        $res = $request->except('_token');
+
+        //将传递过来积分进行赋值
+        $num_p = $res['num_p'];
+
+        //根据传递的用户id查找数据
+        $data = \DB::table('userdetail')->where('id', $res['id'])->first();
+
+        //将用户中积分减去传递的积分
+        $jian = $data->num - $num_p;
+
+        //将减完的积分放到用户数据里面
+        $data->num = $jian;
+
+        //将用户中冻结积分加上传递的积分
+        $jia = $data->num_p + $num_p;
+
+        //将减完积分放到数组中
+        $da = ['num' => $jian];
+
+        //将加完积分放到数组中
+        $dat = ['num_p' => $jia];
+
+        //执行根据用户id进行更新积分
+        $data = \DB::table('userdetail')->where('id', $res['id'])->update($da);
+
+        //执行根据用户id进行更新冻结积分
+        $data = \DB::table('userdetail')->where('id', $res['id'])->update($dat);
+
+        //判断是否成功
+        if ($data) {
+
+            \Cache::forget('userdetail');
+            return redirect('/admin/nums/index')->with(['info' => '冻结成功']);
+        }else{
+            return back()->with(['info'=>'冻结失败']);
+        }
+    }
+
 }

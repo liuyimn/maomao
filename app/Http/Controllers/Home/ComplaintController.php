@@ -10,6 +10,12 @@ class ComplaintController extends Controller
     // 投诉执行页面
 	public function index(){
 
+		if(!session('user')){
+
+			return redirect('home/login/index');
+			
+		}
+
 		return view('home.complaint.index');
 	}
 

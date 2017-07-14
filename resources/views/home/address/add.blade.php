@@ -1,62 +1,7 @@
-@extends('home.layout')
+@extends('home.userlout')
 
 @section('content')
-<script type="text/javascript" async="" src="{{ asset('home/address/mstr.js') }}"></script>
-<script type="text/javascript" async="" src="{{ asset('home/address/jquery.statData.min.js') }}"></script>
-<script type="text/javascript" async="" src="{{ asset('home/address/xmst.js') }}"></script>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="description" content="">
-<link rel="stylesheet" href="{{ asset('home/address/base.min.css') }}">
-<link rel="stylesheet" href="{{ asset('home/address/main.min.css') }}">
-<!-- <link rel="stylesheet" href="{{ asset('home/address/css/demo.css') }}"> -->
-<link rel="stylesheet" href="{{ asset('home/address/css/layout.css') }}">
-</head>
-<body>
-<div class="breadcrumbs">
-    <div class="container">
-        <a href="" >首页</a><span class="sep">&gt;</span><span>收货地址</span>
-    </div>
-</div>
-<div class="page-main user-main">
-    <div class="container">
-        <div class="row">
-            <div class="span3">
-                <div class="uc-box uc-sub-box">
-                    <div class="uc-nav-box">
-                        <div class="box-hd">
-                            <h3 class="title">订单中心</h3>
-                        </div>
-                        <div class="box-bd">
-                            <ul class="uc-nav-list">
-                                <li><a href="">我的订单</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="uc-nav-box">
-                        <div class="box-hd">
-                            <h3 class="title">个人中心</h3>
-                        </div>
-                        <div class="box-bd">
-                            <ul class="uc-nav-list">
-                                <li><a href="" >我的个人中心</a></li>
-                                <li class="active"><a href="" >收货地址</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="uc-nav-box">
-                        <div class="box-hd">
-                            <h3 class="title">账户管理</h3>
-                        </div>
-                        <div class="box-bd">
-                            <ul class="uc-nav-list">
-                                <li><a href="" >个人信息</a></li>
-                                <li><a href="" >修改密码</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
                 <div class="span16" >
                     <div class="uc-box uc-main-box" style="height:750px;" >
                         <div class="uc-content-box">
@@ -81,17 +26,17 @@
                                                       </ul>
                                                     </div>
                                                   @endif
-                                                <div style="height:50px;" class="form-section form-name">
+                                                <div class="form-section form-name">
                                                     <label class="input-label" for="user_name">姓名</label>
-                                                    <input style="height:40px;" class="input-text J_addressInput" type="text" name="name" value="{{ old('name') }}" placeholder="收货人姓名">
+                                                    <input class="input-text J_addressInput" type="text" name="name" value="{{ old('name') }}" placeholder="收货人姓名">
                                                     {{ csrf_field() }}
                                                 </div>
-                                                <div style="height:50px;" class="form-section form-phone">
+                                                <div class="form-section form-phone">
                                                     <label class="input-label" for="user_phone">手机号</label>
-                                                    <input style="height:40px;" class="input-text J_addressInput" type="text" name="phone" value="{{ old('phone') }}" placeholder="11位手机号">
+                                                    <input class="input-text J_addressInput" type="text" name="phone" value="{{ old('phone') }}" placeholder="11位手机号">
                                                 </div>
                                                 <div style="border:0px;" class="form-section form-four-address form-section-active">
-                                                    <fieldset style="width:500px;" id="city_china_val">
+                                                    <fieldset  id="city_china_val">
                                                             <p>所在地区：
                                                             <select name="addressa" class="province cxselect" data-value="" data-first-title="选择省" disabled="disabled"></select>
                                                             <select name="addressb" class="city cxselect" data-value="" data-first-title="选择市" disabled="disabled"></select>
@@ -99,9 +44,9 @@
                                                         </p>
                                                     </fieldset>
                                                 </div>
-                                                <div style="height:80px;" class="form-section form-address-detail">
+                                                <div class="form-section form-address-detail">
                                                     <label class="input-label" for="user_adress">详细地址</label>
-                                                    <textarea style="height:80px;resize:none;" class="input-text J_addressInput" type="text" name="user_adress" placeholder="详细地址，路名或街道名称，门牌号">{{ old('user_adress') }}</textarea>
+                                                    <textarea style="resize:none;" class="input-text J_addressInput" type="text" name="user_adress" placeholder="详细地址，路名或街道名称，门牌号">{{ old('user_adress') }}</textarea>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">保存</button>

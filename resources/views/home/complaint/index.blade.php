@@ -1,23 +1,17 @@
-@extends('home.layout')
+@extends('home.userlout')
 
 @section('content')
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<meta name="viewport" content="width=1226" />
-<meta http-equiv="x-dns-prefetch-control" content="on">
+
 <meta http-equiv="Cache-Control" content="no-transform " />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="stylesheet" href="/home/complaint/css/base.min.css" />
 <link rel="stylesheet" type="text/css" href="/home/complaint/css/feedback.min.css" />
 </head>
 <body>
-
-<div class="page-main">
-    <div class="container feedback-box">
         <div class="row">
             <div class="span14">
                 <form method="post" action="{{url('home/complaint/insert')}}">
-                    <div class="feedback-main">
+                    <div class="feedback-main" style="height:513px">
                         <ul class="feedback-nav  clearfix J_tabSwitch">
                             <li>问题反馈</li>
                               @if(session('info'))
@@ -50,34 +44,10 @@
                     </div>
                 </form>
             </div>
-            <div class="span5">
-                <div class="feedback-list">
-                    <h3 class="title">常见问题</h3>
-                    <ul class="list">
-                        <li>
-                            <dl>
-                                <dt>1</dt>
-                                <dd>网站不能访问</dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <dl>
-                                <dt>2</dt>
-                                <dd></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <dl>
-                                <dt>3</dt>
-                                <dd></dd>
-                            </dl>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            
         </div>
-    </div>
-</div>
+
+
 
 
 
