@@ -47,7 +47,7 @@
 					                  </select>
 					                </div>
 								</div>
-
+						
 								<div class="col-md-3 col-md-offset-6">
 									<div class="input-group input-group">
 						                <input type="text" name="keywords" class="form-control" value="{{ $request['keywords'] or '' }}">
@@ -74,6 +74,7 @@
 						              <th style="text-align: center;">用户昵称</th>
 						              <th style="text-align: center;">用户积分</th>
 						              <th style="text-align: center;">积分状态</th>
+						              <th style="text-align: center;">冻结积分</th>
 						              <th style="text-align: center;">操作</th>
 						            </tr>
 						        </thead>
@@ -93,6 +94,19 @@
 												<td style="line-height: 50px;text-overflow:ellipsis;">已冻结</td>
 											@endif
 
+								            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->num_p }}</td>
+											
+											<div id="put">
+												<div id="zhan"></div>
+												<form action="{{ url('/admin/num/edit') }}" method="post">
+													{{ csrf_field() }}
+													<input type="hidden" name="id" value="{{ $val->id }}">
+													<label>冻结多少</label>
+													<input class="form-control-xs" type="text" name="num_p">
+								                    <button type="submit" class="btn btn-primary">确定</button>
+												</form>
+											</div>
+
 								            <td style="line-height: 50px;text-overflow:ellipsis;">
 												<!-- 判断显示信息 -->
 												@if($val->num_status == '0')
@@ -100,6 +114,8 @@
 												@elseif($val->num_status == '1')
 													<a href="{{ url('/admin/nums/update') }}/{{ $val->id }}">启用</a>  
 												@endif
+
+												| <a id="num_p" href="#">异常积分冻结</a>
 								            </td>
 								        </tr>	
 									@endforeach
@@ -110,6 +126,7 @@
 						</div>
 						<!-- /.box-body -->
 					</div>
+					
 					<!-- /.box -->
 				</div>
 				<!-- /.box -->
@@ -119,4 +136,18 @@
 		<!-- /.content -->
 	</div>
   <!-- /.content-wrapper -->
+@endsection
+
+@section('js')
+
+	<script type="text/javascript">
+
+		$('#num_p').on('click', function(){
+		
+			$('#put').css('display', 'block');
+
+		});
+
+	</script>
+
 @endsection

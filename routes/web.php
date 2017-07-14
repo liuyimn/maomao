@@ -69,6 +69,9 @@ Route::group(['middleware' => 'adminlogin'], function(){
 	//积分页面
 	Route::get('/admin/nums/index', 'Admin\NumController@index');
 
+	//积分修改
+	Route::post('/admin/num/edit', 'Admin\NumController@edit');
+
 	//积分状态修改
 	Route::get('/admin/nums/update/{id}', 'Admin\NumController@update');
 
@@ -278,6 +281,7 @@ Route::get('home/register/name','Home\RegisterController@name');
 //用户添加路由
 Route::post('home/register/insert','Home\RegisterController@insert');
 
+
 // -----------------------前台收货地址结束---------------------------
 
 
@@ -344,3 +348,23 @@ Route::post('home/addshop/insert','Home\AddshopController@insert');
 
 //--------------------个人信息----------------------------
 Route::get('home/user/index','Home\UserController@index');
+
+
+
+//======================前台详情========================
+
+//商品列表
+Route::get('/home/list/index', 'Home\ListController@index');
+
+//购物车表
+Route::get('/home/details/shopcar', 'Home\ShopcarController@index');
+
+//商品详细列表
+Route::get('/home/details/{id}', 'Home\DetailController@index');
+
+//拍卖列表
+Route::get('/home/auct', 'Home\AuctionController@index');
+
+//添加购物车
+Route::get('/home/auct/create/{id}', 'Home\AuctionController@create');
+
