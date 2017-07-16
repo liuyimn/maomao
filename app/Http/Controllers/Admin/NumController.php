@@ -27,6 +27,8 @@ class NumController extends Controller
             
         });
 
+
+
     	//调用数据库中的模糊查询
     	$data = \DB::table('userdetail')->where('nickname', 'like', '%'.$keywords.'%')->paginate($num);
         

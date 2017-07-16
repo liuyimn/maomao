@@ -240,8 +240,6 @@ Route::get('home/auct/add', 'Home\AuctionController@add');
 // 执行添加页面
 Route::post('home/auct/insert', 'Home\AuctionController@insert');
 
-
-
 // ----------------------前台拍卖结束--------------------------
 
 // -----------------------前台收货地址---------------------------
@@ -411,13 +409,22 @@ Route::post('home/userdetail/update', 'Home\UserdetailController@update');
 
 
 
-//======================前台详情========================
+//======================前台购物流程========================
 
 //商品列表
 Route::get('/home/list/index', 'Home\ListController@index');
 
+//商品搜索
+Route::get('/home/list/show', 'Home\ListController@show');
+
+//商品添加session列表
+Route::get('/home/list/create/{id}', 'Home\ListController@create');
+
 //购物车表
 Route::get('/home/details/shopcar', 'Home\ShopcarController@index');
+
+//删除session商品
+Route::get('/home/details/shopcar/{id}', 'Home\ShopcarController@delete');
 
 //商品详细列表
 Route::get('/home/details/{id}', 'Home\DetailController@index');
@@ -425,7 +432,19 @@ Route::get('/home/details/{id}', 'Home\DetailController@index');
 //拍卖列表
 Route::get('/home/auct', 'Home\AuctionController@index');
 
+//拍卖商品详情列表
+Route::get('/home/auct/details/{id}', 'Home\AuctionController@show');
+
 //添加购物车
 Route::get('/home/auct/create/{id}', 'Home\AuctionController@create');
 
+//订单页面
+Route::get('/home/num', 'Home\NumController@index');
 
+//我的下单
+Route::get('/home/num/my', 'Home\NumController@myding');
+
+//生成订单
+Route::post('/home/num/my/insert', 'Home\NumController@insert');
+
+//======================前台购物流程=========================

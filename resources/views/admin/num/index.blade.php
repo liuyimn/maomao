@@ -82,6 +82,7 @@
 
 						        	<!-- 遍历数据库信息 -->
 									@foreach($data as $key=>$val)
+
 								        <tr class="parent">
 								            <td class="ids" style="line-height: 50px;">{{ $val->uid }}</td>
 								            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->nickname }}</td>
@@ -93,7 +94,6 @@
 											@elseif($val->num_status == '1')
 												<td style="line-height: 50px;text-overflow:ellipsis;">已冻结</td>
 											@endif
-
 								            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->num_p }}</td>
 											
 											<div id="put">

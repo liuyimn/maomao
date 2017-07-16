@@ -18,7 +18,7 @@
 					</dd>
 				</dl>
 				
-				<form action="{{ url('/home/list/show') }}">
+				<form action="{{ url('/home/list/index') }}">
 					<dl class="secitem clearfix" >
 						<dt>价格 ：</dt>
 						<dd zwname="价格" zwnameid="5621">

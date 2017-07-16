@@ -73,6 +73,7 @@
 						        <thead>
 						            <tr>
 						              <th style="text-align: center;">ID</th>
+						              <th style="text-align: center;">投诉人ID</th>
 						              <th style="text-align: center;">投诉人</th>
 						              <th style="text-align: center;">投诉内容</th>
 						              <th style="text-align: center;">操作</th>
@@ -84,6 +85,7 @@
 							        <tr>
 							            <td>{{ $val->id }}</td>
 							            <td>{{ $val->uid }}</td>
+							            <td>{{ $val->nickname }}</td>
 							            <td>{{ mb_substr($val->content, 0, 20)."..." }}</td>
 							            <td>
 											<a href="{{ url('/admin/cpt/delete') }}/{{ $val->id }}">删除</a>

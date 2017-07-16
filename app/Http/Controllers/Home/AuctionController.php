@@ -100,8 +100,6 @@ class AuctionController extends Controller
     // 执行添加页面
     public function insert(Request $request){
 
-
-        // dd(session('user')->id);
         // 表单验证
         $this->validate($request, [
                 'name' => 'required|unique:auction|max:18',
@@ -160,9 +158,6 @@ class AuctionController extends Controller
         {
             return back()->with(['info' => '拍卖时间必须是1-10小时且不能超过10小时']);
         }
-
-
-
 
         // 过滤token 
         $data = $request->except('_token', 'agreement');
