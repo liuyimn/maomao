@@ -216,17 +216,18 @@ Route::group(['middleware' => 'adminlogin'], function(){
 
 });
 
+/**
+	前台路由
+*/
+
 
 // -----------------------前台投诉----------------------------
 
 // 前台联系客服 
 Route::get('home/complaint/index', 'Home\ComplaintController@index');
 
-
 // 执行添加
 Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
-
-
 
 
 // -----------------------前台投诉----------------------------
@@ -238,8 +239,6 @@ Route::get('home/auct/add', 'Home\AuctionController@add');
 
 // 执行添加页面
 Route::post('home/auction/insert', 'Home\AuctionController@insert');
-
-
 
 // ----------------------前台拍卖结束--------------------------
 
@@ -265,9 +264,8 @@ Route::get('home/address/delete/{id}', 'Home\AddressController@delete');
 
 //----------------------广告管理---------------------
 
-/**
-	前台路由
-*/
+
+
 //-------------------------主页----------------------
 
 Route::get('/','Home\IndexController@index');
@@ -329,8 +327,85 @@ Route::get('home/register/name','Home\RegisterController@name');
 Route::post('home/register/insert','Home\RegisterController@insert');
 
 
+// -----------------------前台收货地址结束---------------------------
 
 
+
+
+
+// -----------------------前台投诉----------------------------
+
+// 前台联系客服 
+Route::get('home/complaint/index', 'Home\ComplaintController@index');
+
+
+// 执行添加
+Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
+
+// -----------------------前台投诉----------------------------
+
+// ----------------------前台拍卖-------------------------------
+
+// 前台拍卖路由
+Route::get('home/auction/index', 'Home\AuctionController@index');
+
+// 执行添加页面
+Route::post('home/auction/insert', 'Home\AuctionController@insert');
+
+
+
+// ----------------------前台拍卖结束--------------------------
+
+// -----------------------前台收货地址---------------------------
+
+// 收货地址列表
+Route::get('home/address/index', 'Home\AddressController@index');
+
+// 添加收货地址
+Route::get('home/address/add', 'Home\AddressController@add');
+
+// 执行添加方法
+Route::post('home/address/insert', 'Home\AddressController@insert');
+
+// 修改收货地址
+Route::get('home/address/edit/{id}', 'Home\AddressController@edit');
+
+// 执行修改
+Route::post('home/address/update', 'Home\AddressController@update');
+
+// 执行删除
+Route::get('home/address/delete/{id}', 'Home\AddressController@delete');
+
+//----------------------广告管理---------------------
+
+//-----------------------用户添加出售商品-------------
+
+//展示页面路由
+Route::get('home/addshop/index','Home\AddshopController@index');
+
+//查询二级分类
+Route::get('home/addshop/ajaxone','Home\AddshopController@ajaxone');
+
+//查询三级分类
+Route::get('home/addshop/ajaxtwo','Home\AddshopController@ajaxtwo');
+
+//执行添加动作
+Route::post('home/addshop/insert','Home\AddshopController@insert');
+
+//--------------------------------------------------------
+
+//--------------------个人信息----------------------------
+
+Route::get('home/user/index','Home\UserController@index');
+
+// 修改页面
+Route::get('home/userdetail/edit', 'Home\UserdetailController@edit');
+
+// 执行修改页
+Route::post('home/userdetail/update', 'Home\UserdetailController@update');
+
+
+// ----------------------------个人详情-------------------------
 
 
 

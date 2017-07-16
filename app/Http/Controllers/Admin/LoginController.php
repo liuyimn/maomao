@@ -11,7 +11,12 @@ class LoginController extends Controller
     *   @return    加载后台登陆页面
     */
     // 引入页面
-    public function login(){
+    public function login()
+    {
+        // 判断是否有session,存在跳回
+        if (session('user')) {
+            return redirect('/admin/index');
+        }
 
     	return view('admin.login.login');
     }
@@ -32,7 +37,7 @@ class LoginController extends Controller
     		$admin = \DB::table('user')->where('remember_token', $remember_token)->first();
 
     		//  存session
-    		session(['master' => $admin]);
+    		session(['user' => $admin]);
 
     		return redirect('/admin/index')->with(['info' => '登录成功']);
     	}
@@ -112,7 +117,7 @@ class LoginController extends Controller
     // logout退出登录
     public function logout(Request $request)
     {
-        $request->session()->forget('master');
+        $request->session()->forget('user');
         return redirect('/admin/login')->with(['info' => '退出成功']);
     }
 

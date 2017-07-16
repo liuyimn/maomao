@@ -2,7 +2,7 @@
 @section('content')
 <title>猫猫二手商城-拍卖商品添加</title>
 <link rel="stylesheet" href="/home/auction/jquery-ui-1.9.1.custom.d3ae8ca1.css" onerror="tracker.resErr(this)">
-</head><!--[if lt IE 7 ]> <body class="ie6 lt-ie8"> <![endif]--><!--[if IE 7 ]>    <body class="ie7 lt-ie8"> <![endif]--><!--[if IE 8 ]>    <body class="ie8 "> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--> 
+</head>
 <style>
 .fileUpload {
     position: relative;

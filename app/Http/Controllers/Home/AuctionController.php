@@ -159,9 +159,6 @@ class AuctionController extends Controller
             return back()->with(['info' => '拍卖时间必须是1-10小时且不能超过10小时']);
         }
 
-
-
-
         // 过滤token 
         $data = $request->except('_token', 'agreement');
 
