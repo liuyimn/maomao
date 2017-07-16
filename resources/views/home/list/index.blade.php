@@ -1,37 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.58.com/bj/diannao/?zz=zz">
-		<meta http-equiv="mobile-agent" content="format=html5; url=http://m.58.com/bj/diannao/?zz=zz">
-		<meta http-equiv="mobile-agent" content="format=wml; url=http://m.58.com/bj/diannao/?zz=zz">
-		<title>大脸猫 - {{ $title }}</title>
-		<meta name="description" content=""/>
-		<meta name="keywords" content=""/>
-		<link type="text/css" rel="stylesheet" href='{{asset("/home/css/base_v20160530193544.css")}}' media="all">
-		<link rel="stylesheet" type="text/css" href='{{asset("/home/css/listzz_v20170704194231.css")}}' media="all">
-		<script type="text/javascript">
-		</script>
-		<script type="text/javascript" src="{{asset('/home/js/createelement-lte-ie8.js')}}"></script>
-		<script type="text/javascript" src="{{asset('/home/js/require_jquery_load.js')}}"></script>
-		<script type="text/javascript" src='{{asset("/home/js/boot_sale_v20170703195205.js")}}'  ></script>
-		<script src="{{asset('/home/js/entry.js')}}"></script>
-	</head>
-	<body>
-		<div id="topbar"></div>
-		<header id="header">
-			<div id="brand_list_top_banner"></div>
-			<div class="head">
-				<a rel="nofollow" class="gotopost"><i></i>免费发布信息</a>
-					<div class="zz_search" id="SearchForm" >
-						<form id="search_loc" action="{{ url('/home/list') }}" method="get">
-							<input type="submit" id="searchbtn1" class="search_on" value="" >
-							<input class="but-wd" maxlength="40" id="keyword1" name="keywords" placeholder="请输入搜索关键字" >
-						</form>
-					</div>
-				<div class="logo"></div>
-			</div>
-		</header>
+@extends('home.layout')
+
+@section('content')
 
 		<div class="nav">
 			<a href="/">北京大脸猫</a>
@@ -48,23 +17,33 @@
 						<a name='b_link' para='custom' cl='?zz=zz' href="">硬件</a>
 					</dd>
 				</dl>
-				<dl class="secitem clearfix" >
-					<dt>价格 ：</dt>
-					<dd zwname="价格" zwnameid="5621">
-						<a class='select' href="/diannao/?zz=zz" data-finalurl="/diannao/?zz=zz">全部</a>
-						<a name='b_link' para='custom' cl='?zz=zz' data-finalurl="" href="">100元以下</a>
-						<a name='b_link' para='custom' cl='?zz=zz' data-finalurl="" href="">100-200元</a>
-						<a name='b_link' para='custom' cl='?zz=zz' data-finalurl="" href="">200-500元</a>
-						<a name='b_link' para='custom' cl='?zz=zz' data-finalurl="" href="">500-1000元</a>
-								
-						<span class="prifilter">
-							<span class="text"><input type="text" id="price_start" para="minprice" size="3" muti="1" min="0" max="999999" name="b_q" autocomplete="off"></span>
-							<span class="dev"> - </span>
-							<span class="text"><input class="mr5" type="text" id="price_end" para="minprice" size="3" muti="1" min="0" max="999999" name="b_q" autocomplete="off">元</span>
-							<span class="btn""><input id="price_search" type="button" value="价格筛选"></span>
-						</span>
-					</dd>
-				</dl>
+				
+				<form action="{{ url('/home/list/show') }}">
+					<dl class="secitem clearfix" >
+						<dt>价格 ：</dt>
+						<dd zwname="价格" zwnameid="5621">
+							<a class='select' href="">全部</a>
+							<a name='b_link' para='custom' href="">100元以下</a>
+							<a name='b_link' para='custom' href="">100-200元</a>
+							<a name='b_link' para='custom' href="">200-500元</a>
+							<a name='b_link' para='custom' href="">500-1000元</a>
+									
+							<span class="prifilter">
+								<span class="text">
+									<input type="text" id="price_start" para="minprice" size="3" muti="1" min="0" max="999999" name="b_k" autocomplete="off">
+								</span>
+								<span class="dev"> - </span>
+								<span class="text">
+									<input class="mr5" type="text" id="price_end" para="minprice" size="3" muti="1" min="0" max="999999" name="b_q" autocomplete="off">元
+								</span>
+								<span class="btn"">
+									<input id="price_search" type="submit" value="价格筛选">
+								</span>
+							</span>
+						</dd>
+					</dl>
+				</form>
+
 				<dl class="secitem secitem_area clearfix">
 					<dt>区域 ：</dt>
 					<dd zwnameid="quyu" zwname="区域" >
@@ -124,6 +103,8 @@
 				                        <span class="fl">
 				                        	<span>北京</span>
 				                        	&nbsp;
+				                        	<a href="{{ url('/home/list/create') }}/{{ $val->id }}"><span>添加到购物车</span></a>
+				                        	&nbsp;
 				                        	<a class="numa" href="{{ url('/home/details') }}/{{ $val->id }}">查看详细信息</a>
 				                        </span>
 				                        <i class="clear"></i>
@@ -149,21 +130,22 @@
 					 <strong>
 					 <span>1</span>
 					 </strong>
-					 <a href="/diannao/pn2/?zz=zz"><span>2</span></a>
-					 <a href="/diannao/pn3/?zz=zz"><span>3</span></a>
-					 <a href="/diannao/pn4/?zz=zz"><span>4</span></a>
-					 <a href="/diannao/pn5/?zz=zz"><span>5</span></a>
-					 <a href="/diannao/pn6/?zz=zz"><span>6</span></a>
-					 <a href="/diannao/pn7/?zz=zz"><span>7</span></a>
-					 <a href="/diannao/pn8/?zz=zz"><span>8</span></a>
-					 <a href="/diannao/pn9/?zz=zz"><span>9</span></a>
-					 <a href="/diannao/pn10/?zz=zz"><span>10</span></a>
-					 <a href="/diannao/pn11/?zz=zz"><span>11</span></a>
-					 <a href="/diannao/pn12/?zz=zz"><span>12</span></a>
-					 <a class="next" href="/diannao/pn2/?zz=zz"><span>下一页</span></a>
+					 <a href=""><span>2</span></a>
+					 <a href=""><span>3</span></a>
+					 <a href=""><span>4</span></a>
+					 <a href=""><span>5</span></a>
+					 <a href=""><span>6</span></a>
+					 <a href=""><span>7</span></a>
+					 <a href=""><span>8</span></a>
+					 <a href=""><span>9</span></a>
+					 <a href=""><span>10</span></a>
+					 <a href=""><span>11</span></a>
+					 <a href=""><span>12</span></a>
+					 <a class="next" href=""><span>下一页</span></a>
 				</div>
 				<div id="infocont" class="infocont">
-						共 <span style="color: red"><b>343106</b></span> 条信息，
+
+						共 <span style="color: red"><b>{{ $obj }}</b></span> 条信息，
 						<a href="#" target="_blank" class="pubbtn" rel="nofollow">马上发布一条北京二手台式机/配件信息&raquo;</a>
 				</div>
 			</div>
@@ -176,9 +158,8 @@
 					<ul>
 						<li><span class="topprice"><b class='pri'>拍卖热销</b></span></li>
 						@foreach($res as $k => $v)
-
-						<li logr="q_2_48459556635405_30570495766351_4_2_0" _pos="10" sortid="552175998">
-							<a  href=""   target="_blank" >
+						<li>
+							<a href="{{ url('/home/auct/details') }}/{{ $v->id }}">
 								<div class="imgcon">
 									<img src="{{ url('/uploads/auction') }}/{{ $v->pic }}" alt="精选推荐" >
 								</div>
@@ -201,36 +182,4 @@
 
 		<div id="direct_ad_bottom"></div>
 
-		<section id="links">
-			<dl class="linksItem relate" id="relate">
-				<dt  class="b-left" ><h2>北京台式机/配件相关信息</h2></dt>
-				<dd  class="b-right" >
-					<ul class="b-ul">
-						<li><a href="#">i5台式机</a></li>
-					</ul>
-				</dd>
-		 	</dl>
-
-			<dl class="linksItem relatelink" id="relatelink">
-				<dt class="b-left"><h2>北京台式机/配件品牌导航</h2></dt>
-				<dd class="b-right">
-					<dl id="relateSelect" class="relateSelect">
-				 	 	<dt><span>LG</span></dt>
-					 	<dd>
-					 		<a href="#" target="_blank">二手LG note lm70</a>
-					 	</dd>
-				 	</dl>
-				</dd>
-			</dl>
-		</section>
-
-
-		<footer id="footer" class="footer">
-			<p class="copyright">&copy; 大脸猫
-				<a id="askicon" title="有问题请与大脸猫客服进行对话" rel="nofollow" href="#">帮助中心</a>
-			</p>
-		</footer>
-
-		<script src="{{ asset('/home/js/entry.js') }}"></script>
-	</body>
-</html>
+@endsection

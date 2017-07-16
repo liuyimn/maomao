@@ -82,7 +82,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 		<div class="container">
 
 				<div class="topbar-nav">
-						<a rel="nofollow" href="//www.mi.com/index.html" >当前城市：{{ session('city') }}</a><span class="sep">|</span><a rel="nofollow" href="//www.mi.com/index.html" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="http://www.miliao.com/" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="http://www.duokan.com/" target="_blank">联系客服</a>
+						<a rel="nofollow" href="//www.mi.com/index.html" >当前城市：{{ session('city') }}</a><span class="sep">|</span><a rel="nofollow" href="{{ url('/') }}" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="http://www.miliao.com/" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/complaint/index') }}" >联系客服</a>
 				</div>
 				<div class="topbar-cart" id="J_miniCartTrigger">
 						<a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href=""><i class="iconfont"></i>购物车</a>
@@ -117,7 +117,6 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 					<li class="m-auction"><a href="">降降降</a></li>
 				</ul>
 			</div>
-
 			<div class="idle-manage">
 				<span class="idle-manage-sp">|</span>
 				<ul>
@@ -188,10 +187,10 @@ KISSY.use('widget/header5/index');
                             <h3 class="title">个人中心</h3>
                         </div>
                         <div class="box-bd">
-                            <ul class="uc-nav-list">
-                                <li class="active"><a href="">我的个人中心</a></li>
+                            <ul class="uc-nav-list" id="uid">
+                                <li><a href="{{ url('home/user/index') }}">我的个人中心</a></li>
                                 <li><a href="" >消息通知<i class="J_miMessageTotal"></i></a></li>
-                                <li><a href="" >收货地址</a></li>
+                                <li><a href="{{ url('home/address/index') }}" >收货地址</a></li>
                                 <li><a href="" >我的购物车</a></li>
                                 <li><a href="" >我的收藏</a></li>
                                 <li><a href="" >我的积分</a></li>
@@ -221,6 +220,12 @@ KISSY.use('widget/header5/index');
 </div>
 <script>
 	KISSY.use('widget/footer5/index');
+</script>
+<script>
+	$('#uid > li').on('mouseover', function (){
+		$('#uid > li').removeClass('active');
+		$(this).attr('class','active');
+	})
 </script>
 
 <div align="center" id="server-num">idle010100045116.et2</div>

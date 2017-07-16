@@ -14,7 +14,7 @@
                     <div class="user-card">
                         <h2 class="username">{{ $res->nickname }}</h2>
                         <p class="tip">早上好～</p>
-                        <a class="link" href=""  >修改个人信息 &gt;</a>
+                        <a class="link" href="{{ url('home/userdetail/edit') }}">修改个人信息 &gt;</a>
                         <img class="avatar" src="/uploads/user/{{ $res->photo }}" width="150" height="150" alt="时光。">
                     </div>
                     <div class="user-actions">

@@ -284,15 +284,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ asset('/admin/project/dist/img/avatar5.png') }}" class="user-image" alt="User Image">
-              <span class="hidden-xs"></span>
+              <img src="{{ asset('uploads/user') }}/{{ session('detail')->photo }}" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ session('detail')->nickname }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
 
-                <img src="{{ asset('/admin/project/dist/img/avatar5.png') }}" class="img-circle" alt="User Image">
+                <img src="{{ asset('uploads/user') }}/{{ session('detail')->photo }}" class="img-circle" alt="User Image">
                 <p>
+                {{ session('detail')->nickname }}
                   <small>自2012年十一月起</small>
                 </p>
               </li>
@@ -317,7 +318,7 @@
                   <a href="#" class="btn btn-default btn-flat">简况</a>
                 </div>
                 <div class="pull-right">
-                  <a href="/admin/logout" class="btn btn-default btn-flat">退出</a>
+                  <a href="{{ url('/admin/logout') }}" class="btn btn-default btn-flat">退出</a>
                 </div>
               </li>
             </ul>
@@ -337,10 +338,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('/admin/project/dist/img/avatar5.png') }}" class="img-circle" alt="User Image">
+          <img src="{{ asset('uploads/user') }}/{{ session('detail')->photo }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p></p>
+          <p>{{ session('detail')->nickname }}</p>
 
           <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
         </div>

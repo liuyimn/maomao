@@ -82,6 +82,5 @@ class IndexController extends Controller
             $allData[] = $val; 
         }
         return $allData;
-       
     }
 }

@@ -27,11 +27,12 @@ class ComplaintController extends Controller
 
         });
 
+
     	//调用数据库中的模糊查询
     	$data = \DB::table('complaint')->where('content', 'like', '%'.$keywords.'%')->paginate($num);
 
     	//将数据发送到页面
-    	return view('admin.complaint.index', ['title' => '投诉列表', 'data' => $data]);
+    	return view('admin.complaint.index', ['title' => '投诉列表', 'request' => $request->all(), 'data' => $data]);
 
     }
 
