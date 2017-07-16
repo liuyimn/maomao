@@ -30,10 +30,33 @@ class IndexController extends Controller
 
         //数码分类
         $pho = \DB::table('shop')->orwhere('tid',46)->orwhere('tid',40)->limit(8)->get();
+
+        //手机分类
+        $ss = \DB::table('shop')->where('tid',129)->limit(8)->get();
+        
+        //笔记本电脑分类
+        $com = \DB::table('shop')->where('tid',46)->limit(8)->get();
+
+        //单反分类
+        $photo = \DB::table('shop')->where('tid',42)->limit(8)->get();
+
+        //手机分类
+        $phone = \DB::table('shop')->where('tid',129)->limit(8)->get();
+
+        //价格小于3000的拍卖商品
+        $small = \DB::table('auction')->where('newpage','<=',3000)->limit(6)->get();
+
+        //拍卖商品
+        $auction = \DB::table('auction')->limit(6)->get();
+
+        //备用放心 
+        $two = \DB::table('shop')->where('tid',47)->limit(8)->get();
+
+        //老人放心
+        $three = \DB::table('shop')->where('tid',64)->limit(8)->get();
         //获取session
     	if(session('user')){
-
-    		//获取用户数据
+   		//获取用户数据
     		$res = session('user');
 
     		//根据用户id查询该用户详情
@@ -44,7 +67,7 @@ class IndexController extends Controller
     	}
 
     	//加载模板
-    	return view('home.index.index',['city'=>$value,'apple'=>$apple,'an'=>$an,'pho'=>$pho]);
+    	return view('home.index.index',['city'=>$value,'apple'=>$apple,'an'=>$an,'pho'=>$pho,'ss'=>$ss,'com'=>$com,'photo'=>$photo,'phone'=>$phone,'auction'=>$auction,'small'=>$small,'two'=>$two,'three'=>$three]);
     }
 
       // 递归查询所有分类

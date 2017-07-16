@@ -70,67 +70,67 @@ var sn = sn || {
 <div class="commodity-list">
 <h4>热卖潮机</h4>
 <div class="commodity-tag commodity-mobile">
-<a href="http://search.suning.com/iPhone6s/&amp;ci=501218?keyword=iPhone%206s" target="_blank" name="PcYoupin_shppcind_36725413982_word01" title="">
+<a href="{{ url('home/list/index') }}?keywords=iPhone 6s" target="_blank" name="PcYoupin_shppcind_36725413982_word01" title="">
 iPhone 6s
 </a>
-<a href="http://search.suning.com/iPhone%206sPlus/&amp;ci=501218?keyword=iPhone%206s%20Plus" target="_blank" name="PcYoupin_shppcind_36725413982_word02" title="">
+<a href="{{ url('home/list/index') }}?keywords=iPhone 6s Plus" target="_blank" name="PcYoupin_shppcind_36725413982_word02" title="">
 iPhone 6s Plus
 </a>
-<a href="http://search.suning.com/iPhone%207/&amp;ci=501218?keyword=iPhone%207" target="_blank" name="PcYoupin_shppcind_36725413982_word03" title="">
+<a href="{{ url('home/list/index') }}?keywords=iPhone 7" target="_blank" name="PcYoupin_shppcind_36725413982_word03" title="">
 iPhone 7
 </a>
-<a href="http://search.suning.com/iPhone6/&amp;ci=501218?keyword=iPhone%206" target="_blank" name="PcYoupin_shppcind_36725413982_word04" title="">
+<a href="{{ url('home/list/index') }}?keywords=iPhone 6" target="_blank" name="PcYoupin_shppcind_36725413982_word04" title="">
 iPhone 6
 </a>
-<a href="http://search.suning.com/OPPO%20R9/&amp;ci=501218?keyword=OPPO%20R9" target="_blank" name="PcYoupin_shppcind_36725413982_word05" title="">
+<a href="{{ url('home/list/index') }}?keywords=OPPO R9" target="_blank" name="PcYoupin_shppcind_36725413982_word05" title="">
 OPPO R9
 </a>
-<a href="http://search.suning.com/VIVO%20X7/&amp;ci=501218?keyword=VIVO%20X7" target="_blank" name="PcYoupin_shppcind_36725413982_word06" title="">
+<a href="{{ url('home/list/index') }}?keywords=VIVO X7" target="_blank" name="PcYoupin_shppcind_36725413982_word06" title="">
 VIVO X7
 </a>
-<a href="http://search.suning.com/%E5%8D%8E%E4%B8%BA%20P9/&amp;ci=501218?keyword=%E5%8D%8E%E4%B8%BA%20P9" target="_blank" name="PcYoupin_shppcind_36725413982_word07" title="">
+<a href="{{ url('home/list/index') }}?keywords=华为 P9" target="_blank" name="PcYoupin_shppcind_36725413982_word07" title="">
 华为 P9
 </a>
-<a href="http://search.suning.com/iPhone%20SE/&amp;ci=501218?keyword=iPhone%20SE" target="_blank" name="PcYoupin_shppcind_36725413982_word08" title="">
+<a href="{{ url('home/list/index') }}?keywords=iPhone SE" target="_blank" name="PcYoupin_shppcind_36725413982_word08" title="">
 iPhone SE
 </a>
 </div>
 <h4>精选品牌</h4>
 <div class="commodity-tag commodity-flat">
-<a href="http://search.suning.com/%E8%8B%B9%E6%9E%9C/&amp;ci=501218?keyword=%E8%8B%B9%E6%9E%9C" target="_blank" name="PcYoupin_shppcind_36725413984_word01" title="">
+<a href="{{ url('home/list/index') }}?keywords=苹果" target="_blank" name="PcYoupin_shppcind_36725413984_word01" title="">
 苹果
 </a>
-<a href="http://search.suning.com/oppo/&amp;ci=501218?keyword=OPPO" target="_blank" name="PcYoupin_shppcind_36725413984_word02" title="">
+<a href="{{ url('home/list/index') }}?keywords=OPPO" target="_blank" name="PcYoupin_shppcind_36725413984_word02" title="">
 OPPO
 </a>
-<a href="http://search.suning.com/VIVO/&amp;ci=501218?keyword=VIVO" target="_blank" name="PcYoupin_shppcind_36725413984_word03" title="">
+<a href="{{ url('home/list/index') }}?keywords=VIVO" target="_blank" name="PcYoupin_shppcind_36725413984_word03" title="">
 VIVO
 </a>
-<a href="http://search.suning.com/%E5%8D%8E%E4%B8%BA/&amp;ci=501218?keyword=%E5%8D%8E%E4%B8%BA" target="_blank" name="PcYoupin_shppcind_36725413984_word04" title="">
+<a href="{{ url('home/list/index') }}?keywords=华为" target="_blank" name="PcYoupin_shppcind_36725413984_word04" title="">
 华为
 </a>
-<a href="http://search.suning.com/%E4%B8%89%E6%98%9F/&amp;ci=501218?keyword=%E4%B8%89%E6%98%9F" target="_blank" name="PcYoupin_shppcind_36725413984_word05" title="">
+<a href="{{ url('home/list/index') }}?keywords=三星" target="_blank" name="PcYoupin_shppcind_36725413984_word05" title="">
 三星
 </a>
-<a href="http://search.suning.com/%E5%B0%8F%E7%B1%B3/&amp;ci=501218?keyword=%E5%B0%8F%E7%B1%B3" target="_blank" name="PcYoupin_shppcind_36725413984_word06" title="">
+<a href="{{ url('home/list/index') }}?keywords=小米" target="_blank" name="PcYoupin_shppcind_36725413984_word06" title="">
 小米
 </a>
-<a href="http://search.suning.com/%E7%BE%8E%E5%9B%BE/&amp;ci=501218?keyword=%E7%BE%8E%E5%9B%BE" target="_blank" name="PcYoupin_shppcind_36725413984_word07" title="">
+<a href="{{ url('home/list/index') }}?keywords=美图" target="_blank" name="PcYoupin_shppcind_36725413984_word07" title="">
 美图
 </a>
-<a href="http://search.suning.com/%E9%AD%85%E6%97%8F/&amp;ci=501218?keyword=%E9%AD%85%E6%97%8F" target="_blank" name="PcYoupin_shppcind_36725413984_word08" title="">
+<a href="{{ url('home/list/index') }}?keywords=魅族" target="_blank" name="PcYoupin_shppcind_36725413984_word08" title="">
 魅族
 </a>
 </div>
 <h4>电脑数码</h4>
 <div class="commodity-tag commodity-computer">
-<a href="http://search.suning.com/%E7%AC%94%E8%AE%B0%E6%9C%AC/&amp;ci=501218?keyword=%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91" target="_blank" name="PcYoupin_shppcind_36725413986_word01" title="">
+<a href="{{ url('home/list/index') }}?keywords=笔记本电脑" target="_blank" name="PcYoupin_shppcind_36725413986_word01" title="">
 笔记本电脑
 </a>
-<a href="http://search.suning.com/%E7%9B%B8%E6%9C%BA/&amp;ci=501218?keyword=%E7%9B%B8%E6%9C%BA%E9%95%9C%E5%A4%B4" target="_blank" name="PcYoupin_shppcind_36725413986_word02" title="">
+<a href="{{ url('home/list/index') }}?keywords=相机镜头" target="_blank" name="PcYoupin_shppcind_36725413986_word02" title="">
 相机镜头
 </a>
-<a href="http://search.suning.com/%E9%95%9C%E5%A4%B4/&amp;ci=501218?keyword=%E9%95%9C%E5%A4%B4" target="_blank" name="PcYoupin_shppcind_36725413986_word03" title="">
+<a href="{{ url('home/list/index') }}?keywords=镜头" target="_blank" name="PcYoupin_shppcind_36725413986_word03" title="">
 镜头
 </a>
 </div>
@@ -139,17 +139,17 @@ VIVO
 <!--其他频道导航-->
 <ul class="second-nav clearfix">
 <li>
-<a href="https://hx.suning.com/" target="_blank" name="PcYoupin_shppcind_36725413991_word02" title="">
+<a href="" target="_blank" name="PcYoupin_shppcind_36725413991_word02" title="">
 以旧换新
 </a>
 </li>
 <li>
-<a href="http://pai.suning.com/shanpai/" target="_blank" name="PcYoupin_shppcind_36725413991_word03" title="">
+<a href="" target="_blank" name="PcYoupin_shppcind_36725413991_word03" title="">
 闪拍频道
 </a>
 </li>
 <li>
-<a href="http://tcbang.suning.com/10170641.html" target="_blank" name="PcYoupin_shppcind_36725413991_word04" title="">
+<a href="" target="_blank" name="PcYoupin_shppcind_36725413991_word04" title="">
 优品闪购
 </a>
 </li>
@@ -164,22 +164,22 @@ VIVO
 <!--计算banner个数-->
 <ul>
 <li class="show" style="background-color: rgb(0, 141, 255); display: block; opacity: 0.256375;">
-<a href="https://cuxiao.suning.com/es7ythzz.html" target="_blank" name="PcYoupin_shppcind_36725313979_pic01" title="">
+<a href="" target="_blank" name="PcYoupin_shppcind_36725313979_pic01" title="">
 <img src="{{ asset('home/hindex') }}/149941973751247627.png">
 </a>
 </li>
 <li class="show" style="background-color: rgb(218, 48, 77); display: none;">
-<a href="http://boketiankong.suning.com/" target="_blank" name="PcYoupin_shppcind_36725313979_pic02" title="">
+<a href="" target="_blank" name="PcYoupin_shppcind_36725313979_pic02" title="">
 <img src="{{ asset('home/hindex') }}/149983197985185344.jpg">
 </a>
 </li>
 <li class="show" style="background-color: rgb(248, 219, 18); display: none;">
-<a href="http://sale.suning.com/ju/estcb0628/index.html" target="_blank" name="PcYoupin_shppcind_36725313979_pic03" title="">
+<a href="" target="_blank" name="PcYoupin_shppcind_36725313979_pic03" title="">
 <img src="{{ asset('home/hindex') }}/149863224524285196.png">
 </a>
 </li>
 <li class="show" style="background-color: rgb(253, 130, 125); display: block; opacity: 0.743625;">
-<a href="https://pindao.suning.com/shp_pc_ser.htm" target="_blank" name="PcYoupin_shppcind_36725313979_pic04" title="">
+<a href="" target="_blank" name="PcYoupin_shppcind_36725313979_pic04" title="">
 <img src="{{ asset('home/hindex') }}/149429431788234817.jpg">
 </a>
 </li>
@@ -234,183 +234,50 @@ VIVO
 </h3>
 <div class="hot-single-tab clearfix">
 <ul class="tabCnt">
-<li class="active">95新机-品质疯抢</li>
-<li>直降百元-品质疯抢</li>
+<li style="color:black" class="active">95新机-品质疯抢</li>
+<li style="color:black">直降百元-品质疯抢</li>
 </ul>
+<script></script>
 <i></i>
 </div>
 <div class="hot-single-con clearfix">
 <ul style="display: block;">
-<li data-sku="624645696|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613995_prod01" href="https://product.suning.com/0070161527/624645696.html?srcpoint=PcYoupin_shppcind_36725613995_prod01" target="_blank" rel="nofollow" title="【二手95新】苹果/iPhone 6s Plus 银色 16G 全网通4G 苹果手机 国行">
-<img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000624645696_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/624645696.html?srcpoint=PcYoupin_shppcind_36725613995_prod01" target="_blank">
-【二手95新】苹果/iPhone 6s Plus 银色 16G 全网通4G 苹果手机 国行
-</a>
-</p>
-<div class="hot-single-price">
-<span class="curPrice"></span>
-<i></i>
-</div>
-</li>
-<li data-sku="627005922|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613995_prod02" href="https://product.suning.com/0070161527/627005922.html?srcpoint=PcYoupin_shppcind_36725613995_prod02" target="_blank" rel="nofollow" title="【二手95新】苹果/iPhone 6 Plus 银色 16G 全网通4G 苹果手机 国行过保">
-<img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000627005922_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/627005922.html?srcpoint=PcYoupin_shppcind_36725613995_prod02" target="_blank">
-【二手95新】苹果/iPhone 6 Plus 银色 16G 全网通4G 苹果手机 国行过保
-</a>
-</p>
-<div class="hot-single-price">
-<span class="curPrice"></span>
-<i></i>
-</div>
-</li>
-<li data-sku="642381205|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613995_prod03" href="https://product.suning.com/0070161527/642381205.html?srcpoint=PcYoupin_shppcind_36725613995_prod03" target="_blank" rel="nofollow" title="【二手95新】苹果/iPhone 6s 深空灰色 16G 全网通4G 苹果手机 国行">
-<img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000642381205_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/642381205.html?srcpoint=PcYoupin_shppcind_36725613995_prod03" target="_blank">
-【二手95新】苹果/iPhone 6s 深空灰色 16G 全网通4G 苹果手机 国行
-</a>
-</p>
-<div class="hot-single-price">
-<span class="curPrice"></span>
-<i></i>
-</div>
-</li>
+@foreach($auction as $o)
 <li data-sku="624646246|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613995_prod04" href="https://product.suning.com/0070161527/624646246.html?srcpoint=PcYoupin_shppcind_36725613995_prod04" target="_blank" rel="nofollow" title="【二手95新】苹果/iPhone 6s Plus 玫瑰金色 64G 全网通4G 苹果手机 国行">
-<img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000624646246_1_200x200.jpg" class="err-product">
+<a name="PcYoupin_shppcind_36725613995_prod04" href="{{ url('/home/acut/details') }}/{{ $o->id }}" target="_blank" rel="nofollow" title="{{ $o->content }}">
+<img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('uploads/auction') }}/{{ $o->pic }}" class="err-product">
 </a>
 <p>
-<a href="https://product.suning.com/0070161527/624646246.html?srcpoint=PcYoupin_shppcind_36725613995_prod04" target="_blank">
-【二手95新】苹果/iPhone 6s Plus 玫瑰金色 64G 全网通4G 苹果手机 国行
+<a href="{{ url('/home/acut/details') }}/{{ $o->id }}" target="_blank">
+{{ $o->name }}
 </a>
 </p>
 <div class="hot-single-price">
-<span class="curPrice"></span>
+<span class="">￥{{ $o->newpage }}.00</span>
 <i></i>
 </div>
 </li>
-<li data-sku="627051889|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613995_prod05" href="https://product.suning.com/0070161527/627051889.html?srcpoint=PcYoupin_shppcind_36725613995_prod05" target="_blank" rel="nofollow" title="【二手95新】苹果/iPhone 7 玫瑰金色 32G 全网通4G 苹果手机 国行 官方在保">
-<img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000627051889_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/627051889.html?srcpoint=PcYoupin_shppcind_36725613995_prod05" target="_blank">
-【二手95新】苹果/iPhone 7 玫瑰金色 32G 全网通4G 苹果手机 国行 官方在保
-</a>
-</p>
-<div class="hot-single-price">
-<span class="curPrice"></span>
-<i></i>
-</div>
-</li>
-<li data-sku="624480708|1|2|0070155069">
-<a name="PcYoupin_shppcind_36725613995_prod06" href="https://product.suning.com/0070155069/624480708.html?srcpoint=PcYoupin_shppcind_36725613995_prod06" target="_blank" rel="nofollow" title="【二手95新】苹果 iPhone7 plus 32G 玫瑰金色 全网通 苹果手机 国行 包邮">
-<img alt="比新机便宜800，官方保修+店铺保修180天，支持7天无理由退货，专业质检，原装二手，真机实拍，顺丰包邮，支持支付宝付款" src="{{ asset('home/hindex') }}/0070155069-000000000624480708_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/624480708.html?srcpoint=PcYoupin_shppcind_36725613995_prod06" target="_blank">
-【二手95新】苹果 iPhone7 plus 32G 玫瑰金色 全网通 苹果手机 国行 包邮
-</a>
-</p>
-<div class="hot-single-price">
-<span class="curPrice"></span>
-<i></i>
-</div>
-</li>
+@endforeach
 </ul>
 <ul style="display: none;">
+
+@foreach($small as $mall)
 <li data-sku="612451774|1|2|0070155069">
-<a name="PcYoupin_shppcind_36725613997_prod01" href="https://product.suning.com/0070155069/612451774.html?srcpoint=PcYoupin_shppcind_36725613997_prod01" target="_blank" rel="nofollow" title="【二手99新】 苹果/Apple iPhone 6 Plus 16GB 金色 全网通4G 国行手机包邮">
-<img alt="比新机优惠1200，堪比新机，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000612451774_1_200x200.jpg" class="err-product">
+<a name="PcYoupin_shppcind_36725613997_prod01" href="{{ url('/home/acut/details') }}/{{ $mall->id }}" target="_blank" rel="nofollow" title="{{ $mall->content }}">
+<img alt="比新机优惠1200，堪比新机，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('uploads/auction') }}/{{ $mall->pic }}" class="err-product">
 </a>
 <p>
-<a href="https://product.suning.com/0070155069/612451774.html?srcpoint=PcYoupin_shppcind_36725613997_prod01" target="_blank">
-【二手99新】 苹果/Apple iPhone 6 Plus 16GB 金色 全网通4G 国行手机包邮
+<a href="{{ url('/home/acut/details') }}/{{ $mall->id }}" target="_blank">
+{{ $mall->name }}
 </a>
 </p>
 <div class="hot-single-price">
-<span class="curPrice"></span>
+<span class="">￥{{ $mall->newpage }}.00</span>
 <i></i>
 </div>
 </li>
-<li data-sku="646200645|1|2|0070155069">
-<a name="PcYoupin_shppcind_36725613997_prod02" href="https://product.suning.com/0070155069/646200645.html?srcpoint=PcYoupin_shppcind_36725613997_prod02" target="_blank" rel="nofollow" title="【二手95新】苹果/Apple iPhone 7 128G 亮黑色 全网通4G 国行手机包邮">
-<img alt="比新机优惠1200，店铺保修180天，支持7天无理由退货，专业质检，原装二手，真机实拍，顺丰包邮，支持支付宝付款" src="{{ asset('home/hindex') }}/0070155069-000000000646200645_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/646200645.html?srcpoint=PcYoupin_shppcind_36725613997_prod02" target="_blank">
-【二手95新】苹果/Apple iPhone 7 128G 亮黑色 全网通4G 国行手机包邮
-</a>
-</p>
-<div class="hot-single-price">
-<span class="curPrice"></span>
-<i></i>
-</div>
-</li>
-<li data-sku="646144834|1|2|0070155069">
-<a name="PcYoupin_shppcind_36725613997_prod03" href="https://product.suning.com/0070155069/646144834.html?srcpoint=PcYoupin_shppcind_36725613997_prod03" target="_blank" rel="nofollow" title="【二手95新】苹果/Apple iPhone 6s 32GB 玫瑰金色 全网通4G 国行手机包邮">
-<img alt="比新机优惠1300，堪比新机，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000646144834_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/646144834.html?srcpoint=PcYoupin_shppcind_36725613997_prod03" target="_blank">
-【二手95新】苹果/Apple iPhone 6s 32GB 玫瑰金色 全网通4G 国行手机包邮
-</a>
-</p>
-<div class="hot-single-price">
-<span class="curPrice"></span>
-<i></i>
-</div>
-</li>
-<li data-sku="624645374|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613997_prod04" href="https://product.suning.com/0070161527/624645374.html?srcpoint=PcYoupin_shppcind_36725613997_prod04" target="_blank" rel="nofollow" title="iPhone 6s Plus 玫瑰金色 16G 全网通4G 苹果手机 国行">
-<img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000624645374_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/624645374.html?srcpoint=PcYoupin_shppcind_36725613997_prod04" target="_blank">
-iPhone 6s Plus 玫瑰金色 16G 全网通4G 苹果手机 国行
-</a>
-</p>
-<div class="hot-single-price">
-<span class="curPrice"></span>
-<i></i>
-</div>
-</li>
-<li data-sku="627006723|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613997_prod05" href="https://product.suning.com/0070161527/627006723.html?srcpoint=PcYoupin_shppcind_36725613997_prod05" target="_blank" rel="nofollow" title="iPhone 6 Plus 金色 16G 全网通4G 苹果手机 国行过保">
-<img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000627006723_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/627006723.html?srcpoint=PcYoupin_shppcind_36725613997_prod05" target="_blank">
-iPhone 6 Plus 金色 16G 全网通4G 苹果手机 国行过保
-</a>
-</p>
-<div class="hot-single-price">
-<span class="curPrice"></span>
-<i></i>
-</div>
-</li>
-<li data-sku="624645414|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613997_prod06" href="https://product.suning.com/0070161527/624645414.html?srcpoint=PcYoupin_shppcind_36725613997_prod06" target="_blank" rel="nofollow" title="iPhone 6s Plus 深空灰色 16G 全网通4G 苹果手机 国行">
-<img alt="拍下直降100！！再赠苹果原装耳机！！全店6期免息购。做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000624645414_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/624645414.html?srcpoint=PcYoupin_shppcind_36725613997_prod06" target="_blank">
-iPhone 6s Plus 深空灰色 16G 全网通4G 苹果手机 国行
-</a>
-</p>
-<div class="hot-single-price">
-<span class="curPrice"></span>
-<i></i>
-</div>
-</li>
+@endforeach
+
 </ul>
 <ul style="display: none;">
 </ul>
@@ -520,7 +387,7 @@ iPhone 6s Plus 深空灰色 16G 全网通4G 苹果手机 国行
 <div class="user-content">
 <div class="comment-user clearfix">
 <div class="user-header">
-<img src="{{ asset('home/hindex') }}/149283306916617266.jpg" class="err-product">
+<img src="{{ asset('uploads/') }}/149283306916617266.jpg" class="err-product">
 <span></span>
 </div>
 <div class="user-name">
@@ -551,356 +418,11 @@ Y***华
 </dd>
 </dl>
 </li>
-<li>
-<div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('home/hindex') }}/149283311207886501.jpg" class="err-product">
-<span></span>
-</div>
-<div class="user-name">
-1**@1*.com
-</div>
-<i class="grade grade4"></i>
-</div>
-<div class="comment-evaluate clearfix">
-不错哦~特意等使用一天再来评价的 手机是说明官方在三包期出了质量问题退回去维修翻新的跟新的一样……
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="614884352|1|2|0070161527">
-<dt>
-<a name="PcYoupin_shppcind_36725714018_prod01" href="https://product.suning.com/0070161527/614884352.html?srcpoint=PcYoupin_shppcind_36725714018_prod01" target="_blank" rel="nofollow" title="【官翻99新】三星（SAMSUNG）S7 edge（G9350） 铂光金色 32G 全网通4G手机 国行 官方在保">
-<img alt="7天无理由，店铺质保180天，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000614884352_1_200x200.jpg" class="err-product">
-</a>
-</dt>
-<dd>
-<p>
-<a href="https://product.suning.com/0070161527/614884352.html?srcpoint=PcYoupin_shppcind_36725714018_prod01" target="_blank">
-【官翻99新】三星（SAMSUNG）S7 edge（G9350） 铂光金色 32G 全网通4G手机 国行 官方在保
-</a>
-</p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
-</dd>
-</dl>
-</li>
-<li>
-<div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('home/hindex') }}/149283327003424329.jpg" class="err-product">
-<span></span>
-</div>
-<div class="user-name">
-j**@1*.com
-</div>
-<i class="grade grade2"></i>
-</div>
-<div class="comment-evaluate clearfix">
-价钱便宜,发货很快,顺丰第2天上午就送到了.手机很新,没有划痕,外观和新的一样,配的充电器可以使用……
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="614575495|1|2|0070161527">
-<dt>
-<a name="PcYoupin_shppcind_36725714024_prod01" href="https://product.suning.com/0070161527/614575495.html?srcpoint=PcYoupin_shppcind_36725714024_prod01" target="_blank" rel="nofollow" title="【二手99新】Apple iPhone SE 玫瑰金色 16G 全网通4G 苹果手机 国行 官方在保">
-<img alt="买就送乐视原装耳机，真机实拍，正品保证 ，7天无理由退换，官方在保200天以上，无忧购物！" src="{{ asset('home/hindex') }}/0070161527-000000000614575495_1_200x200.jpg" class="err-product">
-</a>
-</dt>
-<dd>
-<p>
-<a href="https://product.suning.com/0070161527/614575495.html?srcpoint=PcYoupin_shppcind_36725714024_prod01" target="_blank">
-【二手99新】Apple iPhone SE 玫瑰金色 16G 全网通4G 苹果手机 国行 官方在保
-</a>
-</p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
-</dd>
-</dl>
-</li>
-<li>
-<div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('home/hindex') }}/149283331809765150.jpg" class="err-product">
-<span></span>
-</div>
-<div class="user-name">
-1***7
-</div>
-<i class="grade grade4"></i>
-</div>
-<div class="comment-evaluate clearfix">
-21点50恰巧看见店铺的广告，幸运就这么降落在了我的头上，520的优惠券已收下，感谢商家。顺丰很快，今天上午就到了，外观很赞，根本看不出是二手的。
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="614575531|1|2|0070161527">
-<dt>
-<a name="PcYoupin_shppcind_36725714030_prod01" href="https://product.suning.com/0070161527/614575531.html?srcpoint=PcYoupin_shppcind_36725714030_prod01" target="_blank" rel="nofollow" title="【二手9成新】苹果 iPhone 6s 金色 64G 全网通4G 苹果手机 国行 过保">
-<img alt="先领券优惠再下单，推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000614575531_1_200x200.jpg" class="err-product">
-</a>
-</dt>
-<dd>
-<p>
-<a href="https://product.suning.com/0070161527/614575531.html?srcpoint=PcYoupin_shppcind_36725714030_prod01" target="_blank">
-【二手9成新】苹果 iPhone 6s 金色 64G 全网通4G 苹果手机 国行 过保
-</a>
-</p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
-</dd>
-</dl>
-</li>
-<li>
-<div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('home/hindex') }}/149432357141687426.jpg" class="err-product">
-<span></span>
-</div>
-<div class="user-name">
-大***2
-</div>
-<i class="grade grade3"></i>
-</div>
-<div class="comment-evaluate clearfix">
-特意用了算是两天才来收货评价的，手机比我想像的还要好，不但是正品，还跟新手机一模一样，很成功的一次购物，还想着在拿一部，给我媳妇用。
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="193143182|1|2|0070155069">
-<dt>
-<a name="PcYoupin_shppcind_36725714036_prod01" href="https://product.suning.com/0070155069/193143182.html?srcpoint=PcYoupin_shppcind_36725714036_prod01" target="_blank" rel="nofollow" title="【二手9成新】Apple iPhone 6 Plus 16GB 金色 全网通4G 苹果手机 国行 包邮">
-<img alt="比新机优惠1100，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000193143182_1_200x200.jpg" class="err-product">
-</a>
-</dt>
-<dd>
-<p>
-<a href="https://product.suning.com/0070155069/193143182.html?srcpoint=PcYoupin_shppcind_36725714036_prod01" target="_blank">
-【二手9成新】Apple iPhone 6 Plus 16GB 金色 全网通4G 苹果手机 国行 包邮
-</a>
-</p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
-</dd>
-</dl>
-</li>
-<li>
-<div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('home/hindex') }}/149432375282872732.jpg" class="err-product">
-<span></span>
-</div>
-<div class="user-name">
-130*****75
-</div>
-<i class="grade grade1"></i>
-</div>
-<div class="comment-evaluate clearfix">
-总体来说还不错，是正品行货！外观也没有多大的伤痕，就是充电口处划痕挺大的！其他地方还好，玩手游还行，电池还不错！用了三天来评价的！
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="193264933|1|2|0070155069">
-<dt>
-<a name="PcYoupin_shppcind_36725714042_prod01" href="https://product.suning.com/0070155069/193264933.html?srcpoint=PcYoupin_shppcind_36725714042_prod01" target="_blank" rel="nofollow" title="【二手9成新】Apple iPhone 6s 64GB 金色 全网通4G 苹果手机 国行 包邮">
-<img alt="比新机优惠1700，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000193264933_1_200x200.jpg" class="err-product">
-</a>
-</dt>
-<dd>
-<p>
-<a href="https://product.suning.com/0070155069/193264933.html?srcpoint=PcYoupin_shppcind_36725714042_prod01" target="_blank">
-【二手9成新】Apple iPhone 6s 64GB 金色 全网通4G 苹果手机 国行 包邮
-</a>
-</p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
-</dd>
-</dl>
-</li>
-<li>
-<div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('home/hindex') }}/149432385135876467.jpg" class="err-product">
-<span></span>
-</div>
-<div class="user-name">
-155*****41
-</div>
-<i class="grade grade2"></i>
-</div>
-<div class="comment-evaluate clearfix">
-快递很快，手机是去年10月份开机的，没啥磕碰。好评，先用用看
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="627043049|1|2|0070161527">
-<dt>
-<a name="PcYoupin_shppcind_36725714048_prod01" href="https://product.suning.com/0070161527/627043049.html?srcpoint=PcYoupin_shppcind_36725714048_prod01" target="_blank" rel="nofollow" title="【二手95新】苹果 iPhone 7 黑色 128G 全网通4G 苹果手机 国行 官方在保">
-<img alt="推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000627043049_1_200x200.jpg" class="err-product">
-</a>
-</dt>
-<dd>
-<p>
-<a href="https://product.suning.com/0070161527/627043049.html?srcpoint=PcYoupin_shppcind_36725714048_prod01" target="_blank">
-【二手95新】苹果 iPhone 7 黑色 128G 全网通4G 苹果手机 国行 官方在保
-</a>
-</p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
-</dd>
-</dl>
-</li>
-<li>
-<div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('home/hindex') }}/149432402765955434.jpg" class="err-product">
-<span></span>
-</div>
-<div class="user-name">
-150*****59
-</div>
-<i class="grade grade4"></i>
-</div>
-<div class="comment-evaluate clearfix">
-手机是真机，买的八成新，有个好大的缺口，早知道买九成新的，价格还算实惠。
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="604762711|1|2|0070155069">
-<dt>
-<a name="PcYoupin_shppcind_36725714054_prod01" href="https://product.suning.com/0070155069/604762711.html?srcpoint=PcYoupin_shppcind_36725714054_prod01" target="_blank" rel="nofollow" title="【二手8成新】Apple iPhone 5s 16GB 金色 移动联通双4G 苹果手机 国行 过保 包邮">
-<img alt="成本售价，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000604762711_1_200x200.jpg" class="err-product">
-</a>
-</dt>
-<dd>
-<p>
-<a href="https://product.suning.com/0070155069/604762711.html?srcpoint=PcYoupin_shppcind_36725714054_prod01" target="_blank">
-【二手8成新】Apple iPhone 5s 16GB 金色 移动联通双4G 苹果手机 国行 过保 包邮
-</a>
-</p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
-</dd>
-</dl>
-</li>
-<li>
-<div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('home/hindex') }}/149432417591684143.jpg" class="err-product">
-<span></span>
-</div>
-<div class="user-name">
-158*****20
-</div>
-<i class="grade grade2"></i>
-</div>
-<div class="comment-evaluate clearfix">
-手机成色还行，充电囗磨损比较严重，二手能有这种成色算不错了。总得来说还是比较值的，用段时间在看。
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="193443729|1|2|0070155069">
-<dt>
-<a name="PcYoupin_shppcind_36725714060_prod01" href="https://product.suning.com/0070155069/193443729.html?srcpoint=PcYoupin_shppcind_36725714060_prod01" target="_blank" rel="nofollow" title="【二手9成新】OPPO R9 玫瑰金色 64GB 全网通 双卡双待 国行 顺丰包邮 店铺保修180天">
-<img alt="成本售卖，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000193443729_1_200x200.jpg" class="err-product">
-</a>
-</dt>
-<dd>
-<p>
-<a href="https://product.suning.com/0070155069/193443729.html?srcpoint=PcYoupin_shppcind_36725714060_prod01" target="_blank">
-【二手9成新】OPPO R9 玫瑰金色 64GB 全网通 双卡双待 国行 顺丰包邮 店铺保修180天
-</a>
-</p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
-</dd>
-</dl>
-</li>
-<li>
-<div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('home/hindex') }}/149432494482823117.jpg" class="err-product">
-<span></span>
-</div>
-<div class="user-name">
-177*****03
-</div>
-<i class="grade grade3"></i>
-</div>
-<div class="comment-evaluate clearfix">
-还不错挺好用的就是一直没有寄发票过来
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="193145113|1|2|0070155069">
-<dt>
-<a name="PcYoupin_shppcind_36725714066_prod01" href="https://product.suning.com/0070155069/193145113.html?srcpoint=PcYoupin_shppcind_36725714066_prod01" target="_blank" rel="nofollow" title="【二手9成新】Apple iPhone 6 16GB 银色 全网通4G 苹果手机 国行 包邮">
-<img alt="比新机优惠1100，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000193145113_1_200x200.jpg" class="err-product">
-</a>
-</dt>
-<dd>
-<p>
-<a href="https://product.suning.com/0070155069/193145113.html?srcpoint=PcYoupin_shppcind_36725714066_prod01" target="_blank">
-【二手9成新】Apple iPhone 6 16GB 银色 全网通4G 苹果手机 国行 包邮
-</a>
-</p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
-</dd>
-</dl>
-</li>
-<li>
-<div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('home/hindex') }}/149432541348170568.jpg" class="err-product">
-<span></span>
-</div>
-<div class="user-name">
-G***u
-</div>
-<i class="grade grade3"></i>
-</div>
-<div class="comment-evaluate clearfix">
-G***u 用了一天才评价很好其实跟新的没有什么区别，送的东西也很好虽然不是原装，送的耳机也可以就是少送一个硅胶套不完美。买二手其实还是再网上买还放心.
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="614575530|1|2|0070161527">
-<dt>
-<a name="PcYoupin_shppcind_36725714072_prod01" href="https://product.suning.com/0070161527/614575530.html?srcpoint=PcYoupin_shppcind_36725714072_prod01" target="_blank" rel="nofollow" title="【二手9成新】苹果 iPhone 6s 金色 16G 全网通4G 苹果手机 国行 过保">
-<img alt="【180天店铺质保 支持7天无理由 顺丰包邮 支付宝付款详情咨询客服哟~】不二优品 不二之选" src="{{ asset('home/hindex') }}/0070161527-000000000614575530_1_200x200.jpg" class="err-product">
-</a>
-</dt>
-<dd>
-<p>
-<a href="https://product.suning.com/0070161527/614575530.html?srcpoint=PcYoupin_shppcind_36725714072_prod01" target="_blank">
-【二手9成新】苹果 iPhone 6s 金色 16G 全网通4G 苹果手机 国行 过保
-</a>
-</p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
-</dd>
-</dl>
-</li>
+
+
+
+
+
 </ul>
 </div>
 <a href="javascript:void(0)" class="comment-prev"></a>
@@ -932,329 +454,63 @@ G***u 用了一天才评价很好其实跟新的没有什么区别，送的东�
 <div class="commodity-box clearfix">
 <!--楼层图片-->
 <div class="commodity-img">
-<a href="https://shop.suning.com/70155069/10170641.html" target="_blank" name="PcYoupin_shppcind_39492014098_pic01" title="">
+<a href="#" target="_blank" name="PcYoupin_shppcind_39492014098_pic01" title="">
 <img src="{{ asset('home/hindex') }}/149723354542211517.jpg" class="err-product">
 </a>
 </div>
 <!--楼层tab商品-->
 <div class="commodity-conList">
 <ul style="display: none;">
+@foreach($phone as $one)
 <li data-sku="621622776|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014101_prod01" href="https://product.suning.com/0070155069/621622776.html?srcpoint=PcYoupin_shppcind_39492014101_prod01" target="_blank" rel="nofollow" title="【二手9成新】三星 Galaxy C5 金色 32G 全网通 国行">
-<img alt="原装二手" src="{{ asset('home/hindex') }}/0070155069-000000000621622776_1_200x200.jpg" class="err-product">
+<a name="PcYoupin_shppcind_39492014101_prod01" href="{{ url('home/details') }}/{{ $one->id }}" target="_blank" rel="nofollow" title="{{ $one->connect }}">
+<img alt="原装二手" src="{{ asset('uploads/shop') }}/{{ $one->pic }}" class="err-product">
 </a>
 <p>
-<a href="https://product.suning.com/0070155069/621622776.html?srcpoint=PcYoupin_shppcind_39492014101_prod01" target="_blank">
-【二手9成新】三星 Galaxy C5 金色 32G 全网通 国行
+<a href="{{ url('home/details') }}/{{ $one->id }}" target="_blank">
+{{ $one->name }}
 </a>
 </p>
 <div class="commodity-conprice">
-<span class="curPrice"></span>
+<span class="">￥{{ $one->newpage }}.00</span>
 </div>
 </li>
-<li data-sku="627466405|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014101_prod02" href="https://product.suning.com/0070155069/627466405.html?srcpoint=PcYoupin_shppcind_39492014101_prod02" target="_blank" rel="nofollow" title="【二手95成新】vivo X9 全网通 灰色 64 G 国行 商品IMEI后四位：3991">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000627466405_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/627466405.html?srcpoint=PcYoupin_shppcind_39492014101_prod02" target="_blank">
-【二手95成新】vivo X9 全网通 灰色 64 G 国行 商品IMEI后四位：3991
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="630549342|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014101_prod03" href="https://product.suning.com/0070155069/630549342.html?srcpoint=PcYoupin_shppcind_39492014101_prod03" target="_blank" rel="nofollow" title="oppo R9 金色 64 G 国行 全网通 商品IMEI后四位：1497">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000630549342_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/630549342.html?srcpoint=PcYoupin_shppcind_39492014101_prod03" target="_blank">
-oppo R9 金色 64 G 国行 全网通 商品IMEI后四位：1497
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="632716236|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014101_prod04" href="https://product.suning.com/0070155069/632716236.html?srcpoint=PcYoupin_shppcind_39492014101_prod04" target="_blank" rel="nofollow" title="华为 M2 金色 WIFI版 16 G 国行 商品IMEI后四位：0952">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000632716236_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/632716236.html?srcpoint=PcYoupin_shppcind_39492014101_prod04" target="_blank">
-华为 M2 金色 WIFI版 16 G 国行 商品IMEI后四位：0952
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="625018775|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014101_prod05" href="https://product.suning.com/0070155069/625018775.html?srcpoint=PcYoupin_shppcind_39492014101_prod05" target="_blank" rel="nofollow" title="【二手9成新】苹果 iPhone 6S Plus 全网通 玫瑰金 16 G 国行 商品编号：4256">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000625018775_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/625018775.html?srcpoint=PcYoupin_shppcind_39492014101_prod05" target="_blank">
-【二手9成新】苹果 iPhone 6S Plus 全网通 玫瑰金 16 G 国行 商品编号：4256
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="626410277|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014101_prod06" href="https://product.suning.com/0070155069/626410277.html?srcpoint=PcYoupin_shppcind_39492014101_prod06" target="_blank" rel="nofollow" title="【二手9成新】小米 小米5C 移动 4G/3G/2G 金色 64 G 国行 运行内存3GB商品IMEI后四位：0710">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000626410277_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/626410277.html?srcpoint=PcYoupin_shppcind_39492014101_prod06" target="_blank">
-【二手9成新】小米 小米5C 移动 4G/3G/2G 金色 64 G 国行 运行内存3GB商品IMEI后四位：0710
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="636044145|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014101_prod07" href="https://product.suning.com/0070155069/636044145.html?srcpoint=PcYoupin_shppcind_39492014101_prod07" target="_blank" rel="nofollow" title=" iPhone 6S Plus 全网通 金色 16G 国行 商品IMEI后四位：7626">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000636044145_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/636044145.html?srcpoint=PcYoupin_shppcind_39492014101_prod07" target="_blank">
-iPhone 6S Plus 全网通 金色 16G 国行 商品IMEI后四位：7626
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="628697660|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014101_prod08" href="https://product.suning.com/0070155069/628697660.html?srcpoint=PcYoupin_shppcind_39492014101_prod08" target="_blank" rel="nofollow" title="【二手9成新】oppo R5 移动 4G/3G/2G 白色 16 G 国行 商品IMEI后四位：4120">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000628697660_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/628697660.html?srcpoint=PcYoupin_shppcind_39492014101_prod08" target="_blank">
-【二手9成新】oppo R5 移动 4G/3G/2G 白色 16 G 国行 商品IMEI后四位：4120
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
+@endforeach
 </ul>
 <ul style="display: block;">
+@foreach($two as $second)
 <li data-sku="625018775|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014103_prod01" href="https://product.suning.com/0070155069/625018775.html?srcpoint=PcYoupin_shppcind_39492014103_prod01" target="_blank" rel="nofollow" title="【二手9成新】苹果 iPhone 6S Plus 全网通 玫瑰金 16 G 国行 商品编号：4256">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000625018775_1_200x200.jpg" class="err-product">
+<a name="PcYoupin_shppcind_39492014103_prod01" href="{{ url('home/details') }}/{{ $second->id }}" target="_blank" rel="nofollow" title="{{ $second->connect }}">
+<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('uploads/shop') }}/{{ $second->pic }}" class="err-product">
 </a>
 <p>
-<a href="https://product.suning.com/0070155069/625018775.html?srcpoint=PcYoupin_shppcind_39492014103_prod01" target="_blank">
-【二手9成新】苹果 iPhone 6S Plus 全网通 玫瑰金 16 G 国行 商品编号：4256
+<a href="{{ url('home/details') }}/{{ $second->id }}" target="_blank">
+{{ $second->name }}
 </a>
 </p>
 <div class="commodity-conprice">
-<span class="curPrice"></span>
+<span class="">￥{{ $second->newpage }}.00</span>
 </div>
 </li>
-<li data-sku="638045512|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014103_prod02" href="https://product.suning.com/0070155069/638045512.html?srcpoint=PcYoupin_shppcind_39492014103_prod02" target="_blank" rel="nofollow" title="【二手8成新】苹果iPad 2白色 16 G WIFI版 国行 商品IMEI后四位：DFHW">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000638045512_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/638045512.html?srcpoint=PcYoupin_shppcind_39492014103_prod02" target="_blank">
-【二手8成新】苹果iPad 2白色 16 G WIFI版 国行 商品IMEI后四位：DFHW
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="622080572|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014103_prod03" href="https://product.suning.com/0070155069/622080572.html?srcpoint=PcYoupin_shppcind_39492014103_prod03" target="_blank" rel="nofollow" title="【二手95成新】三星 A3000 电信 4G/3G/2G 黑色 8 G 国行 商品编号：7086">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服 " src="{{ asset('home/hindex') }}/0070155069-000000000622080572_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/622080572.html?srcpoint=PcYoupin_shppcind_39492014103_prod03" target="_blank">
-【二手95成新】三星 A3000 电信 4G/3G/2G 黑色 8 G 国行 商品编号：7086
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="630068489|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014103_prod04" href="https://product.suning.com/0070155069/630068489.html?srcpoint=PcYoupin_shppcind_39492014103_prod04" target="_blank" rel="nofollow" title="【二手9成新】oppo R9 玫瑰金 64 G 国行 全网通 商品IMEI后四位：0551">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000630068489_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/630068489.html?srcpoint=PcYoupin_shppcind_39492014103_prod04" target="_blank">
-【二手9成新】oppo R9 玫瑰金 64 G 国行 全网通 商品IMEI后四位：0551
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="622718478|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014103_prod05" href="https://product.suning.com/0070155069/622718478.html?srcpoint=PcYoupin_shppcind_39492014103_prod05" target="_blank" rel="nofollow" title="【二手9成新】华为 荣耀畅玩5A 白色 移动 4G/3G/2G 16 G 国行 运行内存2GB商品编号：4108">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000622718478_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/622718478.html?srcpoint=PcYoupin_shppcind_39492014103_prod05" target="_blank">
-【二手9成新】华为 荣耀畅玩5A 白色 移动 4G/3G/2G 16 G 国行 运行内存2GB商品编号：4108
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="623841961|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014103_prod06" href="https://product.suning.com/0070155069/623841961.html?srcpoint=PcYoupin_shppcind_39492014103_prod06" target="_blank" rel="nofollow" title="【二手8成新】华为 荣耀畅玩5C 银色 16 G 国行 移动 4G/3G/2G 商品编号：0919">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000623841961_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/623841961.html?srcpoint=PcYoupin_shppcind_39492014103_prod06" target="_blank">
-【二手8成新】华为 荣耀畅玩5C 银色 16 G 国行 移动 4G/3G/2G 商品编号：0919
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="626250216|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014103_prod07" href="https://product.suning.com/0070155069/626250216.html?srcpoint=PcYoupin_shppcind_39492014103_prod07" target="_blank" rel="nofollow" title="【二手8成新】三星 Galaxy S7 全网通 金色 32 G 国行 商品IMEI后四位：6758">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000626250216_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/626250216.html?srcpoint=PcYoupin_shppcind_39492014103_prod07" target="_blank">
-【二手8成新】三星 Galaxy S7 全网通 金色 32 G 国行 商品IMEI后四位：6758
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="642345076|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014103_prod08" href="https://product.suning.com/0070155069/642345076.html?srcpoint=PcYoupin_shppcind_39492014103_prod08" target="_blank" rel="nofollow" title="三星Galaxy C7玫瑰金 32 G 全网通 国行 商品IMEI后四位：3700">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000642345076_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/642345076.html?srcpoint=PcYoupin_shppcind_39492014103_prod08" target="_blank">
-三星Galaxy C7玫瑰金 32 G 全网通 国行 商品IMEI后四位：3700
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
+@endforeach
 </ul>
 <ul style="display: none;">
+@foreach($three as $th)
 <li data-sku="625387114|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014105_prod01" href="https://product.suning.com/0070155069/625387114.html?srcpoint=PcYoupin_shppcind_39492014105_prod01" target="_blank" rel="nofollow" title="【二手8成新】三星 A7000 移动联通 4G/3G/2G 白色 16 G 国行 商品编号：5995">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000625387114_1_200x200.jpg" class="err-product">
+<a name="PcYoupin_shppcind_39492014105_prod01" href="{{ url('home/details') }}/{{ $th->id }}" target="_blank" rel="nofollow" title="{{ $th->connect }}">
+<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('uploads/shop') }}/{{ $th->pic }}" class="err-product">
 </a>
 <p>
-<a href="https://product.suning.com/0070155069/625387114.html?srcpoint=PcYoupin_shppcind_39492014105_prod01" target="_blank">
-【二手8成新】三星 A7000 移动联通 4G/3G/2G 白色 16 G 国行 商品编号：5995
+<a href="{{ url('home/details') }}/{{ $th->id }}" target="_blank">
+{{ $th->name }}
 </a>
 </p>
 <div class="commodity-conprice">
-<span class="curPrice"></span>
+<span class="">￥{{ $th->newpage }}.00</span>
 </div>
 </li>
-<li data-sku="630550487|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014105_prod02" href="https://product.suning.com/0070155069/630550487.html?srcpoint=PcYoupin_shppcind_39492014105_prod02" target="_blank" rel="nofollow" title="【二手95成新】小米 小米5C 移动 4G/3G/2G 黑色 64 G 国行 运行内存3GB商品IMEI后四位：8755">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000630550487_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/630550487.html?srcpoint=PcYoupin_shppcind_39492014105_prod02" target="_blank">
-【二手95成新】小米 小米5C 移动 4G/3G/2G 黑色 64 G 国行 运行内存3GB商品IMEI后四位：8755
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="625196761|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014105_prod03" href="https://product.suning.com/0070155069/625196761.html?srcpoint=PcYoupin_shppcind_39492014105_prod03" target="_blank" rel="nofollow" title="【二手8成新】华为 p9 银色 联通 4G/3G/2G 32 G 国行 运行内存3GB商品编号：6457">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000625196761_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/625196761.html?srcpoint=PcYoupin_shppcind_39492014105_prod03" target="_blank">
-【二手8成新】华为 p9 银色 联通 4G/3G/2G 32 G 国行 运行内存3GB商品编号：6457
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="611365768|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014105_prod04" href="https://product.suning.com/0070155069/611365768.html?srcpoint=PcYoupin_shppcind_39492014105_prod04" target="_blank" rel="nofollow" title="【二手9成新】魅族 PRO6 金色 32G 全网通4G 国行 顺丰包邮 店铺保修180天">
-<img alt="成本售价，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000611365768_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/611365768.html?srcpoint=PcYoupin_shppcind_39492014105_prod04" target="_blank">
-【二手9成新】魅族 PRO6 金色 32G 全网通4G 国行 顺丰包邮 店铺保修180天
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="624008549|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014105_prod05" href="https://product.suning.com/0070155069/624008549.html?srcpoint=PcYoupin_shppcind_39492014105_prod05" target="_blank" rel="nofollow" title="【二手8成新】三星 GALAXY J3 金色 电信 4G/3G/2G 8 G 国行 商品编号：6335">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000624008549_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/624008549.html?srcpoint=PcYoupin_shppcind_39492014105_prod05" target="_blank">
-【二手8成新】三星 GALAXY J3 金色 电信 4G/3G/2G 8 G 国行 商品编号：6335
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="627943877|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014105_prod06" href="https://product.suning.com/0070155069/627943877.html?srcpoint=PcYoupin_shppcind_39492014105_prod06" target="_blank" rel="nofollow" title="【二手95成新】魅族 MX5 移动 4G/3G/2G 银色 16 G 国行 商品IMEI后四位：0462">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000627943877_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/627943877.html?srcpoint=PcYoupin_shppcind_39492014105_prod06" target="_blank">
-【二手95成新】魅族 MX5 移动 4G/3G/2G 银色 16 G 国行 商品IMEI后四位：0462
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="623401675|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014105_prod07" href="https://product.suning.com/0070155069/623401675.html?srcpoint=PcYoupin_shppcind_39492014105_prod07" target="_blank" rel="nofollow" title="【二手9成新】魅族 PRO 6S 全网通 黑色 64 G 国行 商品编号：9168">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服 ！ " src="{{ asset('home/hindex') }}/0070155069-000000000623401675_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/623401675.html?srcpoint=PcYoupin_shppcind_39492014105_prod07" target="_blank">
-【二手9成新】魅族 PRO 6S 全网通 黑色 64 G 国行 商品编号：9168
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="630550487|1|2|0070155069">
-<a name="PcYoupin_shppcind_39492014105_prod08" href="https://product.suning.com/0070155069/630550487.html?srcpoint=PcYoupin_shppcind_39492014105_prod08" target="_blank" rel="nofollow" title="【二手95成新】小米 小米5C 移动 4G/3G/2G 黑色 64 G 国行 运行内存3GB商品IMEI后四位：8755">
-<img alt="100%真机实拍，库存仅1台，放血底价，全场满减低至5折，赠品胜配件，7天退换，180天质保，支付宝付款咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000630550487_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/630550487.html?srcpoint=PcYoupin_shppcind_39492014105_prod08" target="_blank">
-【二手95成新】小米 小米5C 移动 4G/3G/2G 黑色 64 G 国行 运行内存3GB商品IMEI后四位：8755
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
+@endforeach
+
 </ul>
 <ul style="display: none;">
 </ul>
@@ -1289,7 +545,7 @@ iPhone 6S Plus 全网通 金色 16G 国行 商品IMEI后四位：7626
 <div class="commodity-box clearfix">
 <!--楼层图片-->
 <div class="commodity-img">
-<a href="http://bueryoupin.suning.com/" target="_blank" name="PcYoupin_shppcind_36899814098_pic01" title="">
+<a href="#" target="_blank" name="PcYoupin_shppcind_36899814098_pic01" title="">
 <img src="{{ asset('home/hindex') }}/149723357471972724.jpg" class="err-product">
 </a>
 </div>
@@ -1308,7 +564,7 @@ iPhone 6S Plus 全网通 金色 16G 国行 商品IMEI后四位：7626
 </a>
 </p>
 <div class="commodity-conprice">
-<span class="">{{ $v->newpage }}</span>
+<span class="">￥{{ $v->newpage }}.00</span>
 </div>
 </li>
 @endforeach
@@ -1326,12 +582,13 @@ iPhone 6S Plus 全网通 金色 16G 国行 商品IMEI后四位：7626
 </a>
 </p>
 <div class="commodity-conprice">
-<span class="">{{ $a->newpage }}</span>
+<span class="">￥{{ $a->newpage }}.00</span>
 </div>
 </li>
 @endforeach
 </ul>
 <ul style="display: none;">
+
 @foreach($pho as $p)
 <li data-sku="603581278|1|2|0070155069">
 <a name="PcYoupin_shppcind_36899814105_prod01" href="" target="_blank" rel="nofollow" title="{{ $p->connect }}">
@@ -1343,7 +600,7 @@ iPhone 6S Plus 全网通 金色 16G 国行 商品IMEI后四位：7626
 </a>
 </p>
 <div class="commodity-conprice">
-<span class="">{{ $p->newpage }}</span>
+<span class="">￥{{ $p->newpage }}.00</span>
 </div>
 </li>
 @endforeach
@@ -1382,117 +639,28 @@ iPhone 6S Plus 全网通 金色 16G 国行 商品IMEI后四位：7626
 <div class="commodity-box clearfix">
 <!--楼层图片-->
 <div class="commodity-img">
-<a href="https://list.suning.com/0-501224-0.html" target="_blank" name="PcYoupin_shppcind_39564214098_pic01" title="">
+<a href="" target="_blank" name="PcYoupin_shppcind_39564214098_pic01" title="">
 <img src="{{ asset('home/hindex') }}/149639589310286502.jpg" class="err-product">
 </a>
 </div>
 <!--楼层tab商品-->
 <div class="commodity-conList">
 <ul style="display:block;">
+@foreach($ss as $s)
 <li data-sku="614575495|1|2|0070161527">
-<a name="PcYoupin_shppcind_39564214101_prod01" href="https://product.suning.com/0070161527/614575495.html?srcpoint=PcYoupin_shppcind_39564214101_prod01" target="_blank" rel="nofollow" title="【二手99新】苹果 iPhone SE 玫瑰金色 16G 全网通4G 苹果手机 国行 官方在保">
-<img alt="任性付6期免息 等你来拿【180天店铺质保 支持7天无理由 顺丰包邮 支付宝付款详情咨询客服哟~】不二优品 不二之选~" src="{{ asset('home/hindex') }}/0070161527-000000000614575495_1_200x200.jpg" class="err-product">
+<a name="PcYoupin_shppcind_39564214101_prod01" href="{{ url('home/detail') }}/{{ $s->id }}" target="_blank" rel="nofollow" title="{{ $s->connect }}">
+<img alt="任性付6期免息 等你来拿【180天店铺质保 支持7天无理由 顺丰包邮 支付宝付款详情咨询客服哟~】不二优品 不二之选~" src="{{ asset('uploads/shop') }}/{{ $s->pic }}" class="err-product">
 </a>
 <p>
-<a href="https://product.suning.com/0070161527/614575495.html?srcpoint=PcYoupin_shppcind_39564214101_prod01" target="_blank">
-【二手99新】苹果 iPhone SE 玫瑰金色 16G 全网通4G 苹果手机 国行 官方在保
+<a href="{{ url('home/detail') }}/{{ $s->id }}" target="_blank">
+{{ $s->name }}
 </a>
 </p>
 <div class="commodity-conprice">
-<span class="curPrice"></span>
+<span class="">￥{{ $s->newpage }}.00</span>
 </div>
 </li>
-<li data-sku="624644480|1|2|0070161527">
-<a name="PcYoupin_shppcind_39564214101_prod02" href="https://product.suning.com/0070161527/624644480.html?srcpoint=PcYoupin_shppcind_39564214101_prod02" target="_blank" rel="nofollow" title="【二手95新】苹果 iPhone 6s 银色 16G 全网通4G 苹果手机 国行">
-<img alt="推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000624644480_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/624644480.html?srcpoint=PcYoupin_shppcind_39564214101_prod02" target="_blank">
-【二手95新】苹果 iPhone 6s 银色 16G 全网通4G 苹果手机 国行
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="614884352|1|2|0070161527">
-<a name="PcYoupin_shppcind_39564214101_prod03" href="https://product.suning.com/0070161527/614884352.html?srcpoint=PcYoupin_shppcind_39564214101_prod03" target="_blank" rel="nofollow" title="【官翻99新】三星（SAMSUNG）S7 edge（G9350） 铂光金色 32G 全网通4G手机 国行 官方在保">
-<img alt="真机实拍，正品保证 ，7天无理由退换，让您放心购！【以一抵百、17号结束支付尾款（逾期就是错过）、18号开始陆续发货】" src="{{ asset('home/hindex') }}/0070161527-000000000614884352_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/614884352.html?srcpoint=PcYoupin_shppcind_39564214101_prod03" target="_blank">
-【官翻99新】三星（SAMSUNG）S7 edge（G9350） 铂光金色 32G 全网通4G手机 国行 官方在保
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="193138572|1|2|0070155069">
-<a name="PcYoupin_shppcind_39564214101_prod04" href="https://product.suning.com/0070155069/193138572.html?srcpoint=PcYoupin_shppcind_39564214101_prod04" target="_blank" rel="nofollow" title="【二手95新】Apple iPhone 6s 64GB 玫瑰金色 全网通4G 苹果手机 国行 包邮">
-<img alt="比新机优惠1300，堪比新机，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000193138572_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/193138572.html?srcpoint=PcYoupin_shppcind_39564214101_prod04" target="_blank">
-【二手95新】Apple iPhone 6s 64GB 玫瑰金色 全网通4G 苹果手机 国行 包邮
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="627043049|1|2|0070161527">
-<a name="PcYoupin_shppcind_39564214101_prod05" href="https://product.suning.com/0070161527/627043049.html?srcpoint=PcYoupin_shppcind_39564214101_prod05" target="_blank" rel="nofollow" title="【二手95新】苹果 iPhone 7 黑色 128G 全网通4G 苹果手机 国行 官方在保">
-<img alt="推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000627043049_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/627043049.html?srcpoint=PcYoupin_shppcind_39564214101_prod05" target="_blank">
-【二手95新】苹果 iPhone 7 黑色 128G 全网通4G 苹果手机 国行 官方在保
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="614575497|1|2|0070161527">
-<a name="PcYoupin_shppcind_39564214101_prod06" href="https://product.suning.com/0070161527/614575497.html?srcpoint=PcYoupin_shppcind_39564214101_prod06" target="_blank" rel="nofollow" title="【二手99新】苹果 iPhone SE 金色 16G 全网通4G 苹果手机 国行 官方在保">
-<img alt="推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000614575497_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/614575497.html?srcpoint=PcYoupin_shppcind_39564214101_prod06" target="_blank">
-【二手99新】苹果 iPhone SE 金色 16G 全网通4G 苹果手机 国行 官方在保
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="603581272|1|2|0070155069">
-<a name="PcYoupin_shppcind_39564214101_prod07" href="https://product.suning.com/0070155069/603581272.html?srcpoint=PcYoupin_shppcind_39564214101_prod07" target="_blank" rel="nofollow" title="【二手9成新】苹果/Apple iPhone 6s 16GB 金色 全网通4G 国行手机包邮">
-<img alt="比新机优惠1500，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000603581272_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/603581272.html?srcpoint=PcYoupin_shppcind_39564214101_prod07" target="_blank">
-【二手9成新】苹果/Apple iPhone 6s 16GB 金色 全网通4G 国行手机包邮
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="620724975|1|2|0070161527">
-<a name="PcYoupin_shppcind_39564214101_prod08" href="https://product.suning.com/0070161527/620724975.html?srcpoint=PcYoupin_shppcind_39564214101_prod08" target="_blank" rel="nofollow" title="【二手99新】苹果 iPhone 5s 金色 16G 移动联通4G 苹果手机 国行 官方在保">
-<img alt="推荐搭配苹果原装配件，堪比新机 国行在保 比新机优惠300元，支付宝、微信支付，详情咨询客服。" src="{{ asset('home/hindex') }}/0070161527-000000000620724975_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070161527/620724975.html?srcpoint=PcYoupin_shppcind_39564214101_prod08" target="_blank">
-【二手99新】苹果 iPhone 5s 金色 16G 移动联通4G 苹果手机 国行 官方在保
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
+@endforeach
 </ul>
 <ul>
 </ul>
@@ -1525,117 +693,28 @@ iPhone 6S Plus 全网通 金色 16G 国行 商品IMEI后四位：7626
 <div class="commodity-box clearfix">
 <!--楼层图片-->
 <div class="commodity-img">
-<a href="https://list.suning.com/0-501225-0.html" target="_blank" name="PcYoupin_shppcind_39564314098_pic01" title="">
+<a href="#" target="_blank" name="PcYoupin_shppcind_39564314098_pic01" title="">
 <img src="{{ asset('home/hindex') }}/149639590317563271.jpg" class="err-product">
 </a>
 </div>
 <!--楼层tab商品-->
 <div class="commodity-conList">
 <ul style="display:block;">
+@foreach($com as $computer)
 <li data-sku="193039144|1|2|0070155069">
-<a name="PcYoupin_shppcind_39564314101_prod01" href="https://product.suning.com/0070155069/193039144.html?srcpoint=PcYoupin_shppcind_39564314101_prod01" target="_blank" rel="nofollow" title="【官翻99新】戴尔（DELL）灵越 3558 15.6英寸 (I5-5200 4G 500G 2G DVD刻录) 黑色">
-<img alt="全新品质，dell直供 联保一年" src="{{ asset('home/hindex') }}/0070155069-000000000193039144_1_200x200.jpg" class="err-product">
+<a name="PcYoupin_shppcind_39564314101_prod01" href="{{ url('home/details') }}/{{ $computer->id }}" target="_blank" rel="nofollow" title="{{ $computer->connect }}">
+<img alt="全新品质，dell直供 联保一年" src="{{ asset('uploads/shop') }}/{{ $computer->pic }}" class="err-product">
 </a>
 <p>
-<a href="https://product.suning.com/0070155069/193039144.html?srcpoint=PcYoupin_shppcind_39564314101_prod01" target="_blank">
-【官翻99新】戴尔（DELL）灵越 3558 15.6英寸 (I5-5200 4G 500G 2G DVD刻录) 黑色
+<a href="{{ url('home/details') }}/{{ $computer->id }}" target="_blank">
+{{ $computer->name }}
 </a>
 </p>
 <div class="commodity-conprice">
-<span class="curPrice"></span>
+<span class="">￥{{ $computer->newpage }}.00</span>
 </div>
 </li>
-<li data-sku="634930691|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564314101_prod02" href="https://product.suning.com/0070158894/634930691.html?srcpoint=PcYoupin_shppcind_39564314101_prod02" target="_blank" rel="nofollow" title="【二手9成新】神舟/Hasee 战神 Z7-SL7S3 黑色 i7/8G/GTX970M">
-<img alt="GTX970M游戏显卡，1080P高清无亮点屏，专业音响，游戏发烧本" src="{{ asset('home/hindex') }}/0070158894-000000000634930691_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070158894/634930691.html?srcpoint=PcYoupin_shppcind_39564314101_prod02" target="_blank">
-【二手9成新】神舟/Hasee 战神 Z7-SL7S3 黑色 i7/8G/GTX970M
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="193242610|1|2|0070155069">
-<a name="PcYoupin_shppcind_39564314101_prod03" href="https://product.suning.com/0070155069/193242610.html?srcpoint=PcYoupin_shppcind_39564314101_prod03" target="_blank" rel="nofollow" title="【官翻99新】戴尔（DELL）灵越 7559 15.6英寸 i5-6300 4G 128G+500G 4G独显 黑色">
-<img alt="游戏定制 i5高性价比" src="{{ asset('home/hindex') }}/0070155069-000000000193242610_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/193242610.html?srcpoint=PcYoupin_shppcind_39564314101_prod03" target="_blank">
-【官翻99新】戴尔（DELL）灵越 7559 15.6英寸 i5-6300 4G 128G+500G 4G独显 黑色
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="193242607|1|2|0070155069">
-<a name="PcYoupin_shppcind_39564314101_prod04" href="https://product.suning.com/0070155069/193242607.html?srcpoint=PcYoupin_shppcind_39564314101_prod04" target="_blank" rel="nofollow" title="【官翻99新】戴尔（DELL）XPS 9250 12.5英寸（M5 6Y57 8G 256G SSD 4K触控屏）黑色">
-<img alt="比新机便宜 1300元 全新品质，dell直供 联保一年" src="{{ asset('home/hindex') }}/0070155069-000000000193242607_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/193242607.html?srcpoint=PcYoupin_shppcind_39564314101_prod04" target="_blank">
-【官翻99新】戴尔（DELL）XPS 9250 12.5英寸（M5 6Y57 8G 256G SSD 4K触控屏）黑色
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="623734647|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564314101_prod05" href="https://product.suning.com/0070158894/623734647.html?srcpoint=PcYoupin_shppcind_39564314101_prod05" target="_blank" rel="nofollow" title="【二手9成新】ThinkPad X1 Carbon 14英寸四代双核I5 碳纤维超级本 超薄商务笔记本电脑">
-<img alt="14英寸商用碳纤维材质超极本，酷睿四代 i5双核，配急速固态硬盘" src="{{ asset('home/hindex') }}/0070158894-000000000623734647_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070158894/623734647.html?srcpoint=PcYoupin_shppcind_39564314101_prod05" target="_blank">
-【二手9成新】ThinkPad X1 Carbon 14英寸四代双核I5 碳纤维超级本 超薄商务笔记本电脑
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="603581278|1|2|0070155069">
-<a name="PcYoupin_shppcind_39564314101_prod06" href="https://product.suning.com/0070155069/603581278.html?srcpoint=PcYoupin_shppcind_39564314101_prod06" target="_blank" rel="nofollow" title="【官翻99新】戴尔 灵越3568 14英寸 i5-7200U 4G 500G 黑色 全国联保一年">
-<img alt="戴尔直供，直击底价，购买试用，不满意可使用7天无理由退换货权限，支付宝付款，详情咨询客服~" src="{{ asset('home/hindex') }}/0070155069-000000000603581278_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/603581278.html?srcpoint=PcYoupin_shppcind_39564314101_prod06" target="_blank">
-【官翻99新】戴尔 灵越3568 14英寸 i5-7200U 4G 500G 黑色 全国联保一年
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="621022012|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564314101_prod07" href="https://product.suning.com/0070158894/621022012.html?srcpoint=PcYoupin_shppcind_39564314101_prod07" target="_blank" rel="nofollow" title="【二手95新】联想小新 V4000 15寸 黑色笔记本电脑 i7/8GB/1TB/双显卡">
-<img alt="性价比高" src="{{ asset('home/hindex') }}/0070158894-000000000621022012_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070158894/621022012.html?srcpoint=PcYoupin_shppcind_39564314101_prod07" target="_blank">
-【二手95新】联想小新 V4000 15寸 黑色笔记本电脑 i7/8GB/1TB/双显卡
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="612789371|1|2|0070155069">
-<a name="PcYoupin_shppcind_39564314101_prod08" href="https://product.suning.com/0070155069/612789371.html?srcpoint=PcYoupin_shppcind_39564314101_prod08" target="_blank" rel="nofollow" title="【官翻99新】戴尔游匣灵越7559 15.6英寸 独显 黑色 i7-6700 8G 1T+256G固态 触屏笔">
-<img alt="戴尔直供，直击底价，购买试用，不满意可使用7天无理由退换货权限，原装二手，真机实拍，支付宝付款，详情咨询客服" src="{{ asset('home/hindex') }}/0070155069-000000000612789371_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070155069/612789371.html?srcpoint=PcYoupin_shppcind_39564314101_prod08" target="_blank">
-【官翻99新】戴尔游匣灵越7559 15.6英寸 独显 黑色 i7-6700 8G 1T+256G固态 触屏笔
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
+@endforeach
 </ul>
 <ul>
 </ul>
@@ -1675,117 +754,28 @@ iPhone 6S Plus 全网通 金色 16G 国行 商品IMEI后四位：7626
 <div class="commodity-box clearfix">
 <!--楼层图片-->
 <div class="commodity-img">
-<a href="http://youdemai.suning.com/" target="_blank" name="PcYoupin_shppcind_39564414098_pic01" title="">
+<a href="#" target="_blank" name="PcYoupin_shppcind_39564414098_pic01" title="">
 <img src="{{ asset('home/hindex') }}/149639592129047784.jpg" class="err-product">
 </a>
 </div>
 <!--楼层tab商品-->
 <div class="commodity-conList">
 <ul style="display:block;">
+@foreach($photo as $k)
 <li data-sku="621675559|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564414101_prod01" href="https://product.suning.com/0070158894/621675559.html?srcpoint=PcYoupin_shppcind_39564414101_prod01" target="_blank" rel="nofollow" title="【二手99新】富士（FUJIFILM）INSTAX mini8 一次成像相机 白色 过保">
-<img alt="不含相纸、5号AA电池" src="{{ asset('home/hindex') }}/0070158894-000000000621675559_1_200x200.jpg" class="err-product">
+<a name="PcYoupin_shppcind_39564414101_prod01" href="{{ url('home/details') }}/{{ $k->id }}" target="_blank" rel="nofollow" title="{{ $k->connect }}">
+<img alt="不含相纸、5号AA电池" src="{{ asset('uploads/shop') }}/{{ $k->pic }}" class="err-product">
 </a>
 <p>
-<a href="https://product.suning.com/0070158894/621675559.html?srcpoint=PcYoupin_shppcind_39564414101_prod01" target="_blank">
-【二手99新】富士（FUJIFILM）INSTAX mini8 一次成像相机 白色 过保
+<a href="{{ url('home/details') }}/{{ $k->id }}" target="_blank">
+{{ $k->name }}
 </a>
 </p>
 <div class="commodity-conprice">
-<span class="curPrice"></span>
+<span class="">￥{{ $k->newpage }}.00</span>
 </div>
 </li>
-<li data-sku="617798826|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564414101_prod02" href="https://product.suning.com/0070158894/617798826.html?srcpoint=PcYoupin_shppcind_39564414101_prod02" target="_blank" rel="nofollow" title="【二手95新】尼康（Nikon） AF-S DX 微距尼克尔 40mm f/2.8G">
-<img alt="【二手95新】尼康（Nikon） AF-S DX 微距尼克尔 40mm f/2.8G" src="{{ asset('home/hindex') }}/0070158894-000000000617798826_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070158894/617798826.html?srcpoint=PcYoupin_shppcind_39564414101_prod02" target="_blank">
-【二手95新】尼康（Nikon） AF-S DX 微距尼克尔 40mm f/2.8G
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="609874639|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564414101_prod03" href="https://product.suning.com/0070158894/609874639.html?srcpoint=PcYoupin_shppcind_39564414101_prod03" target="_blank" rel="nofollow" title="【二手99新】佳能（Canon） EOS 700D 单反机身 过保">
-<img alt="APS-C画幅 触控液晶屏 高速连拍 " src="{{ asset('home/hindex') }}/0070158894-000000000609874639_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070158894/609874639.html?srcpoint=PcYoupin_shppcind_39564414101_prod03" target="_blank">
-【二手99新】佳能（Canon） EOS 700D 单反机身 过保
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="617798831|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564414101_prod04" href="https://product.suning.com/0070158894/617798831.html?srcpoint=PcYoupin_shppcind_39564414101_prod04" target="_blank" rel="nofollow" title="Panasonic DMC-GF3双镜头套机 （14/2.5 14mm-42mm）">
-<img alt="【二手】买二手 有保障/店铺180天质保，7天无理由退换货 " src="{{ asset('home/hindex') }}/0070158894-000000000617798831_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070158894/617798831.html?srcpoint=PcYoupin_shppcind_39564414101_prod04" target="_blank">
-Panasonic DMC-GF3双镜头套机 （14/2.5 14mm-42mm）
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="623734645|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564414101_prod05" href="https://product.suning.com/0070158894/623734645.html?srcpoint=PcYoupin_shppcind_39564414101_prod05" target="_blank" rel="nofollow" title="【二手99新】富士（FUJIFILM）趣奇（checky）instax mini7S 粉色 单机">
-<img alt="【无包装盒】600mm-无穷远对焦范围，60秒快门，使用4XAA电池，即拍即得（不含相纸）" src="{{ asset('home/hindex') }}/0070158894-000000000623734645_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070158894/623734645.html?srcpoint=PcYoupin_shppcind_39564414101_prod05" target="_blank">
-【二手99新】富士（FUJIFILM）趣奇（checky）instax mini7S 粉色 单机
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="637608863|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564414101_prod06" href="https://product.suning.com/0070158894/637608863.html?srcpoint=PcYoupin_shppcind_39564414101_prod06" target="_blank" rel="nofollow" title="佳能/Canon EF 17-40mm f/4L USM 广角变焦镜头">
-<img alt="一镜走天下" src="{{ asset('home/hindex') }}/0070158894-000000000637608863_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070158894/637608863.html?srcpoint=PcYoupin_shppcind_39564414101_prod06" target="_blank">
-佳能/Canon EF 17-40mm f/4L USM 广角变焦镜头
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="621675565|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564414101_prod07" href="https://product.suning.com/0070158894/621675565.html?srcpoint=PcYoupin_shppcind_39564414101_prod07" target="_blank" rel="nofollow" title="【二手99新】索尼 E 55-210mm f/4.5-6.3 OSS APS-C画幅远摄 大变焦微单镜头 银色 过保">
-<img alt="【先领券后购物】银色99新国行拆机镜头 顺丰包邮 " src="{{ asset('home/hindex') }}/0070158894-000000000621675565_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070158894/621675565.html?srcpoint=PcYoupin_shppcind_39564414101_prod07" target="_blank">
-【二手99新】索尼 E 55-210mm f/4.5-6.3 OSS APS-C画幅远摄 大变焦微单镜头 银色 过保
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
-<li data-sku="607668854|1|2|0070158894">
-<a name="PcYoupin_shppcind_39564414101_prod08" href="https://product.suning.com/0070158894/607668854.html?srcpoint=PcYoupin_shppcind_39564414101_prod08" target="_blank" rel="nofollow" title="【二手99新】尼康数码单反相机 D7100（18-200II VR）套机 过保">
-<img alt="51点对焦系统，无低通滤镜设计，全高清摄像" src="{{ asset('home/hindex') }}/0070158894-000000000607668854_1_200x200.jpg" class="err-product">
-</a>
-<p>
-<a href="https://product.suning.com/0070158894/607668854.html?srcpoint=PcYoupin_shppcind_39564414101_prod08" target="_blank">
-【二手99新】尼康数码单反相机 D7100（18-200II VR）套机 过保
-</a>
-</p>
-<div class="commodity-conprice">
-<span class="curPrice"></span>
-</div>
-</li>
+@endforeach
 </ul>
 <ul>
 </ul>

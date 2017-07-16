@@ -65,14 +65,13 @@ class AuctionController extends Controller
 
         //检测是否合法
         $this->validate($request, [
-                'name' => 'required|unique:auction|max:18',
+                'name' => 'required|unique:auction',
                 'oldpage' => 'required',
                 'newpage' => 'required',
                 'pic' => 'required',
                 'content' => 'required',
                 'endtime' => 'required',
             ],[
-                'name.max' => '商品名最长18个字符',
                 'name.required' => '商品名不能为空',
                 'name.unique' => '商品名已存在',
                 'oldpage.required' => '原价不能为空',
