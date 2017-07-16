@@ -60,8 +60,7 @@ class AuctionController extends Controller
     public function store(Request $request)
     {   
 
-        //测试用户id
-        session(['id' => 2]);
+       $uid = session('user')->id;
 
         //检测是否合法
         $this->validate($request, [
@@ -95,9 +94,8 @@ class AuctionController extends Controller
         //过滤无效字段
         $data = $request->except('_token');
 
-
         //测试
-        $data['uid'] = session('id');
+        $data['uid'] = $uid;
 
         //处理图片
         if($request->hasFile('pic')){

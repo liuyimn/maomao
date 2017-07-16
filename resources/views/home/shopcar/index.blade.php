@@ -13,28 +13,23 @@
 </head>
 <body>
     <!-- 头部信息 -->
-    <div class="site-header site-mini-header">
-        <div class="container">
-            <div class="header-logo">
-                <a class="logo ir" href="" title="大脸猫官网" >大脸猫官网</a>
-            </div>
-            <div class="header-title" id="J_miniHeaderTitle"></div>
-            <div class="topbar-info" id="J_userInfo">
-                <a class="link" href="" data-needlogin="true">登录</a>
-                <span class="sep">|</span>
-                <a class="link" href="" >注册</a>        
-            </div>
-        </div>
-    </div>
+    @extends('home.layout')
     
+    @section('content')
     <div class="page-main">
         <div class="container">
-            <div class="cart-empty hide" id="J_cartEmpty">
+            
+            @if(!session('userlist'))
+
+            <div class="cart-empty" id="J_cartEmpty">
                 <h2>您的购物车还是空的！</h2>
                 <p class="login-desc">登录后将显示您之前加入的商品</p>
                 <a href="#" class="btn btn-primary btn-login" id="J_loginBtn">立即登录</a>
-                <a href="#" class="btn btn-primary btn-shoping J_goShoping">马上去购物</a>
+                <a href="{{ url('/home/list/index') }}" class="btn btn-primary btn-shoping J_goShoping">马上去购物</a>
             </div>
+            
+            @else
+
             <div id="J_cartBox">
                 <div class="cart-goods-list" >
                     <div class="list-head clearfix">
@@ -55,11 +50,11 @@
                                 <i class="iconfont icon-checkbox icon-checkbox" >&#x221a;</i>
                             </div>
                             <div class="col col-img"><img width="40" src="{{ url('/uploads/shop') }}/{{ $val->pic }}" alt=""></div>
-                            <div class="col col-name">{{ $val->scon }}</div>
+                            <div class="col col-name">{{ $val->name }}</div>
                             <div class="col col-price">{{ $val->newpage }}</div>
                             <div class="col col-total">&nbsp;</div>
                             <div id="num" class="col col-num">1</div>
-                            <div class="col col-action"><a href="#">删除</a></div>
+                            <div class="col col-action"><a href="{{ url('/home/details/shopcar') }}/{{ $key }}">删除</a></div>
                         </div>
                     @endforeach
 
@@ -74,8 +69,7 @@
                     <div class="section-left">
                         <a href="#" class="back-shopping J_goShoping">继续购物</a>
                         <span class="cart-total ">共 
-                            <i id="J_cartTotalNum">2</i> 件商品，已选择 
-                            <i id="J_selTotalNum">0</i> 件
+                            <i id="J_cartTotalNum">{{ $res }}</i> 件商品
                         </span>
                     </div>
                     <span class="activity-money ">
@@ -84,9 +78,12 @@
                     <span class="total-price">
                         合计（不含运费）：<em id="j"></em>元
                     </span>
-                    <a href="javascript:void(0);" class="btn btn-a btn btn-primary" id="J_goCheckout">去结算</a>
+                    <a href="{{ url('/home/num/my') }}" class="btn btn-a btn btn-primary" id="J_goCheckout">去结算</a>
                 </div>
             </div>
+
+            @endif
+
         </div>
     </div>
 
@@ -178,7 +175,6 @@
     </div>
     <div class="site-info">
         <div class="container">
-            <div class="logo ir">大脸猫官网</div>
             <div class="info-text">
                 <p class="sites">
                     <a rel="nofollow" href=""   target="_blank">大脸猫商城</a>
@@ -195,8 +191,9 @@
                 </p>
             </div>
         </div>
-        <div class="slogan ir">探索冒险者,专为买家而生</div>
     </div>
+
+
 
     <!-- .modal-globalSites END -->
     <script src="{{asset('/home/js/base.min.js')}}"></script>
@@ -306,5 +303,7 @@
 
     </script>
     <!--mae_monitor-->
+
+     @endsection
 </body>
 </html>

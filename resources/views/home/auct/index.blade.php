@@ -1,42 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.58.com/bj/diannao/?zz=zz">
-		<meta http-equiv="mobile-agent" content="format=html5; url=http://m.58.com/bj/diannao/?zz=zz">
-		<meta http-equiv="mobile-agent" content="format=wml; url=http://m.58.com/bj/diannao/?zz=zz">
-		<title>大脸猫 - {{ $title }}</title>
-		<meta name="description" content=""/>
-		<meta name="keywords" content=""/>
-		<link type="text/css" rel="stylesheet" href='{{asset("/home/css/base_v20160530193544.css")}}' media="all">
-		<link rel="stylesheet" type="text/css" href='{{asset("/home/css/listzz_v20170704194231.css")}}' media="all">
-		<script type="text/javascript">
-		</script>
-		<script type="text/javascript" src="{{asset('/home/js/createelement-lte-ie8.js')}}"></script>
-		<script type="text/javascript" src="{{asset('/home/js/require_jquery_load.js')}}"></script>
-		<script type="text/javascript" src='{{asset("/home/js/boot_sale_v20170703195205.js")}}'  ></script>
-		<script src="{{asset('/home/js/entry.js')}}"></script>
-	</head>
-	<body>
-		<div id="topbar"></div>
-		<header id="header">
-			<div id="brand_list_top_banner"></div>
-			<div class="head">
-				<a rel="nofollow" class="gotopost"><i></i>免费发布信息</a>
-					<div class="zz_search" id="SearchForm" >
-						<form id="search_loc" action="{{ url('/home/auct') }}" method="get">
-							<input type="submit" id="searchbtn1" class="search_on" value="" >
-							<input class="but-wd" maxlength="40" id="keyword1" name="keywords" placeholder="请输入搜索关键字" >
-						</form>
-					</div>
-				<div class="logo"></div>
-			</div>
-		</header>
+@extends('home.layout')
+
+@section('content')	
 
 		<div class="nav">
-			<a href="/">北京大脸猫</a>
-			<a href='/sale.shtml'>大脸猫二手市场</a>
-			<a href='/diannao/'>大脸猫二手台式机/配件</a>
+			<a href="#">北京大脸猫</a>
+			<a href='#'>大脸猫二手市场</a>
+			<a href='#'>大脸猫二手台式机/配件</a>
 		</div>
 		<section id="selection">
 			<div>
@@ -101,15 +70,14 @@
 						</colgroup>
 						<tbody>
 							@foreach($data as $key => $val)
-							<?php var_dump($val); ?>
 								<tr class="zzinfo" logr="z_2_22418388680711_28541506662583_1_2_0" _pos="1" sortid="552662188">
 				                    <td class="img">
-				                        <a href="{{ url('')}}"  target="_blank" rel="nofollow">
+				                        <a href="{{ url('/home/auct/details')}}/{{ $val->id }}"  target="_blank" rel="nofollow">
 				                            <img src="{{ url('/uploads/auction') }}/{{ $val->pic }}" alt="办公、游戏"/>
 				                        </a>
 				                    </td>
 				                    <td class="t">
-				                        <a href=""  target="_blank" class="t" rel="nofollow">{{ $val->name }}<span class="zhiding_icon">顶</span></a>
+				                        <a href="{{ url('/home/auct/details')}}/{{ $val->id }}"  target="_blank" class="t" rel="nofollow">{{ $val->name }}<span class="zhiding_icon">顶</span></a>
 				                        <i class="clear"></i>
 				                        <span  class="pricebiao">
 				                        	<span class="price">原价</span>￥<span class="price">{{ $val->oldpage}}</span>
@@ -156,7 +124,7 @@
 
 				</div>
 				<div id="infocont" class="infocont">
-						共 <span style="color: red"><b>343106</b></span> 条信息，
+						共 <span style="color: red"><b>{{ $obj }}</b></span> 条信息，
 						<a href="#" target="_blank" class="pubbtn" rel="nofollow">马上发布一条大脸猫二手台式机/配件信息&raquo;</a>
 				</div>
 			</div>
@@ -198,35 +166,6 @@
 
 		<div id="direct_ad_bottom"></div>
 
-		<section id="links">
-			<dl class="linksItem relate" id="relate">
-				<dt  class="b-left" ><h2>北京台式机/配件相关信息</h2></dt>
-				<dd  class="b-right" >
-					<ul class="b-ul">
-						<li><a href="#">i5台式机</a></li>
-					</ul>
-				</dd>
-		 	</dl>
-
-			<dl class="linksItem relatelink" id="relatelink">
-				<dt class="b-left"><h2>北京台式机/配件品牌导航</h2></dt>
-				<dd class="b-right">
-					<dl id="relateSelect" class="relateSelect">
-				 	 	<dt><span>LG</span></dt>
-					 	<dd>
-					 		<a href="#" target="_blank">二手LG note lm70</a>
-					 	</dd>
-				 	</dl>
-				</dd>
-			</dl>
-		</section>
-
-
-		<footer id="footer" class="footer">
-			<p class="copyright">&copy; 大脸猫
-				<a id="askicon" title="有问题请与大脸猫客服进行对话" rel="nofollow" href="#">帮助中心</a>
-			</p>
-		</footer>
 			
 		<script type="text/javascript">
 			//服务器时间，毫秒数 
@@ -284,5 +223,5 @@
 		</script>
 
 		<script src="{{ asset('/home/js/entry.js') }}"></script>
-	</body>
-</html>
+
+@endsection
