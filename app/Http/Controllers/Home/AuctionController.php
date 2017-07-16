@@ -203,7 +203,7 @@ class AuctionController extends Controller
         // 判断是否成功
         if ($res) 
         {
-            return redirect('/')->with(['info' => '添加成功']);
+            return redirect('/home/auct/index')->with(['info' => '添加成功']);
         }else{
             return back()->with(['info' => '添加失败']);
         }

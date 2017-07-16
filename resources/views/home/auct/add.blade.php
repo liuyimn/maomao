@@ -81,7 +81,7 @@
   <div id="publish" class="publish-detail">
     <div class="separate">猫猫二手商城-拍卖商品添加
   </div>
-  <form id="bxForm" action="{{ url('/home/auction/insert') }}" method="post" style="" enctype="multipart/form-data" class="form zengsong ershou">
+  <form id="bxForm" action="{{ url('/home/auct/insert') }}" method="post" style="" enctype="multipart/form-data" class="form zengsong ershou">
      {{ csrf_field() }}
     <div class="fabuform-tab-content">
               @if(session('info'))

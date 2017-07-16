@@ -235,10 +235,10 @@ Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
 // ----------------------前台拍卖-------------------------------
 
 // 前台拍卖路由
-Route::get('home/auction/add', 'Home\AuctionController@add');
+Route::get('home/auct/add', 'Home\AuctionController@add');
 
 // 执行添加页面
-Route::post('home/auction/insert', 'Home\AuctionController@insert');
+Route::post('home/auct/insert', 'Home\AuctionController@insert');
 
 
 
@@ -349,10 +349,10 @@ Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
 // ----------------------前台拍卖-------------------------------
 
 // 前台拍卖路由
-Route::get('home/auction/index', 'Home\AuctionController@index');
+Route::get('home/auct/index', 'Home\AuctionController@index');
 
 // 执行添加页面
-Route::post('home/auction/insert', 'Home\AuctionController@insert');
+Route::post('home/auct/insert', 'Home\AuctionController@insert');
 
 
 
