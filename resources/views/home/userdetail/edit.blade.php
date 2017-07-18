@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>小米帐号 -个人信息</title>
+<title>{{ config('app.name') }}</title>
 <link type="text/css" rel="stylesheet" href="{{ asset('home/gr/reset.css') }}">
 <link type="text/css" rel="stylesheet" href="{{ asset('home/gr/layout.css') }}">
 <link type="text/css" rel="stylesheet" href="{{ asset('home/gr/modacctip.css') }}">
@@ -54,7 +54,7 @@
   <div class="wrap">
 <div class="layout bugfix_ie6 dis_none">
   <div class="n-logo-area clearfix">
-      <a id="logoutLink" class="fl-r logout" href="{{ url('/') }}">
+      <a id="logoutLink" class="fl-r logout" href="{{ url('home/user/index') }}">
           退出
       </a>
   </div>
@@ -120,13 +120,13 @@
               <p>
               <span>生日：</span>
                 <select name="year" id="sel1">
-                    <option value="{{ $birth[0] }}">{{ $birth[0] }}</option>
+                    <option value="@if($year){{ $year }}@else 1990 @endif">@if($year){{ $year }}@else 1990 @endif</option>
                 </select>
                 <select name="month" id="sel2">
-                    <option value="{{ $birth[1] }}">{{ $birth[1] }}</option>
+                    <option value="{{ $month }}">{{ $month }}</option>
                 </select>
                 <select name="day" id="sel3">
-                    <option value="{{ $birth[2] }}">{{ $birth[2] }}</option>
+                    <option value="{{ $day }}">{{ $day }}</option>
                 </select>
                 <span id="result"></span>
                 </p>
@@ -148,7 +148,7 @@
             </div>
             <div class="fdata lblnickname">
               <p><span>邮箱：</span>
-              <input type="email" autocomplete="off" name="email" value="{{ $data->email }}">
+              <input type="email" disabled="disabled" autocomplete="off" name="email" value="{{ $data->email }}">
               </p>     
             </div>
             <div class="fdata lblnickname">

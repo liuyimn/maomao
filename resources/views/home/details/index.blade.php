@@ -149,17 +149,26 @@
 								<span class="talk_button download_button">联系卖家</span>
 								<a href="{{ url('/home/list/create') }}/{{ $data->id }}"><span class="buy_button download_button">我要购买</span></a>
 							</div>
-
+							
 							<div class="want_li">
-								<span class="want_left">
-									<img src="{{asset('/home/Picture/want.png')}}">
-									收藏
+								@if(session('user'))
+								<span style="width:100px;" id="shoucang" sid="{{ $data->id }}" status="0" class="want_left">
+									@if($sta)
+									<img id="src" src="{{asset('/home/Picture/hong.png')}}">
+									<span id="sp">取消收藏</span>
+									@else
+									<img id="src" src="{{asset('/home/Picture/want.png')}}">
+									<span id="sp">收藏</span>
+									@endif
 								</span>
+								@endif
+								@if(!session('user'))
 								<span class="want_right">
-									<span class="want_no">宝贝还没有被收藏，快来抢沙发</span>
+									<span class="want_no">收藏请登陆</span>
 								</span>
+								@endif
 							</div>
-
+							
 						</div>
 
 					</div>    
@@ -412,6 +421,27 @@
 	                bigImg.src = src;
 	            }
 	        }
+	    </script>
+	    <script>
+
+	    	$('#shoucang').on('click', function (){
+	    		var sc = $(this);
+	    		var sid = sc.attr('sid');
+	    		var status = sc.attr('status');
+	    		$.get('/home/favorite/getajax', {sid:sid}, function (data){
+	    			if(data == 1){
+	    				$('#src').attr('src','{{asset("/home/Picture/want.png")}}');
+	    				$('#sp').html('收藏');
+	    			}
+
+	    			if(data == 0){
+	    				$('#src').attr('src','{{asset("/home/Picture/hong.png")}}');
+	    				$('#sp').html('取消收藏');
+	    			}
+	    		})
+	    	
+	    	})
+
 	    </script>
 	</body>
 </html>

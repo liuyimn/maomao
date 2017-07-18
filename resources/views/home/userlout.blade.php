@@ -108,7 +108,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 <!-- S GLOBAL HTML -->
 <div class="idle-header-wrap" style="background-color:#fc5023;opacity:0.87;">
 	<div class="idle-header" id="J_IdleHeader">
-		<h1 class="idle-logo"><a href="http://2.taobao.com" target="_top"><img src="{{ asset('/home/index/Images/logoko.png') }}"  width="100px" height="100px" style="margin-top:-45px;margin-left:40px;" /></a></h1>
+		<h1 class="idle-logo"><a href="{{ url('/') }}" target="_top"><img src="{{ asset('/home/index/Images/logoko.png') }}"  width="100px" height="100px" style="margin-top:-45px;margin-left:40px;" /></a></h1>
 
 		<div class="idle-nav">
 			<div class="idle-menu">
@@ -191,8 +191,9 @@ KISSY.use('widget/header5/index');
                                 <li><a href="{{ url('home/user/index') }}">我的个人中心</a></li>
                                 <li><a href="" >消息通知<i class="J_miMessageTotal"></i></a></li>
                                 <li><a href="{{ url('home/address/index') }}" >收货地址</a></li>
-                                <li><a href="" >我的购物车</a></li>
-                                <li><a href="" >我的收藏</a></li>
+                                <li><a href="{{ url('home/shopping/index') }}" >我的购物车</a></li>
+                                <li><a href="{{ url('home/favorite/index') }}" >我的收藏</a></li>
+                                <li><a href="" >我的商品</a></li>
                                 <li><a href="" >我的积分</a></li>
                             </ul>
                         </div>

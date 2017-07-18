@@ -34,8 +34,12 @@ class DetailController extends Controller
 
 		//测试
 		$jx = \DB::table('shop')->get();
+		// dd($jx);
+		$uid = isset(session('user')->id)?session('user')->id:'';
+		// 收藏状态
+		$sta = \DB::table('favorite')->where('sid', $data->id)->where('uid', $uid)->first();
 
-		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx]);
+		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx, 'sta' => $sta]);
 
 	}
 
