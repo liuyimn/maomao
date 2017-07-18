@@ -157,9 +157,12 @@ class IndexController extends Controller
 
         // 家具
         $fur = \DB::table('shop')->where('tid', 108)->get();
-      
+
+        // 生活服务
+        $fuw = \DB::table('shop')->where('tid', 206)->orwhere('tid', 207)->orwhere('tid', 208)->limit(10)->get();
+
         //加载视图
-        return view('home.next.index',['one'=>$one,'two'=>$two,'three'=>$three,'four'=>$four,'fif'=>$fif,'six'=>$six,'seven'=>$seven,'eight'=>$eight, 'nine' => $nine,'num'=>$num,'phone'=>$phone,'baby'=>$baby,'bby'=>$bby,'shut'=>$shut,'shirt'=>$shirt,'but'=>$but,'ful'=>$ful,'bbc'=>$bbc, 'fur' => $fur]);
+        return view('home.next.index',['one'=>$one,'two'=>$two,'three'=>$three,'four'=>$four,'fif'=>$fif,'six'=>$six,'seven'=>$seven,'eight'=>$eight, 'nine' => $nine,'num'=>$num,'phone'=>$phone,'baby'=>$baby,'bby'=>$bby,'shut'=>$shut,'shirt'=>$shirt,'but'=>$but,'ful'=>$ful,'bbc'=>$bbc, 'fur' => $fur, 'fuw' => $fuw]);
 
     }
 }

@@ -43,7 +43,7 @@
 								<span class="text">
 									<input class="mr5" type="text" id="price_end" para="minprice" size="3" muti="1" min="0" max="999999" name="b_q" autocomplete="off">元
 								</span>
-								<span class="btn"">
+								<span class="btn">
 									<input id="price_search" type="submit" value="价格筛选">
 								</span>
 							</span>
@@ -120,7 +120,7 @@
 				                    <td class="tc">
 				                        <div class="qq_attest">
 				                            <p class="img_attest">
-				                            <img src="{{ url('/uploads/userdetail') }}/{{ $val->photo }}">
+				                            <img src="{{ url('/uploads/user') }}/{{ $val->photo }}">
 				                            </p>
 				                            <p class="name_add">{{ $val->nickname }}</p>
 				                        </div>

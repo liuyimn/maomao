@@ -31,8 +31,8 @@
                                         <p class="price">{{ $v->newpage }}</p>
                                         <p class="rank">{{ $v->connect }}</p>
                                     <div class="actions">
-                                        <a class="btn btn-small btn-line-gray J_delFav" href="{{ url('home/favorite/delete') }}/{{ $v->id }}" >删除</a>
-                                        <a class="btn btn-small btn-primary" target="_blank" href="{{ url('home/details') }}/{{ $v->id }}" >去购物车支付</a>
+                                        <a class="btn btn-small btn-line-gray J_delFav" href="{{ url('home/details/shopcar/del') }}/{{ $v->id }}" >删除</a>
+                                        <a class="btn btn-small btn-primary" target="_blank" href="{{ url('home/details/shopcar') }}" >去购物车支付</a>
                                     </div>
                                 </li>
                             @endforeach
