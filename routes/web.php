@@ -424,7 +424,7 @@ Route::get('/home/list/create/{id}', 'Home\ListController@create');
 Route::get('/home/details/shopcar', 'Home\ShopcarController@index');
 
 //删除session商品
-Route::get('/home/details/shopcar/{id}', 'Home\ShopcarController@delete');
+Route::get('/home/details/shopcar/del/{key}', 'Home\ShopcarController@delete');
 
 //商品详细列表
 Route::get('/home/details/{id}', 'Home\DetailController@index');
@@ -437,9 +437,6 @@ Route::get('/home/auct/details/{id}', 'Home\AuctionController@show');
 
 //添加购物车
 Route::get('/home/auct/create/{id}', 'Home\AuctionController@create');
-
-//订单页面
-Route::get('/home/num', 'Home\NumController@index');
 
 //我的下单
 Route::get('/home/num/my', 'Home\NumController@myding');

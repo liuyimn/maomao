@@ -30,8 +30,21 @@ class NumController extends Controller
                 ->select('address_list.name', 'address_list.phone', 'address_list.address')
                 ->get();
 
-            //获取session中商品信息
-            $res = session()->get('userlist');
+            //获取订单表商品信息
+            $res = \DB::table('nums_user')->where('uid', $uid)->get();
+
+            foreach ($res as $key => $value) {
+                //多表关联查询
+                $k = \DB::table('shop')
+                    ->join('user', 'shop.uid', '=', 'user.id')
+                    ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+                    ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+                    ->where('shop.id', '=', $value->sid)
+                    ->first();
+
+                    $r[] = $k;
+            }
+
 
         }else{
 
@@ -39,7 +52,7 @@ class NumController extends Controller
 
         }
 
-    	return view('home.num.my', ['title' => '订单详情', 'data' => $data, 'res' => $res]);
+    	return view('home.num.my', ['title' => '订单详情', 'data' => $data, 'r' => $r]);
 
     }
 
@@ -63,7 +76,7 @@ class NumController extends Controller
             $uid = session('user')->id;
 
             //商品id
-            $data = session()->get('userlist');
+            $data = \DB::table('nums_user')->where('uid', $uid)->get();
 
             //设置空数组
             $arr = [];
@@ -97,7 +110,10 @@ class NumController extends Controller
             //下单是否成功
             if($res){
 
-                return redirect()->with();
+                //删除关于当前用户的商品
+                \DB::table('nums_user')->where('uid', $uid)->delete();
+
+                return redirect('/home/details/shopcar');
 
             }else{
 

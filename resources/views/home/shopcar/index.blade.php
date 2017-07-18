@@ -9,7 +9,6 @@
     <link rel="icon" href="//s01.mifile.cn/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="{{asset('/home/css/base.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{asset('/home/css/cart.min.css') }}" />
-    <script type="text/javascript">var _head_over_time = (new Date()).getTime();</script>
 </head>
 <body>
     <!-- 头部信息 -->
@@ -17,77 +16,153 @@
     
     @section('content')
     <div class="page-main">
-        <div class="container">
-            
-            @if(!session('userlist'))
-
-            <div class="cart-empty" id="J_cartEmpty">
-                <h2>您的购物车还是空的！</h2>
-                <p class="login-desc">登录后将显示您之前加入的商品</p>
-                <a href="#" class="btn btn-primary btn-login" id="J_loginBtn">立即登录</a>
-                <a href="{{ url('/home/list/index') }}" class="btn btn-primary btn-shoping J_goShoping">马上去购物</a>
-            </div>
-            
-            @else
-
-            <div id="J_cartBox">
-                <div class="cart-goods-list" >
-                    <div class="list-head clearfix">
-                        <div class="col col-check">
-                            <i id="J_selectUnAll">全选/清除所有</i>
-                        </div>
-                        <div class="col col-img">商品图片</div>
-                        <div class="col col-name">商品名称</div>
-                        <div class="col col-price">单价</div>
-                        <div class="col col-total">&nbsp;</div>
-                            <div class="col col-num">数量</div>
-                        <div class="col col-action">操作</div>
-                    </div>
-
-                    @foreach($data as $key => $val)
-                        <div class="list-head clearfix">
-                            <div class="col col-check">
-                                <i class="iconfont icon-checkbox icon-checkbox" >&#x221a;</i>
+        <div id="did" class="container">
+            <!--判断是否存在用户-->
+            @if(!empty(session('user')))
+                <!--判断是否存在商品-->
+                @if(!empty($ka))
+                    <div id="J_cartBox">
+                        <div class="cart-goods-list" >
+                            <div class="list-head clearfix">
+                                <div class="col col-check">
+                                    <i id="J_selectUnAll">全选/清除所有</i>
+                                </div>
+                                <div class="col col-img">商品图片</div>
+                                <div class="col col-name">商品名称</div>
+                                <div class="col col-price">单价</div>
+                                <div class="col col-total">&nbsp;</div>
+                                    <div class="col col-num">数量</div>
+                                <div class="col col-action">操作</div>
                             </div>
-                            <div class="col col-img"><img width="40" src="{{ url('/uploads/shop') }}/{{ $val->pic }}" alt=""></div>
-                            <div class="col col-name">{{ $val->name }}</div>
-                            <div class="col col-price">{{ $val->newpage }}</div>
-                            <div class="col col-total">&nbsp;</div>
-                            <div id="num" class="col col-num">1</div>
-                            <div class="col col-action"><a href="{{ url('/home/details/shopcar') }}/{{ $key }}">删除</a></div>
+                            <!--遍历商品-->
+                            @foreach($ka as $key => $val)
+                                <div class="list-head clearfix">
+                                    <div class="col col-check">
+                                        <i class="iconfont icon-checkbox icon-checkbox" >&#x221a;</i>
+                                    </div>
+                                    <div class="col col-img"><img width="40" src="{{ url('/uploads/shop') }}/{{ $val->pic }}" alt=""></div>
+                                    <div class="col col-name">{{ $val->name }}</div>
+                                    <div class="col col-price">{{ $val->newpage }}</div>
+                                    <div class="col col-total">&nbsp;</div>
+                                    <div id="num" class="col col-num">1</div>
+                                    <div class="col col-action">
+                                        <a class="del" href="{{ url('/home/details/shopcar/del') }}/{{ $val->id }}" value="{{ $val->id }}">删除</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <!--遍历商品结束-->
+                            <div class="list-body" id="J_cartListBody">
+                            </div>
                         </div>
-                    @endforeach
+                        <!-- 加价购 -->
+                        <div class="raise-buy-box" id="J_raiseBuyBox">
+                        </div>
 
-                    <div class="list-body" id="J_cartListBody">
+                        <div class="cart-bar clearfix" id="J_cartBar">
+                            <div class="section-left">
+                                <a href="{{ url('/home/list/index') }}" class="back-shopping J_goShoping">继续购物</a>
+                                <span class="cart-total ">共 
+                                    <i id="J_cartTotalNum">{{ isset($res)?$res:0 }}</i> 件商品
+                                </span>
+                            </div>
+                            <span class="activity-money ">
+                                活动优惠：减 <i id="J_cartActivityMoney">0</i> 元
+                            </span>
+                            <span class="total-price">
+                                合计（不含运费）：<em id="j"></em>元
+                            </span>
+                            <a href="{{ url('/home/num/my') }}" class="btn btn-a btn btn-primary" id="J_goCheckout">去结算</a>
+                        </div>
                     </div>
-                </div>
-                <!-- 加价购 -->
-                <div class="raise-buy-box" id="J_raiseBuyBox">
-                </div>
-
-                <div class="cart-bar clearfix" id="J_cartBar">
-                    <div class="section-left">
-                        <a href="#" class="back-shopping J_goShoping">继续购物</a>
-                        <span class="cart-total ">共 
-                            <i id="J_cartTotalNum">{{ $res }}</i> 件商品
-                        </span>
+                @else
+                    <div class="cart-empty" id="J_cartEmpty">
+                        <h2>您的购物车还是空的！</h2>
+                        <p class="login-desc">登录后将显示您之前加入的商品</p>
+                        <a href="#" class="btn btn-primary btn-login" id="J_loginBtn">立即登录</a>
+                        <a href="{{ url('/home/list/index') }}" class="btn btn-primary btn-shoping J_goShoping">马上去购物</a>
                     </div>
-                    <span class="activity-money ">
-                        活动优惠：减 <i id="J_cartActivityMoney">0</i> 元
-                    </span>
-                    <span class="total-price">
-                        合计（不含运费）：<em id="j"></em>元
-                    </span>
-                    <a href="{{ url('/home/num/my') }}" class="btn btn-a btn btn-primary" id="J_goCheckout">去结算</a>
-                </div>
-            </div>
+                @endif
+                <!--判断是否存在商品结束-->
+            @else
+                <!--判断session中商品是否存在-->
+                @if(!session('userlist'))
+                    <div class="cart-empty" id="J_cartEmpty">
+                        <h2>您的购物车还是空的！</h2>
+                        <p class="login-desc">登录后将显示您之前加入的商品</p>
+                        <a href="#" class="btn btn-primary btn-login" id="J_loginBtn">立即登录</a>
+                        <a href="{{ url('/home/list/index') }}" class="btn btn-primary btn-shoping J_goShoping">马上去购物</a>
+                    </div>
+                @else
+                
+                    <div id="J_cartBox">
+                        <div class="cart-goods-list" >
+                            <div class="list-head clearfix">
+                                <div class="col col-check">
+                                    <i id="J_selectUnAll">全选/清除所有</i>
+                                </div>
+                                <div class="col col-img">商品图片</div>
+                                <div class="col col-name">商品名称</div>
+                                <div class="col col-price">单价</div>
+                                <div class="col col-total">&nbsp;</div>
+                                    <div class="col col-num">数量</div>
+                                <div class="col col-action">操作</div>
+                            </div>
 
+                            @foreach($data as $key => $val)
+
+                                <div class="list-head clearfix">
+                                    <div class="col col-check">
+                                        <i class="iconfont icon-checkbox icon-checkbox" >&#x221a;</i>
+                                    </div>
+                                    <div class="col col-img"><img width="40" src="{{ url('/uploads/shop') }}/{{ $val->pic }}" alt=""></div>
+                                    <div class="col col-name">{{ $val->name }}</div>
+                                    <div class="col col-price">{{ $val->newpage }}</div>
+                                    <div class="col col-total">&nbsp;</div>
+                                    <div id="num" class="col col-num">1</div>
+                                    <div class="col col-action">
+                                        <a class="del" href="{{ url('/home/details/shopcar/del') }}/{{ $key }}" value="{{ isset($key)?$key:0 }}">删除</a>
+                                    </div>
+                                </div>  
+                            @endforeach
+
+                            <div class="list-body" id="J_cartListBody">
+                            </div>
+                        </div>
+                        <!-- 加价购 -->
+                        <div class="raise-buy-box" id="J_raiseBuyBox">
+                        </div>
+
+                        <div class="cart-bar clearfix" id="J_cartBar">
+                            <div class="section-left">
+                                <a href="{{ url('/home/list/index') }}" class="back-shopping J_goShoping">继续购物</a>
+                                <span class="cart-total ">共 
+                                    <i id="J_cartTotalNum">{{ $res }}</i> 件商品
+                                </span>
+                            </div>
+                            <span class="activity-money ">
+                                活动优惠：减 <i id="J_cartActivityMoney">0</i> 元
+                            </span>
+                            <span class="total-price">
+                                合计（不含运费）：<em id="j"></em>元
+                            </span>
+                            <a href="{{ url('/home/num/my') }}" class="btn btn-a btn btn-primary" id="J_goCheckout">去结算</a>
+                        </div>
+                    </div>
+                @endif
+                <!--判断session中商品结束-->
             @endif
-
+            <!--判断是否存在用户结束-->
         </div>
     </div>
-
    
+    
+    <div style="display:none" class="cart-empty" id="con">
+        <h2>您的购物车还是空的！</h2>
+        <p class="login-desc">登录后将显示您之前加入的商品</p>
+        <a href="#" class="btn btn-primary btn-login" id="J_loginBtn">立即登录</a>
+        <a href="{{ url('/home/list/index') }}" class="btn btn-primary btn-shoping J_goShoping">马上去购物</a>
+    </div>
+
     <div class="site-footer">
         <div class="container">
             <div class="footer-service">
@@ -300,7 +375,32 @@
                 });
             }
         });
+        
 
+        // $('.del').each(function(){
+
+        //     $(this).click(function(){
+
+        //         //获取id
+        //         var val = $(this).attr('value');
+                
+        //         $.get('/home/details/shopcar/del', {'key':val} ,function(data){
+
+        //             if(data == 0){
+
+        //                 // $('#J_cartBox').empty();
+        //                 $(this).parents().parents().remove();
+
+        //                 // var num = $('#con').clone().css('display','block');
+                        
+        //                 // $('#did').append(num);
+                    
+        //             }
+        //         });
+
+        //     });
+
+        // });
     </script>
     <!--mae_monitor-->
 

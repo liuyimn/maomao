@@ -2,51 +2,12 @@
 
 @section('content')	
 
+		<link rel="stylesheet" href="{{ asset('/home/index/bootstrap/bootstrap.min.css') }}">
 		<div class="nav">
 			<a href="#">北京大脸猫</a>
 			<a href='#'>大脸猫二手市场</a>
 			<a href='#'>大脸猫二手台式机/配件</a>
 		</div>
-		<section id="selection">
-			<div>
-				<dl class="secitem clearfix" >
-					<dt>类别 ：</dt>
-					<dd zwname="类别" zwnameid="35">
-						<a class='select' href="/diannao/?zz=zz" data-finalurl="/diannao/?zz=zz">全部</a>
-						<a name='b_link' para='custom' cl='?zz=zz' data-finalurl="" href="">台式机</a>
-						<a name='b_link' para='custom' cl='?zz=zz' data-finalurl="" href="">硬件</a>
-					</dd>
-				</dl>
-				<dl class="secitem clearfix" >
-					<dt>价格 ：</dt>
-					<dd zwname="价格" zwnameid="5621">
-						<a class='select' href="/diannao/?zz=zz" data-finalurl="/diannao/?zz=zz">全部</a>
-						<a name='b_link' para='custom' cl='?zz=zz' data-finalurl="" href="">100元以下</a>
-						<a name='b_link' para='custom' cl='?zz=zz' data-finalurl="" href="">100-200元</a>
-						<a name='b_link' para='custom' cl='?zz=zz' data-finalurl="" href="">200-500元</a>
-						<a name='b_link' para='custom' cl='?zz=zz' data-finalurl="" href="">500-1000元</a>
-								
-						<span class="prifilter">
-							<span class="text"><input type="text" id="price_start" para="minprice" size="3" muti="1" min="0" max="999999" name="b_q" autocomplete="off"></span>
-							<span class="dev"> - </span>
-							<span class="text"><input class="mr5" type="text" id="price_end" para="minprice" size="3" muti="1" min="0" max="999999" name="b_q" autocomplete="off">元</span>
-							<span class="btn""><input id="price_search" type="button" value="价格筛选"></span>
-						</span>
-					</dd>
-				</dl>
-				<dl class="secitem secitem_area clearfix">
-					<dt>区域 ：</dt>
-					<dd zwnameid="quyu" zwname="区域" >
-						<a href='#' data-finalurl='#' class='select'>全国</a>
-						<a href='#' data-finalurl='#' >全北京</a>
-						<a href='#' data-finalurl="#">朝阳</a>
-						<a href='#' data-finalurl="#">海淀</a>
-						<a href='#' data-finalurl="#">东城</a>
-						<a href='#' data-finalurl="#">西城</a>
-					</dd>
-				</dl>
-			</div>
-		</section>
 
 		<div id="main">
 
@@ -73,7 +34,7 @@
 								<tr class="zzinfo" logr="z_2_22418388680711_28541506662583_1_2_0" _pos="1" sortid="552662188">
 				                    <td class="img">
 				                        <a href="{{ url('/home/auct/details')}}/{{ $val->id }}"  target="_blank" rel="nofollow">
-				                            <img src="{{ url('/uploads/auction') }}/{{ $val->pic }}" alt="办公、游戏"/>
+				                            <img width="100" src="{{ url('/uploads/auction') }}/{{ $val->pic }}" alt="办公、游戏"/>
 				                        </a>
 				                    </td>
 				                    <td class="t">
@@ -96,7 +57,7 @@
 				                        	<a href="{{ url('/home/auct/create') }}/{{ $val->id }}">加入购物车</a>
 				                        	<span  class="pricebiao">
 				                        		<span class="starttime" style="display: none;" >{{ $val->starttime }}</span>
-				                        		<span class="price">剩余时间:</span><span class="endtime" style="font-size: 24px;">asd</span>
+				                        		<span class="price">剩余时间:</span><span class="endtime" style="font-size: 24px;"></span>
 				                        	</span>
 				                        </span>
 				                        <i class="clear"></i>
@@ -119,9 +80,7 @@
 							    	
 				<iframe src="about:blank" id="searchResult" name="searchResult" frameBorder="0" width="100%" scrolling="no" height="40"></iframe>
 				<div class="pager">
-					
-
-
+					{{ $data->links() }}
 				</div>
 				<div id="infocont" class="infocont">
 						共 <span style="color: red"><b>{{ $obj }}</b></span> 条信息，

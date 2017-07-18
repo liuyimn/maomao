@@ -5,13 +5,15 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
-date_default_timezone_get('PRC');
+date_default_timezone_set('PRC');
 
 class AuctionController extends Controller
 {
     //拍卖页面
     public function index(Request $request){
+
+        //定义分页
+        $num = '10';
 
         //默认关键字为空
         $keywords = $request->input('keywords', '');
@@ -23,7 +25,7 @@ class AuctionController extends Controller
                     ->where('auction.status','=','0')
                     ->where('auction.name', 'like', '%'.$keywords.'%')
                     ->select('auction.*', 'userdetail.nickname', 'userdetail.photo')
-                    ->get();
+                    ->paginate($num);
 
         //遍历出数据值;
         foreach ($data as $key => $value) {
@@ -39,23 +41,20 @@ class AuctionController extends Controller
 
             //定义一个状态数组
             $da = ['status' => '1'];
-
-            $endtime = $value->endtime;
-
-            $endtime = strtotime($endtime);
            
             //如果当前商品日期不等于当前日期
-            if($time[0] != $ntime){
+            // if($time[0] != $ntime){
 
-                //修改当前商品状态为已过期
-                $res = \DB::table('auction')->where('id', $value->id)->update($da);
+            //     //修改当前商品状态为已过期
+            //     $res = \DB::table('auction')->where('id', $value->id)->update($da);
 
-            }
+            // }
         }
 
-        //测试
-        $res = \DB::table('shop')->where('tid', 2)->get();
+        //测试商品
+        $res = \DB::table('shop')->limit(5)->get();
 
+        //拍卖状态为0的显示
         $obj = \DB::table('auction')->where('status', '0')->count();
 
         return view('home.auct.index', ['title' => '商品拍卖', 'data' => $data, 'res' => $res, 'obj' => $obj]);
@@ -63,6 +62,7 @@ class AuctionController extends Controller
     }
 
 
+    //拍卖商品详情
     public function show($id){
 
         //商品信息查询
@@ -75,7 +75,7 @@ class AuctionController extends Controller
         $user = \DB::table('userdetail')->where('id', $res->id)->first();
 
         //测试
-        $jx = \DB::table('shop')->get();
+        $jx = \DB::table('shop')->limit(5)->get();
 
         return view('home.auct.show',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx]);
 

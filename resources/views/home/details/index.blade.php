@@ -23,10 +23,10 @@
         }
         #big
         {
-            width: 200px;
+            width: 300px;
             height: 200px;
             position: absolute;
-            left: 620px;
+            margin-left: 350px;
             top: 180px;
             overflow: hidden;
         }
@@ -105,6 +105,10 @@
 								</span>
 							</div>
 
+					        <div id="big">
+					            <img id="bigImg" style="width: 200%" src="{{ url('/uploads/shop') }}/{{ $data->pic }}">
+					        </div>
+
 							<div class="g_thumb">
 								<span id="img_scrollLeft">
 									<a href="#" class="icon_left"></a>
@@ -116,16 +120,14 @@
 								<div class="g_thumb_main">
 									<ul id="img_smalls">
 										<li data-adjust="adjust" class="hover">
-							            	<img src="{{ url('/uploads/shop') }}/{{ $data->pic }}"/>
+							            	<img src="{{ url('/uploads/shop') }}/{{ $data->pic }}" width="100%"/>
 										</li>
 								     </ul>
 								</div>
 							</div>
 						</div>
 
-						<div id="big">
-				            <img id="bigImg" style="width: 200%" src="{{ url('/uploads/shop') }}/{{ $data->pic }}">
-				        </div>
+						
 					
 
 

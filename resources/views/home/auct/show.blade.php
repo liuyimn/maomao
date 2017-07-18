@@ -2,11 +2,55 @@
 <html>
 	<head>
 	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	  
 	  <title>大脸猫 - {{ $title }}</title>
-
 	  <link rel="stylesheet" type="text/css" href='{{asset("/home/css/zzdetails_pc_v20170522210751.css") }}' media="all">
-	  
+	  <style type="text/css">
+        #con
+        {
+            width: 300px;
+            height: 280px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #small
+        {
+            position: absolute;
+            width: 100%;
+            height: 280px;
+        }
+        #big
+        {
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            margin-left: 350px;
+            top: 160px;
+            overflow: hidden;
+        }
+        #move
+        {
+            position: absolute;
+            left: 0;
+            top:0;
+            background: url('../../../../home/images/bg.png');
+        }
+
+        #bigImg
+        {
+            position: absolute;
+            display: none;
+        }
+
+        #uid
+        {
+            position: absolute;
+            width: 200px;
+            height: 66px;
+            border: 1px solid #ccc;
+            top: 240px;
+            left:20px;
+        }
+    </style>
 	</head>
 	<body>
 	   	<div id="topbar"></div>
@@ -45,32 +89,36 @@
 						</div>
 
 						<div class="banner">
-
-							<div class="gallery">
-								<div class="g_img">
-									<span data-adjust="adjust">
-										<img id="img1" style="width: 100%" src="{{ url('/uploads/auction') }}/{{ $data->pic }}" alt="商品图片"/>
-									</span>
-								</div>
-
-								<div class="g_thumb">
-									<span id="img_scrollLeft">
-										<a href="javascript:void(0)" class="icon_left"></a>
-									</span>
-									<span id="img_scrollRight">
-										<a href="javascript:void(0)" class="icon_right"></a>
-									</span>
-
-									<div class="g_thumb_main">
-										<ul id="img_smalls">
-											<li data-adjust="adjust" class="hover">
-												<img style="width: 100%" src="{{ url('/uploads/auction') }}/{{ $data->pic }}" alt='' />
-											</li>
-										</ul>
+							<div id="con" class="g_img">
+								<span data-adjust="adjust">
+									<div id="small">
+										<img id="smallImg" style="width: 100%" src="{{ url('/uploads/auction') }}/{{ $data->pic }}" alt="商品图片"/>
+										<div id="move"></div>
 									</div>
+								</span>
+							</div>
+
+							<div class="g_thumb">
+								<span id="img_scrollLeft">
+									<a href="javascript:void(0)" class="icon_left"></a>
+								</span>
+								<span id="img_scrollRight">
+									<a href="javascript:void(0)" class="icon_right"></a>
+								</span>
+
+								<div class="g_thumb_main">
+									<ul id="img_smalls">
+										<li data-adjust="adjust" class="hover">
+											<img src="{{ url('/uploads/auction') }}/{{ $data->pic }}" width="100%" />
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
+
+						<div id="big">
+				            <img id="bigImg" style="width: 200%" src="{{ url('/uploads/auction') }}/{{ $data->pic }}">
+				        </div>
 
 						<div class="info_massege left">
 
@@ -224,17 +272,139 @@
 		</div>    
 
 		<script type="text/javascript" src='{{asset("home/js/jquery.qrcode.min_v20151221160205.js") }}'></script>
-		  <script src="{{asset('home/js/config.js') }}"></script>
+		<script src="{{asset('home/js/config.js') }}"></script>
 	    <script type="text/javascript" src="{{asset('home/js/referrer4.js') }}"></script>
 	    <script type="text/javascript" src="{{asset('home/js/jquery-1.11.0.min.js') }}"></script>
 	
 		<script type="text/javascript">
 
-			$('.icon-btn-top').click(function(){
-				
-			});
+	        // 获取元素。
+	        var con = document.getElementById('con');
+	        var small = document.getElementById('small');
+	        var big = document.getElementById('big');
+	        var bigImg = document.getElementById('bigImg');
+	        var move = document.getElementById('move');
+	        var smallImg = document.getElementById('smallImg');
 
-		</script>
+	        // 全局变量。
+	        var mw = 0;
+	        var mh = 0;
+	        var smallW = 0;
+	        var smallH = 0;
+	        var bigImgW = 0;
+	        var bigImgH = 0;
+	        
+	        // 添加事件。
+	        small.onmouseover = function()
+	        {
+	            bigImg.style.display = 'block';
+	            move.style.display = 'block';
+
+	            // 获取 big 的宽度。
+	            var bigW = big.offsetWidth;
+	            var bigH = big.offsetHeight;
+	            // 获取 大图片的 宽度和高度。
+	            bigImgW = bigImg.offsetWidth;
+	            bigImgH = bigImg.offsetHeight;
+	            // 获取 samll 的宽度和高度。
+	            smallW = small.offsetWidth;
+	            smallH = small.offsetHeight;
+
+	            // 计算比例.
+	            var wp = bigW/bigImgW;
+	            var hp = bigH/bigImgH;
+
+	            // 计算 背景的宽度和高度。
+	            mw = wp * smallW;
+	            mh = hp * smallH;
+
+	            // 设置 move 的宽度和高度。
+	            move.style.width = mw + 'px';
+	            move.style.height = mh + 'px';
+
+	        }
+
+	        // 移动事件。
+	        small.onmousemove = function(e)
+	        {
+	            // 获取 con 的left
+	            var conL = con.offsetLeft;
+	            var conT = con.offsetTop;
+
+	            // 获取 small 的left
+	            var smallL = small.offsetLeft;
+	            var smallT = small.offsetTop;
+
+	            // 获取鼠标的 距离。
+	            var mouseL = e.pageX;
+	            var mouseT = e.pageY;
+
+	            // 计算　move 的left
+	            var moveL = mouseL - conL - smallL - mw/2;
+	            var moveT = mouseT - conT - smallT - mh/2;
+
+	            // 判断
+	            if(moveL <= 0)
+	            {
+	                moveL = 0;
+	            }
+
+	            if(moveL >= smallW - mw)
+	            {
+	                moveL = smallW - mw;
+	            }
+
+	            if(moveT <= 0)
+	            {
+	                moveT = 0;
+	            }
+
+	            if(moveT >= smallH - mh)
+	            {
+	                moveT = smallH - mh;
+	            }
+
+	            // 设置
+	            move.style.left = moveL + 'px';
+	            move.style.top = moveT + 'px';
+
+	            // 计算大图比例。
+	            var bigImgWP = moveL / smallW;
+	            var bigImgHP = moveT / smallH;
+
+	            // 计算大图移动的距离。
+	            var bigImgL = bigImgW * bigImgWP;
+	            var bigImgT = bigImgH * bigImgHP;
+
+	            // 设置大图的 left top
+	            bigImg.style.left = - bigImgL + 'px';
+	            bigImg.style.top = - bigImgT + 'px';
+
+	        }
+
+	        // 移出事件。
+	        small.onmouseout = function()
+	        {
+	            bigImg.style.display = 'none';
+	            move.style.display = 'none';
+	        }
+
+	        // 获取　图片。
+	        var imgs = document.getElementsByClassName('list');
+
+	        // 循环
+	        for(var i = 0; i < imgs.length; i ++)
+	        {
+	            imgs[i].onmouseover = function()
+	            {
+	                // 获取当前　src
+	                var src =  this.src;
+	                // 设置小图与大图的　src
+	                smallImg.src = src;
+	                bigImg.src = src;
+	            }
+	        }
+	    </script>
 
 	</body>
 </html>

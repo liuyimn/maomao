@@ -2,6 +2,8 @@
 
 @section('content')
 
+		<link rel="stylesheet" href="{{ asset('/home/index/bootstrap/bootstrap.min.css') }}">
+
 		<div class="nav">
 			<a href="/">北京大脸猫</a>
 			<a href='/sale.shtml'>北京二手市场</a>
@@ -83,7 +85,7 @@
 								<tr class="zzinfo" logr="z_2_22418388680711_28541506662583_1_2_0" _pos="1" sortid="552662188">
 				                    <td class="img">
 				                        <a class="numa" href="{{ url('/home/details') }}/{{ $val->id }}" rel="nofollow">
-				                            <img src="{{ url('/uploads/shop') }}/{{ $val->pic }}" alt="卖家商品"/>
+				                            <img width="100" src="{{ url('/uploads/shop') }}/{{ $val->pic }}" alt="卖家商品"/>
 				                        </a>
 				                    </td>
 				                    <td class="t">
@@ -127,21 +129,7 @@
 							    	
 				<iframe src="about:blank" id="searchResult" name="searchResult" frameBorder="0" width="100%" scrolling="no" height="40"></iframe>
 				<div class="pager">
-					 <strong>
-					 <span>1</span>
-					 </strong>
-					 <a href=""><span>2</span></a>
-					 <a href=""><span>3</span></a>
-					 <a href=""><span>4</span></a>
-					 <a href=""><span>5</span></a>
-					 <a href=""><span>6</span></a>
-					 <a href=""><span>7</span></a>
-					 <a href=""><span>8</span></a>
-					 <a href=""><span>9</span></a>
-					 <a href=""><span>10</span></a>
-					 <a href=""><span>11</span></a>
-					 <a href=""><span>12</span></a>
-					 <a class="next" href=""><span>下一页</span></a>
+					 {{ $data->links() }}
 				</div>
 				<div id="infocont" class="infocont">
 

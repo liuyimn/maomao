@@ -78,7 +78,7 @@
                                 </tr>
                                 
 
-                                @foreach($res as $k => $v)
+                                @foreach($r as $k => $v)
                                 
                                 <tr class="shop blue-line">
                                     <td colspan="3">

@@ -25,14 +25,8 @@
 <!-- E GLOBAL JS -->
 <script src="{{ asset('/home/index/Scripts/b4f74d71946043da93fca460b7edd7d3.js') }}"></script>
 <script src="{{ asset('/home/index/bootstrap/bootstrap.min.js') }}"></script>
-
-<script src="{{ asset('/home/index/bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/home/index/bootstrap/jquery.cxselect.min.js') }}"></script>
 <script src="{{ asset('/home/index/bootstrap/jquery-1.7.2.min.js') }}"></script>
-
-
-
-
 
 <link rel="stylesheet" type="text/css" href='{{asset("/home/css/listzz_v20170704194231.css")}}' >
 <script type="text/javascript" src="{{asset('/home/js/createelement-lte-ie8.js')}}"></script>
@@ -85,10 +79,10 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 		<div class="container">
 
 				<div class="topbar-nav">
-						<a rel="nofollow" href="#" >当前城市：@if(!session('city')){{ $city }}@else{{ session('city') }}@endif</a><span class="sep">|</span><a rel="nofollow" href="{{ url('/') }}" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="http://www.miliao.com/" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/complaint/index') }}" target="_blank">联系客服</a>
+					<a rel="nofollow" href="#" >当前城市：@if(!session('city')){{ $city }}@else{{ session('city') }}@endif</a><span class="sep">|</span><a rel="nofollow" href="{{ url('/') }}" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="http://www.miliao.com/" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/complaint/index') }}" target="_blank">联系客服</a>
 				</div>
 				<div class="topbar-cart" id="J_miniCartTrigger">
-						<a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href="{{ url('/home/details/shopcar') }}"><i class="iconfont"></i>购物车</a>
+					<a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href="{{ url('/home/details/shopcar') }}"><i class="iconfont"></i>购物车</a>
 				</div>
 				@if(!session('user'))
 					<div class="topbar-info" id="J_userInfo">
@@ -112,7 +106,11 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 <div class="idle-header-wrap" style="background-color:#fc5023;opacity:0.87;">
 	<div class="idle-header" id="J_IdleHeader">
 
-		<h1 class="idle-logo"><a href="{{ url('/home/index') }}" target="_top"><img src="{{ asset('/home/index/Images/logoko.png') }}"  width="100px" height="100px" style="margin-top:-25px;margin-left:40px" /></a></h1>
+		<h1 class="idle-logo">
+			<a href="{{ url('/') }}" target="_top">
+				<img src="{{ asset('/home/index/Images/logoko.png') }}"  width="100px" height="100px" style="margin-top:-25px;margin-left:40px" />
+			</a>
+		</h1>
 
 		<div class="idle-nav">
 			<div class="idle-menu">

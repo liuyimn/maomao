@@ -33,7 +33,7 @@ class DetailController extends Controller
 		$user = \DB::table('userdetail')->where('id', $res->id)->first();
 
 		//测试
-		$jx = \DB::table('shop')->get();
+		$jx = \DB::table('shop')->limit(5)->get();
 
 		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx]);
 
