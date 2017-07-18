@@ -1,72 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta property="wb:webmaster" content="bd14bd59a79e2a4d" />
-<meta name="360-site-verification" content="0d4ec208337c4c03706dbb76fccd784e" />
-<meta name="sogou_site_verification" content="dMhEpiNZxp"/>
-<meta name="baidu-site-verification" content="CrHL5lkDw2" />
-<meta name="spm-id" content="2007.1000261"/>
-<meta chaarset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-<title>大脸猫二手商城</title>
-<!-- start idle vmcommon assets 4.0-->
-
-<link rel="shortcut icon" type="image/x-icon" href="//www.taobao.com/favicon.ico" />
-<link rel="search" type="application/opensearchdescription+xml" href="//assets.alicdn.com/plugins/opensearch/provider.xml" title="淘宝购物" />
-
-<!-- S GLOBAL CSS -->
-<link rel="stylesheet" href="{{ asset('/home/index/Css/global-min.css') }}">
-<link rel="stylesheet" href="{{ asset('/home/Css/main.min.css') }}">
-<!-- S GLOBAL CSS -->
-<link rel="stylesheet" href="{{ asset('/home/index/Css/cf8cdabb29cd4d268664ab04ef272c64.css') }}">
-<!-- S GLOBAL JS -->
-<script src="{{ asset('/home/index/Scripts/3e184c6718544466bc7c7def6ef3b6f8.js') }}"></script>
-<!-- E GLOBAL JS -->
-<script src="{{ asset('/home/index/Scripts/b4f74d71946043da93fca460b7edd7d3.js') }}"></script>
-<script src="{{ asset('/home/index/bootstrap/bootstrap.min.js') }}"></script>
-<script src="{{ asset('/home/index/bootstrap/jquery.cxselect.min.js') }}"></script>
-<script src="{{ asset('/home/index/bootstrap/jquery-1.7.2.min.js') }}"></script>
-
-<link rel="stylesheet" type="text/css" href='{{asset("/home/css/listzz_v20170704194231.css")}}' >
-<script type="text/javascript" src="{{asset('/home/js/createelement-lte-ie8.js')}}"></script>
-<script type="text/javascript" src="{{asset('/home/js/require_jquery_load.js')}}"></script>
-<script type="text/javascript" src='{{asset("/home/js/boot_sale_v20170703195205.js")}}'  ></script>
-<script src="{{asset('/home/js/entry.js')}}"></script>
-
-<style>
-	.topbar-nav{float:left;height:40px;line-height:40px;overflow:hidden;_zoom:1}
-	.container{position:relative}
-	.sep{margin:0 0.5em;color:#b0b0b0}
-	.sep{margin:0 .5em;color:#424242}
-	.topbar-nav{float:left;height:40px;line-height:40px;overflow:hidden;_zoom:1}
-	.site-topbar{position:relative;z-index:30;height:40px;font-size:12px;color:#b0b0b0;background:#333}
-	.site-topbar a{color:#b0b0b0;text-decoration:none;}
-	.site-topbar a:hover{color:#fff}
-	.site-topbar .topbar-cart,.site-topbar .topbar-info{position:relative;float:right;_display:inline;height:40px}
-	.site-topbar .topbar-cart{width:120px;margin-left:15px}
-	.site-topbar .topbar-cart-filled .cart-mini{color:#fff;background:#ff6700}
-	.site-topbar .topbar-cart-active .cart-mini{color:#ff6700;background:#fff}
-	.site-topbar .topbar-info{line-height:40px}
-	.site-topbar .topbar-info .link,.site-topbar .topbar-info .user,.site-topbar .topbar-info .message,.site-topbar .topbar-info .sep{float:left}
-	.site-topbar .topbar-info .link{padding:0 5px;text-align:center}
-	.site-topbar .topbar-info .link-order{width:70px}
-	.site-topbar .topbar-info .sep{margin:0}
-	.site-topbar .cart-mini{position:relative;z-index:32;display:block;height:40px;line-height:40px;text-align:center;color:#b0b0b0;background:#424242}
-	.site-topbar .cart-mini i{margin-right:4px;font-size:20px;line-height:20px;vertical-align:-4px}
-	.site-topbar .cart-menu{display:none;position:absolute;right:0;right:-1px \9;top:40px;z-index:31;width:316px;padding:15px 0 0;color:#424242;background:#fff;border:1px solid #e0e0e0 \9;border-top:0 \9;-webkit-box-shadow:0 2px 10px rgba(0,0,0,0.15);box-shadow:0 2px 10px rgba(0,0,0,0.15)}
-	.site-mini-header .topbar-cart,.site-mini-header .topbar-info{position:relative;float:right;_display:inline;height:40px}
-	.topbar-info{position:relative;float:right;_display:inline;height:40px}
-	.container{width:1226px;*zoom:1;margin-right:auto;margin-left:auto}
-	.container:before,.container:after{content:" ";display:table}
-	.container:after{clear:both}
-	.sep,.ndash{margin:0 .25em;font-family:sans-serif}
+	<head>
+	<meta property="wb:webmaster" content="bd14bd59a79e2a4d" />
+		<meta name="360-site-verification" content="0d4ec208337c4c03706dbb76fccd784e" />
+		<meta name="sogou_site_verification" content="dMhEpiNZxp"/>
+	<meta name="baidu-site-verification" content="CrHL5lkDw2" />
 	
-</style>
-
+	<meta name="spm-id" content="2007.1000261"/>
+	<meta chaarset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<title >大脸猫二手购物网</title>
+	
 		
-<!-- end idle vmcommon assets 4.0-->
-</head>
+	<!-- start idle vmcommon assets 4.0-->
+	<link rel="shortcut icon" type="image/x-icon" href="" />
+	<!-- S GLOBAL CSS -->
+	<link rel="stylesheet" href="{{ asset('/home/index/Css/global-min.css') }}">
+	<!-- S GLOBAL CSS -->
+	<link rel="stylesheet" href="{{ asset('/home/index/Css/cf8cdabb29cd4d268664ab04ef272c64.css') }}">
+	<!-- S GLOBAL JS -->
+	<script src="{{ asset('/home/index/Scripts/3e184c6718544466bc7c7def6ef3b6f8.js') }}"></script>
+	<!-- E GLOBAL JS -->
+	<script src="{{ asset('/home/index/Scripts/b4f74d71946043da93fca460b7edd7d3.js') }}"></script>
+
+	<script src="{{ asset('/home/index/bootstrap/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('/home/index/bootstrap/jquery.cxselect.min.js') }}"></script>
+	<script src="{{ asset('/home/index/bootstrap/jquery-1.7.2.min.js') }}"></script>
+
+	<link rel="stylesheet" type="text/css" href='{{asset("/home/css/listzz_v20170704194231.css")}}' >
+
+	<style>
+		.topbar-nav{float:left;height:40px;line-height:40px;overflow:hidden;_zoom:1}
+		.container{position:relative}
+		.sep{margin:0 0.5em;color:#b0b0b0}
+		.sep{margin:0 .5em;color:#424242}
+		.topbar-nav{float:left;height:40px;line-height:40px;overflow:hidden;_zoom:1}
+		.site-topbar{position:relative;z-index:30;height:40px;font-size:12px;color:#b0b0b0;background:#333}
+		.site-topbar a{color:#b0b0b0;text-decoration:none;}
+		.site-topbar a:hover{color:#fff}
+		.site-topbar .topbar-cart,.site-topbar .topbar-info{position:relative;float:right;_display:inline;height:40px}
+		.site-topbar .topbar-cart{width:120px;margin-left:15px}
+		.site-topbar .topbar-cart-filled .cart-mini{color:#fff;background:#ff6700}
+		.site-topbar .topbar-cart-active .cart-mini{color:#ff6700;background:#fff}
+		.site-topbar .topbar-info{line-height:40px}
+		.site-topbar .topbar-info .link,.site-topbar .topbar-info .user,.site-topbar .topbar-info .message,.site-topbar .topbar-info .sep{float:left}
+		.site-topbar .topbar-info .link{padding:0 5px;text-align:center}
+		.site-topbar .topbar-info .link-order{width:70px}
+		.site-topbar .topbar-info .sep{margin:0}
+		.site-topbar .cart-mini{position:relative;z-index:32;display:block;height:40px;line-height:40px;text-align:center;color:#b0b0b0;background:#424242}
+		.site-topbar .cart-mini i{margin-right:4px;font-size:20px;line-height:20px;vertical-align:-4px}
+		.site-topbar .cart-menu{display:none;position:absolute;right:0;right:-1px \9;top:40px;z-index:31;width:316px;padding:15px 0 0;color:#424242;background:#fff;border:1px solid #e0e0e0 \9;border-top:0 \9;-webkit-box-shadow:0 2px 10px rgba(0,0,0,0.15);box-shadow:0 2px 10px rgba(0,0,0,0.15)}
+		.site-mini-header .topbar-cart,.site-mini-header .topbar-info{position:relative;float:right;_display:inline;height:40px}
+		.topbar-info{position:relative;float:right;_display:inline;height:40px}
+		.container{width:1226px;*zoom:1;margin-right:auto;margin-left:auto}
+		.container:before,.container:after{content:" ";display:table}
+		.container:after{clear:both}
+		.sep,.ndash{margin:0 .25em;font-family:sans-serif}
+		
+	</style>
+
+			
+	<!-- end idle vmcommon assets 4.0-->
+		<!-- <base target="_blank"/> -->
+	</head>
 
 	<body>
 	<script>
@@ -79,7 +75,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 		<div class="container">
 
 				<div class="topbar-nav">
-					<a rel="nofollow" href="#" >当前城市：@if(!session('city')){{ $city }}@else{{ session('city') }}@endif</a><span class="sep">|</span><a rel="nofollow" href="{{ url('/') }}" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="http://www.miliao.com/" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/complaint/index') }}" target="_blank">联系客服</a>
+					<a rel="nofollow" href="#" >当前城市：@if(!session('city')){{ $city }}@else{{ session('city') }}@endif</a><span class="sep">|</span><a rel="nofollow" href="{{ url('/') }}" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="#" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/favorite/index') }}" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/complaint/index') }}" target="_blank">联系客服</a>
 				</div>
 				<div class="topbar-cart" id="J_miniCartTrigger">
 					<a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href="{{ url('/home/details/shopcar') }}"><i class="iconfont"></i>购物车</a>
@@ -132,12 +128,11 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 		</div>
 
 		<div class="idle-search">
-			<form method="get" action="{{ url('/home/list/index') }}" name="search" target="_top">
-				<input class="input-search" id="J_HeaderSearchQuery" name="keywords" type="text" value="" placeholder="搜索商品" />
-				<button class="btn-search" type="submit">
-					<i class="iconfont">&#xe602;</i>
-					<span class="search-img"></span>
-				</button>
+			<form method="get" action="//s.2.taobao.com/list/list.htm" name="search" target="_top">
+				<input class="input-search" id="J_HeaderSearchQuery" name="q" type="text" value="" placeholder="搜索商品" />
+				<input type="hidden" name="search_type" value="item" autocomplete="off" />
+				<input type="hidden" name="app" value="shopsearch" autocomplete="off" />
+				<button class="btn-search" type="submit"><i class="iconfont">&#xe602;</i><span class="search-img"></span></button>
 			</form>
 		</div>
 	</div>
@@ -196,9 +191,9 @@ KISSY.use('widget/header5/index');
 		<!-- ushu abtest -->
 		<script type="text/javascript" src="{{ asset('/home/index/Scripts/xwj.js') }}"></script>
 		<script type="text/javascript">
-			window._ap_xwj && _ap_xwj.monitor("130917-224");
-		</script>
-		<script src="{{ asset('/home/js/entry.js') }}"></script>
+									window._ap_xwj && _ap_xwj.monitor("130917-224");
+						</script>
+
 		<script type="text/javascript" src="{{ asset('/home/index/Scripts/tb-tracer-min.js') }}"></script>
 		<img src="{{ asset('/home/index/Picture/t1pksfxexkxxxxxxxx-1-1.gif') }}"/>
 		<script src="{{ asset('/home/index/Scripts/c.js') }}"></script>

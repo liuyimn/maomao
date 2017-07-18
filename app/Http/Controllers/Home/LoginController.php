@@ -14,7 +14,7 @@ class LoginController extends Controller
     	if(session('user')){
 
     		//存在跳转首页
-    		return redirect('/');
+    		return redirect('/admin/index', ['title' => '主页']);
     	}
     	//引入登录页面
     	return view('home.login.login');

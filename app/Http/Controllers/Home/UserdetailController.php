@@ -23,10 +23,20 @@ class UserdetailController extends Controller
         // 拆分年月日
     	$birth = explode('#', $data->birth);
 
+        // 拆分年并判断
+        $year = isset($birth[0])?$birth[0]:' ';
+
+        // 拆分月并判断
+        $month = isset($birth[1])?$birth[1]:'1';
+
+        // 拆分日并判断
+        $day = isset($birth[2])?$birth[2]:'1';
+
+        // 获取到email 邮箱
         $data->email = \DB::table('user')->where('id', $uid)->first()->email;
 
     	// 把查询到数据发送到页面
-    	return view('home.userdetail.edit', ['data' => $data, 'birth' => $birth]);
+    	return view('home.userdetail.edit', ['data' => $data, 'year' => $year, 'month' => $month, 'day' => $day]);
     }
 
     // 执行修改页面
@@ -41,15 +51,6 @@ class UserdetailController extends Controller
 
         // 过滤字段
         $data = $request->except('_token', 'year', 'month', 'day', 'email');
-
-        // 取出邮箱
-        $email = $request->email;
-
-        // 取出用户id号
-        $id = session('user')->id;
-
-        // 修改邮箱
-        \DB::table('user')->where('id', $id)->update(['email' => $email]);
 
         // 取出session里的id
         $uid = session('user')->id;
@@ -98,5 +99,12 @@ class UserdetailController extends Controller
         }else{
         	return back()->with(['info' => '添加失败']);
         }
+    }
+    
+
+    //添加邮箱email
+    public function email(Request $request){
+
+        return view('home.userdetail.email');
     }
 }

@@ -268,7 +268,17 @@ Route::get('home/address/delete/{id}', 'Home\AddressController@delete');
 
 //-------------------------主页----------------------
 
+//主页
 Route::get('/','Home\IndexController@index');
+
+//副主页
+Route::get('home/next/index','Home\IndexController@next');
+
+//推荐页
+Route::get('home/tuijian/index','Home\IndexController@tuijian');
+
+//服务页
+Route::get('home/fuwu/index', 'Home\IndexController@fuwu');
 
 //-------------------------主页----------------------
 
@@ -356,27 +366,6 @@ Route::post('home/auct/insert', 'Home\AuctionController@insert');
 
 // ----------------------前台拍卖结束--------------------------
 
-// -----------------------前台收货地址---------------------------
-
-// 收货地址列表
-Route::get('home/address/index', 'Home\AddressController@index');
-
-// 添加收货地址
-Route::get('home/address/add', 'Home\AddressController@add');
-
-// 执行添加方法
-Route::post('home/address/insert', 'Home\AddressController@insert');
-
-// 修改收货地址
-Route::get('home/address/edit/{id}', 'Home\AddressController@edit');
-
-// 执行修改
-Route::post('home/address/update', 'Home\AddressController@update');
-
-// 执行删除
-Route::get('home/address/delete/{id}', 'Home\AddressController@delete');
-
-//----------------------广告管理---------------------
 
 //-----------------------用户添加出售商品-------------
 
@@ -404,17 +393,30 @@ Route::get('home/userdetail/edit', 'Home\UserdetailController@edit');
 // 执行修改页
 Route::post('home/userdetail/update', 'Home\UserdetailController@update');
 
+// 个人收藏页面
+Route::get('home/favorite/index', 'Home\FavoriteController@index');
 
+// 商品列表收藏ajax
+Route::get('home/favorite/getajax', 'Home\FavoriteController@getajax');
+
+// 个人收藏删除页
+Route::get('home/favorite/delete/{id}', 'Home\FavoriteController@delete');
+
+// 个人中心购物车表
+Route::get('home/shopping/index', 'Home\ShoppingController@index');
+
+//绑定邮箱
+Route::get('home/email/index', 'Home\UserdetailController@email');
 // ----------------------------个人详情-------------------------
 
 
 
 //======================前台购物流程========================
 
-//商品列表
+//商品搜索
 Route::get('/home/list/index', 'Home\ListController@index');
 
-//商品搜索
+//商品价格搜索
 Route::get('/home/list/show', 'Home\ListController@show');
 
 //商品添加session列表
@@ -445,3 +447,4 @@ Route::get('/home/num/my', 'Home\NumController@myding');
 Route::post('/home/num/my/insert', 'Home\NumController@insert');
 
 //======================前台购物流程=========================
+
