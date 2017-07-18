@@ -79,8 +79,87 @@ class IndexController extends Controller
         foreach ($data as $key => $val) 
         {
             $val->sub = $this->getCategoryByPid($val->id);
+
             $allData[] = $val; 
         }
         return $allData;
+    }
+    
+
+    //引入推荐页
+    public function tuijian(){
+
+        //加载视图
+        return view('home.tuijian.index');
+    }
+
+    public function fuwu(){
+
+        //加载视图
+        return view('home.fuwu.index');
+    }
+
+    public function next(){
+
+        //数码分类
+        $one = \DB::table('type')->where('pid',1)->get();
+
+        //孕婴
+        $two = \DB::table('type')->where('pid',2)->get();
+
+        //服饰
+        $three = \DB::table('type')->where('pid',5)->get();
+
+        //美容
+        $four = \DB::table('type')->where('pid',130)->get();
+
+        //家具日用
+        $fif = \DB::table('type')->where('pid',3)->get();
+
+        //家电
+        $six = \DB::table('type')->where('pid',4)->get();
+
+        //运动爱好
+        $seven = \DB::table('type')->where('pid',149)->get();
+
+        //汽车用品
+        $eight = \DB::table('type')->where('pid',158)->get();
+
+        // 送礼专区
+        $nine = \DB::table('type')->where('pid', 166)->get();
+
+        //数码分类
+        $num = \DB::table('type')->where('pid',10)->orwhere('pid',12)->limit(10)->get();
+       
+        //手机数码
+        $phone = \DB::table('shop')->where('tid',46)->orwhere('tid',49)->orwhere('tid',129)->limit(10)->get();
+
+        //孕婴
+        $baby = \DB::table('type')->where('pid',13)->orwhere('pid',14)->orwhere('pid',15)->limit(10)->get();
+
+        //婴儿用品
+        $bby = \DB::table('shop')->where('tid',85)->orwhere('tid',97)->orwhere('tid',98)->orwhere('tid',99)->limit(10)->get();
+        
+        //服饰鞋包
+        $shut = \DB::table('type')->where('pid',5)->orwhere('pid',6)->limit(9)->get();
+
+        //女装配饰
+        $shirt = \DB::table('shop')->where('tid',177)->orwhere('tid',180)->limit(10)->get();
+
+        //美容护肤分类
+        $but = \DB::table('type')->where('pid',130)->get();
+
+        //美妆
+        $ful = \DB::table('shop')->where('tid',183)->orwhere('tid',184)->orwhere('tid',185)->orwhere('tid',186)->orwhere('tid',187)->limit(10)->get();
+
+        //家具日用
+        $bbc = \DB::table('type')->where('pid',3)->get();
+
+        // 家具
+        $fur = \DB::table('shop')->where('tid', 108)->get();
+      
+        //加载视图
+        return view('home.next.index',['one'=>$one,'two'=>$two,'three'=>$three,'four'=>$four,'fif'=>$fif,'six'=>$six,'seven'=>$seven,'eight'=>$eight, 'nine' => $nine,'num'=>$num,'phone'=>$phone,'baby'=>$baby,'bby'=>$bby,'shut'=>$shut,'shirt'=>$shirt,'but'=>$but,'ful'=>$ful,'bbc'=>$bbc, 'fur' => $fur]);
+
     }
 }

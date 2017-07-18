@@ -1,0 +1,1 @@
+var imgurlrandom=imgurlrandom||{};imgurlrandom.randomUrl=function(b){var a=parseInt(Math.random()*imgHostNumber+1);var c=imgHost.replace("?",a)+b;return c};

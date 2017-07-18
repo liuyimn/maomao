@@ -1,44 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta property="wb:webmaster" content="bd14bd59a79e2a4d" />
-<meta name="360-site-verification" content="0d4ec208337c4c03706dbb76fccd784e" />
-<meta name="sogou_site_verification" content="dMhEpiNZxp"/>
-<meta name="baidu-site-verification" content="CrHL5lkDw2" />
-<meta name="spm-id" content="2007.1000261"/>
-<meta chaarset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-<title>大脸猫二手商城</title>
+	<head>
+	<meta property="wb:webmaster" content="bd14bd59a79e2a4d" />
+		<meta name="360-site-verification" content="0d4ec208337c4c03706dbb76fccd784e" />
+		<meta name="sogou_site_verification" content="dMhEpiNZxp"/>
+	<meta name="baidu-site-verification" content="CrHL5lkDw2" />
+	
+	<meta name="spm-id" content="2007.1000261"/>
+	<meta chaarset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<title >大脸猫二手购物网</title>
+	
+		
 <!-- start idle vmcommon assets 4.0-->
-
-<link rel="shortcut icon" type="image/x-icon" href="//www.taobao.com/favicon.ico" />
-<link rel="search" type="application/opensearchdescription+xml" href="//assets.alicdn.com/plugins/opensearch/provider.xml" title="淘宝购物" />
-
+<link rel="shortcut icon" type="image/x-icon" href="" />
 <!-- S GLOBAL CSS -->
 <link rel="stylesheet" href="{{ asset('/home/index/Css/global-min.css') }}">
-<link rel="stylesheet" href="{{ asset('/home/Css/main.min.css') }}">
 <!-- S GLOBAL CSS -->
 <link rel="stylesheet" href="{{ asset('/home/index/Css/cf8cdabb29cd4d268664ab04ef272c64.css') }}">
 <!-- S GLOBAL JS -->
 <script src="{{ asset('/home/index/Scripts/3e184c6718544466bc7c7def6ef3b6f8.js') }}"></script>
 <!-- E GLOBAL JS -->
 <script src="{{ asset('/home/index/Scripts/b4f74d71946043da93fca460b7edd7d3.js') }}"></script>
-<script src="{{ asset('/home/index/bootstrap/bootstrap.min.js') }}"></script>
 
 <script src="{{ asset('/home/index/bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/home/index/bootstrap/jquery.cxselect.min.js') }}"></script>
 <script src="{{ asset('/home/index/bootstrap/jquery-1.7.2.min.js') }}"></script>
 
-
-
-
-
 <link rel="stylesheet" type="text/css" href='{{asset("/home/css/listzz_v20170704194231.css")}}' >
-<script type="text/javascript" src="{{asset('/home/js/createelement-lte-ie8.js')}}"></script>
-<script type="text/javascript" src="{{asset('/home/js/require_jquery_load.js')}}"></script>
-<script type="text/javascript" src='{{asset("/home/js/boot_sale_v20170703195205.js")}}'  ></script>
-<script src="{{asset('/home/js/entry.js')}}"></script>
+
+
 
 <style>
 	.topbar-nav{float:left;height:40px;line-height:40px;overflow:hidden;_zoom:1}
@@ -72,6 +63,7 @@
 
 		
 <!-- end idle vmcommon assets 4.0-->
+	<!-- <base target="_blank"/> -->
 </head>
 
 	<body>
@@ -85,10 +77,10 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 		<div class="container">
 
 				<div class="topbar-nav">
-						<a rel="nofollow" href="#" >当前城市：@if(!session('city')){{ $city }}@else{{ session('city') }}@endif</a><span class="sep">|</span><a rel="nofollow" href="{{ url('/') }}" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="http://www.miliao.com/" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/complaint/index') }}" target="_blank">联系客服</a>
+						<a rel="nofollow" href="#" >当前城市：@if(!session('city')){{ $city }}@else{{ session('city') }}@endif</a><span class="sep">|</span><a rel="nofollow" href="//www.mi.com/index.html" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="http://www.miliao.com/" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="http://www.duokan.com/" target="_blank">联系客服</a>
 				</div>
 				<div class="topbar-cart" id="J_miniCartTrigger">
-						<a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href="{{ url('/home/details/shopcar') }}"><i class="iconfont"></i>购物车</a>
+						<a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href=""><i class="iconfont"></i>购物车</a>
 				</div>
 				@if(!session('user'))
 					<div class="topbar-info" id="J_userInfo">
@@ -111,8 +103,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 <!-- S GLOBAL HTML -->
 <div class="idle-header-wrap" style="background-color:#fc5023;opacity:0.87;">
 	<div class="idle-header" id="J_IdleHeader">
-
-		<h1 class="idle-logo"><a href="{{ url('/home/index') }}" target="_top"><img src="{{ asset('/home/index/Images/logoko.png') }}"  width="100px" height="100px" style="margin-top:-25px;margin-left:40px" /></a></h1>
+		<h1 class="idle-logo"><a href="" target="_top"><img src="{{ asset('/home/index/Images/logoko.png') }}"  width="100px" height="100px" style="margin-top:-25px;margin-left:40px;" /></a></h1>
 
 		<div class="idle-nav">
 			<div class="idle-menu">
@@ -134,12 +125,11 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 		</div>
 
 		<div class="idle-search">
-			<form method="get" action="{{ url('/home/list/index') }}" name="search" target="_top">
-				<input class="input-search" id="J_HeaderSearchQuery" name="keywords" type="text" value="" placeholder="搜索商品" />
-				<button class="btn-search" type="submit">
-					<i class="iconfont">&#xe602;</i>
-					<span class="search-img"></span>
-				</button>
+			<form method="get" action="//s.2.taobao.com/list/list.htm" name="search" target="_top">
+				<input class="input-search" id="J_HeaderSearchQuery" name="q" type="text" value="" placeholder="搜索商品" />
+				<input type="hidden" name="search_type" value="item" autocomplete="off" />
+				<input type="hidden" name="app" value="shopsearch" autocomplete="off" />
+				<button class="btn-search" type="submit"><i class="iconfont">&#xe602;</i><span class="search-img"></span></button>
 			</form>
 		</div>
 	</div>
@@ -198,9 +188,9 @@ KISSY.use('widget/header5/index');
 		<!-- ushu abtest -->
 		<script type="text/javascript" src="{{ asset('/home/index/Scripts/xwj.js') }}"></script>
 		<script type="text/javascript">
-			window._ap_xwj && _ap_xwj.monitor("130917-224");
-		</script>
-		<script src="{{ asset('/home/js/entry.js') }}"></script>
+									window._ap_xwj && _ap_xwj.monitor("130917-224");
+						</script>
+
 		<script type="text/javascript" src="{{ asset('/home/index/Scripts/tb-tracer-min.js') }}"></script>
 		<img src="{{ asset('/home/index/Picture/t1pksfxexkxxxxxxxx-1-1.gif') }}"/>
 		<script src="{{ asset('/home/index/Scripts/c.js') }}"></script>

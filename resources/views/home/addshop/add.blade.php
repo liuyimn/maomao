@@ -262,7 +262,7 @@ $('#sid').live('change',function(){
                         if(data.length > 0){
 
                             //设置一个select
-                            var selects = $('<select name="tid" id="uid"></select>'); 
+                            var selects = $('<select name="tid" id="uid"><option value="">-请选择分区-</option></select>'); 
 
                             //添加到页面
                             $('#did').append(selects);

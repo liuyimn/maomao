@@ -15,6 +15,7 @@ class LoginController extends Controller
     {
         // 判断是否有session,存在跳回
         if (session('user')) {
+
             return redirect('/admin/index');
         }
 
