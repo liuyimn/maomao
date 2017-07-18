@@ -138,7 +138,7 @@
 
 							<div class="button_li">
 								<span class="talk_button download_button">联系卖家</span>
-								<span class="buy_button download_button">我要购买</span>
+								<a href="{{ url('/home/list/create') }}/{{ $data->id }}"><span class="buy_button download_button">我要购买</span></a>
 							</div>
 
 							<div class="want_li">
@@ -189,7 +189,7 @@
 						<div class="personal_jieshao">
 							<ul class="personal_biaoqian clearfix"></ul>
 							<div class="personal_touxiang" data-adjust="adjust">
-								<img src="{{ url('/uploads/userdetail') }}/{{ $user->photo }}" alt="">
+								<img src="{{ url('/uploads/user') }}/{{ $user->photo }}" alt="">
 							</div>
 							
 							<p class="personal_name">{{ $user->nickname }}</p>

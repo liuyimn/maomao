@@ -30,12 +30,12 @@ class DetailController extends Controller
 		$res = \DB::table('user')->where('id', $data->uid)->first();
 		
 		//查询卖家的详细信息
-		$user = \DB::table('userdetail')->where('id', $res->id)->first();
+		$user = \DB::table('userdetail')->where('uid', $res->id)->first();
 
 		//测试
 		$jx = \DB::table('shop')->limit(5)->get();
 		
-
+		//三元运算判断是否存在用户
 		$uid = isset(session('user')->id)?session('user')->id:'';
 
 		// 收藏状态

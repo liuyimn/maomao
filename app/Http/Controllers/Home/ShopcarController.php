@@ -146,9 +146,9 @@ class ShopcarController extends Controller
             //判断
             if($res)
             {
-                return "<script>alert('已删除商品');location.href='/home/details/shopcar'</script>";
+                return "<script>alert('已删除商品');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
             }else{
-                return "<script>alert('删除失败');location.href='/home/details/shopcar'</script>";
+                return "<script>alert('删除失败');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
             }
 
         }else{
@@ -158,7 +158,7 @@ class ShopcarController extends Controller
 
             // return response()->json('0');
              
-           return "<script>alert('已删除商品');location.href='/home/details/shopcar'</script>";
+           return "<script>alert('已删除商品');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
             
         }
     }

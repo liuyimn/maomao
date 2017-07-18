@@ -66,7 +66,7 @@
 				                    <td class="tc">
 				                        <div class="qq_attest">
 				                            <p class="img_attest">
-				                            <img src="{{ url('/uploads/userdetail') }}/{{ $val->photo }}">
+				                            <img src="{{ url('/uploads/user') }}/{{ $val->photo }}">
 				                            </p>
 				                            <p class="name_add">{{ $val->nickname }}</p>
 				                        </div>

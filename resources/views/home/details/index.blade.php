@@ -127,9 +127,6 @@
 							</div>
 						</div>
 
-						
-					
-
 
 						<div class="info_massege left">
 

@@ -30,12 +30,15 @@ class ListController extends Controller
 		//查询总条数
 		$obj = \DB::table('shop')->count();
 
-    	return view('home.list.index',['title' => '商品列表', 'data'=> $data, 'res' => $res, 'obj' => $obj]);
+    	return view('home.list.index',['title' => '商品列表', 'data'=> $data, 'request' => $request->all(), 'res' => $res, 'obj' => $obj]);
 
     }
 
     //搜索价格
 	public function show(Request $request){
+
+		//定义分页
+    	$num = '8';
 
 		//起始价格
 		$bk = $request['b_k'];
@@ -53,7 +56,7 @@ class ListController extends Controller
 		            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
 		            ->wherebetween('shop.newpage',[$bk, $bq])
 		            ->where('name', 'like', '%'.$keywords.'%')
-		            ->get();
+		            ->paginate($num);
 
 		//遍历拍卖商品状态为0的
         $res = \DB::table('auction')->where('status', 0)->get();
@@ -61,7 +64,7 @@ class ListController extends Controller
         //查询商品总条数
 		$obj = \DB::table('shop')->count();
 
-    	return view('home.list.show',['title' => '商品列表', 'data'=> $data, 'res' => $res, 'obj' => $obj]);
+    	return view('home.list.show',['title' => '商品列表', 'data'=> $data, 'res' => $res, 'request' => $request->all(), 'obj' => $obj]);
 
 	}
 
@@ -95,11 +98,11 @@ class ListController extends Controller
 	    		//判断是否成功
 		    	if($res){
 
-		    		return "<script>alert('添加购物车成功');location.href='/home/list/index'</script>";
+		    		return "<script>alert('添加购物车成功');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
 		    		die();
 		    	}else{
 		    		
-		    		return "<script>alert('添加失败');location.href='/home/list/index'</script>";
+		    		return "<script>alert('添加失败');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
 		    		die();
 		    	}
 
@@ -128,7 +131,7 @@ class ListController extends Controller
 					//如果有重复数据返回
 					if($value->id == $data->id){
 
-						return "<script>alert('请勿重复添加');location.href='/home/list/index'</script>";
+						return "<script>alert('请勿重复添加');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
 						die();
 					}
 
@@ -145,11 +148,11 @@ class ListController extends Controller
 	    	//判断是否成功
 	    	if($res){
 
-	    		return "<script>alert('添加购物车成功');location.href='/home/list/index'</script>";
+	    		return "<script>alert('添加购物车成功');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
 	    		die();
 	    	}else{
 	    		
-	    		return "<script>alert('添加失败');location.href='/home/list/index'</script>";
+	    		return "<script>alert('添加失败');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
 	    		die();
 	    	}
 	    }
