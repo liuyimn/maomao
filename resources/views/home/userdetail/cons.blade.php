@@ -3,7 +3,7 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
-<title>猫猫二手市场-绑定邮箱</title>
+<title>猫猫二手市场-验证</title>
 
 <link type="text/css" rel="stylesheet" href="{{ asset('/home/forget/reset.css') }}">
 <link type="text/css" rel="stylesheet" href="{{ asset('/home/forget/layout.css') }}">
@@ -20,16 +20,19 @@
   <div class="n-frame device-frame reg_frame">
     <div class="external_logo_area"><img style="width:150px;height:150px;margin-left:330px;" src="{{ asset('/home/forget/logoko.png') }}" alt=""></div>
     <div class="title-item t_c">
-      <h4 class="title_big30">绑定邮箱</h4>
+      <h4 class="title_big30">验证</h4>
     </div>
-    <form action="{{ url('/home/email/insert') }}" method="post" id="forgetpwd_form">
+    <form action="{{ url('home/cons/insert') }}" method="post" id="forgetpwd_form">
+
     {{ csrf_field() }}
     <div class="regbox">
-      <h5 class="n_tit_msg">请输入您的邮箱地址：</h5>      
+      <h5 class="n_tit_msg">请输入您的验证码：</h5>      
       <div class="inputbg">
         <!-- 错误添加class为err_label -->
         <label class="labelbox labelbox-user" for="user">
-          <input type="email" name="email" id="user" autocomplete="off" placeholder="邮箱">
+          <input type="text" name="con" id="user" autocomplete="off" placeholder="验证码">
+          <input type="hidden" name="str" value="{{ $str }}">
+          <input type="hidden" name="email" value="{{ $email }}">
          </label>
       </div>	
       <span id="emailspan" style="display:none;color:red"></span><br/>
@@ -63,58 +66,4 @@
      {
       document.getElementById("user").focus();
      }
-</script>
-
-<script>
-
-    
-   
-
-    // 点击刷新
-    function re_captcha() {
-        $url = "{{ URL('kit/captcha') }}";
-        $url = $url + "/" + Math.random();
-        document.getElementById('c2c98f0de5a04167a9e427d883690ff6').src=$url;
-    }
-
-
-    $('#user').on('blur',function(){
-        //设置状态值
-        eml = false;
-
-        //获取输入的内容
-        var con = $(this).val();
-
-        if(con){
-            //ajax
-            $.get('/home/email/ajax' ,{'email':con} ,function(data){
-                
-                //判断返回值
-                if(data == 0){
-                    //修改样式
-                    $('#emailspan').css('display','block').html('该邮箱已经存在');
-                }
-
-                if(data == 1){
-
-                    //设置状态值
-                    eml = true;
-                    //修改样式
-                    $('#emailspan').css('display','none').html('');
-
-                }
-            });
-        }else{
-            $('#emailspan').css('display','block').html('邮箱不能为空');
-        }
-       
-    });
-
-    $('#submit_button').on('click', function(){
-        if(!eml){
-            return false;
-        }else{
-            return true;
-        }
-    });
 </script>
