@@ -83,8 +83,5 @@ class FavoriteController extends Controller
     	}
     }
 
-    public function email(Request $request){
-        dd($request->all());
-    }
 
 }

@@ -268,7 +268,17 @@ Route::get('home/address/delete/{id}', 'Home\AddressController@delete');
 
 //-------------------------主页----------------------
 
+//主页
 Route::get('/','Home\IndexController@index');
+
+//副主页
+Route::get('home/next/index','Home\IndexController@next');
+
+//推荐页
+Route::get('home/tuijian/index','Home\IndexController@tuijian');
+
+//服务页
+Route::get('home/fuwu/index', 'Home\IndexController@fuwu');
 
 //-------------------------主页----------------------
 
@@ -403,10 +413,10 @@ Route::get('home/email/index', 'Home\UserdetailController@email');
 
 //======================前台购物流程========================
 
-//商品列表
+//商品搜索
 Route::get('/home/list/index', 'Home\ListController@index');
 
-//商品搜索
+//商品价格搜索
 Route::get('/home/list/show', 'Home\ListController@show');
 
 //商品添加session列表

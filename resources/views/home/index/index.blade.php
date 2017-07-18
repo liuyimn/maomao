@@ -7,7 +7,7 @@
 <meta name="keywords" content="二手手机,二手笔记本,二手iPhone,二手数码,二手相机">
 <meta name="description" content="苏宁易购苏宁二手优品专业提供二手手机，二手笔记本，二手iPhone，二手数码，二手相机的最新报价、促销、评论、导购、图片等相关信息！">
 <title>二手优品-【二手手机_二手笔记本_二手iPhone_二手数码_二手相机】-苏宁易购</title>
-<link rel="shortcut icon" href="https://ssl.suning.com/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="" type="image/x-icon">
 <link rel="stylesheet" href="{{ asset('home/hindex') }}/a.css">
 <script type="text/javascript" src="{{ asset('home/hindex') }}/a"></script>
 <script>
@@ -139,18 +139,18 @@ VIVO
 <!--其他频道导航-->
 <ul class="second-nav clearfix">
 <li>
-<a href="" target="_blank" name="PcYoupin_shppcind_36725413991_word02" title="">
-以旧换新
+<a href="{{ url('home/next/index') }}" target="_blank" name="PcYoupin_shppcind_36725413991_word02" title="">
+闲置二手
 </a>
 </li>
 <li>
-<a href="" target="_blank" name="PcYoupin_shppcind_36725413991_word03" title="">
-闪拍频道
+<a href="{{ url('home/fuwu/index') }}" target="_blank" name="PcYoupin_shppcind_36725413991_word03" title="">
+二手优品
 </a>
 </li>
 <li>
-<a href="" target="_blank" name="PcYoupin_shppcind_36725413991_word04" title="">
-优品闪购
+<a href="{{ url('home/tuijian/index') }}" target="_blank" name="PcYoupin_shppcind_36725413991_word04" title="">
+聪明之选
 </a>
 </li>
 </ul>
@@ -174,7 +174,7 @@ VIVO
 </a>
 </li>
 <li class="show" style="background-color: rgb(248, 219, 18); display: none;">
-<a href="" target="_blank" name="PcYoupin_shppcind_36725313979_pic03" title="">
+<a href="{{ url('home/tuijian/index') }}" target="_blank" name="PcYoupin_shppcind_36725313979_pic03" title="">
 <img src="{{ asset('home/hindex') }}/149863224524285196.png">
 </a>
 </li>
@@ -185,10 +185,10 @@ VIVO
 </li>
 </ul>
 </div>
-<a href="javascript:void(0);" class="point left-point" style="display: inline; opacity: 1;"></a>
-<a href="javascript:void(0);" class="point right-point" style="display: inline; opacity: 1;"></a>
+<a href="javascript:void(0);" class="point left-point" style="display: block; opacity: 1;"></a>
+<a href="javascript:void(0);" class="point right-point" style="display: block; opacity: 1;"></a>
 <div class="banner-nav-wrap">
-<div class="banner-nav"><a name="hwg_none_lbgg_yd01" href="javascript:;" class="page-item current"></a><a name="hwg_none_lbgg_yd02" href="javascript:;" class="page-item"></a><a name="hwg_none_lbgg_yd03" href="javascript:;" class="page-item"></a><a name="hwg_none_lbgg_yd04" href="javascript:;" class="page-item"></a></div></div>
+</div>
 </div>
 <!-- 联板广告 代码结束 -->
 <!--品质保证-->
@@ -244,11 +244,11 @@ VIVO
 <ul style="display: block;">
 @foreach($auction as $o)
 <li data-sku="624646246|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613995_prod04" href="{{ url('/home/acut/details') }}/{{ $o->id }}" target="_blank" rel="nofollow" title="{{ $o->content }}">
+<a name="PcYoupin_shppcind_36725613995_prod04" href="{{ url('/home/auct/details') }}/{{ $o->id }}" target="_blank" rel="nofollow" title="{{ $o->content }}">
 <img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('uploads/auction') }}/{{ $o->pic }}" class="err-product">
 </a>
 <p>
-<a href="{{ url('/home/acut/details') }}/{{ $o->id }}" target="_blank">
+<a href="{{ url('/home/auct/details') }}/{{ $o->id }}" target="_blank">
 {{ $o->name }}
 </a>
 </p>
@@ -263,11 +263,11 @@ VIVO
 
 @foreach($small as $mall)
 <li data-sku="612451774|1|2|0070155069">
-<a name="PcYoupin_shppcind_36725613997_prod01" href="{{ url('/home/acut/details') }}/{{ $mall->id }}" target="_blank" rel="nofollow" title="{{ $mall->content }}">
+<a name="PcYoupin_shppcind_36725613997_prod01" href="{{ url('/home/auct/details') }}/{{ $mall->id }}" target="_blank" rel="nofollow" title="{{ $mall->content }}">
 <img alt="比新机优惠1200，堪比新机，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('uploads/auction') }}/{{ $mall->pic }}" class="err-product">
 </a>
 <p>
-<a href="{{ url('/home/acut/details') }}/{{ $mall->id }}" target="_blank">
+<a href="{{ url('/home/auct/details') }}/{{ $mall->id }}" target="_blank">
 {{ $mall->name }}
 </a>
 </p>
