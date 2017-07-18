@@ -1166,10 +1166,6 @@ Life Services
 <em class="nav-icon nav-icon-9"></em>
 <b>生活<br />服务</b>
 </a>
-<a href="http://ued.suning.com/survey/express/d0lrSW9T" target="_blank">
-<i class="ng-iconfont">&#xe612;</i>
-<b>问卷<br />调查</b>
-</a>
 <a href="javascript:;" onclick="findsinglepass(18710);">
 <i class="ng-iconfont">&#xe631;</i>
 <b>联系<br />客服</b>
