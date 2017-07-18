@@ -22,7 +22,7 @@
                             <li>账户安全：<span class="level level-2">普通</span></li>
                             <li>绑定手机：<span class="tel">{{ session('user')->phone }}</span></li>
                             
-                            <li>绑定邮箱：@if(session('user')->email)<span class="tel">{{ session('user')->email }}</span>@else<span class="tel"></span><a class="btn btn-small btn-primary">绑定</a></li>@endif
+                            <li>绑定邮箱：@if(session('user')->email)<span class="tel">{{ session('user')->email }}</span>@else<span class="tel"></span><a href="{{ url('home/email/index') }}" class="btn btn-small btn-primary">绑定</a></li>@endif
                         </ul>
                     </div>
                 </div>

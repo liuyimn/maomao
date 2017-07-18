@@ -156,10 +156,20 @@ class IndexController extends Controller
         $bbc = \DB::table('type')->where('pid',3)->get();
 
         // 家具
-        $fur = \DB::table('shop')->where('tid', 108)->get();
-      
+        $fur = \DB::table('shop')->where('tid', 108)->orwhere('tid',106)->orwhere('tid',188)->orwhere('tid',190)->limit(10)->get();
+        
+        //电器影音
+        $mmd = \DB::table('shop')->where('tid',191)->orwhere('tid',192)->orwhere('tid',193)->limit(10)->get();
+
+        //兴趣爱好
+        $ins = \DB::table('shop')->where('tid',194)->orwhere('tid',197)->orwhere('tid',196)->limit(10)->get();
+        
+        //汽车养护
+        $car = \DB::table('shop')->where('tid',198)->orwhere('tid',205)->orwhere('tid',203)->orwhere('tid',204)->limit(10)->get();
+
+
         //加载视图
-        return view('home.next.index',['one'=>$one,'two'=>$two,'three'=>$three,'four'=>$four,'fif'=>$fif,'six'=>$six,'seven'=>$seven,'eight'=>$eight, 'nine' => $nine,'num'=>$num,'phone'=>$phone,'baby'=>$baby,'bby'=>$bby,'shut'=>$shut,'shirt'=>$shirt,'but'=>$but,'ful'=>$ful,'bbc'=>$bbc, 'fur' => $fur]);
+        return view('home.next.index',['one'=>$one,'two'=>$two,'three'=>$three,'four'=>$four,'fif'=>$fif,'six'=>$six,'seven'=>$seven,'eight'=>$eight, 'nine' => $nine,'num'=>$num,'phone'=>$phone,'baby'=>$baby,'bby'=>$bby,'shut'=>$shut,'shirt'=>$shirt,'but'=>$but,'ful'=>$ful,'bbc'=>$bbc, 'fur' => $fur,'mmd'=>$mmd,'ins'=>$ins,'car'=>$car]);
 
     }
 }
