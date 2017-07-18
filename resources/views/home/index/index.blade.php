@@ -648,11 +648,11 @@ Y***华
 <ul style="display:block;">
 @foreach($ss as $s)
 <li data-sku="614575495|1|2|0070161527">
-<a name="PcYoupin_shppcind_39564214101_prod01" href="{{ url('home/detail') }}/{{ $s->id }}" target="_blank" rel="nofollow" title="{{ $s->connect }}">
+<a name="PcYoupin_shppcind_39564214101_prod01" href="{{ url('home/details') }}/{{ $s->id }}" target="_blank" rel="nofollow" title="{{ $s->connect }}">
 <img alt="任性付6期免息 等你来拿【180天店铺质保 支持7天无理由 顺丰包邮 支付宝付款详情咨询客服哟~】不二优品 不二之选~" src="{{ asset('uploads/shop') }}/{{ $s->pic }}" class="err-product">
 </a>
 <p>
-<a href="{{ url('home/detail') }}/{{ $s->id }}" target="_blank">
+<a href="{{ url('home/details') }}/{{ $s->id }}" target="_blank">
 {{ $s->name }}
 </a>
 </p>

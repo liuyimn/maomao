@@ -407,6 +407,18 @@ Route::get('home/shopping/index', 'Home\ShoppingController@index');
 
 //绑定邮箱
 Route::get('home/email/index', 'Home\UserdetailController@email');
+
+//执行绑定邮箱
+Route::post('home/email/insert', 'Home\UserdetailController@doemail');
+
+//邮箱验证ajax
+Route::get('home/email/ajax', 'Home\UserdetailController@ajax');
+
+//验证验证码页面
+Route::get('home/email/con/{str}/{email}', 'Home\UserdetailController@con');
+
+//执行验证
+Route::post('home/cons/insert', 'Home\UserdetailController@docon');
 // ----------------------------个人详情-------------------------
 
 

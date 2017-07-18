@@ -128,10 +128,8 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 		</div>
 
 		<div class="idle-search">
-			<form method="get" action="//s.2.taobao.com/list/list.htm" name="search" target="_top">
-				<input class="input-search" id="J_HeaderSearchQuery" name="q" type="text" value="" placeholder="搜索商品" />
-				<input type="hidden" name="search_type" value="item" autocomplete="off" />
-				<input type="hidden" name="app" value="shopsearch" autocomplete="off" />
+			<form method="get" action="{{ url('home/list/index') }}" name="keywords" target="_top">
+				<input class="input-search" id="J_HeaderSearchQuery" name="keywords" type="text" value="" placeholder="搜索商品" />
 				<button class="btn-search" type="submit"><i class="iconfont">&#xe602;</i><span class="search-img"></span></button>
 			</form>
 		</div>

@@ -103,8 +103,89 @@ class UserdetailController extends Controller
     
 
     //添加邮箱email
-    public function email(Request $request){
+    public function email(){
 
         return view('home.userdetail.email');
+    }
+
+    //执行发送邮件
+    public function doemail(Request $request){
+
+        //获取email
+        $email = $request->except('_token');
+
+        //获取用户id
+        $id = session('user')->id;
+
+        //根据id查询该用户信息
+        $user = \DB::table('user')->where('id',$id)->first();
+
+        //生成随机验证码
+        $str = mt_rand(0,999999);
+
+        //发送邮件
+        \Mail::send('home.mail.bmail', ['user'=>$user,'str'=>$str], function($message) use($email){
+
+            //要发送的邮件地址
+            $message->to($email['email']);
+
+            //标题
+            $message->subject('大脸猫二手交易-邮箱绑定');
+        });
+
+        return redirect('home/email/con/'.$str.'/'.$email['email']);
+        
+    }
+
+    //验证验证码页面
+    public function con($str,$email){
+     
+        return view('home.userdetail.cons',['str'=>$str,'email'=>$email]);
+    }
+
+    //执行验证
+    public function docon(Request $request){
+
+        //获取传递过来的数据
+        $data = $request->except('_token');
+
+        //判断验证码是否正确
+        if($data['con'] != $data['str']){
+            return back() -> with(['info'=>'验证码错误']);
+        }
+
+        //获取用户id
+        $id = session('user')->id;
+
+        //修改数据库的邮箱
+        $res = \DB::table('user')->where('id',$id)->update(['email'=>$data['email']]);
+
+        //判断是否修改成功
+        if($res){
+            return redirect('home/user/index');
+        }else{
+            return back()->with(['info'=>'修改失败请重试']);
+        }
+    }
+
+    //ajax验证邮箱
+    public function ajax(Request $request){
+
+        //获取输入的邮箱
+        $email = $request->input('email');
+
+        //去数据库中验证邮箱是否存在
+        $res = \DB::table('user')->where('email',$email)->first();
+
+        //判断
+        if($res){
+
+            //0为该邮箱已经存在
+            return response() -> json('0');
+        }else{
+
+            //1为该邮箱可以使用
+            return response() -> json('1');
+        }
     }
 }

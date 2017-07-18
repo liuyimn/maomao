@@ -7,7 +7,7 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>二手手机交易市场_二手交易网_二手市场_苏宁易购二手优品</title>
-<link rel="shortcut icon" href="//ssl.suning.com/favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="" type="image/x-icon"/>
 <link rel="stylesheet" href="Css/f030e6c59eff4bfca42043dc488160f6.css"/>
 <script type="text/javascript" src="Scripts/60b9b407a2824ade88ebc407d2440f75.js"></script>
 <script>
@@ -818,129 +818,26 @@ Electric Appliances & Audio Video
 </div>
 <div class="floor-category">
 <ul>
-<li><a name="PcYoupin_none_list_floor_0601" href="//s2.suning.com/search/0-1000000001-1000000019-P1.htm" target=_blank><h3>空调</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0602" href="//s2.suning.com/search/0-1000000001-1000000020-P1.htm" target=_blank><h3>彩电</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0603" href="//s2.suning.com/search/0-1000000001-1000000057-P1.htm" target=_blank><h3>音响</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0604" href="//s2.suning.com/search/0-1000000001-1000000022-P1.htm" target=_blank><h3>小家电</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0605" href="//s2.suning.com/search/0-1000000001-1000000017-P1.htm" target=_blank><h3>冰箱</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0606" href="//s2.suning.com/search/0-1000000001-1000000018-P1.htm" target=_blank><h3>洗衣机</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0607" href="//s2.suning.com/search/0-1000000001-1000000021-P1.htm" target=_blank><h3>厨卫电器</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0608" href="//s2.suning.com/search/0-1000000001-1000000058-P1.htm" target=_blank><h3>其他</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0609" href="//s2.suning.com/search/0-1000000001-1000000090-P1.htm" target=_blank><h3>家电配件</h3></a></li>
+@foreach($six as $cont)
+<li><a name="PcYoupin_none_list_floor_0601" href="{{ url('/home/list/index') }}?keywords={{ $cont->name }}" target=_blank><h3>{{ $cont->name }}</h3></a></li>
+@endforeach
 </ul>
 </div>
 <div class="floor-product" id="floor-product_1000000001">
 <ul>
 <div class="itemList">
+@foreach($mmd as $mu)
 <li>
 <!--<a name="PcYoupin_none_list_GoodsPicture" title="[购自苏宁］美的空调扇AC120-16BRW 家用单冷风扇遥控 移动静音制冷气水冷风机" target="_blank" href="/getItemDetail/5203316272/148703444250976772.htm" rel="nofollow"><img alt="[购自苏宁］美的空调扇AC120-16BRW 家用单冷风扇遥控 移动静音制冷气水冷风机" class="lazy-loading" lazy-src="Picture/148703444250976772_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="[购自苏宁］美的空调扇AC120-16BRW 家用单冷风扇遥控 移动静音制冷气水冷风机" target="_blank" href="/getItemDetail/148703444250976772.htm" rel="nofollow"><img alt="[购自苏宁］美的空调扇AC120-16BRW 家用单冷风扇遥控 移动静音制冷气水冷风机" class="lazy-loading" lazy-src="Picture/148703444250976772_99_200x200.jpg" /></a>
+<a name="PcYoupin_none_list_GoodsPicture" title="{{ $mu->connect }}" target="_blank" href="{{ url('home/details') }}/{{ $mu->id }}" rel="nofollow"><img alt="[购自苏宁］美的空调扇AC120-16BRW 家用单冷风扇遥控 移动静音制冷气水冷风机" class="lazy-loading" lazy-src="{{ asset('/uploads/shop') }}/{{ $mu->pic }}" /></a>
 <div class="price-wrap">
-<span class="price"><em>¥</em>280. <span class="sml-pri">00</span></span>
+<span class="price"><em>¥</em>{{ $mu->newpage }}. <span class="sml-pri">00</span></span>
 <!-- </span> -->
 </div>
 <!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="[购自苏宁］美的空调扇AC120-16BRW 家用单冷风扇遥控 移动静音制冷气水冷风机" href="/getItemDetail/5203316272/148703444250976772.htm">[购自苏宁］美的空调扇AC120-16BRW 家用单冷风扇遥控 移动静音制冷气水冷风机</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="[购自苏宁］美的空调扇AC120-16BRW 家用单冷风扇遥控 移动静音制冷气水冷风机" href="/getItemDetail/148703444250976772.htm">[购自苏宁］美的空调扇AC120-16BRW 家用单冷风扇遥控 移动静音制冷气水冷风机</a></p>
+<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="{{ $mu->connect }}" href="{{ url('home/details') }}/{{ $mu->id }}">{{ $mu->name }}</a></p>
 </li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="转卖pm14s1马兰士功放" target="_blank" href="/getItemDetail/2219138091/149785332432393891.htm" rel="nofollow"><img alt="转卖pm14s1马兰士功放" class="lazy-loading" lazy-src="Picture/149785332432393891_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="转卖pm14s1马兰士功放" target="_blank" href="/getItemDetail/149785332432393891.htm" rel="nofollow"><img alt="转卖pm14s1马兰士功放" class="lazy-loading" lazy-src="Picture/149785332432393891_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>1. <span class="sml-pri">1万</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="转卖pm14s1马兰士功放" href="/getItemDetail/2219138091/149785332432393891.htm">转卖pm14s1马兰士功放</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="转卖pm14s1马兰士功放" href="/getItemDetail/149785332432393891.htm">转卖pm14s1马兰士功放</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】上菱(shangling) BCD-191THCK 191升三门冰箱 中门软冷冻养鲜 优" target="_blank" href="/getItemDetail/2218035253/149793902512222753.htm" rel="nofollow"><img alt="【购自苏宁】上菱(shangling) BCD-191THCK 191升三门冰箱 中门软冷冻养鲜 优" class="lazy-loading" lazy-src="Picture/149793902512222753_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】上菱(shangling) BCD-191THCK 191升三门冰箱 中门软冷冻养鲜 优" target="_blank" href="/getItemDetail/149793902512222753.htm" rel="nofollow"><img alt="【购自苏宁】上菱(shangling) BCD-191THCK 191升三门冰箱 中门软冷冻养鲜 优" class="lazy-loading" lazy-src="Picture/149793902512222753_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>500. <span class="sml-pri">00</span></span>
-<!-- <span class="degree degree-new">全新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】上菱(shangling) BCD-191THCK 191升三门冰箱 中门软冷冻养鲜 优" href="/getItemDetail/2218035253/149793902512222753.htm">【购自苏宁】上菱(shangling) BCD-191THCK 191升三门冰箱 中门软冷冻养鲜 优</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】上菱(shangling) BCD-191THCK 191升三门冰箱 中门软冷冻养鲜 优" href="/getItemDetail/149793902512222753.htm">【购自苏宁】上菱(shangling) BCD-191THCK 191升三门冰箱 中门软冷冻养鲜 优</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】长虹空调KFR-26GW/DHID(W1-J)+2白" target="_blank" href="/getItemDetail/6160658163/149793888739747263.htm" rel="nofollow"><img alt="【购自苏宁】长虹空调KFR-26GW/DHID(W1-J)+2白" class="lazy-loading" lazy-src="Picture/149793888739747263_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】长虹空调KFR-26GW/DHID(W1-J)+2白" target="_blank" href="/getItemDetail/149793888739747263.htm" rel="nofollow"><img alt="【购自苏宁】长虹空调KFR-26GW/DHID(W1-J)+2白" class="lazy-loading" lazy-src="Picture/149793888739747263_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>900. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】长虹空调KFR-26GW/DHID(W1-J)+2白" href="/getItemDetail/6160658163/149793888739747263.htm">【购自苏宁】长虹空调KFR-26GW/DHID(W1-J)+2白</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】长虹空调KFR-26GW/DHID(W1-J)+2白" href="/getItemDetail/149793888739747263.htm">【购自苏宁】长虹空调KFR-26GW/DHID(W1-J)+2白</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】星星(XINGX) BD/BC-107JE 107升 冷藏冷冻转换柜 （白色）" target="_blank" href="/getItemDetail/6016063598/149635782234269298.htm" rel="nofollow"><img alt="【购自苏宁】星星(XINGX) BD/BC-107JE 107升 冷藏冷冻转换柜 （白色）" class="lazy-loading" lazy-src="Picture/149635782234269298_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】星星(XINGX) BD/BC-107JE 107升 冷藏冷冻转换柜 （白色）" target="_blank" href="/getItemDetail/149635782234269298.htm" rel="nofollow"><img alt="【购自苏宁】星星(XINGX) BD/BC-107JE 107升 冷藏冷冻转换柜 （白色）" class="lazy-loading" lazy-src="Picture/149635782234269298_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>399. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】星星(XINGX) BD/BC-107JE 107升 冷藏冷冻转换柜 （白色）" href="/getItemDetail/6016063598/149635782234269298.htm">【购自苏宁】星星(XINGX) BD/BC-107JE 107升 冷藏冷冻转换柜 （白色）</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】星星(XINGX) BD/BC-107JE 107升 冷藏冷冻转换柜 （白色）" href="/getItemDetail/149635782234269298.htm">【购自苏宁】星星(XINGX) BD/BC-107JE 107升 冷藏冷冻转换柜 （白色）</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】九阳（Joyoung）DJ13B-C668SG可预约 免滤豆浆机" target="_blank" href="/getItemDetail/6011167573/149635858812744073.htm" rel="nofollow"><img alt="【购自苏宁】九阳（Joyoung）DJ13B-C668SG可预约 免滤豆浆机" class="lazy-loading" lazy-src="Picture/149635858812744073_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】九阳（Joyoung）DJ13B-C668SG可预约 免滤豆浆机" target="_blank" href="/getItemDetail/149635858812744073.htm" rel="nofollow"><img alt="【购自苏宁】九阳（Joyoung）DJ13B-C668SG可预约 免滤豆浆机" class="lazy-loading" lazy-src="Picture/149635858812744073_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>418. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】九阳（Joyoung）DJ13B-C668SG可预约 免滤豆浆机" href="/getItemDetail/6011167573/149635858812744073.htm">【购自苏宁】九阳（Joyoung）DJ13B-C668SG可预约 免滤豆浆机</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】九阳（Joyoung）DJ13B-C668SG可预约 免滤豆浆机" href="/getItemDetail/149635858812744073.htm">【购自苏宁】九阳（Joyoung）DJ13B-C668SG可预约 免滤豆浆机</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】美的F80-30W7(HD)(遥控)电热水器80L" target="_blank" href="/getItemDetail/6142858466/149636213352328866.htm" rel="nofollow"><img alt="【购自苏宁】美的F80-30W7(HD)(遥控)电热水器80L" class="lazy-loading" lazy-src="Picture/149636213352328866_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】美的F80-30W7(HD)(遥控)电热水器80L" target="_blank" href="/getItemDetail/149636213352328866.htm" rel="nofollow"><img alt="【购自苏宁】美的F80-30W7(HD)(遥控)电热水器80L" class="lazy-loading" lazy-src="Picture/149636213352328866_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>1399. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】美的F80-30W7(HD)(遥控)电热水器80L" href="/getItemDetail/6142858466/149636213352328866.htm">【购自苏宁】美的F80-30W7(HD)(遥控)电热水器80L</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】美的F80-30W7(HD)(遥控)电热水器80L" href="/getItemDetail/149636213352328866.htm">【购自苏宁】美的F80-30W7(HD)(遥控)电热水器80L</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】林内12升水量伺服器 CO安防恒温 燃气热水器 RUS-12E55CWNF（天然气）" target="_blank" href="/getItemDetail/6035496718/149636579848626718.htm" rel="nofollow"><img alt="【购自苏宁】林内12升水量伺服器 CO安防恒温 燃气热水器 RUS-12E55CWNF（天然气）" class="lazy-loading" lazy-src="Picture/149636579848626718_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】林内12升水量伺服器 CO安防恒温 燃气热水器 RUS-12E55CWNF（天然气）" target="_blank" href="/getItemDetail/149636579848626718.htm" rel="nofollow"><img alt="【购自苏宁】林内12升水量伺服器 CO安防恒温 燃气热水器 RUS-12E55CWNF（天然气）" class="lazy-loading" lazy-src="Picture/149636579848626718_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>4500. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】林内12升水量伺服器 CO安防恒温 燃气热水器 RUS-12E55CWNF（天然气）" href="/getItemDetail/6035496718/149636579848626718.htm">【购自苏宁】林内12升水量伺服器 CO安防恒温 燃气热水器 RUS-12E55CWNF（天然气）</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】林内12升水量伺服器 CO安防恒温 燃气热水器 RUS-12E55CWNF（天然气）" href="/getItemDetail/149636579848626718.htm">【购自苏宁】林内12升水量伺服器 CO安防恒温 燃气热水器 RUS-12E55CWNF（天然气）</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】韩国原装进口Hurom/惠人HU-780WN原汁机低速慢榨原汁机家用多功能果汁机" target="_blank" href="/getItemDetail/2216416215/149122059280941715.htm" rel="nofollow"><img alt="【购自苏宁】韩国原装进口Hurom/惠人HU-780WN原汁机低速慢榨原汁机家用多功能果汁机" class="lazy-loading" lazy-src="Picture/149122059280941715_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】韩国原装进口Hurom/惠人HU-780WN原汁机低速慢榨原汁机家用多功能果汁机" target="_blank" href="/getItemDetail/149122059280941715.htm" rel="nofollow"><img alt="【购自苏宁】韩国原装进口Hurom/惠人HU-780WN原汁机低速慢榨原汁机家用多功能果汁机" class="lazy-loading" lazy-src="Picture/149122059280941715_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>1699. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】韩国原装进口Hurom/惠人HU-780WN原汁机低速慢榨原汁机家用多功能果汁机" href="/getItemDetail/2216416215/149122059280941715.htm">【购自苏宁】韩国原装进口Hurom/惠人HU-780WN原汁机低速慢榨原汁机家用多功能果汁机</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】韩国原装进口Hurom/惠人HU-780WN原汁机低速慢榨原汁机家用多功能果汁机" href="/getItemDetail/149122059280941715.htm">【购自苏宁】韩国原装进口Hurom/惠人HU-780WN原汁机低速慢榨原汁机家用多功能果汁机</a></p>
-</li>
-</div>
-<div class="page">
-<li>
-<div class="floor-control">
-<div class="floor-control-bg"></div>
-<input type="hidden" class="pageNum" value="1">
-<a name="PcYoupin_none_list_floor06_Prev" href="javascript:prePage(1000000001);" class="floor-control-prev disabled-prev"><i></i>上一页</a>
-<a name="PcYoupin_none_list_floor06_Next" href="javascript:nextPage(1000000001);" class="floor-control-next "><i></i>下一页</a>
-</div>
-<a name="PcYoupin_none_list_floor06_All" class="floor-control-all" href="//s2.suning.com/search/0-1000000001-99-P1.htm" target=_blank>电器影音 &gt;</a>
-</li>
+@endforeach
 </div>
 </ul>
 </div>
@@ -962,127 +859,27 @@ Sporting Goods
 </div>
 <div class="floor-category">
 <ul>
-<li><a name="PcYoupin_none_list_floor_0701" href="//s2.suning.com/search/0-1000000006-1000000051-P1.htm" target=_blank><h3>书籍</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0702" href="//s2.suning.com/search/0-1000000006-1000000053-P1.htm" target=_blank><h3>乐器</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0703" href="//s2.suning.com/search/0-1000000006-1000000052-P1.htm" target=_blank><h3>CD</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0704" href="//s2.suning.com/search/0-1000000006-1000000054-P1.htm" target=_blank><h3>运动器材</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0705" href="//s2.suning.com/search/0-1000000006-1000000050-P1.htm" target=_blank><h3>文具</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0706" href="//s2.suning.com/search/0-1000000006-1000000055-P1.htm" target=_blank><h3>骑行装备</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0707" href="//s2.suning.com/search/0-1000000006-1000000056-P1.htm" target=_blank><h3>户外装备</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0708" href="//s2.suning.com/search/0-1000000006-1000000085-P1.htm" target=_blank><h3>垂钓用品</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0709" href="//s2.suning.com/search/0-1000000006-1000000086-P1.htm" target=_blank><h3>其他</h3></a></li>
+@foreach($seven as $even)
+<li><a name="PcYoupin_none_list_floor_0701" href="{{ url('home/list/index') }}?keywords={{ $even->name }}" target=_blank><h3>{{ $even->name }}</h3></a></li>
+@endforeach
 </ul>
 </div>
 <div class="floor-product" id="floor-product_1000000006">
 <ul>
 <div class="itemList">
+@foreach($ins as $ind)
 <li>
 <!--<a name="PcYoupin_none_list_GoodsPicture" title="日本原装进口二手卡哇伊钢琴K8KAWAI便宜促销" target="_blank" href="/getItemDetail/6194001477/148841854161059577.htm" rel="nofollow"><img alt="日本原装进口二手卡哇伊钢琴K8KAWAI便宜促销" class="lazy-loading" lazy-src="Picture/148841854161059577_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="日本原装进口二手卡哇伊钢琴K8KAWAI便宜促销" target="_blank" href="/getItemDetail/148841854161059577.htm" rel="nofollow"><img alt="日本原装进口二手卡哇伊钢琴K8KAWAI便宜促销" class="lazy-loading" lazy-src="Picture/148841854161059577_99_200x200.jpg" /></a>
+<a name="PcYoupin_none_list_GoodsPicture" title="{{ $ind->connect }}" target="_blank" href="{{ url('home/details') }}/{{ $ind->id }}" rel="nofollow"><img alt="{{ $ind->connect }}" class="lazy-loading" lazy-src="{{ asset('/uploads/shop') }}/{{ $ind->pic }}" /></a>
 <div class="price-wrap">
-<span class="price"><em>¥</em>9500. <span class="sml-pri">00</span></span>
+<span class="price"><em>¥</em>{{ $ind->newpage }}. <span class="sml-pri">00</span></span>
 <!-- <span class="degree">非全新
 </span> -->
 </div>
 <!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="日本原装进口二手卡哇伊钢琴K8KAWAI便宜促销" href="/getItemDetail/6194001477/148841854161059577.htm">日本原装进口二手卡哇伊钢琴K8KAWAI便宜促销</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="日本原装进口二手卡哇伊钢琴K8KAWAI便宜促销" href="/getItemDetail/148841854161059577.htm">日本原装进口二手卡哇伊钢琴K8KAWAI便宜促销</a></p>
+<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="{{ $ind->connect }}" href="{{ url('home/details') }}/{{ $ind->id }}">{{ $ind->name }}</a></p>
 </li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="悲惨世界 旧书" target="_blank" href="/getItemDetail/2207032182/148967373558694382.htm" rel="nofollow"><img alt="悲惨世界 旧书" class="lazy-loading" lazy-src="Picture/148967373558694382_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="悲惨世界 旧书" target="_blank" href="/getItemDetail/148967373558694382.htm" rel="nofollow"><img alt="悲惨世界 旧书" class="lazy-loading" lazy-src="Picture/148967373558694382_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>70. <span class="sml-pri">00</span></span>
-<!-- </span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="悲惨世界 旧书" href="/getItemDetail/2207032182/148967373558694382.htm">悲惨世界 旧书</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="悲惨世界 旧书" href="/getItemDetail/148967373558694382.htm">悲惨世界 旧书</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="罗宾合资全新钢琴红木榔头乌木黑键厂家正品低价促销" target="_blank" href="/getItemDetail/6194001477/149017411137530377.htm" rel="nofollow"><img alt="罗宾合资全新钢琴红木榔头乌木黑键厂家正品低价促销" class="lazy-loading" lazy-src="Picture/149017411137530377_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="罗宾合资全新钢琴红木榔头乌木黑键厂家正品低价促销" target="_blank" href="/getItemDetail/149017411137530377.htm" rel="nofollow"><img alt="罗宾合资全新钢琴红木榔头乌木黑键厂家正品低价促销" class="lazy-loading" lazy-src="Picture/149017411137530377_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>1. <span class="sml-pri">25万</span></span>
-<!-- <span class="degree">非全新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="罗宾合资全新钢琴红木榔头乌木黑键厂家正品低价促销" href="/getItemDetail/6194001477/149017411137530377.htm">罗宾合资全新钢琴红木榔头乌木黑键厂家正品低价促销</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="罗宾合资全新钢琴红木榔头乌木黑键厂家正品低价促销" href="/getItemDetail/149017411137530377.htm">罗宾合资全新钢琴红木榔头乌木黑键厂家正品低价促销</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="攀岩主义会员卡，还剩4次，仅限杭州" target="_blank" href="/getItemDetail/6029126522/149621852524055622.htm" rel="nofollow"><img alt="攀岩主义会员卡，还剩4次，仅限杭州" class="lazy-loading" lazy-src="Picture/149621852524055622_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="攀岩主义会员卡，还剩4次，仅限杭州" target="_blank" href="/getItemDetail/149621852524055622.htm" rel="nofollow"><img alt="攀岩主义会员卡，还剩4次，仅限杭州" class="lazy-loading" lazy-src="Picture/149621852524055622_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>200. <span class="sml-pri">00</span></span>
-<!-- </span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="攀岩主义会员卡，还剩4次，仅限杭州" href="/getItemDetail/6029126522/149621852524055622.htm">攀岩主义会员卡，还剩4次，仅限杭州</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="攀岩主义会员卡，还剩4次，仅限杭州" href="/getItemDetail/149621852524055622.htm">攀岩主义会员卡，还剩4次，仅限杭州</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="流水线，输送机，传送带等机械设备" target="_blank" href="/getItemDetail/6216270897/149741993384836997.htm" rel="nofollow"><img alt="流水线，输送机，传送带等机械设备" class="lazy-loading" lazy-src="Picture/149741993384836997_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="流水线，输送机，传送带等机械设备" target="_blank" href="/getItemDetail/149741993384836997.htm" rel="nofollow"><img alt="流水线，输送机，传送带等机械设备" class="lazy-loading" lazy-src="Picture/149741993384836997_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>3000. <span class="sml-pri">00</span></span>
-<!-- </span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="流水线，输送机，传送带等机械设备" href="/getItemDetail/6216270897/149741993384836997.htm">流水线，输送机，传送带等机械设备</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="流水线，输送机，传送带等机械设备" href="/getItemDetail/149741993384836997.htm">流水线，输送机，传送带等机械设备</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】伊吉康s700 跑步机 家用多功能静音 折叠健身运动器材 多功能带减震" target="_blank" href="/getItemDetail/6134542752/149736122712050252.htm" rel="nofollow"><img alt="【购自苏宁】伊吉康s700 跑步机 家用多功能静音 折叠健身运动器材 多功能带减震" class="lazy-loading" lazy-src="Picture/149736122712050252_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】伊吉康s700 跑步机 家用多功能静音 折叠健身运动器材 多功能带减震" target="_blank" href="/getItemDetail/149736122712050252.htm" rel="nofollow"><img alt="【购自苏宁】伊吉康s700 跑步机 家用多功能静音 折叠健身运动器材 多功能带减震" class="lazy-loading" lazy-src="Picture/149736122712050252_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>998. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】伊吉康s700 跑步机 家用多功能静音 折叠健身运动器材 多功能带减震" href="/getItemDetail/6134542752/149736122712050252.htm">【购自苏宁】伊吉康s700 跑步机 家用多功能静音 折叠健身运动器材 多功能带减震</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】伊吉康s700 跑步机 家用多功能静音 折叠健身运动器材 多功能带减震" href="/getItemDetail/149736122712050252.htm">【购自苏宁】伊吉康s700 跑步机 家用多功能静音 折叠健身运动器材 多功能带减震</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】凯速Kansoon红玫瑰 液压左右摇摆踏步机带计数显示器 送地毯、拉绳" target="_blank" href="/getItemDetail/6003274365/149733687609473665.htm" rel="nofollow"><img alt="【购自苏宁】凯速Kansoon红玫瑰 液压左右摇摆踏步机带计数显示器 送地毯、拉绳" class="lazy-loading" lazy-src="Picture/149733687609473665_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】凯速Kansoon红玫瑰 液压左右摇摆踏步机带计数显示器 送地毯、拉绳" target="_blank" href="/getItemDetail/149733687609473665.htm" rel="nofollow"><img alt="【购自苏宁】凯速Kansoon红玫瑰 液压左右摇摆踏步机带计数显示器 送地毯、拉绳" class="lazy-loading" lazy-src="Picture/149733687609473665_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>150. <span class="sml-pri">00</span></span>
-<!-- <span class="degree degree-new">全新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】凯速Kansoon红玫瑰 液压左右摇摆踏步机带计数显示器 送地毯、拉绳" href="/getItemDetail/6003274365/149733687609473665.htm">【购自苏宁】凯速Kansoon红玫瑰 液压左右摇摆踏步机带计数显示器 送地毯、拉绳</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】凯速Kansoon红玫瑰 液压左右摇摆踏步机带计数显示器 送地毯、拉绳" href="/getItemDetail/149733687609473665.htm">【购自苏宁】凯速Kansoon红玫瑰 液压左右摇摆踏步机带计数显示器 送地毯、拉绳</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="实用高帮篮球鞋" target="_blank" href="/getItemDetail/6041142199/149736250544373199.htm" rel="nofollow"><img alt="实用高帮篮球鞋" class="lazy-loading" lazy-src="Picture/149736250544373199_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="实用高帮篮球鞋" target="_blank" href="/getItemDetail/149736250544373199.htm" rel="nofollow"><img alt="实用高帮篮球鞋" class="lazy-loading" lazy-src="Picture/149736250544373199_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>150. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="实用高帮篮球鞋" href="/getItemDetail/6041142199/149736250544373199.htm">实用高帮篮球鞋</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="实用高帮篮球鞋" href="/getItemDetail/149736250544373199.htm">实用高帮篮球鞋</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="臂力棒" target="_blank" href="/getItemDetail/6053561664/149767022629745964.htm" rel="nofollow"><img alt="臂力棒" class="lazy-loading" lazy-src="Picture/149767022629745964_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="臂力棒" target="_blank" href="/getItemDetail/149767022629745964.htm" rel="nofollow"><img alt="臂力棒" class="lazy-loading" lazy-src="Picture/149767022629745964_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>30. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="臂力棒" href="/getItemDetail/6053561664/149767022629745964.htm">臂力棒</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="臂力棒" href="/getItemDetail/149767022629745964.htm">臂力棒</a></p>
-</li>
-</div>
-<div class="page">
-<li>
-<div class="floor-control">
-<div class="floor-control-bg"></div>
-<input type="hidden" class="pageNum" value="1">
-<a name="PcYoupin_none_list_floor07_Prev" href="javascript:prePage(1000000006);" class="floor-control-prev disabled-prev"><i></i>上一页</a>
-<a name="PcYoupin_none_list_floor07_Next" href="javascript:nextPage(1000000006);" class="floor-control-next "><i></i>下一页</a>
-</div>
-<a name="PcYoupin_none_list_floor07_All" class="floor-control-all" href="//s2.suning.com/search/0-1000000006-99-P1.htm" target=_blank>文体用品 &gt;</a>
-</li>
+@endforeach
 </div>
 </ul>
 </div>
@@ -1104,133 +901,34 @@ Second-hand Car Goods
 </div>
 <div class="floor-category">
 <ul>
-<li><a name="PcYoupin_none_list_floor_0801" href="//s2.suning.com/search/0-1000000062-1000000066-P1.htm" target=_blank><h3>自行车</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0802" href="//s2.suning.com/search/0-1000000062-1000000065-P1.htm" target=_blank><h3>电动车</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0803" href="//s2.suning.com/search/0-1000000062-1000000068-P1.htm" target=_blank><h3>车载电器</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0804" href="//s2.suning.com/search/0-1000000062-1000000064-P1.htm" target=_blank><h3>二手汽车</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0805" href="//s2.suning.com/search/0-1000000062-1000000067-P1.htm" target=_blank><h3>汽车内饰</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0806" href="//s2.suning.com/search/0-1000000062-1000000069-P1.htm" target=_blank><h3>汽车养护</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0807" href="//s2.suning.com/search/0-1000000062-1000000082-P1.htm" target=_blank><h3>汽车周边</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0808" href="//s2.suning.com/search/0-1000000062-1000000083-P1.htm" target=_blank><h3>其他</h3></a></li>
+@foreach($eight as $init)
+<li><a name="PcYoupin_none_list_floor_0801" href="{{ url('home/list/index') }}?keywords={{ $init->name }}" target=_blank><h3>{{ $init->name }}</h3></a></li>
+@endforeach
 </ul>
 </div>
 <div class="floor-product" id="floor-product_1000000062">
 <ul>
 <div class="itemList">
+@foreach($car as $ar)
 <li>
 <!--<a name="PcYoupin_none_list_GoodsPicture" title="德国进口CENTURION公路车" target="_blank" href="/getItemDetail/6022582556/148966355467383756.htm" rel="nofollow"><img alt="德国进口CENTURION公路车" class="lazy-loading" lazy-src="Picture/148966355467383756_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="德国进口CENTURION公路车" target="_blank" href="/getItemDetail/148966355467383756.htm" rel="nofollow"><img alt="德国进口CENTURION公路车" class="lazy-loading" lazy-src="Picture/148966355467383756_99_200x200.jpg" /></a>
+<a name="PcYoupin_none_list_GoodsPicture" title="{{ $ar->connect }}" target="_blank" href="/getItemDetail/148966355467383756.htm" rel="nofollow"><img alt="{{ $ar->connect }}" class="lazy-loading" lazy-src="{{ asset('/uploads/shop') }}/{{ $ar->pic }}" /></a>
 <div class="price-wrap">
-<span class="price"><em>¥</em>3500. <span class="sml-pri">00</span></span>
+<span class="price"><em>¥</em>{{ $ar->newpage }}. <span class="sml-pri">00</span></span>
 <!-- <span class="degree">9.5成新
 </span> -->
 </div>
 <!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="德国进口CENTURION公路车" href="/getItemDetail/6022582556/148966355467383756.htm">德国进口CENTURION公路车</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="德国进口CENTURION公路车" href="/getItemDetail/148966355467383756.htm">德国进口CENTURION公路车</a></p>
+<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="{{ $ar->connect }}" href="{{ url('home/details') }}/{{ $arr->id }}">{{ $ar->name }}</a></p>
 </li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】玥玛摩托车锁防盗碟刹锁电动车锁电瓶不锈钢山地自行车碟刹锁单车 750E9004" target="_blank" href="/getItemDetail/6078606229/149062472458274729.htm" rel="nofollow"><img alt="【购自苏宁】玥玛摩托车锁防盗碟刹锁电动车锁电瓶不锈钢山地自行车碟刹锁单车 750E9004" class="lazy-loading" lazy-src="Picture/149062472458274729_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】玥玛摩托车锁防盗碟刹锁电动车锁电瓶不锈钢山地自行车碟刹锁单车 750E9004" target="_blank" href="/getItemDetail/149062472458274729.htm" rel="nofollow"><img alt="【购自苏宁】玥玛摩托车锁防盗碟刹锁电动车锁电瓶不锈钢山地自行车碟刹锁单车 750E9004" class="lazy-loading" lazy-src="Picture/149062472458274729_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>60. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】玥玛摩托车锁防盗碟刹锁电动车锁电瓶不锈钢山地自行车碟刹锁单车 750E9004" href="/getItemDetail/6078606229/149062472458274729.htm">【购自苏宁】玥玛摩托车锁防盗碟刹锁电动车锁电瓶不锈钢山地自行车碟刹锁单车 750E9004</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】玥玛摩托车锁防盗碟刹锁电动车锁电瓶不锈钢山地自行车碟刹锁单车 750E9004" href="/getItemDetail/149062472458274729.htm">【购自苏宁】玥玛摩托车锁防盗碟刹锁电动车锁电瓶不锈钢山地自行车碟刹锁单车 750E9004</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="大众汽车汽车保养" target="_blank" href="/getItemDetail/6155719368/149629263659072868.htm" rel="nofollow"><img alt="大众汽车汽车保养" class="lazy-loading" lazy-src="Picture/149629263659072868_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="大众汽车汽车保养" target="_blank" href="/getItemDetail/149629263659072868.htm" rel="nofollow"><img alt="大众汽车汽车保养" class="lazy-loading" lazy-src="Picture/149629263659072868_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>80. <span class="sml-pri">00</span></span>
-<!-- </span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="大众汽车汽车保养" href="/getItemDetail/6155719368/149629263659072868.htm">大众汽车汽车保养</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="大众汽车汽车保养" href="/getItemDetail/149629263659072868.htm">大众汽车汽车保养</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="越野摩托车" target="_blank" href="/getItemDetail/6154882051/149791182482287951.htm" rel="nofollow"><img alt="越野摩托车" class="lazy-loading" lazy-src="Picture/149791182482287951_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="越野摩托车" target="_blank" href="/getItemDetail/149791182482287951.htm" rel="nofollow"><img alt="越野摩托车" class="lazy-loading" lazy-src="Picture/149791182482287951_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>3400. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="越野摩托车" href="/getItemDetail/6154882051/149791182482287951.htm">越野摩托车</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="越野摩托车" href="/getItemDetail/149791182482287951.htm">越野摩托车</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="回收旧锂电池" target="_blank" href="/getItemDetail/6210321867/149491552715797667.htm" rel="nofollow"><img alt="回收旧锂电池" class="lazy-loading" lazy-src="Picture/149491552715797667_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="回收旧锂电池" target="_blank" href="/getItemDetail/149491552715797667.htm" rel="nofollow"><img alt="回收旧锂电池" class="lazy-loading" lazy-src="Picture/149491552715797667_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>50. <span class="sml-pri">00</span></span>
-<!-- <span class="degree degree-new">全新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="回收旧锂电池" href="/getItemDetail/6210321867/149491552715797667.htm">回收旧锂电池</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="回收旧锂电池" href="/getItemDetail/149491552715797667.htm">回收旧锂电池</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="全新宗申赛科龙复古咖啡街车PN150CC摩托车跨骑车威客WEEK8 " target="_blank" href="/getItemDetail/6212922159/149526356786971959.htm" rel="nofollow"><img alt="全新宗申赛科龙复古咖啡街车PN150CC摩托车跨骑车威客WEEK8 " class="lazy-loading" lazy-src="Picture/149526356786971959_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="全新宗申赛科龙复古咖啡街车PN150CC摩托车跨骑车威客WEEK8 " target="_blank" href="/getItemDetail/149526356786971959.htm" rel="nofollow"><img alt="全新宗申赛科龙复古咖啡街车PN150CC摩托车跨骑车威客WEEK8 " class="lazy-loading" lazy-src="Picture/149526356786971959_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>8180. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="全新宗申赛科龙复古咖啡街车PN150CC摩托车跨骑车威客WEEK8 " href="/getItemDetail/6212922159/149526356786971959.htm">全新宗申赛科龙复古咖啡街车PN150CC摩托车跨骑车威客WEEK8 </a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="全新宗申赛科龙复古咖啡街车PN150CC摩托车跨骑车威客WEEK8 " href="/getItemDetail/149526356786971959.htm">全新宗申赛科龙复古咖啡街车PN150CC摩托车跨骑车威客WEEK8 </a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="宗申赛科龙RX1水冷150CC小鸟拉力车ADV越野车巡航车摩托车 " target="_blank" href="/getItemDetail/6212922159/149526235257268359.htm" rel="nofollow"><img alt="宗申赛科龙RX1水冷150CC小鸟拉力车ADV越野车巡航车摩托车 " class="lazy-loading" lazy-src="Picture/149526235257268359_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="宗申赛科龙RX1水冷150CC小鸟拉力车ADV越野车巡航车摩托车 " target="_blank" href="/getItemDetail/149526235257268359.htm" rel="nofollow"><img alt="宗申赛科龙RX1水冷150CC小鸟拉力车ADV越野车巡航车摩托车 " class="lazy-loading" lazy-src="Picture/149526235257268359_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>1. <span class="sml-pri">08万</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="宗申赛科龙RX1水冷150CC小鸟拉力车ADV越野车巡航车摩托车 " href="/getItemDetail/6212922159/149526235257268359.htm">宗申赛科龙RX1水冷150CC小鸟拉力车ADV越野车巡航车摩托车 </a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="宗申赛科龙RX1水冷150CC小鸟拉力车ADV越野车巡航车摩托车 " href="/getItemDetail/149526235257268359.htm">宗申赛科龙RX1水冷150CC小鸟拉力车ADV越野车巡航车摩托车 </a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="望江天地游侠BRIXTON复古咖啡街车G3摩托车跨骑车" target="_blank" href="/getItemDetail/6212922159/149521509901068559.htm" rel="nofollow"><img alt="望江天地游侠BRIXTON复古咖啡街车G3摩托车跨骑车" class="lazy-loading" lazy-src="Picture/149521509901068559_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="望江天地游侠BRIXTON复古咖啡街车G3摩托车跨骑车" target="_blank" href="/getItemDetail/149521509901068559.htm" rel="nofollow"><img alt="望江天地游侠BRIXTON复古咖啡街车G3摩托车跨骑车" class="lazy-loading" lazy-src="Picture/149521509901068559_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>1. <span class="sml-pri">08万</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="望江天地游侠BRIXTON复古咖啡街车G3摩托车跨骑车" href="/getItemDetail/6212922159/149521509901068559.htm">望江天地游侠BRIXTON复古咖啡街车G3摩托车跨骑车</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="望江天地游侠BRIXTON复古咖啡街车G3摩托车跨骑车" href="/getItemDetail/149521509901068559.htm">望江天地游侠BRIXTON复古咖啡街车G3摩托车跨骑车</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】Britax宝得适 儿童安全座椅 超级百变王白金版 适合9-36kg（9个月-12岁）闪" target="_blank" href="/getItemDetail/2214436270/149633393016476270.htm" rel="nofollow"><img alt="【购自苏宁】Britax宝得适 儿童安全座椅 超级百变王白金版 适合9-36kg（9个月-12岁）闪" class="lazy-loading" lazy-src="Picture/149633393016476270_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】Britax宝得适 儿童安全座椅 超级百变王白金版 适合9-36kg（9个月-12岁）闪" target="_blank" href="/getItemDetail/149633393016476270.htm" rel="nofollow"><img alt="【购自苏宁】Britax宝得适 儿童安全座椅 超级百变王白金版 适合9-36kg（9个月-12岁）闪" class="lazy-loading" lazy-src="Picture/149633393016476270_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>1600. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】Britax宝得适 儿童安全座椅 超级百变王白金版 适合9-36kg（9个月-12岁）闪" href="/getItemDetail/2214436270/149633393016476270.htm">【购自苏宁】Britax宝得适 儿童安全座椅 超级百变王白金版 适合9-36kg（9个月-12岁）闪</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】Britax宝得适 儿童安全座椅 超级百变王白金版 适合9-36kg（9个月-12岁）闪" href="/getItemDetail/149633393016476270.htm">【购自苏宁】Britax宝得适 儿童安全座椅 超级百变王白金版 适合9-36kg（9个月-12岁）闪</a></p>
-</li>
-</div>
-<div class="page">
-<li>
-<div class="floor-control">
-<div class="floor-control-bg"></div>
-<input type="hidden" class="pageNum" value="1">
-<a name="PcYoupin_none_list_floor08_Prev" href="javascript:prePage(1000000062);" class="floor-control-prev disabled-prev"><i></i>上一页</a>
-<a name="PcYoupin_none_list_floor08_Next" href="javascript:nextPage(1000000062);" class="floor-control-next "><i></i>下一页</a>
-</div>
-<a name="PcYoupin_none_list_floor08_All" class="floor-control-all" href="//s2.suning.com/search/0-1000000062-99-P1.htm" target=_blank>车品配饰 &gt;</a>
-</li>
+@endforeach
 </div>
 </ul>
 </div>
 </div>
 </div>
+
+
 <div class="floor floor9 clearfix">
 <div class="floor-head">
 <i class="icon-floor floor-09"></i>
@@ -1247,279 +945,140 @@ Life Services
 </div>
 <div class="floor-category">
 <ul>
-<li><a name="PcYoupin_none_list_floor_0901" href="//s2.suning.com/search/0-1000000070-1000000074-P1.htm" target=_blank><h3>券</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0902" href="//s2.suning.com/search/0-1000000070-1000000076-P1.htm" target=_blank><h3>门票</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0903" href="//s2.suning.com/search/0-1000000070-1000000071-P1.htm" target=_blank><h3>礼品卡</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0904" href="//s2.suning.com/search/0-1000000070-1000000079-P1.htm" target=_blank><h3>租房租车</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0905" href="//s2.suning.com/search/0-1000000070-1000000072-P1.htm" target=_blank><h3>健身卡</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0906" href="//s2.suning.com/search/0-1000000070-1000000075-P1.htm" target=_blank><h3>游戏点卡</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0907" href="//s2.suning.com/search/0-1000000070-1000000077-P1.htm" target=_blank><h3>演唱会门票</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0908" href="//s2.suning.com/search/0-1000000070-1000000078-P1.htm" target=_blank><h3>电影票</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_0909" href="//s2.suning.com/search/0-1000000070-1000000080-P1.htm" target=_blank><h3>拼车</h3></a></li>
-<li><a name="PcYoupin_none_list_floor_09010" href="//s2.suning.com/search/0-1000000070-1000000081-P1.htm" target=_blank><h3>其他</h3></a></li>
+
+@foreach($nine as $oyy)
+<li><a name="PcYoupin_none_list_floor_0901" href="{{ url('home/list/index') }}?keywords={{ $oyy->name }}" target=_blank><h3>{{ $oyy->name }}</h3></a></li>
+@endforeach
 </ul>
 </div>
+
 <div class="floor-product" id="floor-product_1000000070">
 <ul>
 <div class="itemList">
+
+@foreach($fuw as $vl)
 <li>
 <!--<a name="PcYoupin_none_list_GoodsPicture" title="正宗田阳芒果大甩卖" target="_blank" href="/getItemDetail/6172073153/149793295726082253.htm" rel="nofollow"><img alt="正宗田阳芒果大甩卖" class="lazy-loading" lazy-src="Picture/149793295726082253_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="正宗田阳芒果大甩卖" target="_blank" href="/getItemDetail/149793295726082253.htm" rel="nofollow"><img alt="正宗田阳芒果大甩卖" class="lazy-loading" lazy-src="Picture/149793295726082253_99_200x200.jpg" /></a>
+<a name="PcYoupin_none_list_GoodsPicture" title="{{ $vl->name }}" target="_blank" href="{{ url('home/details') }}/{{ $vl->id }}" rel="nofollow"><img alt="{{ $vl->connect }}" class="lazy-loading" lazy-src="{{ asset('/uploads/shop') }}/{{ $vl->pic }}" /></a>
 <div class="price-wrap">
-<span class="price"><em>¥</em>88. <span class="sml-pri">00</span></span>
+<span class="price"><em>¥</em>{{ $vl->newpage }}. <span class="sml-pri">00</span></span>
 <!-- <span class="degree">9.5成新
 </span> -->
 </div>
 <!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="正宗田阳芒果大甩卖" href="/getItemDetail/6172073153/149793295726082253.htm">正宗田阳芒果大甩卖</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="正宗田阳芒果大甩卖" href="/getItemDetail/149793295726082253.htm">正宗田阳芒果大甩卖</a></p>
+<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="{{ $vl->name }}" href="{{ url('home/details') }}/{{ $vl->id }}">{{ $vl->name }}</a></p>
 </li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="好利来储值卡" target="_blank" href="/getItemDetail/2212753307/148800434001117407.htm" rel="nofollow"><img alt="好利来储值卡" class="lazy-loading" lazy-src="Picture/148800434001117407_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="好利来储值卡" target="_blank" href="/getItemDetail/148800434001117407.htm" rel="nofollow"><img alt="好利来储值卡" class="lazy-loading" lazy-src="Picture/148800434001117407_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>155. <span class="sml-pri">00</span></span>
-<!-- <span class="degree degree-new">全新
-</span> -->
+@endforeach
+
+
 </div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="好利来储值卡" href="/getItemDetail/2212753307/148800434001117407.htm">好利来储值卡</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="好利来储值卡" href="/getItemDetail/148800434001117407.htm">好利来储值卡</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="海底捞欢乐卡" target="_blank" href="/getItemDetail/6201604549/148732550294565049.htm" rel="nofollow"><img alt="海底捞欢乐卡" class="lazy-loading" lazy-src="Picture/148732550294565049_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="海底捞欢乐卡" target="_blank" href="/getItemDetail/148732550294565049.htm" rel="nofollow"><img alt="海底捞欢乐卡" class="lazy-loading" lazy-src="Picture/148732550294565049_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>490. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="海底捞欢乐卡" href="/getItemDetail/6201604549/148732550294565049.htm">海底捞欢乐卡</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="海底捞欢乐卡" href="/getItemDetail/148732550294565049.htm">海底捞欢乐卡</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="伊尔洁洗衣卡便宜转" target="_blank" href="/getItemDetail/2202214185/148738960594125785.htm" rel="nofollow"><img alt="伊尔洁洗衣卡便宜转" class="lazy-loading" lazy-src="Picture/148738960594125785_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="伊尔洁洗衣卡便宜转" target="_blank" href="/getItemDetail/148738960594125785.htm" rel="nofollow"><img alt="伊尔洁洗衣卡便宜转" class="lazy-loading" lazy-src="Picture/148738960594125785_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>400. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="伊尔洁洗衣卡便宜转" href="/getItemDetail/2202214185/148738960594125785.htm">伊尔洁洗衣卡便宜转</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="伊尔洁洗衣卡便宜转" href="/getItemDetail/148738960594125785.htm">伊尔洁洗衣卡便宜转</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="流动小吃车" target="_blank" href="/getItemDetail/6019317333/148739096054951233.htm" rel="nofollow"><img alt="流动小吃车" class="lazy-loading" lazy-src="Picture/148739096054951233_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="流动小吃车" target="_blank" href="/getItemDetail/148739096054951233.htm" rel="nofollow"><img alt="流动小吃车" class="lazy-loading" lazy-src="Picture/148739096054951233_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>6580. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="流动小吃车" href="/getItemDetail/6019317333/148739096054951233.htm">流动小吃车</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="流动小吃车" href="/getItemDetail/148739096054951233.htm">流动小吃车</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="橄榄手链，生命之源。把玩两年了" target="_blank" href="/getItemDetail/6144540791/148763912958373291.htm" rel="nofollow"><img alt="橄榄手链，生命之源。把玩两年了" class="lazy-loading" lazy-src="Picture/148763912958373291_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="橄榄手链，生命之源。把玩两年了" target="_blank" href="/getItemDetail/148763912958373291.htm" rel="nofollow"><img alt="橄榄手链，生命之源。把玩两年了" class="lazy-loading" lazy-src="Picture/148763912958373291_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>199. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="橄榄手链，生命之源。把玩两年了" href="/getItemDetail/6144540791/148763912958373291.htm">橄榄手链，生命之源。把玩两年了</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="橄榄手链，生命之源。把玩两年了" href="/getItemDetail/148763912958373291.htm">橄榄手链，生命之源。把玩两年了</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="鸡心，核桃，差不多两年了" target="_blank" href="/getItemDetail/6144540791/148763968509138991.htm" rel="nofollow"><img alt="鸡心，核桃，差不多两年了" class="lazy-loading" lazy-src="Picture/148763968509138991_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="鸡心，核桃，差不多两年了" target="_blank" href="/getItemDetail/148763968509138991.htm" rel="nofollow"><img alt="鸡心，核桃，差不多两年了" class="lazy-loading" lazy-src="Picture/148763968509138991_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>66. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="鸡心，核桃，差不多两年了" href="/getItemDetail/6144540791/148763968509138991.htm">鸡心，核桃，差不多两年了</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="鸡心，核桃，差不多两年了" href="/getItemDetail/148763968509138991.htm">鸡心，核桃，差不多两年了</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】Schiff Movefree氨糖维骨力软骨素 170粒" target="_blank" href="/getItemDetail/5201030061/148766929863086661.htm" rel="nofollow"><img alt="【购自苏宁】Schiff Movefree氨糖维骨力软骨素 170粒" class="lazy-loading" lazy-src="Picture/148766929863086661_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="【购自苏宁】Schiff Movefree氨糖维骨力软骨素 170粒" target="_blank" href="/getItemDetail/148766929863086661.htm" rel="nofollow"><img alt="【购自苏宁】Schiff Movefree氨糖维骨力软骨素 170粒" class="lazy-loading" lazy-src="Picture/148766929863086661_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>176. <span class="sml-pri">00</span></span>
-<!-- <span class="degree">9.5成新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】Schiff Movefree氨糖维骨力软骨素 170粒" href="/getItemDetail/5201030061/148766929863086661.htm">【购自苏宁】Schiff Movefree氨糖维骨力软骨素 170粒</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="【购自苏宁】Schiff Movefree氨糖维骨力软骨素 170粒" href="/getItemDetail/148766929863086661.htm">【购自苏宁】Schiff Movefree氨糖维骨力软骨素 170粒</a></p>
-</li>
-<li>
-<!--<a name="PcYoupin_none_list_GoodsPicture" title="转卖马代泰姬珊瑚酒店" target="_blank" href="/getItemDetail/6020917420/148768855198662220.htm" rel="nofollow"><img alt="转卖马代泰姬珊瑚酒店" class="lazy-loading" lazy-src="Picture/148768855198662220_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="转卖马代泰姬珊瑚酒店" target="_blank" href="/getItemDetail/148768855198662220.htm" rel="nofollow"><img alt="转卖马代泰姬珊瑚酒店" class="lazy-loading" lazy-src="Picture/148768855198662220_99_200x200.jpg" /></a>
-<div class="price-wrap">
-<span class="price"><em>¥</em>1. <span class="sml-pri">98万</span></span>
-<!-- <span class="degree">非全新
-</span> -->
-</div>
-<!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="转卖马代泰姬珊瑚酒店" href="/getItemDetail/6020917420/148768855198662220.htm">转卖马代泰姬珊瑚酒店</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="转卖马代泰姬珊瑚酒店" href="/getItemDetail/148768855198662220.htm">转卖马代泰姬珊瑚酒店</a></p>
-</li>
-</div>
-<div class="page">
-<li>
-<div class="floor-control">
-<div class="floor-control-bg"></div>
-<input type="hidden" class="pageNum" value="1">
-<a name="PcYoupin_none_list_floor09_Prev" href="javascript:prePage(1000000070);" class="floor-control-prev disabled-prev"><i></i>上一页</a>
-<a name="PcYoupin_none_list_floor09_Next" href="javascript:nextPage(1000000070);" class="floor-control-next "><i></i>下一页</a>
-</div>
-<a name="PcYoupin_none_list_floor09_All" class="floor-control-all" href="//s2.suning.com/search/0-1000000070-99-P1.htm" target=_blank>生活服务 &gt;</a>
-</li>
-</div>
+
 </ul>
 </div>
 </div>
 </div>
+
+
+
+
+
+
+
 <!-- 全部分类 [[ -->
 <div class="shp-bottom-wrap">
 <div class="sbw-nav clearfix">
 <dl>
 <dt><i class="icon-floor floor-01"></i>
-<a name="PcYoupin_none_list_bottomCategory_01" href="//s2.suning.com/search/0-1000000000-99/1.htm" target="_blank">手机数码</a>
+手机数码
 </dt>
 <dd>
-<a name="PcYoupin_none_list_bottomCategory_0101" href="//s2.suning.com/search/0-1000000000-1000000007-P1.htm" target="_blank">手机</a>
-<a name="PcYoupin_none_list_bottomCategory_0102" href="//s2.suning.com/search/0-1000000000-1000000012-P1.htm" target="_blank">电脑</a>
-<a name="PcYoupin_none_list_bottomCategory_0103" href="//s2.suning.com/search/0-1000000000-1000000009-P1.htm" target="_blank">单反</a>
-<a name="PcYoupin_none_list_bottomCategory_0104" href="//s2.suning.com/search/0-1000000000-1000000015-P1.htm" target="_blank">耳机</a>
-<a name="PcYoupin_none_list_bottomCategory_0105" href="//s2.suning.com/search/0-1000000000-1000000008-P1.htm" target="_blank">手机配件</a>
-<a name="PcYoupin_none_list_bottomCategory_0106" href="//s2.suning.com/search/0-1000000000-1000000010-P1.htm" target="_blank">镜头</a>
-<a name="PcYoupin_none_list_bottomCategory_0107" href="//s2.suning.com/search/0-1000000000-1000000011-P1.htm" target="_blank">数码配件</a>
-<a name="PcYoupin_none_list_bottomCategory_0108" href="//s2.suning.com/search/0-1000000000-1000000013-P1.htm" target="_blank">网络设备</a>
-<a name="PcYoupin_none_list_bottomCategory_0109" href="//s2.suning.com/search/0-1000000000-1000000014-P1.htm" target="_blank">电脑配件</a>
-<a name="PcYoupin_none_list_bottomCategory_01010" href="//s2.suning.com/search/0-1000000000-1000000016-P1.htm" target="_blank">其他</a>
+@foreach($num as $dl)
+<a name="PcYoupin_none_list_bottomCategory_0101" href="{{ url('home/list/index') }}?keywords={{ $dl->name }}" target="_blank">{{ $dl->name }}</a>
+@endforeach
 </dd>
 </dl>
+
 <dl>
 <dt><i class="icon-floor floor-02"></i>
-<a name="PcYoupin_none_list_bottomCategory_02" href="//s2.suning.com/search/0-1000000002-99/1.htm" target="_blank">母婴玩具</a>
+母婴玩具
 </dt>
 <dd>
-<a name="PcYoupin_none_list_bottomCategory_0201" href="//s2.suning.com/search/0-1000000002-1000000023-P1.htm" target="_blank">奶粉</a>
-<a name="PcYoupin_none_list_bottomCategory_0202" href="//s2.suning.com/search/0-1000000002-1000000030-P1.htm" target="_blank">玩具</a>
-<a name="PcYoupin_none_list_bottomCategory_0203" href="//s2.suning.com/search/0-1000000002-1000000028-P1.htm" target="_blank">童装</a>
-<a name="PcYoupin_none_list_bottomCategory_0204" href="//s2.suning.com/search/0-1000000002-1000000027-P1.htm" target="_blank">尿不湿</a>
-<a name="PcYoupin_none_list_bottomCategory_0205" href="//s2.suning.com/search/0-1000000002-1000000024-P1.htm" target="_blank">营养/辅食</a>
-<a name="PcYoupin_none_list_bottomCategory_0206" href="//s2.suning.com/search/0-1000000002-1000000025-P1.htm" target="_blank">孕婴洗护</a>
-<a name="PcYoupin_none_list_bottomCategory_0207" href="//s2.suning.com/search/0-1000000002-1000000026-P1.htm" target="_blank">喂养用品</a>
-<a name="PcYoupin_none_list_bottomCategory_0208" href="//s2.suning.com/search/0-1000000002-1000000029-P1.htm" target="_blank">车床/床品</a>
-<a name="PcYoupin_none_list_bottomCategory_0209" href="//s2.suning.com/search/0-1000000002-1000000031-P1.htm" target="_blank">孕妈专区</a>
-<a name="PcYoupin_none_list_bottomCategory_02010" href="//s2.suning.com/search/0-1000000002-1000000059-P1.htm" target="_blank">其他</a>
+@foreach($baby as $dj)
+<a name="PcYoupin_none_list_bottomCategory_0201" href="{{ url('home/list/index') }}?keywords={{ $dj->name }}" target="_blank">{{ $dj->name }}</a>
+@endforeach
 </dd>
 </dl>
+
 <dl>
 <dt><i class="icon-floor floor-03"></i>
-<a name="PcYoupin_none_list_bottomCategory_03" href="//s2.suning.com/search/0-1000000004-99/1.htm" target="_blank">服饰鞋包</a>
+服饰鞋包
 </dt>
 <dd>
-<a name="PcYoupin_none_list_bottomCategory_0301" href="//s2.suning.com/search/0-1000000004-1000000038-P1.htm" target="_blank">女装</a>
-<a name="PcYoupin_none_list_bottomCategory_0302" href="//s2.suning.com/search/0-1000000004-1000000039-P1.htm" target="_blank">男装</a>
-<a name="PcYoupin_none_list_bottomCategory_0303" href="//s2.suning.com/search/0-1000000004-1000000043-P1.htm" target="_blank">钟表</a>
-<a name="PcYoupin_none_list_bottomCategory_0304" href="//s2.suning.com/search/0-1000000004-1000000044-P1.htm" target="_blank">奢侈品</a>
-<a name="PcYoupin_none_list_bottomCategory_0305" href="//s2.suning.com/search/0-1000000004-1000000040-P1.htm" target="_blank">箱包</a>
-<a name="PcYoupin_none_list_bottomCategory_0306" href="//s2.suning.com/search/0-1000000004-1000000041-P1.htm" target="_blank">女鞋</a>
-<a name="PcYoupin_none_list_bottomCategory_0307" href="//s2.suning.com/search/0-1000000004-1000000042-P1.htm" target="_blank">男鞋</a>
-<a name="PcYoupin_none_list_bottomCategory_0308" href="//s2.suning.com/search/0-1000000004-1000000087-P1.htm" target="_blank">金银珠宝</a>
-<a name="PcYoupin_none_list_bottomCategory_0309" href="//s2.suning.com/search/0-1000000004-1000000088-P1.htm" target="_blank">其他</a>
+@foreach($shut as $sl)
+<a name="PcYoupin_none_list_bottomCategory_0301" href="{{ url('home/list/index') }}?keywords={{ $sl->name }}" target="_blank">{{ $sl->name }}</a>
+@endforeach
 </dd>
 </dl>
 <dl>
 <dt><i class="icon-floor floor-04"></i>
-<a name="PcYoupin_none_list_bottomCategory_04" href="//s2.suning.com/search/0-1000000003-99/1.htm" target="_blank">美妆个护</a>
+美妆个护
 </dt>
 <dd>
-<a name="PcYoupin_none_list_bottomCategory_0401" href="//s2.suning.com/search/0-1000000003-1000000033-P1.htm" target="_blank">美容护肤</a>
-<a name="PcYoupin_none_list_bottomCategory_0402" href="//s2.suning.com/search/0-1000000003-1000000034-P1.htm" target="_blank">彩妆</a>
-<a name="PcYoupin_none_list_bottomCategory_0403" href="//s2.suning.com/search/0-1000000003-1000000037-P1.htm" target="_blank">个人护理</a>
-<a name="PcYoupin_none_list_bottomCategory_0404" href="//s2.suning.com/search/0-1000000003-1000000032-P1.htm" target="_blank">美容工具</a>
-<a name="PcYoupin_none_list_bottomCategory_0405" href="//s2.suning.com/search/0-1000000003-1000000035-P1.htm" target="_blank">美容护发</a>
-<a name="PcYoupin_none_list_bottomCategory_0406" href="//s2.suning.com/search/0-1000000003-1000000036-P1.htm" target="_blank">香水</a>
-<a name="PcYoupin_none_list_bottomCategory_0407" href="//s2.suning.com/search/0-1000000003-1000000089-P1.htm" target="_blank">其他</a>
+@foreach($but as $yu)
+<a name="PcYoupin_none_list_bottomCategory_0401" href="{{ url('home/list/index') }}?keywords={{ $yu->name }}" target="_blank">{{ $yu->name }}</a>
+@endforeach
 </dd>
 </dl>
 <dl>
 <dt><i class="icon-floor floor-05"></i>
-<a name="PcYoupin_none_list_bottomCategory_05" href="//s2.suning.com/search/0-1000000005-99/1.htm" target="_blank">居家日用</a>
+居家日用
 </dt>
+
 <dd>
-<a name="PcYoupin_none_list_bottomCategory_0501" href="//s2.suning.com/search/0-1000000005-1000000047-P1.htm" target="_blank">家具</a>
-<a name="PcYoupin_none_list_bottomCategory_0502" href="//s2.suning.com/search/0-1000000005-1000000049-P1.htm" target="_blank">厨具</a>
-<a name="PcYoupin_none_list_bottomCategory_0503" href="//s2.suning.com/search/0-1000000005-1000000060-P1.htm" target="_blank">酒水</a>
-<a name="PcYoupin_none_list_bottomCategory_0504" href="//s2.suning.com/search/0-1000000005-1000000045-P1.htm" target="_blank">日用日化</a>
-<a name="PcYoupin_none_list_bottomCategory_0505" href="//s2.suning.com/search/0-1000000005-1000000046-P1.htm" target="_blank">建材</a>
-<a name="PcYoupin_none_list_bottomCategory_0506" href="//s2.suning.com/search/0-1000000005-1000000048-P1.htm" target="_blank">家饰家纺</a>
-<a name="PcYoupin_none_list_bottomCategory_0507" href="//s2.suning.com/search/0-1000000005-1000000061-P1.htm" target="_blank">其他</a>
+@foreach($bbc as $bd)
+<a name="PcYoupin_none_list_bottomCategory_0501" href="{{ url('home/list/index') }}?keywords={{ $bd->name }}" target="_blank">{{ $bd->name }}</a>
+@endforeach
 </dd>
+
 </dl>
 <dl>
 <dt><i class="icon-floor floor-06"></i>
-<a name="PcYoupin_none_list_bottomCategory_06" href="//s2.suning.com/search/0-1000000001-99/1.htm" target="_blank">电器影音</a>
+电器影音
 </dt>
 <dd>
-<a name="PcYoupin_none_list_bottomCategory_0601" href="//s2.suning.com/search/0-1000000001-1000000019-P1.htm" target="_blank">空调</a>
-<a name="PcYoupin_none_list_bottomCategory_0602" href="//s2.suning.com/search/0-1000000001-1000000020-P1.htm" target="_blank">彩电</a>
-<a name="PcYoupin_none_list_bottomCategory_0603" href="//s2.suning.com/search/0-1000000001-1000000057-P1.htm" target="_blank">音响</a>
-<a name="PcYoupin_none_list_bottomCategory_0604" href="//s2.suning.com/search/0-1000000001-1000000022-P1.htm" target="_blank">小家电</a>
-<a name="PcYoupin_none_list_bottomCategory_0605" href="//s2.suning.com/search/0-1000000001-1000000017-P1.htm" target="_blank">冰箱</a>
-<a name="PcYoupin_none_list_bottomCategory_0606" href="//s2.suning.com/search/0-1000000001-1000000018-P1.htm" target="_blank">洗衣机</a>
-<a name="PcYoupin_none_list_bottomCategory_0607" href="//s2.suning.com/search/0-1000000001-1000000021-P1.htm" target="_blank">厨卫电器</a>
-<a name="PcYoupin_none_list_bottomCategory_0608" href="//s2.suning.com/search/0-1000000001-1000000058-P1.htm" target="_blank">其他</a>
-<a name="PcYoupin_none_list_bottomCategory_0609" href="//s2.suning.com/search/0-1000000001-1000000090-P1.htm" target="_blank">家电配件</a>
+@foreach($six as $js)
+<a name="PcYoupin_none_list_bottomCategory_0601" href="{{ url('home/list/index') }}?keywords={{ $js->name }}" target="_blank">{{ $js->name }}</a>
+@endforeach
 </dd>
 </dl>
 <dl>
 <dt><i class="icon-floor floor-07"></i>
-<a name="PcYoupin_none_list_bottomCategory_07" href="//s2.suning.com/search/0-1000000006-99/1.htm" target="_blank">文体用品</a>
+文体用品
 </dt>
 <dd>
-<a name="PcYoupin_none_list_bottomCategory_0701" href="//s2.suning.com/search/0-1000000006-1000000051-P1.htm" target="_blank">书籍</a>
-<a name="PcYoupin_none_list_bottomCategory_0702" href="//s2.suning.com/search/0-1000000006-1000000053-P1.htm" target="_blank">乐器</a>
-<a name="PcYoupin_none_list_bottomCategory_0703" href="//s2.suning.com/search/0-1000000006-1000000052-P1.htm" target="_blank">CD</a>
-<a name="PcYoupin_none_list_bottomCategory_0704" href="//s2.suning.com/search/0-1000000006-1000000054-P1.htm" target="_blank">运动器材</a>
-<a name="PcYoupin_none_list_bottomCategory_0705" href="//s2.suning.com/search/0-1000000006-1000000050-P1.htm" target="_blank">文具</a>
-<a name="PcYoupin_none_list_bottomCategory_0706" href="//s2.suning.com/search/0-1000000006-1000000055-P1.htm" target="_blank">骑行装备</a>
-<a name="PcYoupin_none_list_bottomCategory_0707" href="//s2.suning.com/search/0-1000000006-1000000056-P1.htm" target="_blank">户外装备</a>
-<a name="PcYoupin_none_list_bottomCategory_0708" href="//s2.suning.com/search/0-1000000006-1000000085-P1.htm" target="_blank">垂钓用品</a>
-<a name="PcYoupin_none_list_bottomCategory_0709" href="//s2.suning.com/search/0-1000000006-1000000086-P1.htm" target="_blank">其他</a>
+@foreach($seven as $bs)
+<a name="PcYoupin_none_list_bottomCategory_0701" href="{{ url('home/list/index') }}?keywords={{ $bs->name }}" target="_blank">{{ $bs->name }}</a>
+@endforeach
 </dd>
 </dl>
 <dl>
 <dt><i class="icon-floor floor-08"></i>
-<a name="PcYoupin_none_list_bottomCategory_08" href="//s2.suning.com/search/0-1000000062-99/1.htm" target="_blank">车品配饰</a>
+车品配饰
 </dt>
 <dd>
-<a name="PcYoupin_none_list_bottomCategory_0801" href="//s2.suning.com/search/0-1000000062-1000000066-P1.htm" target="_blank">自行车</a>
-<a name="PcYoupin_none_list_bottomCategory_0802" href="//s2.suning.com/search/0-1000000062-1000000065-P1.htm" target="_blank">电动车</a>
-<a name="PcYoupin_none_list_bottomCategory_0803" href="//s2.suning.com/search/0-1000000062-1000000068-P1.htm" target="_blank">车载电器</a>
-<a name="PcYoupin_none_list_bottomCategory_0804" href="//s2.suning.com/search/0-1000000062-1000000064-P1.htm" target="_blank">二手汽车</a>
-<a name="PcYoupin_none_list_bottomCategory_0805" href="//s2.suning.com/search/0-1000000062-1000000067-P1.htm" target="_blank">汽车内饰</a>
-<a name="PcYoupin_none_list_bottomCategory_0806" href="//s2.suning.com/search/0-1000000062-1000000069-P1.htm" target="_blank">汽车养护</a>
-<a name="PcYoupin_none_list_bottomCategory_0807" href="//s2.suning.com/search/0-1000000062-1000000082-P1.htm" target="_blank">汽车周边</a>
-<a name="PcYoupin_none_list_bottomCategory_0808" href="//s2.suning.com/search/0-1000000062-1000000083-P1.htm" target="_blank">其他</a>
+@foreach($eight as $es)
+<a name="PcYoupin_none_list_bottomCategory_0801" href="{{ url('home/list/index') }}?keywords={{ $es->name }}" target="_blank">{{ $es->name }}</a>
+@endforeach
 </dd>
 </dl>
 <dl>
 <dt><i class="icon-floor floor-09"></i>
-<a name="PcYoupin_none_list_bottomCategory_09" href="//s2.suning.com/search/0-1000000070-99/1.htm" target="_blank">生活服务</a>
+生活服务
 </dt>
 <dd>
-<a name="PcYoupin_none_list_bottomCategory_0901" href="//s2.suning.com/search/0-1000000070-1000000074-P1.htm" target="_blank">券</a>
-<a name="PcYoupin_none_list_bottomCategory_0902" href="//s2.suning.com/search/0-1000000070-1000000076-P1.htm" target="_blank">门票</a>
-<a name="PcYoupin_none_list_bottomCategory_0903" href="//s2.suning.com/search/0-1000000070-1000000071-P1.htm" target="_blank">礼品卡</a>
-<a name="PcYoupin_none_list_bottomCategory_0904" href="//s2.suning.com/search/0-1000000070-1000000079-P1.htm" target="_blank">租房租车</a>
-<a name="PcYoupin_none_list_bottomCategory_0905" href="//s2.suning.com/search/0-1000000070-1000000072-P1.htm" target="_blank">健身卡</a>
-<a name="PcYoupin_none_list_bottomCategory_0906" href="//s2.suning.com/search/0-1000000070-1000000075-P1.htm" target="_blank">游戏点卡</a>
-<a name="PcYoupin_none_list_bottomCategory_0907" href="//s2.suning.com/search/0-1000000070-1000000077-P1.htm" target="_blank">演唱会门票</a>
-<a name="PcYoupin_none_list_bottomCategory_0908" href="//s2.suning.com/search/0-1000000070-1000000078-P1.htm" target="_blank">电影票</a>
-<a name="PcYoupin_none_list_bottomCategory_0909" href="//s2.suning.com/search/0-1000000070-1000000080-P1.htm" target="_blank">拼车</a>
-<a name="PcYoupin_none_list_bottomCategory_09010" href="//s2.suning.com/search/0-1000000070-1000000081-P1.htm" target="_blank">其他</a>
+@foreach($nine as $dy)
+<a name="PcYoupin_none_list_bottomCategory_0901" href="{{ url('home/list/index') }}?keywords={{ $dy->name }}" target="_blank">{{ $dy->name }}</a>
+@endforeach
 </dd>
 </dl>
 <dl class="wx-qr">
@@ -1606,10 +1165,6 @@ Life Services
 <a href="javascript:;" rel="floor9">
 <em class="nav-icon nav-icon-9"></em>
 <b>生活<br />服务</b>
-</a>
-<a href="http://ued.suning.com/survey/express/d0lrSW9T" target="_blank">
-<i class="ng-iconfont">&#xe612;</i>
-<b>问卷<br />调查</b>
 </a>
 <a href="javascript:;" onclick="findsinglepass(18710);">
 <i class="ng-iconfont">&#xe631;</i>

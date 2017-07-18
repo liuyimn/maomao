@@ -37,15 +37,8 @@ class ShoppingController extends Controller
     		return view('home.shopping.index');
     	}
 
+        // 发送数据到页面
     	return view('home.shopping.index', ['date' => $date]);
-    }
-
-    // 个人中心删除
-    public function delete($id)
-    {
-    	$res = \DB::table('nums_user')->where('sid', $id)->where('uid', session('user')->id)->delete();
-
-   
     }
 
 }
