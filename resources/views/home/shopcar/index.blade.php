@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <title>我的购物车 - {{ $title }}</title>
+
     <link rel="stylesheet" href="{{asset('/home/css/base.min.css') }}" />   
+
     <link rel="stylesheet" type="text/css" href="{{asset('/home/css/cart.min.css') }}" />
 </head>
 <body>

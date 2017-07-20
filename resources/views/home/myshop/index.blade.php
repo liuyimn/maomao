@@ -1,12 +1,13 @@
 @extends('home.userlout')
 
 @section('content')
-
+<!-- <link rel="stylesheet" href="{{ asset('/home/index/bootstrap/bootstrap.min.css') }}"> -->
+<script src="{{ asset('/home/index/bootstrap/bootstrap.min.js') }}"></script>
 <div class="span16">
     <div class="uc-box uc-main-box">
         <div class="uc-content-box">
             <div class="box-hd">
-                <h1 class="title">购物车</h1>
+                <h1 class="title">我的发布</h1>
                 <div class="more clearfix hide">
                     <ul class="filter-list J_addrType">
                         <li class="first active"><a href="https://order.mi.com/user/favorite?r=61712.1500252256" data-stat-id="23ba2e43c89c0180" onclick="_msq.push([&#39;trackEvent&#39;, &#39;85a35dcaa091e037-23ba2e43c89c0180&#39;, &#39;https://order.mi.com/user/favorite&#39;, &#39;pcpid&#39;, &#39;&#39;]);">喜欢的商品</a></li>
@@ -17,31 +18,29 @@
             <div class="box-bd">
                 <div class="xm-goods-list-wrap">
                     <ul class="xm-goods-list clearfix">
-                    @if(empty($date))
+                    @if(!$res)
                         <div class="box-bd">
-                            <p class="empty">您暂未添加任何商品。</p>
+                            <p class="empty">您暂未发布任何商品。</p>
                             <div class="xm-pagenavi"></div>  
                         </div>
-                    @else
-                        @foreach($date as $key)
-                            @foreach($key as $v)
+                    @endif
+                                @foreach($res as $v)
                                 <li class="xm-goods-item">
                                     <div class="figure figure-img"><a href="{{ url('home/details') }}/{{ $v->id }}" ><img src="{{ asset('uploads/shop') }}/{{ $v->pic }}"></a></div>
-                                        <h3 class="title"><a href="" >{{ $v->name }}</a></h3>
+                                        <h3 class="title"><a href="{{ url('home/details') }}/{{ $v->id }}" >{{ $v->name }}</a></h3>
                                         <p class="price">{{ $v->newpage }}</p>
-                                        <p class="rank">{{ $v->connect }}</p>
+                                        <p class="rank"></p>
                                     <div class="actions">
-                                        <a class="btn btn-small btn-line-gray J_delFav" href="{{ url('home/details/shopcar/del') }}/{{ $v->id }}" >删除</a>
-                                        <a class="btn btn-small btn-primary" target="_blank" href="{{ url('home/details/shopcar') }}" >去购物车支付</a>
+                                        <a class="btn btn-small btn-primary" target="_blank" href="{{ url('home/details') }}/{{ $v->id }}" >查看详情</a>
                                     </div>
                                 </li>
-                            @endforeach
-                        @endforeach
-                    @endif
+                                @endforeach
+                  
                     </ul>
                 </div>
                 <div class="xm-pagenavi"></div>
             </div>
+           {{ $res->links('vendor.pagination.simple-default', ["max" => $max]) }}
         </div>
     </div>
 </div>

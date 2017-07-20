@@ -419,6 +419,16 @@ Route::get('home/email/con/{str}/{email}', 'Home\UserdetailController@con');
 
 //执行验证
 Route::post('home/cons/insert', 'Home\UserdetailController@docon');
+
+// 个人中心我的商品
+Route::get('home/mygoods/index', 'Home\MygoodsController@index');
+
+// 个人中心卖的商品
+Route::get('home/mygoods/mysold', 'Home\MygoodsController@mysold');
+
+// 个人中心订单表
+Route::get('home/order/index', 'Home\OrderController@index');
+
 // ----------------------------个人详情-------------------------
 
 
@@ -470,4 +480,17 @@ Route::post('/home/num/my/inserts', 'Home\NumController@inserts');
 //订单成功生成页面
 Route::get('/home/shopcar/active', 'Home\NumController@active');
 
+
 //======================前台购物流程=========================
+
+//---------------------我的优品----------------------------
+
+//展示页面路由
+Route::get('home/myshop/index', 'Home\MyshopController@index');
+
+//删除
+Route::get('home/myshop/delete/{id}', 'Home\MyshopController@delete');
+
+//---------------------我的优品----------------------------
+
+

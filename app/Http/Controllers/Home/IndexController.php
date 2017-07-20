@@ -54,9 +54,17 @@ class IndexController extends Controller
 
         //老人放心
         $three = \DB::table('shop')->where('tid',64)->limit(8)->get();
+
+        //活动
+        $pop = \DB::table('pop_list')->limit(4)->get();
+
+        //友情链接
+        $ord = \DB::table('friendlink')->orderBy('ordernum')->get();
+
         //获取session
     	if(session('user')){
-   		//获取用户数据
+
+   		    //获取用户数据
     		$res = session('user');
 
     		//根据用户id查询该用户详情
@@ -67,7 +75,7 @@ class IndexController extends Controller
     	}
 
     	//加载模板
-    	return view('home.index.index',['city'=>$value,'apple'=>$apple,'an'=>$an,'pho'=>$pho,'ss'=>$ss,'com'=>$com,'photo'=>$photo,'phone'=>$phone,'auction'=>$auction,'small'=>$small,'two'=>$two,'three'=>$three]);
+    	return view('home.index.index',['city'=>$value,'apple'=>$apple,'an'=>$an,'pho'=>$pho,'ss'=>$ss,'com'=>$com,'photo'=>$photo,'phone'=>$phone,'auction'=>$auction,'small'=>$small,'two'=>$two,'three'=>$three,'pop'=>$pop,'ord'=>$ord]);
     }
 
       // 递归查询所有分类
@@ -168,7 +176,7 @@ class IndexController extends Controller
         $ins = \DB::table('shop')->where('tid',194)->orwhere('tid',197)->orwhere('tid',196)->limit(10)->get();
         
         //汽车养护
-        $car = \DB::table('shop')->where('tid',198)->orwhere('tid',205)->orwhere('tid',203)->orwhere('tid',204)->limit(10)->get();
+        $car = \DB::table('shop')->where('tid',198)->orwhere('tid',205)->orwhere('tid',203)->orwhere('tid',204)->orwhere('tid', 199)->limit(10)->get();
 
           //加载视图
         return view('home.next.index',['one'=>$one,'two'=>$two,'three'=>$three,'four'=>$four,'fif'=>$fif,'six'=>$six,'seven'=>$seven,'eight'=>$eight, 'nine' => $nine,'num'=>$num,'phone'=>$phone,'baby'=>$baby,'bby'=>$bby,'shut'=>$shut,'shirt'=>$shirt,'but'=>$but,'ful'=>$ful,'bbc'=>$bbc, 'fur' => $fur, 'fuw' => $fuw, 'mmd'=>$mmd,'ins'=>$ins,'car'=>$car]);
