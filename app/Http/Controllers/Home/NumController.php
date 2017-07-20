@@ -210,7 +210,7 @@ class NumController extends Controller
                 //删除关于当前用户的商品
                 \DB::table('nums_user')->where('uid', $uid)->delete();
 
-                return view('home.shopcar.active', ['stmt' => $stmt]);
+                return view('home.shopcar.active', ['stmt' => $stmt, 'newp' => $newp]);
 
             }else{
 
@@ -293,7 +293,7 @@ class NumController extends Controller
                 //修改当前拍卖商品的状态
                 \DB::table('auction')->where('id', $sid)->update($sta);
 
-                return view('/home/shopcar/active', ['stmt' => $stmt]);
+                return view('/home/shopcar/active', ['stmt' => $stmt, 'newp' => $newp]);
  
             }else{
 

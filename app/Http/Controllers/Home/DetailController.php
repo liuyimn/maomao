@@ -44,7 +44,11 @@ class DetailController extends Controller
 		// 收藏状态
 		$sta = \DB::table('favorite')->where('sid', $data->id)->where('uid', $uid)->first();
 
-		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx, 'sta' => $sta]);
+		//广告栏
+		$adv = \DB::table('advert')->where('id', 1)->get();
+
+
+		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx, 'sta' => $sta, 'adv' => $adv]);
 
 	}
 

@@ -81,8 +81,11 @@ class ListController extends Controller
     		//获取当前用户信息
     		$uid = session('user')->id;
 
+    		//获取当前商品信息
+    		$ar = \DB::table('shop')->where('id', $id)->first();
+
     		//判断当前用户是否是商品用户
-    		if($r->uid == $uid){
+    		if($ar->uid == $uid){
 
     			return "<script>alert('怎么可以买自己的东西~');location.href='".$_SERVER['HTTP_REFERER']."'</script>"; 
     		}

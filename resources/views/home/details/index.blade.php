@@ -247,6 +247,30 @@
 									</a>
 								</li>
 							@endforeach
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="personal tuijian_div">
+						<div class="personal_tuijian">
+							<h3 class="box_title">精品广告</h3>
+							<ul class="personal_list">
+
+							@foreach($adv as $key => $val)
+								<li class="clearfix">
+									<a href="{{ url('/home/advert') }}/{{ $val->id }}" target="_blank">
+										<dl class="clearfix">
+											<dt data-adjust="adjust">
+												<img width="100%" src="{{ url('/uploads/advert') }}/{{ $val->pic }}" />      
+											</dt>
+											<dd class="info_title"><b style="font-size: 16px; color: red;">标题:</b>{{ $val->title }}</dd>
+											<i>{{ mb_substr($val->connect, 0, 8).'...' }}</i>
+										</dl>
+									</a>
+								</li>
+							@endforeach
+							
 							</ul>
 						</div>
 					</div>
