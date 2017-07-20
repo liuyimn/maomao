@@ -90,7 +90,7 @@
 							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->oldpage }}元</td>
 							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->newpage }}元</td>
 							            <td><img style="height: 50px;text-overflow:ellipsis;" src="{{ url('/uploads/auction') }}/{{ $val->pic }}"></td>
-							            <td style="line-height: 50px;">{{ mb_substr($val->content, 0, 6)."..." }}</td>
+							            <td style="line-height: 50px;">{{ mb_substr($val->connect, 0, 6)."..." }}</td>
 							            <td style="line-height: 50px;text-overflow:ellipsis;">
 											
 											@if($val->status == 0)

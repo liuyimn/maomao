@@ -21,6 +21,7 @@ class ListController extends Controller
 		            ->join('user', 'shop.uid', '=', 'user.id')
 		            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
 		            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+		            ->where('shop.status', '=', '0')
 		            ->where('name', 'like', '%'.$keywords.'%')
 		            ->paginate($num);
 
@@ -78,7 +79,7 @@ class ListController extends Controller
 
     		if($r){
 
-    			return "<script>alert('请勿重复添加');location.href='/home/list/index'</script>"; 
+    			return "<script>alert('请勿重复添加');location.href='".$_SERVER['HTTP_REFERER']."'</script>"; 
 
     		}else{
 
@@ -98,7 +99,7 @@ class ListController extends Controller
 	    		//判断是否成功
 		    	if($res){
 
-		    		return "<script>alert('添加购物车成功');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
+		    		return "<script>alert('添加购物车成功');location.href='/home/details/shopcar'</script>";
 		    		die();
 		    	}else{
 		    		

@@ -64,7 +64,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputName5">商品描述</label>
-                    <textarea name="content" style="resize: none; height: 100px;" class="form-control" id="exampleInputName5" placeholder="请输入商品描述">{{ old('content') }}</textarea>
+                    <textarea name="connect" style="resize: none; height: 100px;" class="form-control" id="exampleInputName5" placeholder="请输入商品描述">{{ old('connect') }}</textarea>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputName6">拍卖时间</label>

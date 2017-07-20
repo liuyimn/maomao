@@ -449,14 +449,25 @@ Route::get('/home/auct', 'Home\AuctionController@index');
 //拍卖商品详情列表
 Route::get('/home/auct/details/{id}', 'Home\AuctionController@show');
 
-//添加购物车
-Route::get('/home/auct/create/{id}', 'Home\AuctionController@create');
-
-//我的下单
+//我的订单
 Route::get('/home/num/my', 'Home\NumController@myding');
+
+//拍卖商品订单
+Route::get('/home/num/my/{id}', 'Home\NumController@auct');
+
+//商品选中ajax事件
+Route::get('/home/num/dajax', 'Home\NumController@dajax');
+
+//商品全选或全不选ajax事件
+Route::get('/home/num/allajax', 'Home\NumController@allajax');
 
 //生成订单
 Route::post('/home/num/my/insert', 'Home\NumController@insert');
 
-//======================前台购物流程=========================
+//拍卖商品订单
+Route::post('/home/num/my/inserts', 'Home\NumController@inserts');
 
+//订单成功生成页面
+Route::get('/home/shopcar/active', 'Home\NumController@active');
+
+//======================前台购物流程=========================

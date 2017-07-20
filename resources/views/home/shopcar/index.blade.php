@@ -1,13 +1,9 @@
 <!doctype html>
-<html lang="zh-CN" xml:lang="zh-CN">
+<html>
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta charset="UTF-8" />
     <title>我的购物车 - {{ $title }}</title>
-    <meta name="viewport" content="width=1226" />
-    <link rel="shortcut icon" href="//s01.mifile.cn/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="//s01.mifile.cn/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="{{asset('/home/css/base.min.css') }}" />
+    <link rel="stylesheet" href="{{asset('/home/css/base.min.css') }}" />   
     <link rel="stylesheet" type="text/css" href="{{asset('/home/css/cart.min.css') }}" />
 </head>
 <body>
@@ -21,6 +17,15 @@
             @if(!empty(session('user')))
                 <!--判断是否存在商品-->
                 @if(!empty($ka))
+
+                    @if(session('info'))                  
+                    <span id="passwordTip" class="wrong1" style="display:block" > 
+                    {{session('info')}}
+                    </span>
+                    @else
+                    <span id="passwordTip" class="wrong1" style="display=block" ></span>
+                    @endif 
+
                     <div id="J_cartBox">
                         <div class="cart-goods-list" >
                             <div class="list-head clearfix">
@@ -34,22 +39,28 @@
                                     <div class="col col-num">数量</div>
                                 <div class="col col-action">操作</div>
                             </div>
-                            <!--遍历商品-->
-                            @foreach($ka as $key => $val)
-                                <div class="list-head clearfix">
-                                    <div class="col col-check">
-                                        <i class="iconfont icon-checkbox icon-checkbox" >&#x221a;</i>
+
+                                <!--遍历商品-->
+                                @foreach($ka as $key => $val)
+                                    <div class="list-head clearfix">
+                                        <div class="col col-check">
+                                        @if($val->status == 0)
+                                            <i class="iconfont icon-checkbox icon-checkbox" >&#x221a;</i>
+                                        @else
+                                            <i class="iconfont icon-checkbox icon-checkbox-selected" >&#x221a;</i>
+                                        @endif
+                                            <input class="sid" type="hidden" name="sid" value="{{ $val->id }}">
+                                        </div>
+                                        <div class="col col-img"><img width="40" src="{{ url('/uploads/shop') }}/{{ $val->pic }}" alt=""></div>
+                                        <div class="col col-name">{{ $val->name }}</div>
+                                        <div class="col col-price">{{ $val->newpage }}</div>
+                                        <div class="col col-total">&nbsp;</div>
+                                        <div id="num" class="col col-num">1</div>
+                                        <div class="col col-action">
+                                            <a class="del" href="{{ url('/home/details/shopcar/del') }}/{{ $val->id }}" value="{{ $val->id }}">删除</a>
+                                        </div>
                                     </div>
-                                    <div class="col col-img"><img width="40" src="{{ url('/uploads/shop') }}/{{ $val->pic }}" alt=""></div>
-                                    <div class="col col-name">{{ $val->name }}</div>
-                                    <div class="col col-price">{{ $val->newpage }}</div>
-                                    <div class="col col-total">&nbsp;</div>
-                                    <div id="num" class="col col-num">1</div>
-                                    <div class="col col-action">
-                                        <a class="del" href="{{ url('/home/details/shopcar/del') }}/{{ $val->id }}" value="{{ $val->id }}">删除</a>
-                                    </div>
-                                </div>
-                            @endforeach
+                                @endforeach
                             <!--遍历商品结束-->
                             <div class="list-body" id="J_cartListBody">
                             </div>
@@ -93,7 +104,15 @@
                         <a href="{{ url('/home/list/index') }}" class="btn btn-primary btn-shoping J_goShoping">马上去购物</a>
                     </div>
                 @else
-                
+                    
+                    @if(session('info'))                  
+                    <span id="passwordTip" class="wrong1" style="display:block" > 
+                    {{session('info')}}
+                    </span>
+                    @else
+                    <span id="passwordTip" class="wrong1" style="display=block" ></span>
+                    @endif 
+                    
                     <div id="J_cartBox">
                         <div class="cart-goods-list" >
                             <div class="list-head clearfix">
@@ -284,9 +303,23 @@
 
                 $(this).attr('class', 'iconfont icon-checkbox icon-checkbox');
 
+                var sid = $(this).next().val();
+
+                $.get('/home/num/dajax', {sid:sid}, function(data){
+
+
+                });
+
             }else{
 
                 $(this).attr('class', 'iconfont icon-checkbox icon-checkbox-selected');
+
+                var sid = $(this).next().val();
+
+                $.get('/home/num/dajax', {sid:sid}, function(data){
+
+
+                });
 
             }
 
@@ -347,29 +380,55 @@
 
         //全选或清除鼠标移入移出
         $('#J_selectUnAll').hover(function(){
+
             $('#J_selectUnAll').css('cursor', 'pointer');
+
         }, function(){
+
             $('#J_selectUnAll').css('cursor', 'default');
         });
+
 
 
         //全选或清除事件
         $('#J_selectUnAll').click(function(){
 
+            //如果没有选中
             if(!$('.iconfont.icon-checkbox.icon-checkbox').hasClass('iconfont icon-checkbox icon-checkbox-selected')){
 
+                //遍历每个没有选中的
                 $('.iconfont.icon-checkbox.icon-checkbox').each(function(){
 
+                    //设置属性为选中
                     $(this).attr('class', 'iconfont icon-checkbox icon-checkbox-selected');
                    
+                    //获取到每个商品id
+                    var sid = $(this).next().val();
+
+                    $.get('/home/num/allajax', {sid:sid}, function(data){
+
+
+
+                    });
+
                     refreshCart();
                 });
 
             }else{
 
+                //遍历每个选中框
                 $('.iconfont.icon-checkbox.icon-checkbox').each(function(){
 
+                    //遍历为不选中
                     $(this).attr('class', 'iconfont icon-checkbox icon-checkbox');
+
+                    //获取到每个商品id
+                    var sid = $(this).next().val();
+
+                    $.get('/home/num/allajax', {sid:sid}, function(data){
+                        
+
+                    });
                    
                     refreshCart();
                 });

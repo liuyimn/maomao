@@ -72,10 +72,13 @@ class AuctionController extends Controller
         $res = \DB::table('user')->where('id', $data->uid)->first();
         
         //查询卖家的详细信息
-        $user = \DB::table('userdetail')->where('id', $res->id)->first();
+        $user = \DB::table('userdetail')
+                    ->join('auction', 'auction.uid', '=', 'userdetail.uid')
+                    ->where('userdetail.uid', $res->id)
+                    ->first();
 
         //测试
-        $jx = \DB::table('shop')->limit(5)->get();
+        $jx = \DB::table('shop')->where('tid', 193)->limit(5)->get();
 
         return view('home.auct.show',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx]);
 

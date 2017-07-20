@@ -25,7 +25,7 @@ class ShopcarController extends Controller
                 //组成数组必须的用户信息
                 $sid['uid'] = $id;
 
-                //进行遍历
+                //进行遍历session中商品
                 foreach ($stmt as $key => $value) {
                     
                     //组成数组必须的每个商品id
@@ -52,6 +52,7 @@ class ShopcarController extends Controller
 
                         //多表关联查询
                         $k = \DB::table('shop')
+                            ->join('nums_user', 'shop.id', '=', 'nums_user.sid')
                             ->join('user', 'shop.uid', '=', 'user.id')
                             ->join('userdetail', 'user.id', '=', 'userdetail.uid')
                             ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
@@ -60,6 +61,7 @@ class ShopcarController extends Controller
 
                             $ka[] = $k;
                      }
+
 
                     //查询到条数
                     $res = count($data);
@@ -92,9 +94,10 @@ class ShopcarController extends Controller
 
                         //多表关联查询
                         $k = \DB::table('shop')
+                            ->join('nums_user', 'shop.id', '=', 'nums_user.sid')
                             ->join('user', 'shop.uid', '=', 'user.id')
                             ->join('userdetail', 'user.id', '=', 'userdetail.uid')
-                            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+                            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo', 'nums_user.status')
                             ->where('shop.id', '=', $value->sid)
                             ->first();
 

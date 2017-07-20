@@ -127,18 +127,17 @@
 								<span class="price_now">现价：<i>{{ $data->newpage }}</i>元</span>
 							</div>
 
-
 							<div class="palce_li">
 								<span>区域：<i>北京昌平区</i></span>
 							</div>
 
 							<div class="biaoqian_li">
-								<span style="width: 150px;">{{ $data->content }}</span>
+								<span style="width: 150px;">{{ $data->connect }}</span>
 							</div>
 
 							<div class="button_li">
 								<span class="talk_button download_button">联系卖家</span>
-								<a href="{{ url('/home/list/create') }}/{{ $data->id }}"><span class="buy_button download_button">我要购买</span></a>
+								<a href="{{ url('/home/num/my') }}/{{ $data->id }}"><span class="buy_button download_button">我要购买</span></a>
 							</div>
 
 							<div class="want_li">
@@ -175,7 +174,7 @@
 						<h3 class="box_title">宝贝图片</h3>
 
 						<div class="boby_pic">
-							<img style="width: 100%" src="{{ url('/uploads/auction') }}/{{ $data->pic }}" alt="TOSHIBA 东芝500G USB3.0">
+							<img style="width: 100%" src="{{ url('/uploads/auction') }}/{{ $data->pic }}" >
 						</div>
 
 					</div>
@@ -193,7 +192,6 @@
 							</div>
 							
 							<p class="personal_name">{{ $user->nickname }}</p>
-							<p class="personal_chengjiu">她加入转转216天，常居上海浦东</p>
 						</div>
 
 						<div class="personal_salebaby">
@@ -201,25 +199,15 @@
 							<h3 class="person_title">她的宝贝(3)</h3>
 
 							<ul class="salebaby_list">
-								<li>
-									<a href="#" target="_blank">
+								<li style="float: left;">
+									<a href="{{ url('/home/auct/details') }}/{{ $user->id }}" target="_blank">
 										<div data-adjust="adjust" class="plist_img">
-											<img alt="TOSHIBA 东芝500G USB3.0" src='http://pic7.58cdn.com.cn/zhuanzh/n_v2ae84e669267f4f51990e2225c888c051_115_86.jpg' />
+											<img width="100%" src="{{ url('/uploads/auction') }}/{{ $user->pic }}" />
 										</div>
-										<span class="plist_price"><i>800</i>元</span>
+										<span class="plist_price"><i>{{ $user->newpage }}</i>元</span>
 									</a>
 								</li>
-
-								<li>
-									<a href="#" target="_blank">
-										<div data-adjust="adjust" class="plist_img">
-											<img alt="TOSHIBA 东芝500G USB3.0" src='http://pic2.58cdn.com.cn/zhuanzh/n_v1bl2lwknipzbfrw34bfta_115_86.jpg' />
-										</div>
-										<span class="plist_price"><i>20</i>元</span>
-									</a>
-								</li>
-							</ul>                                                                                                                                                  </ul>
-							<div class="salebaby_more">点击查看他的全部宝贝</div>
+							</ul>                                                                                                                                                    </ul>
 						</div>
 					</div>
 
@@ -230,10 +218,10 @@
 
 							@foreach($jx as $key => $value)
 								<li class="clearfix">
-									<a href="#" target="_blank">
+									<a href="{{ url('/home/details') }}/{{ $value->id }}" target="_blank">
 										<dl class="clearfix">
 											<dt data-adjust="adjust">
-												<img alt="TOSHIBA 东芝500G USB3.0" src='http://pic8.58cdn.com.cn/zhuanzh/n_f8db46d71c754e4db085da2cb8316d50_100_75.jpg' />      
+												<img width="100%" src='{{ url('/uploads/shop') }}/{{ $value->pic }}' />      
 											</dt>
 											<dd class="info_title">{{ $value->name }}</dd>
 											<dd class="info_price"><i>{{ $value->newpage }}</i>元</dd>

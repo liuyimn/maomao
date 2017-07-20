@@ -68,7 +68,7 @@ class AuctionController extends Controller
                 'oldpage' => 'required',
                 'newpage' => 'required',
                 'pic' => 'required',
-                'content' => 'required',
+                'connect' => 'required',
                 'endtime' => 'required',
             ],[
                 'name.required' => '商品名不能为空',
@@ -76,7 +76,7 @@ class AuctionController extends Controller
                 'oldpage.required' => '原价不能为空',
                 'newpage.required' => '现价名不能为空',
                 'pic.required' => '商品图片不能为空',
-                'content.required' => '商品描述不能为空',
+                'connect.required' => '商品描述不能为空',
                 'endtime.required' => '拍卖时间不能为空',
             ]);
 
@@ -179,7 +179,7 @@ class AuctionController extends Controller
             'oldpage' => 'required',
             'newpage' => 'required',
             'pic' => 'required',
-            'content' => 'required',
+            'connect' => 'required',
             'endtime' => 'required',
         ],[
             'name.max' => '商品名最长18个字符',
@@ -188,7 +188,7 @@ class AuctionController extends Controller
             'oldpage.required' => '原价不能为空',
             'newpage.required' => '现价名不能为空',
             'pic.required' => '商品图片不能为空',
-            'content.required' => '商品描述不能为空',
+            'connect.required' => '商品描述不能为空',
             'endtime.required' => '拍卖时间不能为空',
         ]);
         

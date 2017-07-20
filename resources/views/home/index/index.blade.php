@@ -244,7 +244,7 @@ VIVO
 <ul style="display: block;">
 @foreach($auction as $o)
 <li data-sku="624646246|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613995_prod04" href="{{ url('/home/auct/details') }}/{{ $o->id }}" target="_blank" rel="nofollow" title="{{ $o->content }}">
+<a name="PcYoupin_shppcind_36725613995_prod04" href="{{ url('/home/auct/details') }}/{{ $o->id }}" target="_blank" rel="nofollow" title="{{ $o->connect }}">
 <img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('uploads/auction') }}/{{ $o->pic }}" class="err-product">
 </a>
 <p>
@@ -263,7 +263,7 @@ VIVO
 
 @foreach($small as $mall)
 <li data-sku="612451774|1|2|0070155069">
-<a name="PcYoupin_shppcind_36725613997_prod01" href="{{ url('/home/auct/details') }}/{{ $mall->id }}" target="_blank" rel="nofollow" title="{{ $mall->content }}">
+<a name="PcYoupin_shppcind_36725613997_prod01" href="{{ url('/home/auct/details') }}/{{ $mall->id }}" target="_blank" rel="nofollow" title="{{ $mall->connect }}">
 <img alt="比新机优惠1200，堪比新机，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('uploads/auction') }}/{{ $mall->pic }}" class="err-product">
 </a>
 <p>

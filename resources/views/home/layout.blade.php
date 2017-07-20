@@ -183,14 +183,14 @@ KISSY.use('widget/header5/index');
 <div id="J_Feedback4bug" data-version-id="20038"></div>
 
 		<script type="text/javascript">
-				KISSY.use('page/index');
+			KISSY.use('page/index');
 		</script>
 
 		<!-- ushu abtest -->
 		<script type="text/javascript" src="{{ asset('/home/index/Scripts/xwj.js') }}"></script>
 		<script type="text/javascript">
-									window._ap_xwj && _ap_xwj.monitor("130917-224");
-						</script>
+			window._ap_xwj && _ap_xwj.monitor("130917-224");
+		</script>
 
 		<script type="text/javascript" src="{{ asset('/home/index/Scripts/tb-tracer-min.js') }}"></script>
 		<img src="{{ asset('/home/index/Picture/t1pksfxexkxxxxxxxx-1-1.gif') }}"/>

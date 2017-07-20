@@ -226,7 +226,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <a href="#" class="back J_MakePoint" target="_top" data-point-url="">返回购物车</a>
+                                                    <a href="{{ url('/home/details/shopcar') }}" class="back J_MakePoint" target="_top" data-point-url="">返回购物车</a>
                                                     <button id="J_Go" class=" btn-go" tabindex="0" style="border: 0px;">提交订单<b class="dpl-button"></b></button>
                                                 </div>
                                             </div>

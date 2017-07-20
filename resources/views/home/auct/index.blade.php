@@ -16,7 +16,7 @@
 				<div class="infocon jzcon" id="jzcon">
 					<table class="tbimg" cellspacing="0" cellpadding="0" id="jingzhun">
 						<colgroup>
-							<col class="w130"></col>
+							<col class="w130"><span style="font-size: 24px; color: red;">商品秒杀中,仅限一天哟~</span></col>
 						</colgroup>
 					</table>
 				</div>
@@ -54,10 +54,8 @@
 				                        <span class="fl">
 				                        	<span>北京</span>
 				                        	&nbsp;
-				                        	<a href="{{ url('/home/auct/create') }}/{{ $val->id }}">加入购物车</a>
+				                        	<a href="{{ url('/home/num/my') }}/{{ $val->id }}">我要购买</a>
 				                        	<span  class="pricebiao">
-				                        		<span class="starttime" style="display: none;" >{{ $val->starttime }}</span>
-				                        		<span class="price">剩余时间:</span><span class="endtime" style="font-size: 24px;"></span>
 				                        	</span>
 				                        </span>
 				                        <i class="clear"></i>
@@ -124,62 +122,6 @@
 		</div>
 
 		<div id="direct_ad_bottom"></div>
-
-			
-		<script type="text/javascript">
-			//服务器时间，毫秒数 
-			var serverTime =  1000; 
-
-			//准备
-			$(function(){ 
-
-				//获取当前系统时间
-			  	var dateTime = new Date(); 
-
-			  	//客户端时间戳减掉系统时间
-			  	var difference = dateTime.getTime() - serverTime; 
-			    	
-			  	//设置定时器
-			  	var int = setInterval(function(){ 
-
-			  		//遍历出所有商品定时器
-				   	$(".starttime").each(function(){ 
-
-				   		//当前对象
-					    var obj = $(this); 
-
-					    //结束时间
-					    var endTime = new Date(parseInt(obj.attr('value')) * 3000); 
-
-					    //当前时间
-					    var nowTime = new Date(); 
-					    
-					    //
-					    var nMS = endTime.getTime() - nowTime.getTime() + difference; 
-
-					    var myM = Math.floor(nMS/(1000*60)) % 60; //分钟 
-
-					    var myS = Math.floor(nMS/1000) % 60; //秒 
-
-					    if(myM >= 0){ 
-
-					      var str = myM + "分" + myS + "秒"; 
-
-					    }else{ 
-
-					      var str = "已结束！";  
-					      clearInterval(int);
-
-					    } 
-
-					    obj.next().next().html(str); 
-
-			   		}); 
-
-			  	}, 1000); //每个0.1秒执行一次 
-
-			});
-		</script>
 
 		<script src="{{ asset('/home/js/entry.js') }}"></script>
 

@@ -72,7 +72,7 @@
 
                   <div class="form-group">
                     <label for="exampleInputName">商品描述</label>
-                    <textarea name="content" style="resize: none; height: 100px;"  class="form-control" id="exampleInputName" placeholder="请输入拍卖名">{{ $data->content }}</textarea>
+                    <textarea name="connect" style="resize: none; height: 100px;"  class="form-control" id="exampleInputName" placeholder="请输入拍卖名">{{ $data->connect }}</textarea>
                   </div>
 
                   <div class="form-group">
