@@ -5,8 +5,6 @@
     <meta charset="UTF-8" />
     <title>我的购物车 - {{ $title }}</title>
     <meta name="viewport" content="width=1226" />
-    <link rel="shortcut icon" href="//s01.mifile.cn/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="//s01.mifile.cn/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="{{asset('/home/css/base.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{asset('/home/css/cart.min.css') }}" />
 </head>

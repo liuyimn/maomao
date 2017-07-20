@@ -2,8 +2,8 @@
 <html>
 	<head>
 	<meta property="wb:webmaster" content="bd14bd59a79e2a4d" />
-		<meta name="360-site-verification" content="0d4ec208337c4c03706dbb76fccd784e" />
-		<meta name="sogou_site_verification" content="dMhEpiNZxp"/>
+	<meta name="360-site-verification" content="0d4ec208337c4c03706dbb76fccd784e" />
+	<meta name="sogou_site_verification" content="dMhEpiNZxp"/>
 	<meta name="baidu-site-verification" content="CrHL5lkDw2" />
 	
 	<meta name="spm-id" content="2007.1000261"/>
@@ -11,9 +11,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 	<title >大脸猫二手购物网</title>
 	
-		
-	<!-- start idle vmcommon assets 4.0-->
-	<link rel="shortcut icon" type="image/x-icon" href="" />
 	<!-- S GLOBAL CSS -->
 	<link rel="stylesheet" href="{{ asset('/home/index/Css/global-min.css') }}">
 	<!-- S GLOBAL CSS -->

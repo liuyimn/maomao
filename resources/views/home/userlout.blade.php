@@ -13,7 +13,6 @@
 	
 		
 <!-- start idle vmcommon assets 4.0-->
-<link rel="shortcut icon" type="image/x-icon" href="" />
 
 <link rel="search" type="application/opensearchdescription+xml" href="//assets.alicdn.com/plugins/opensearch/provider.xml" title="淘宝购物" />
 <!-- S GLOBAL CSS -->
@@ -32,7 +31,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('/home/user/main.min.css') }}">
 <script type="text/javascript" async="" src="{{ asset('/home/user/mstr.js') }} "></script>
 <script type="text/javascript" async="" src="{{ asset('/home/user/jquery.statData.min.js') }} "></script>
-
+<link rel="stylesheet" href="{{ asset('home/order/serviceList.min.css') }}">
 
 
 
@@ -85,7 +84,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 						<a rel="nofollow" href="#" >当前城市：{{ session('city') }}</a><span class="sep">|</span><a rel="nofollow" href="{{ url('/') }}" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/favorite/index') }}" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/complaint/index') }}" >联系客服</a>
 				</div>
 				<div class="topbar-cart" id="J_miniCartTrigger">
-						<a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href=""><i class="iconfont"></i>购物车</a>
+						<a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href="{{ url('/home/details/shopcar') }}"><i class="iconfont"></i>购物车</a>
 				</div>
 				@if(!session('user'))
 					<div class="topbar-info" id="J_userInfo">
@@ -177,7 +176,7 @@ KISSY.use('widget/header5/index');
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="" >我的订单</a></li>
+                                <li><a href="{{ url('home/order/index') }}" >我的订单</a></li>
                             </ul>
                         </div>
                     </div>
@@ -188,11 +187,12 @@ KISSY.use('widget/header5/index');
                         <div class="box-bd">
                             <ul class="uc-nav-list" id="uid">
                                 <li><a href="{{ url('home/user/index') }}">我的个人中心</a></li>
-                                <li><a href="" >消息通知<i class="J_miMessageTotal"></i></a></li>
                                 <li><a href="{{ url('home/address/index') }}" >收货地址</a></li>
                                 <li><a href="{{ url('home/shopping/index') }}" >我的购物车</a></li>
                                 <li><a href="{{ url('home/favorite/index') }}" >我的收藏</a></li>
-                                <li><a href="" >我的商品</a></li>
+                                <li><a href="{{ url('home/complaint/index') }}" >联系客服</a></li>
+                                <li><a href="{{ url('home/mygoods/index') }}" >我买到的</a></li>
+                                <li><a href="{{ url('home/mygoods/mysold') }}" >我卖出的</a></li>
                                 <li><a href="" >我的积分</a></li>
                             </ul>
                         </div>

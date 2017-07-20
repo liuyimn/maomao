@@ -293,7 +293,7 @@ regBarNode.style.display = "block";
 <div class="nav-main-index">
 <ul class="ng-nav">
 <li>
-<a class="ng-nav-title" href="//2.suning.com" name="PcYoupin_none_list_UpShouYe">首页</a>
+<a class="ng-nav-title" href="{{ url('/') }}" name="PcYoupin_none_list_UpShouYe">首页</a>
 </li>
 <li>
 <a class="ng-nav-title" href="{{ url('home/addshop/index') }}" name="PcYoupin_none_list_UpMyPublish">发布闲置</a>
@@ -304,11 +304,11 @@ regBarNode.style.display = "block";
 <li class="dropdown"><a class="ng-nav-title" href="javascript:;" onclick="myPublish()" name="PcYoupin_none_list_MyCenter">我的二手优品<i class="ci-right"><s>◇</s></i></a>
 <div class="ng-nav-box">
 <div class="white-cover"></div>
-<a href="javascript:;" onclick="myPublish()" name="PcYoupin_none_center_MyPublish">我发布的</a>
+<a href="javascript:;" name="PcYoupin_none_center_MyPublish">我发布的</a>
 <a href="//2.suning.com/seller/outsale.do" name="PcYoupin_none_center_MySellPcYoupinOrder">我卖出的</a>
 <a href="//2.suning.com/myOrder/queryMyOrderList.do" name="PcYoupin_none_center_MyBuyPcYoupinOrder">我买到的</a>
 <a href="//2.suning.com/myEvaluate/showMyEvaluate.do" name="PcYoupin_none_center_MyEvaluation">我的评价</a>
-<a href="//2.suning.com/favorite/myFavorite.do" name="PcYoupin_none_center_MyCollection">我的收藏</a>
+<a href="{{ url('home/favorite/index') }}" name="PcYoupin_none_center_MyCollection">我的收藏</a>
 </div>
 </li>
 </ul>
@@ -912,14 +912,14 @@ Second-hand Car Goods
 @foreach($car as $ar)
 <li>
 <!--<a name="PcYoupin_none_list_GoodsPicture" title="德国进口CENTURION公路车" target="_blank" href="/getItemDetail/6022582556/148966355467383756.htm" rel="nofollow"><img alt="德国进口CENTURION公路车" class="lazy-loading" lazy-src="Picture/148966355467383756_99_200x200.jpg" /></a>-->
-<a name="PcYoupin_none_list_GoodsPicture" title="{{ $ar->connect }}" target="_blank" href="/getItemDetail/148966355467383756.htm" rel="nofollow"><img alt="{{ $ar->connect }}" class="lazy-loading" lazy-src="{{ asset('/uploads/shop') }}/{{ $ar->pic }}" /></a>
+<a name="PcYoupin_none_list_GoodsPicture" title="{{ $ar->connect }}" target="_blank" href="{{ url('home/details') }}/{{ $ar->id }}" rel="nofollow"><img alt="{{ $ar->connect }}" class="lazy-loading" lazy-src="{{ asset('/uploads/shop') }}/{{ $ar->pic }}" /></a>
 <div class="price-wrap">
 <span class="price"><em>¥</em>{{ $ar->newpage }}. <span class="sml-pri">00</span></span>
 <!-- <span class="degree">9.5成新
 </span> -->
 </div>
 <!--<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="德国进口CENTURION公路车" href="/getItemDetail/6022582556/148966355467383756.htm">德国进口CENTURION公路车</a></p>-->
-<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="{{ $ar->connect }}" href="{{ url('home/details') }}/{{ $arr->id }}">{{ $ar->name }}</a></p>
+<p class="title"><a name="PcYoupin_none_list_GoodsName" target="_blank" title="{{ $ar->connect }}" href="{{ url('home/details') }}/{{ $ar->id }}">{{ $ar->name }}</a></p>
 </li>
 @endforeach
 </div>
@@ -1166,7 +1166,7 @@ Life Services
 <em class="nav-icon nav-icon-9"></em>
 <b>生活<br />服务</b>
 </a>
-<a href="javascript:;" onclick="findsinglepass(18710);">
+<a href="{{ url('home/complaint/index') }}">
 <i class="ng-iconfont">&#xe631;</i>
 <b>联系<br />客服</b>
 </a>

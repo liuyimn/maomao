@@ -85,7 +85,7 @@ class NumController extends Controller
             foreach ($data as $key => $value) {
 
                 //把每个商品id存到数组中
-                $arr[] = $value->id;
+                $arr[] = $value->sid;
 
             }  
 

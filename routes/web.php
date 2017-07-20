@@ -419,6 +419,16 @@ Route::get('home/email/con/{str}/{email}', 'Home\UserdetailController@con');
 
 //执行验证
 Route::post('home/cons/insert', 'Home\UserdetailController@docon');
+
+// 个人中心我的商品
+Route::get('home/mygoods/index', 'Home\MygoodsController@index');
+
+// 个人中心卖的商品
+Route::get('home/mygoods/mysold', 'Home\MygoodsController@mysold');
+
+// 个人中心订单表
+Route::get('home/order/index', 'Home\OrderController@index');
+
 // ----------------------------个人详情-------------------------
 
 

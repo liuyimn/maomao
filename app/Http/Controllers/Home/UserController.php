@@ -24,10 +24,10 @@ class UserController extends Controller
     	$res = \DB::table('userdetail')->where('uid',$data->id)->first();
 
         // 查询收藏商品条数
-        $favorite = \DB::table('favorite')->count();
+        $favorite = \DB::table('favorite')->where('uid', session('user')->id)->count();
 
         // 查询待支付的订单
-        $nums_user = \DB::table('nums_user')->count();
+        $nums_user = \DB::table('nums_user')->where('uid', session('user')->id)->count();
 
     	return view('home.user.index',['res'=>$res, 'favorite' => $favorite, 'nums_user' => $nums_user]);
     }

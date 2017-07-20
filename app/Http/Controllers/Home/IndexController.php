@@ -168,7 +168,7 @@ class IndexController extends Controller
         $ins = \DB::table('shop')->where('tid',194)->orwhere('tid',197)->orwhere('tid',196)->limit(10)->get();
         
         //汽车养护
-        $car = \DB::table('shop')->where('tid',198)->orwhere('tid',205)->orwhere('tid',203)->orwhere('tid',204)->limit(10)->get();
+        $car = \DB::table('shop')->where('tid',198)->orwhere('tid',205)->orwhere('tid',203)->orwhere('tid',204)->orwhere('tid', 199)->limit(10)->get();
 
           //加载视图
         return view('home.next.index',['one'=>$one,'two'=>$two,'three'=>$three,'four'=>$four,'fif'=>$fif,'six'=>$six,'seven'=>$seven,'eight'=>$eight, 'nine' => $nine,'num'=>$num,'phone'=>$phone,'baby'=>$baby,'bby'=>$bby,'shut'=>$shut,'shirt'=>$shirt,'but'=>$but,'ful'=>$ful,'bbc'=>$bbc, 'fur' => $fur, 'fuw' => $fuw, 'mmd'=>$mmd,'ins'=>$ins,'car'=>$car]);
