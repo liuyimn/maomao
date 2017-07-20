@@ -304,9 +304,9 @@ regBarNode.style.display = "block";
 <li class="dropdown"><a class="ng-nav-title" href="javascript:;" onclick="myPublish()" name="PcYoupin_none_list_MyCenter">我的二手优品<i class="ci-right"><s>◇</s></i></a>
 <div class="ng-nav-box">
 <div class="white-cover"></div>
-<a href="javascript:;" name="PcYoupin_none_center_MyPublish">我发布的</a>
-<a href="//2.suning.com/seller/outsale.do" name="PcYoupin_none_center_MySellPcYoupinOrder">我卖出的</a>
-<a href="//2.suning.com/myOrder/queryMyOrderList.do" name="PcYoupin_none_center_MyBuyPcYoupinOrder">我买到的</a>
+<a href="{{ url('home/myshop/index') }}" name="PcYoupin_none_center_MyPublish">我发布的</a>
+<a href="{{ url('home/mygoods/mysold') }}" name="PcYoupin_none_center_MySellPcYoupinOrder">我卖出的</a>
+<a href="{{ url('home/mygoods/index') }}" name="PcYoupin_none_center_MyBuyPcYoupinOrder">我买到的</a>
 <a href="//2.suning.com/myEvaluate/showMyEvaluate.do" name="PcYoupin_none_center_MyEvaluation">我的评价</a>
 <a href="{{ url('home/favorite/index') }}" name="PcYoupin_none_center_MyCollection">我的收藏</a>
 </div>
