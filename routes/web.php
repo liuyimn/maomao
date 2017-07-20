@@ -470,3 +470,13 @@ Route::post('/home/num/my/insert', 'Home\NumController@insert');
 
 //======================前台购物流程=========================
 
+//---------------------我的优品----------------------------
+
+//展示页面路由
+Route::get('home/myshop/index', 'Home\MyshopController@index');
+
+//删除
+Route::get('home/myshop/delete/{id}', 'Home\MyshopController@delete');
+
+//---------------------我的优品----------------------------
+

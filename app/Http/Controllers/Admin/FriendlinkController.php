@@ -143,13 +143,11 @@ class FriendlinkController extends Controller
 		$this->validate($request,[
 			'linkname' => 'required',
 			'url' => 'required',
-			'url' => 'url',
 			'content' => 'required',
 			'logo' => 'image',
 		],[
 			'linkname.required' => '友情链接名不能为空',
 			'url.required' => '友情链接地址不能为空',
-			'url.url' => '请输入正确的URL格式',
 			'content.required' => '友情链接描述不能为空',
 			'logo.image' => '请选择正确的文件类型',
 		]);

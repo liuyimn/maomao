@@ -1,7 +1,7 @@
 @extends('home.layout')
 
 @section('content')
-
+<link rel="stylesheet" href="{{ asset('/home/index/bootstrap/bootstrap.min.css') }}">
 <script type="text/javascript" src="{{asset('/home/js/createelement-lte-ie8.js')}}"></script>
 <script type="text/javascript" src="{{asset('/home/js/require_jquery_load.js')}}"></script>
 <script type="text/javascript" src='{{asset("/home/js/boot_sale_v20170703195205.js")}}'  ></script>
@@ -131,24 +131,9 @@
 							    	
 				<iframe src="about:blank" id="searchResult" name="searchResult" frameBorder="0" width="100%" scrolling="no" height="40"></iframe>
 				<div class="pager">
-					 <strong>
-					 <span>1</span>
-					 </strong>
-					 <a href=""><span>2</span></a>
-					 <a href=""><span>3</span></a>
-					 <a href=""><span>4</span></a>
-					 <a href=""><span>5</span></a>
-					 <a href=""><span>6</span></a>
-					 <a href=""><span>7</span></a>
-					 <a href=""><span>8</span></a>
-					 <a href=""><span>9</span></a>
-					 <a href=""><span>10</span></a>
-					 <a href=""><span>11</span></a>
-					 <a href=""><span>12</span></a>
-					 <a class="next" href=""><span>下一页</span></a>
+					 {{ $data->appends($request)->links() }}
 				</div>
 				<div id="infocont" class="infocont">
-
 						共 <span style="color: red"><b>{{ $obj }}</b></span> 条信息，
 						<a href="#" target="_blank" class="pubbtn" rel="nofollow">马上发布一条北京二手台式机/配件信息&raquo;</a>
 				</div>

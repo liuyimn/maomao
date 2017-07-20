@@ -35,7 +35,7 @@ class DetailController extends Controller
 		//测试
 		$jx = \DB::table('shop')->limit(5)->get();
 		
-
+		//三元运算判断是否存在用户
 		$uid = isset(session('user')->id)?session('user')->id:'';
 
 		// 收藏状态
