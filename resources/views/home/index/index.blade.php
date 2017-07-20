@@ -7,12 +7,28 @@
 <meta name="keywords" content="二手手机,二手笔记本,二手iPhone,二手数码,二手相机">
 <meta name="description" content="苏宁易购苏宁二手优品专业提供二手手机，二手笔记本，二手iPhone，二手数码，二手相机的最新报价、促销、评论、导购、图片等相关信息！">
 <title>二手优品-【二手手机_二手笔记本_二手iPhone_二手数码_二手相机】-苏宁易购</title>
-<link rel="shortcut icon" href="" type="image/x-icon">
 <link rel="stylesheet" href="{{ asset('home/hindex') }}/a.css">
 <script type="text/javascript" src="{{ asset('home/hindex') }}/a"></script>
 <script>
 var sa;if(!sa){sa={}}if(!sa.click){sa.click={}}(function(){var t=/\.suning\.com/,s=document.location.hostname,h=(("https:"==document.location.protocol)?"https://":"http://"),o=i(true),b="|",c=location.href,m=l(p(c));function q(af,F,E){try{var Q=af.title?l(af.title):"";if(Q==""){var ad=af.attributes.title;if(ad!=undefined&&ad!=null){Q=ad.value?l(ad.value):""}}if(E!=undefined&&E!=null&&E!=""){var D=af.attributes[E];if(D!=undefined&&D!=null){Q=D.value?l(D.value):""}}var ae=af.name?l(af.name):"name undefined";if(ae=="name undefined"){var C=af.attributes.name;if(C!=undefined&&C!=null){ae=C.value?l(C.value):"name undefined"}}if(F!=undefined&&F!=null&&F!=""){var W=af.attributes[F];if(W!=undefined&&W!=null){ae=W.value?l(W.value):F+" undefined"}}var S=af.id?l(af.id):"id undefined",ab=new Array(),P=(f(af,ab),ab)?l(ab.join("").replace(/\s|\|/ig,"")):"text undefined",ag=(ag=document.getElementById("resourceType"))?ag.value:"",Y=S+b+ae+b+P,k=(k=document.getElementById("errorCode"))?k.value:"",V=h+o+"/ajaxClick.gif",I=u(),z="_snck";j(z,I,"/","","");var ac=d();var J=typeof sn=="object"?sn.cityId:"can not get cityId",x=I+b+ac+b+Y+b+m,U=af.href?af.href:"",K=(U?w(U):"-"),L=document.getElementById("URLPattern"),X=(L?L.value:"");var R="";var T=n("logonStatus");if(T!=undefined&&T!=null){R=T}var y="";var H=n("_snma");if(H!=undefined&&H!=null&&H.indexOf("|")>=0){try{y=H.split("|")[1]}catch(Z){}}var N="";var M=n("idsLoginUserIdLastTime");if(M!=undefined&&M!=null){N=M}var aa="";var O=n("custno");if(O!=undefined&&O!=null){aa=O}var A="";var G=n("_snmb");if(G!=undefined&&G!=null&&G.indexOf("|")>=0){try{A=G.split("|")[0]}catch(Z){}}var B=V+"?_snmk="+x+"&_snme="+k+"&_type="+ag+"&_cId="+J+"&_sid="+K+"&urlPattern="+X+"&vid="+y+"&lu="+N+"&sid="+A+"&mid="+aa+"&ls="+R+"&title="+Q;v(B)}catch(Z){}}function d(){if(!sa.pvId){sa.pvId=u()}return sa.pvId}function u(){try{var x=new Date(),k=Math.round(100000*Math.random()),z=x.getTime().toString().concat(k);return z}catch(y){}}function n(x){var k=document.cookie.split("; ");for(var y=0;y<k.length;y++){var z=k[y].split("=");if(z[0]==x){return unescape(z[1])}}}function v(k){var y="log_"+(new Date()).getTime();var x=window[y]=new Image();x.onload=(x.onerror=function(){window[y]=null});x.src=k+"&iId="+y;x=null}function i(k){if(k){return"click.suning.cn/sa"}else{return"clicksit.suning.cn/sa"}}function e(){return document.domain}function j(x,k,D,C,B){try{var A=x+"="+escape(k);if(C!=""){var z=new Date();z.setTime(z.getTime()+C);A+=";expires="+z.toGMTString()}if(D!=""){A+=";path="+D}var y=e();if(y.indexOf(".suning.com")!=-1){A+=";domain=.suning.com"}else{if(y.indexOf(".cnsuning.com")!=-1){A+=";domain=.cnsuning.com"}else{A+=";domain="+B}}document.cookie=A}catch(B){}}function w(x){var k="-";if(!a(x)){k=g(x,"tid","&")}return k}function p(k){try{if(k.length>301){k=k.substring(0,300)}while(k.indexOf(b)!=-1){k=k.replace(b,"--")}return k}catch(x){}}function f(z,x){try{if(z.nodeType==3){x.push(z.nodeValue)}else{if(z.nodeType==1){for(var k=z.firstChild;k!=null;k=k.nextSibling){f(k,x)}}}}catch(y){}}function l(k){return k!=null?encodeURIComponent(k):""}function g(y,x,B){try{var A="-",k;if(!a(y)&&!a(x)&&!a(B)){k=y.indexOf(x);if(k>-1){var z=y.indexOf(B,k);if(z<0){z=y.length}A=y.substring(k+x.length+1,z)}}return A}catch(z){}}function a(k){return(undefined==k||""==k||"-"==k)}var r=sa.click;r.sendDatasIndex=q})();
 </script>
+<style>
+.fd
+{
+	font-size: 17px;
+	text-decoration: none;
+}
+
+.fd:link{
+text-decoration:none;
+}
+
+#friend
+{
+	margin-left: 38px;
+}
+
+</style>
 <!--[if IE 6]>
 <script type="text/javascript" src="//res.suning.cn/public/js/DD_belatedPNG.js"></script>
 <![endif]-->
@@ -244,7 +260,7 @@ VIVO
 <ul style="display: block;">
 @foreach($auction as $o)
 <li data-sku="624646246|1|2|0070161527">
-<a name="PcYoupin_shppcind_36725613995_prod04" href="{{ url('/home/auct/details') }}/{{ $o->id }}" target="_blank" rel="nofollow" title="{{ $o->content }}">
+<a name="PcYoupin_shppcind_36725613995_prod04" href="{{ url('/home/auct/details') }}/{{ $o->id }}" target="_blank" rel="nofollow" title="{{ $o->connect }}">
 <img alt="任性7月，全店6期免息购。推荐搭配苹果原装配件，国行正品，做二手 【不二】从不马虎，支付宝、微信支付，详情咨询客服。" src="{{ asset('uploads/auction') }}/{{ $o->pic }}" class="err-product">
 </a>
 <p>
@@ -263,7 +279,7 @@ VIVO
 
 @foreach($small as $mall)
 <li data-sku="612451774|1|2|0070155069">
-<a name="PcYoupin_shppcind_36725613997_prod01" href="{{ url('/home/auct/details') }}/{{ $mall->id }}" target="_blank" rel="nofollow" title="{{ $mall->content }}">
+<a name="PcYoupin_shppcind_36725613997_prod01" href="{{ url('/home/auct/details') }}/{{ $mall->id }}" target="_blank" rel="nofollow" title="{{ $mall->connect }}">
 <img alt="比新机优惠1200，堪比新机，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('uploads/auction') }}/{{ $mall->pic }}" class="err-product">
 </a>
 <p>
@@ -376,50 +392,30 @@ VIVO
 <!-- 真实评语 代码开始 -->
 <h3 class="comment-true">
 <i class="title-icon comment-title"></i>
-大家说
+夏日炎炎
 <i class="embelliShment"></i>
 </h3>
 <div class="comment-box clearfix">
 <div class="comment-list clearfix">
 <ul style="width: 3300px;">
 <!--计算li个数-->
+@foreach($pop as $auth)
+@if($auth->status != 1)
 <li>
 <div class="user-content">
-<div class="comment-user clearfix">
-<div class="user-header">
-<img src="{{ asset('uploads/') }}/149283306916617266.jpg" class="err-product">
-<span></span>
+<div style="height:100px;" class="comment-evaluate clearfix">
+<img style="height:100px;width:250px;" src="{{ asset('/uploads/pop') }}/{{ $auth->pic }}" alt="">
 </div>
-<div class="user-name">
-Y***华
 </div>
-<i class="grade grade4"></i>
-</div>
-<div class="comment-evaluate clearfix">
-非常一次愉快的购机，收到的手机几乎全新的，只是有点使用过的痕迹，但不影响使用，可以接受。还有这个价钱能买到这么好的手机，主要价格便宜，比购买新机器划算，很开心
-</div>
-<i class="arrow"></i>
-</div>
-<dl data-sku="193138572|1|2|0070155069">
-<dt>
-<a name="PcYoupin_shppcind_36725714012_prod01" href="https://product.suning.com/0070155069/193138572.html?srcpoint=PcYoupin_shppcind_36725714012_prod01" target="_blank" rel="nofollow" title="【二手95新】Apple iPhone 6s 64GB 玫瑰金色 全网通4G 苹果手机 国行 包邮">
-<img alt="比新机优惠1200，领券再减100元，堪比新机，支持7天无理由，原装二手，真机实拍，顺丰包邮，支付宝付款，详情咨询客！" src="{{ asset('home/hindex') }}/0070155069-000000000193138572_1_200x200.jpg" class="err-product">
-</a>
-</dt>
 <dd>
-<p>
-<a href="https://product.suning.com/0070155069/193138572.html?srcpoint=PcYoupin_shppcind_36725714012_prod01" target="_blank">
-【二手95新】Apple iPhone 6s 64GB 玫瑰金色 全网通4G 苹果手机 国行 包邮
-</a>
+<p style="margin-left:-70px; height:90px;">
+{{ mb_substr($auth->content,0,90) }}...
 </p>
-<div class="comment-list-price">
-<span class="curPrice"></span>
-</div>
 </dd>
 </dl>
 </li>
-
-
+@endif
+@endforeach
 
 
 
@@ -792,6 +788,33 @@ Y***华
 </div>
 </div>
 </div>
+<h3 class="comment-true">
+<i class="title-icon computer-title"></i>
+友情链接
+<i class="embelliShment"></i>
+</h3>
+
+<div id="friend" align="center">
+    <table width="980" height="35" border="0" align="center">
+        <tr>
+            <td>
+        	@foreach($ord as $order)
+            <a class="fd" target="_blank" href="{{ $order->url }}"><img style="width:18px;height:18px;" src="{{ asset('/uploads/avatar') }}/{{ $order->logo }}" alt="">{{ $order->linkname }}</a>
+            &nbsp;&nbsp; 
+          	@endforeach
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+	$('.fd').on('mouseover',function(){
+		$(this).css('color','#FC8D37');
+	});
+
+	$('.fd').on('mouseout',function(){
+		$(this).css('color','');
+	});
+</script>
 <!-- 楼层1 代码结束 -->
 <!--品质保障-->
 <!-- 品质保证 代码开始 -->

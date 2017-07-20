@@ -122,7 +122,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 				<ul>
 					<li><a class="pub-overlay-btn" href="{{ url('/home/addshop/index') }}">发布商品</a></li>
 					<li id="J_IdleLi" class="my-idle-li">
-						<a class="my-idle-link"  id="J_IdleLink" href="">我的发布
+						<a class="my-idle-link"  id="J_IdleLink" href="{{ url('home/myshop/index') }}">我的发布
 						
 						</a>
 
@@ -163,7 +163,7 @@ KISSY.use('widget/header5/index');
 		<body>
 <div class="breadcrumbs">
     <div class="container">
-        <a href="https://www.mi.com/index.html" data-stat-id="b0bcd814768c68cc" onclick="_msq.push([&#39;trackEvent&#39;, &#39;f4f3444fdfa3d27a-b0bcd814768c68cc&#39;, &#39;//www.mi.com/index.html&#39;, &#39;pcpid&#39;, &#39;&#39;]);">首页</a><span class="sep">&gt;</span><span>个人中心</span>    </div>
+        <a href="{{ url('/') }}" data-stat-id="b0bcd814768c68cc" onclick="_msq.push([&#39;trackEvent&#39;, &#39;f4f3444fdfa3d27a-b0bcd814768c68cc&#39;, &#39;//www.mi.com/index.html&#39;, &#39;pcpid&#39;, &#39;&#39;]);">首页</a><span class="sep">&gt;</span><span>个人中心</span>    </div>
 </div>
 
 <div class="page-main user-main">
@@ -188,12 +188,23 @@ KISSY.use('widget/header5/index');
                         <div class="box-bd">
                             <ul class="uc-nav-list" id="uid">
                                 <li><a href="{{ url('home/user/index') }}">我的个人中心</a></li>
-                                <li><a href="" >消息通知<i class="J_miMessageTotal"></i></a></li>
                                 <li><a href="{{ url('home/address/index') }}" >收货地址</a></li>
                                 <li><a href="{{ url('home/shopping/index') }}" >我的购物车</a></li>
                                 <li><a href="{{ url('home/favorite/index') }}" >我的收藏</a></li>
                                 <li><a href="" >我的商品</a></li>
                                 <li><a href="" >我的积分</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="uc-nav-box">
+                        <div class="box-hd">
+                            <h3 class="title">我的优品</h3>
+                        </div>
+                        <div class="box-bd">
+                            <ul class="uc-nav-list" id="uid">
+                                <li><a href="{{ url('home/myshop/index') }}">我发布的</a></li>
+                                <li><a href="" >我卖出的</a></li>
+                                <li><a href="" >我买到的</a></li>
                             </ul>
                         </div>
                     </div>

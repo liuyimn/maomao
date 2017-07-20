@@ -121,7 +121,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 				<ul>
 					<li><a class="pub-overlay-btn" href="{{ url('/home/addshop/index') }}">发布商品</a></li>
 					<li id="J_IdleLi" class="my-idle-li">
-						<a class="my-idle-link" id="J_IdleLink" href="">我的发布</a>
+						<a class="my-idle-link" id="J_IdleLink" href="{{ url('home/myshop/index') }}">我的发布</a>
 					</li>
 				</ul>
 			</div>
