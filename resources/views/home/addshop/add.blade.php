@@ -5,7 +5,7 @@
 <!-- <link rel="stylesheet" href="/home/auction/baicons2.1657e729.css"> -->
 <link rel="stylesheet" href="/home/auction/jquery-ui-1.9.1.custom.d3ae8ca1.css" onerror="tracker.resErr(this)">
 <script src="{{ asset('/home/index/bootstrap/jquery.cxselect.min.js') }}"></script>
-<link rel="stylesheet" href="{{ asset('/home/index/bootstrap/bootstrap.min.css') }}">
+<!-- <link rel="stylesheet" href="{{ asset('/home/index/bootstrap/bootstrap.min.css') }}"> -->
 
 <style type="text/css">
 
@@ -161,10 +161,10 @@
             </textarea>
           </div>
       </div>
-      <div class="p-line swfu" id="id_images">
-        <label class="p-label">封面照片：</label>
-            <div class="fileUpload btn btn-primary">
-          <span>商品图片</span>
+      <div  class="p-line swfu" id="id_images">
+        <label  class="p-label"></label>
+            <div style="width:105px; height:29px;border-radius:5px; background-color:#f0f0f0;color:#FF472E;" class="fileUpload btn btn-primary">
+          <span>封面照片</span>
           <input type="file" name="pic" class="upload" />
         </div>
       </div>
