@@ -2,7 +2,6 @@
 
 @section('content')	
 
-		<link rel="stylesheet" href="{{ asset('/home/index/bootstrap/bootstrap.min.css') }}">
 		<div class="nav">
 			<a href="#">北京大脸猫</a>
 			<a href='#'>大脸猫二手市场</a>

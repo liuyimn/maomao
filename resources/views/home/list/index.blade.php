@@ -2,7 +2,6 @@
 
 @section('content')
 
-	<link rel="stylesheet" href="{{ asset('/home/index/bootstrap/bootstrap.min.css') }}">
 	<script type="text/javascript" src="{{asset('/home/js/createelement-lte-ie8.js')}}"></script>
 	<script type="text/javascript" src="{{asset('/home/js/require_jquery_load.js')}}"></script>
 	<script type="text/javascript" src='{{asset("/home/js/boot_sale_v20170703195205.js")}}'  ></script>
