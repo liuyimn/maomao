@@ -69,14 +69,28 @@ class ListController extends Controller
 
 	}
 
-    //添加到session
+    //添加商品
     public function create($id){
 
     	//判断是否有用户存在
     	if(session('user')){
 
+    		//判断是否有重复商品
     		$r = \DB::table('nums_user')->where('sid', $id)->first();
 
+    		//获取当前用户信息
+    		$uid = session('user')->id;
+
+    		//获取当前商品信息
+    		$ar = \DB::table('shop')->where('id', $id)->first();
+
+    		//判断当前用户是否是商品用户
+    		if($ar->uid == $uid){
+
+    			return "<script>alert('怎么可以买自己的东西~');location.href='".$_SERVER['HTTP_REFERER']."'</script>"; 
+    		}
+
+    		//判断是否有重复商品
     		if($r){
 
     			return "<script>alert('请勿重复添加');location.href='".$_SERVER['HTTP_REFERER']."'</script>"; 
@@ -89,7 +103,7 @@ class ListController extends Controller
 	    		//存放用户存在时添加购物车的操作
 	    		$data = [
 
-	    			'uid' => session('user')->id,
+	    			'uid' => $uid,
 	    			'sid' => $id
 	    		];
 

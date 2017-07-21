@@ -28,82 +28,80 @@
 	<div class="border_top_cart">
 
 	<div class="container payment-con">
-		<!-- <form  target="_blank" action="#" id="pay-form" method="post"> -->
-			<div class="order-info">
-				<div class="msg">
-					<h3>您的订单已提交成功！付款咯～</h3>
-					<p></p>
-					<p class="post-date">成功付款后，7天发货</p>
-				</div>
-				<div class="info">
-					<p>
-						金额：<span class="pay-total">{{ $stmt['page'] }}元</span>
-					</p>
-					<p>订单：{{ $stmt['num'] }}</p>
-					<p>
-						配送：{{ $stmt['address'] }}
-					</p>
-				</div>
-				<div class="icon-box">
-					<i class="iconfont"><img src="{{ url('/home/images/yes_ok.png') }}"></i>
+		<div class="order-info">
+			<div class="msg">
+				<h3>您的订单已提交成功！付款咯～</h3>
+				<p></p>
+				<p class="post-date">成功付款后，7天发货</p>
+			</div>
+			<div class="info">
+				<p>
+					当前订单积分：<span class="pay-total">{{ $newp }}分</span>
+				</p>
+				<p>
+					金额：<span class="pay-total">{{ $stmt['page'] }}元</span>
+				</p>
+				<p>订单：{{ $stmt['num'] }}</p>
+				<p>
+					配送：{{ $stmt['address'] }}
+				</p>
+			</div>
+			<div class="icon-box">
+				<i class="iconfont"><img src="{{ url('/home/images/yes_ok.png') }}"></i>
+			</div>
+		</div>
+			
+		<div class="xm-plain-box">
+			<!-- 选择支付方式 -->
+			<div class="box-hd bank-title clearfix">
+				<div id="titleWrap" class="title-wrap">
+					<h2 class="title">选择支付方式</h2>
+					<h2 class="title hide " >你还需要继续支付 <em>{{ $stmt['page'] }}</em> 元</h2>
+					<span class="tip-tag"></span>
 				</div>
 			</div>
-				
-			<div class="xm-plain-box">
-				<!-- 选择支付方式 -->
-				<div class="box-hd bank-title clearfix">
-					<div id="titleWrap" class="title-wrap">
-						<h2 class="title">选择支付方式</h2>
-						<h2 class="title hide " >你还需要继续支付 <em>{{ $stmt['page'] }}</em> 元</h2>
-						<span class="tip-tag"></span>
-					</div>
-				</div>
-				<div class="box-bd" id="bankList">
-					<div class="payment-bd">
-						<form name="ck">
-							<dl class="clearfix payment-box" >
-								<dt >
-									<strong style="display:none;">支付平台</strong>
-									<p style="display:none;">手机等大额支付推荐使用支付宝快捷支付</p>
-								</dt>
-								<dd>
-									<fieldset id="test4-input-input_tab1-input_tab2" style=" border:none;">
-										<ul class="payment-list clearfix" >
-											<li><input style="display:none;" class="input_tab1" name="myradio" id="r1" type="radio" checked="checked"/><label for="r1" ><img style="display:none;" src="{{ url('/home/images/xhw.png') }}" alt=""/></label></label></li>
-											<li><input style="display:none;" class="input_tab2" name="myradio" id="r2" type="radio" /><label for="r2" ><img style="display:none;" src="{{ url('/home/images/zfb.png') }}" alt=""/></label></li>
-											<li><input style="display:none;" class="input_tab2" name="myradio" id="r2" type="radio" /><label for="r2" ><img style="display:none;" src="{{ url('/home/images/yck.png') }}" alt=""/></label></li>
-											<li><input style="display:none;" class="input_tab2" name="myradio" id="r2" type="radio" /><label for="r2" ><img style="display:none;" src="{{ url('/home/images/zxzf.png') }}" alt=""/></label></li>
-										</ul>
-										<div>
-											<div id="test4_1">
-												<ul class="payment-list clearfix">
-													<div class="xhw">
-													</div>
-												</ul>
-											</div>
-											<div  id="test4_2" style="display:none;">
-												
-											</div>
-											<div  id="test4_3" style="display:none;">
-												
-											</div>
-											<div  id="test4_4" style="display:none;">
-												
-											</div>
+			<div class="box-bd" id="bankList">
+				<div class="payment-bd">
+					<form name="ck">
+						<dl class="clearfix payment-box" >
+							<dt >
+								<strong style="display:none;">支付平台</strong>
+								<p style="display:none;">手机等大额支付推荐使用支付宝快捷支付</p>
+							</dt>
+							<dd>
+								<fieldset id="test4-input-input_tab1-input_tab2" style=" border:none;">
+									<ul class="payment-list clearfix" >
+										<li><input style="display:none;" class="input_tab1" name="myradio" id="r1" type="radio" checked="checked"/><label for="r1" ><img style="display:none;" src="{{ url('/home/images/xhw.png') }}" alt=""/></label></label></li>
+										<li><input style="display:none;" class="input_tab2" name="myradio" id="r2" type="radio" /><label for="r2" ><img style="display:none;" src="{{ url('/home/images/zfb.png') }}" alt=""/></label></li>
+										<li><input style="display:none;" class="input_tab2" name="myradio" id="r2" type="radio" /><label for="r2" ><img style="display:none;" src="{{ url('/home/images/yck.png') }}" alt=""/></label></li>
+										<li><input style="display:none;" class="input_tab2" name="myradio" id="r2" type="radio" /><label for="r2" ><img style="display:none;" src="{{ url('/home/images/zxzf.png') }}" alt=""/></label></li>
+									</ul>
+									<div>
+										<div id="test4_1">
+											<ul class="payment-list clearfix">
+												<div class="xhw">
+												</div>
+											</ul>
 										</div>
-									</fieldset>
-								</dd>
-							</dl>
-						</form>
+										<div  id="test4_2" style="display:none;">
+										</div>
+										<div  id="test4_3" style="display:none;">
+										</div>
+										<div  id="test4_4" style="display:none;">
+										</div>
+									</div>
+								</fieldset>
+							</dd>
+						</dl>
+					</form>
 
-					</div>
-				</div>
-				<div class="box-ft clearfix">
-					<a href="{{ url('/') }}" class="btn btn-lineDakeLight" style="background-color: orange; width: 150px; height: 40px; line-height: 40px; font-size: 18px;">完成订单</a>
-					<span class="tip"></span>
 				</div>
 			</div>
-		<!-- </form>   -->
+			<div class="box-ft clearfix">
+				<a href="{{ url('/') }}" class="btn btn-lineDakeLight" style="background-color: orange; width: 150px; height: 40px; line-height: 40px; font-size: 18px;">完成订单</a>
+				<span class="tip"></span>
+			</div>
+		</div>
 	</div>
 	<!-- 支付弹框 -->
 	<div style="display:none;" class="modal hide to-pay-tip" id="toPayTip">

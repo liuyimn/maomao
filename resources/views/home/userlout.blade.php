@@ -113,7 +113,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 			<div class="idle-menu">
 				<ul>
 					<li class="m-home"><a href="{{ url('/') }}">首页</a></li>
-					<li class="m-auction"><a href="">降降降</a></li>
+					<li class="m-auction"><a href="{{ url('/home/auct') }}">降降降</a></li>
 				</ul>
 			</div>
 			<div class="idle-manage">

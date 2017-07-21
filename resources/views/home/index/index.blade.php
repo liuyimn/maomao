@@ -799,7 +799,7 @@ VIVO
         <tr>
             <td>
         	@foreach($ord as $order)
-            <a class="fd" target="_blank" href="{{ $order->url }}"><img style="width:18px;height:18px;" src="{{ asset('/uploads/avatar') }}/{{ $order->logo }}" alt="">{{ $order->linkname }}</a>
+            <a class="fd" target="_blank" href="https://{{ $order->url }}"><img style="width:18px;height:18px;" src="{{ asset('/uploads/avatar') }}/{{ $order->logo }}" alt="">{{ $order->linkname }}</a>
             &nbsp;&nbsp; 
           	@endforeach
             </td>

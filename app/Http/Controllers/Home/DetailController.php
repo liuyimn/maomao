@@ -44,7 +44,25 @@ class DetailController extends Controller
 		// 收藏状态
 		$sta = \DB::table('favorite')->where('sid', $data->id)->where('uid', $uid)->first();
 
-		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx, 'sta' => $sta]);
+		//获取所有该商品的评论
+		$com = \DB::table('commit')->where('sid',$id)
+				->join('userdetail', 'commit.uid', '=', 'userdetail.uid')
+	            ->select('commit.*', 'userdetail.photo', 'userdetail.nickname')
+	            ->simplePaginate(3);
+
+	    $max = \DB::table('commit')
+				->join('userdetail', 'commit.uid', '=', 'userdetail.uid')
+	            ->select('commit.*', 'userdetail.photo', 'userdetail.nickname')
+	            ->count();
+
+	    //进一取整
+    	$max = ceil($max/3);
+
+		//广告栏
+		$adv = \DB::table('advert')->where('id', 1)->get();
+
+
+		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx, 'sta' => $sta, 'adv' => $adv ,'com'=>$com, 'max'=>$max]);
 
 	}
 
