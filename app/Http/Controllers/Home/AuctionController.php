@@ -80,7 +80,10 @@ class AuctionController extends Controller
         //测试
         $jx = \DB::table('shop')->where('tid', 193)->limit(5)->get();
 
-        return view('home.auct.show',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx]);
+        //广告
+        $ar = \DB::table('advert')->where('id', 2)->get();
+
+        return view('home.auct.show',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx, 'ar' => $ar]);
 
     }
 

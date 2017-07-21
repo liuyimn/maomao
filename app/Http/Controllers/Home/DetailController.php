@@ -58,7 +58,11 @@ class DetailController extends Controller
 	    //进一取整
     	$max = ceil($max/3);
 
-		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx, 'sta' => $sta, 'com'=>$com, 'max'=>$max]);
+		//广告栏
+		$adv = \DB::table('advert')->where('id', 1)->get();
+
+
+		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx, 'sta' => $sta, 'adv' => $adv ,'com'=>$com, 'max'=>$max]);
 
 	}
 

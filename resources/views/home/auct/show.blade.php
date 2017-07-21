@@ -232,6 +232,26 @@
 							</ul>
 						</div>
 					</div>
+	
+					<div class="personal tuijian_div">
+						<div class="personal_tuijian">
+							<h3 class="box_title">吐血大推荐</h3>
+							<ul class="personal_list">
+
+							@foreach($ar as $key => $val)
+								<li class="clearfix">
+									<dl class="clearfix">
+										<dt data-adjust="adjust">
+											<img width="100%" src="{{ url('/uploads/advert') }}/{{ $val->pic }}" />      
+										</dt>
+										<dd class="info_title"><b style="font-size: 16px; color: red;">标题:</b>{{ $val->title }}</dd>
+										<i>{{ mb_substr($val->connect, 0, 8).'...' }}</i>
+									</dl>
+								</li>
+							@endforeach
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>        

@@ -90,6 +90,11 @@ class NumController extends Controller
                 //遍历到所有商品详细信息
                 foreach ($res as $key => $value) {
 
+                    //判断当前用户是否是商品用户
+                    if($value->uid == $uid){
+                        return "<script>alert('怎么可以买自己的东西~');location.href='".$_SERVER['HTTP_REFERER']."'</script>"; 
+                    }
+
                     //多表关联查询
                     $k = \DB::table('auction')
                         ->join('user', 'auction.uid', '=', 'user.id')
@@ -205,7 +210,7 @@ class NumController extends Controller
                 //删除关于当前用户的商品
                 \DB::table('nums_user')->where('uid', $uid)->delete();
 
-                return view('home.shopcar.active', ['stmt' => $stmt]);
+                return view('home.shopcar.active', ['stmt' => $stmt, 'newp' => $newp]);
 
             }else{
 
@@ -288,7 +293,7 @@ class NumController extends Controller
                 //修改当前拍卖商品的状态
                 \DB::table('auction')->where('id', $sid)->update($sta);
 
-                return view('/home/shopcar/active', ['stmt' => $stmt]);
+                return view('/home/shopcar/active', ['stmt' => $stmt, 'newp' => $newp]);
  
             }else{
 
