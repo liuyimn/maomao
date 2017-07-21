@@ -27,6 +27,8 @@ class AuctionController extends Controller
                     ->select('auction.*', 'userdetail.nickname', 'userdetail.photo')
                     ->paginate($num);
 
+
+
         //遍历出数据值;
         foreach ($data as $key => $value) {
             
@@ -57,7 +59,10 @@ class AuctionController extends Controller
         //拍卖状态为0的显示
         $obj = \DB::table('auction')->where('status', '0')->count();
 
-        return view('home.auct.index', ['title' => '商品拍卖', 'data' => $data, 'res' => $res, 'obj' => $obj]);
+        // 进一取整
+        $max = ceil($obj/3);
+
+        return view('home.auct.index', ['title' => '商品拍卖', 'data' => $data, 'res' => $res, 'obj' => $obj,'max'=>$max]);
 
     }
 

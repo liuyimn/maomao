@@ -174,11 +174,15 @@ class NumController extends Controller
             //将商品id进行拼接
             $sid = implode($arr, '-');
 
+            //创造订单时间
+            $date = date('Y-m-d H:i:s');
+
             //组成数组
             $stmt = [
 
                 'uid' => $uid,
                 'num' => $order,
+                'time' => $date,
                 'sid' => $sid,
                 'page' => $page,
                 'address' => $str
@@ -250,11 +254,15 @@ class NumController extends Controller
             //生成随机订单号
             $order = date('ymdHis').substr(microtime(),2,2);
 
+            //创造订单时间
+            $date = date('Y-m-d H:i:s');
+
             //组成数组
             $stmt = [
 
                 'uid' => $uid,
                 'num' => $order,
+                'time' => $date,
                 'sid' => $sid,
                 'page' => $page,
                 'address' => $str,

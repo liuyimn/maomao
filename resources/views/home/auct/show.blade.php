@@ -207,7 +207,7 @@
 										<span class="plist_price"><i>{{ $user->newpage }}</i>元</span>
 									</a>
 								</li>
-							</ul>                                                                                                                                                    </ul>
+							</ul>                                                                  
 						</div>
 					</div>
 

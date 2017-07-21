@@ -163,7 +163,7 @@ KISSY.use('widget/header5/index');
 				<a href="#nogo" target="_self" class="idle-footer-link-auth">卖家实名认证</a>
 				<a href="#nogo" target="_self" class="idle-footer-link-alipay">支付宝担保交易</a>
 				<a href="#nogo" target="_self" class="idle-footer-link-team">专业团队支撑</a>
-				<a href="http://weibo.com/taoershou" class="idle-footer-link-weibo">官方微博</a>
+				<a href="#nogo" class="idle-footer-link-weibo" style="cursor: default;">官方微博</a>
 			</div>
 		</div>
 	</div>

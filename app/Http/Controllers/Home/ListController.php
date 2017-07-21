@@ -31,7 +31,10 @@ class ListController extends Controller
 		//查询总条数
 		$obj = \DB::table('shop')->count();
 
-    	return view('home.list.index',['title' => '商品列表', 'data'=> $data, 'request' => $request->all(), 'res' => $res, 'obj' => $obj]);
+	   // 进一取整
+        $max = ceil($obj/3);
+
+    	return view('home.list.index',['title' => '商品列表', 'data'=> $data, 'request' => $request->all(), 'res' => $res, 'obj' => $obj,'max'=>$max]);
 
     }
 
@@ -60,7 +63,7 @@ class ListController extends Controller
 		            ->paginate($num);
 
 		//遍历拍卖商品状态为0的
-        $res = \DB::table('auction')->where('status', 0)->get();
+        $res = \DB::table('auction')->where('status', 0)->limit(5)->get();
 
         //查询商品总条数
 		$obj = \DB::table('shop')->count();

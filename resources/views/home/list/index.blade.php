@@ -132,11 +132,12 @@
 						    	
 			<iframe src="about:blank" id="searchResult" name="searchResult" frameBorder="0" width="100%" scrolling="no" height="40"></iframe>
 			<div class="pager">
-				 {{ $data->appends($request)->links() }}
+				 {{ $data->links('vendor.pagination.simple-default', ["max" => $max]) }}
 			</div>
 			<div id="infocont" class="infocont">
+			
 				共 <span style="color: red"><b>{{ $obj }}</b></span> 条信息，
-				<a href="#" target="_blank" class="pubbtn" rel="nofollow">马上发布一条北京二手台式机/配件信息&raquo;</a>
+				<a href="#" class="pubbtn" rel="nofollow">马上发布一条北京二手台式机/配件信息&raquo;</a>
 			</div>
 		</div>
 
