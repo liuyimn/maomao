@@ -12,33 +12,33 @@
             <div class="box-bd">
                 <div class="xm-goods-list-wrap">
                     <ul class="xm-goods-list clearfix">
-                    @if(empty($data))
+                    @if(empty($data) | empty($max))
                         <div class="box-bd">
                             <p class="empty">您暂未任何商品卖出。</p>
                             <div class="xm-pagenavi"></div>  
                         </div>
                     @else
-                    @foreach($data as $key => $v)
-                        <li class="xm-goods-item">
-                            <div class="figure figure-img">
-                                <a href="{{ url('home/details') }}/{{ $v->id }}" >
-                                    <img src="{{ asset('uploads/shop') }}/{{ $v->pic }}">
-                                </a>
-                            </div>
-                                <h3 class="title"><a href="" >{{ $v->name }}</a></h3>
-                                <p class="price">{{ $v->newpage }}</p>
-                                <p class="rank">{{ $v->connect }}</p>
-                            <div class="actions">
-                                <a class="btn btn-small btn-primary" target="_blank" href="{{ url('home/details') }}/{{ $v->id }}">查看详情</a>
-                            </div>
-                        </li>
-                    @endforeach
+                        @foreach($data as $key => $v)
+                            <li class="xm-goods-item">
+                                <div class="figure figure-img">
+                                    <a href="{{ url('home/details') }}/{{ $v->id }}" >
+                                        <img src="{{ asset('uploads/shop') }}/{{ $v->pic }}">
+                                    </a>
+                                </div>
+                                    <h3 class="title"><a href="" >{{ $v->name }}</a></h3>
+                                    <p class="price">{{ $v->newpage }}</p>
+                                    <p class="rank">{{ $v->connect }}</p>
+                                <div class="actions">
+                                    <a class="btn btn-small btn-primary" target="_blank" href="{{ url('home/details') }}/{{ $v->id }}">查看详情</a>
+                                </div>
+                            </li>
+                        @endforeach
                     @endif
                     </ul>
                 </div>
                 <div class="xm-pagenavi"></div>
             </div>
-            
+            {{ $data->links('vendor.pagination.simple-default', ["max" => $max]) }}
         </div>
     </div>
 </div>

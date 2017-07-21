@@ -4,7 +4,7 @@
 	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	  
 	  <title>大脸猫 - {{ $title }}</title>
-
+		
 	  	<link rel="stylesheet" type="text/css" href='{{asset("/home/css/zzdetails_pc_v20170522210751.css") }}' media="all">
 	  	<style type="text/css">
         
@@ -79,7 +79,7 @@
 					<div id="nav" class="nav">
 						<div class="breadCrumb f12">
 							<span>
-								<a href="#">北京昌平区</a>
+								<a href="{{ url('/') }}">首页</a>
 							</span>
 							<span class="crb_i">
 								<a href='#'>大脸猫市场</a>
@@ -182,10 +182,54 @@
 						<div class="box_title clearfix liuyan_title">
 							<h3 class="box_title_h3 left">宝贝留言（<i>0</i>）</h3>
 						</div>
+						@if(session('user'))
+						<form action="{{ url('home/add/commit') }}" method="post">
+						{{ csrf_field() }}
+							<div style="margin-top:6px;">
+							
+								<textarea id="did"  autofocus="autofocus" name="content" style="border:1px solid #f0f0f0;width:460px;resize: none;border-radius:5px;font-size:18px;" name="" id="" cols="10" rows="5"></textarea>
+								
+							</div>
+							<input type="hidden" name="sid" value="{{ $data->id }}">
+							<input type="hidden" name="uid" value="{{ session('user')->id }}">
+							<input id="btn" style="width:75px; height:29px;border-radius:5px; background-color:#f0f0f0;color:#FF472E;font-weight:bold;" type="submit" value="评论">
+							@if(session('info'))
+							        <div style="color:#FF472E" class="alert alert-danger">
+							            {{ session('info') }}
+							        </div>
+						     	@endif
+						</form>
+						@endif
+						
+					</div>
+				<div class="info_baby">
+						<h3 class="box_title">看看别人都说了什么吧...</h3>
+							<ul class="liuyan_list clearfix">
 
-						<div class="liuyan_ewm">
-							<img style="margin-top: -8px; margin-right: -10px;" src="{{asset('/home/Picture/9b8a52486f214173a1935e022676e60d.gif')}}">
-						</div>
+								@foreach($com as $mm)
+								@if($mm->status == 1)
+								<li class="liuyan_li">
+									<span class="liuyan_face" data-adjust="adjust">
+										<img src="{{ asset('/uploads/user') }}/{{ $mm->photo }}" alt="">
+									</span>
+									<div class="liuyan_meg clearfix">
+										<i class="liuyan_name">{{ $mm->nickname }}
+											
+										</i>
+				
+										<span class="liuyan_time"><i class="icon_png"></i>{{ date('Y-m-d H:i',$mm->ptime) }}</span>
+										{{ $mm->content }}
+									</div>
+								</li>
+								@endif
+								@endforeach
+								 {{ $com->links('vendor.pagination.simple-default', ["max" => $max]) }}
+							</ul>
+
+					<div class="boby_pic">
+						
+					</div>
+
 					</div>
 
 					<div class="info_baby">
@@ -455,5 +499,18 @@
 	    	})
 
 	    </script>
+	    <script>
+			$('#btn').on('click', function(){
+				
+				var num = $('#did').val();
+				
+				if(!num){
+					return false;
+				}else{
+					return true;
+				}
+				
+			});
+		</script>
 	</body>
 </html>

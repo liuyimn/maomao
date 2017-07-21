@@ -75,7 +75,7 @@
 					<div id="nav" class="nav">
 						<div class="breadCrumb f12">
 							<span>
-								<a href="#">北京昌平区</a>
+								<a href="{{ url('/') }}">首页</a>
 							</span>
 							<span class="crb_i">
 								<a href='#'>大脸猫市场</a>

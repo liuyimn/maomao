@@ -429,6 +429,9 @@ Route::get('home/mygoods/mysold', 'Home\MygoodsController@mysold');
 // 个人中心订单表
 Route::get('home/order/index', 'Home\OrderController@index');
 
+// 积分
+Route::get('home/int/index', 'Home\IntController@index');
+
 // ----------------------------个人详情-------------------------
 
 
@@ -493,4 +496,6 @@ Route::get('home/myshop/delete/{id}', 'Home\MyshopController@delete');
 
 //---------------------我的优品----------------------------
 
+//----------------------评论----------------------------
+Route::post('home/add/commit', 'Home\CommitController@add');
 

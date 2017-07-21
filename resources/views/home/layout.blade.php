@@ -5,7 +5,6 @@
 	<meta name="360-site-verification" content="0d4ec208337c4c03706dbb76fccd784e" />
 	<meta name="sogou_site_verification" content="dMhEpiNZxp"/>
 	<meta name="baidu-site-verification" content="CrHL5lkDw2" />
-	
 	<meta name="spm-id" content="2007.1000261"/>
 	<meta chaarset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
@@ -109,7 +108,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 			<div class="idle-menu">
 				<ul>
 					<li class="m-home"><a href="{{ url('/') }}">首页</a></li>
-					<li class="m-auction"><a href="">降降降</a></li>
+					<li class="m-auction"><a href="{{ url('/home/auct') }}">降降降</a></li>
 				</ul>
 			</div>
 
@@ -170,6 +169,21 @@ KISSY.use('widget/header5/index');
 </div>
 	</div>
 	</div>
+</div>
+<div class="ng-s-footer">
+<p class="ng-copyright" style="display: block;">
+Copyright© 2002-2017 ，
+<a href="http://www.miitbeian.gov.cn/" target="_blank" style="color:#999">京ICP备10207551号-4</a><span>|</span>
+<a href="https://res.suning.cn/public/v3/images/SUB1-20130131.png" target="_blank" rel="nofollow" style="color:#999">京B1-20130131</a><span>|</span>
+<a href="https://res.suning.cn/public/v3/images/SUB2-20130376.png" target="_blank" rel="nofollow" style="color:#999">京B2-20130376</a></p>
+<p class="ng-copyright ng-copyright-2" style="display: block;">
+<a href="https://res.suning.cn/public/v3/images/SUB2-20130391.png" target="_blank" rel="nofollow" style="color:#999">京B2-20130391</a>
+出版物经营许可证新出发京批字第A-243号<span>|</span>
+互联网药品信息服务资格证书<a href="https://res.suning.cn/public/v3/images/yaopin_content.jpg" target="_blank" rel="nofollow" style="color:#999">（京）-非经营性-2016-0005</a></p>
+<p></p>
+<p class="ng-copyright" style="display: block;">本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）</p>
+<div class="ng-authentication" style="display: block;">
+</div>
 </div>
 <script>
 	KISSY.use('widget/footer5/index');

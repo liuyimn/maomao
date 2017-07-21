@@ -113,7 +113,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 			<div class="idle-menu">
 				<ul>
 					<li class="m-home"><a href="{{ url('/') }}">首页</a></li>
-					<li class="m-auction"><a href="">降降降</a></li>
+					<li class="m-auction"><a href="{{ url('/home/auct') }}">降降降</a></li>
 				</ul>
 			</div>
 			<div class="idle-manage">
@@ -190,7 +190,7 @@ KISSY.use('widget/header5/index');
                                 <li><a href="{{ url('home/address/index') }}" >收货地址</a></li>
                                 <li><a href="{{ url('home/shopping/index') }}" >我的购物车</a></li>
                                 <li><a href="{{ url('home/complaint/index') }}" >联系客服</a></li>
-                                <li><a href="" >我的积分</a></li>
+                                <li><a href="{{ url('home/int/index') }}" >我的积分</a></li>
                             </ul>
                         </div>
                     </div>
