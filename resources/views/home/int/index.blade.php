@@ -13,12 +13,12 @@
                     </ul>
                 </div>
             </div>
-            @if(empty($data))
-                <div class="box-bd">
+            
+                <!-- <div class="box-bd">
                     <p class="empty">您暂无订单。</p>
                     <div class="xm-pagenavi"></div>  
-                </div>
-            @else
+                </div> -->
+            
             <div class="xm-exchange-content mail" data-class="mail" style="padding:0px;width:100%;">
                 <div class="text mail">
                     <div class="exchange_bd">
@@ -34,23 +34,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($data as $val)
+                            
                             <tr>
-                            <th>{{ $val->num }}</th>
-                            <td>{{ mb_substr($val->name, 0, 8).'     等...' }}</td>
-                            <td>{{ $val->page }}</td>
-                            <td>{{ mb_substr($val->address, 0, 8).'...' }}</td>
-                            <td>{{ $arr[$val->status] }}</td>
-                            <td>{{ $val->time }}</td>
+                            <th>1</th>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>12</td>
                             </tr>
-                            @endforeach
+                            
 
                         </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            @endif
+            
 
             
         </div>

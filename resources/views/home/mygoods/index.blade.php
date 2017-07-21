@@ -23,24 +23,25 @@
                             <div class="xm-pagenavi"></div>  
                         </div>
                     @else
-                        @foreach($w as $key => $val)
-                            @foreach($val as $v)
+                        @foreach($w as $key => $v)
+                            
                                 <li class="xm-goods-item">
                                     <div class="figure figure-img"><a href="{{ url('home/details') }}/{{ $v->id }}" ><img src="{{ asset('uploads/shop') }}/{{ $v->pic }}"></a></div>
                                         <h3 class="title"><a href="" >{{ $v->name }}</a></h3>
                                         <p class="price">{{ $v->newpage }}</p>
                                         <p class="rank">{{ $v->connect }}</p>
-                                    <div class="actions">
+                                    <!-- <div class="actions">
                                         <a class="btn btn-small btn-primary" target="_blank" href="">查看详情</a>
-                                    </div>
+                                    </div> -->
                                 </li>
-                            @endforeach
+                            
                         @endforeach
                     @endif
                     </ul>
                 </div>
                 <div class="xm-pagenavi"></div>
             </div>
+           
         </div>
     </div>
 </div>

@@ -10,40 +10,29 @@ class OrderController extends Controller
     //个人订单页面
     public function index()
     {
-    	// 
-    	$data = \DB::table('nums_list')->where('uid', session('user')->id)->where('auth', 0)->get();
-
-    	if($data)
+    	// 判断用户是否登录
+    	if(!session('user'))
     	{
-    		// 定义两个空数组
-    		$k = [];
-    		$w = [];
+    		return redirect('home/login/index')->with(['info' => '请登录']);
+    	}
+    	// 查询用户登录
+    	$res = \DB::table('nums_list')->where('uid', session('user')->id)->where('auth', 0)->first();
 
-    		// 第一层遍历数组放到$k中
-    		foreach($data as $val)
-    		{
-    			$k[] = explode('-', $val->sid);
-    		}
+    	if($res)
+    	{
+    		// 查询所有
+    		$data = \DB::table('nums_list')
+    		->join('shop', 'nums_list.sid', '=', 'shop.id')
+    		->where('nums_list.uid', '=', session('user')->id)
+    		->where('auth', 0)
+    		->select('nums_list.*', 'shop.name')
+    		->get();
 
-
-    		// 遍历二维数组
-			foreach($k as $key)
-    		{
-    			// 查询商品数量
-				$sid = count($key);
-    			foreach($key as $a)
-    			{
-    				// 把遍历出来的商品id去数据库查询
-    				$res = \DB::table('shop')->where('id', $a)->get();
-    				// 把查询到的数据放到空数组中
-    				$w[] = $res;
-    			}
-    		}
     		// 状态按钮
     		$arr = ['0' => '未支付', '1' => '支付'];
 
     		// 把数据发送到页面 
-    		return view('home/order/index', ['w' => $w, 'data' => $data, 'arr' => $arr]);
+    		return view('home/order/index', ['data' => $data, 'arr' => $arr]);
     	}else
     	{
     		return view('home/order/index');

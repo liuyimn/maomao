@@ -10,10 +10,9 @@ class ComplaintController extends Controller
     // 投诉执行页面
 	public function index(){
 
+		// 判断用户是否登陆
 		if(!session('user')){
-
-			return redirect('home/login/index');
-			
+			return redirect('home/login/index')->with(['info' => '请登录']);
 		}
 
 		return view('home.complaint.index');
