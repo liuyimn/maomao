@@ -258,7 +258,11 @@
 
 						<div class="personal_salebaby">
 
+
 							<h3 class="person_title">她的宝贝</h3>
+
+
+
 
 							<ul class="salebaby_list">
 								<li style="float: left;">
@@ -327,8 +331,10 @@
 
 		<div class="footer_footer">
 		    <p>
+
 			    <span> 电话: 010-8888888 </span> 
 			    <span>日常联系地址: 北京市昌平区回龙观</span>
+
 			    <span>联系我们: kefu@mao.com</span>
 			    <span></span>
 		    </p>

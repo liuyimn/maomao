@@ -51,11 +51,13 @@ class LoginController extends Controller
             ]);
 
     	// 验证码是否正确
+
     	$code = session('code');
     	if($code != $data['code'])
     	{
     		return back()->with(['info' => '验证码错误']);
     	}
+
 
     	// 查询用户
     	$user = \DB::table('user')->where('username', $data['username'])->first();
@@ -118,10 +120,14 @@ class LoginController extends Controller
     // logout退出登录
     public function logout(Request $request)
     {
+<<<<<<< HEAD
         // 清除session
         $request->session()->forget('user');
 
         // 引入页面
+=======
+        $request->session()->forget('user');
+>>>>>>> ls
         return redirect('/admin/login')->with(['info' => '退出成功']);
     }
 

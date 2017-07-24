@@ -15,7 +15,7 @@
                         <h2 class="username">{{ $res->nickname }}</h2>
                         <p class="tip">早上好～</p>
                         <a class="link" href="{{ url('home/userdetail/edit') }}">修改个人信息 &gt;</a>
-                        <img class="avatar" src="/uploads/user/{{ $res->photo }}" width="150" height="150" alt="时光。">
+                        <img class="avatar" src="{{ asset('uploads/user') }}/{{ $res->photo }}" width="150" height="150" alt="时光。">
                     </div>
                     <div class="user-actions">
                         <ul class="action-list">
@@ -39,10 +39,12 @@
                             <a href="{{ url('home/favorite/index') }}">查看喜欢的商品<i class="iconfont"></i></a>
                             <a href="{{ url('home/favorite/index') }}"><img src="{{ asset('/home/user/portal-icon-4.png') }}" alt=""></a>
                         </li>
+
                          <li>
                         </li>
                         <li>
                         </li>
+
                     </ul>
                 </div>
             </div>

@@ -50,6 +50,8 @@ class MygoodsController extends Controller
     		
     		// 如果没有数据直接引入页面
     		return view('home/mygoods/index');
+
+ 
     	}
     }
 

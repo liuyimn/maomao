@@ -432,9 +432,12 @@ Route::get('home/order/index', 'Home\OrderController@index');
 // 积分
 Route::get('home/int/index', 'Home\IntController@index');
 
+<<<<<<< HEAD
 // 个人中心评论页面
 Route::get('home/comment/index', 'Home\CommitController@index');
 
+=======
+>>>>>>> ls
 // ----------------------------个人详情-------------------------
 
 

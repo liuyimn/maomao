@@ -38,12 +38,12 @@ class ForgetController extends Controller
     	$data = $request->except('_token');
 
     	//验证验证码是否正确
-    	// if(session('code') != $data['code']){
+    	if(session('code') != $data['code']){
 
-    	// 	//重定向
-    	// 	return back()->with(['info'=>'验证码错误']);
+    		//重定向
+    		return back()->with(['info'=>'验证码错误']);
 
-    	// }
+    	}
 
     	$res = \DB::table('user')->where('email',$data['email'])->first();
 

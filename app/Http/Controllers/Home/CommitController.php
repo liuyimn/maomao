@@ -10,6 +10,17 @@ class CommitController extends Controller
     //执行添加评论
     public function add(Request $request){
 
+
+        //获取用户名
+        $name = session('user')->username;
+
+        //根据用户名查看是否被禁言
+        $sta = \DB::table('gog')->where('name',$name)->first();
+
+        if($sta->status == 1){
+            return back()->with(['info'=>'您已经被禁言请联系管理员解禁']);
+        }
+
     	//获取用户输入的数据
     	$data = $request->except('_token');
 
@@ -26,6 +37,7 @@ class CommitController extends Controller
     		return back()->with(['info'=>'抱歉：评论失败']);
     	}
     }
+
 
     // 个人中心
     public function index()

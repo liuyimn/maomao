@@ -22,7 +22,7 @@ class LoginController extends Controller
 
     //执行登录
     public function dologin(Request $request){
-    	
+
     	//获取cookie
     	$remember_token = \Cookie::get('remember_token');
 
@@ -44,6 +44,12 @@ class LoginController extends Controller
 
     	//去数据库查询密码
     	$res = \DB::table('user')->where('username',$request->username)->orwhere('email',$request->username)->orwhere('phone',$request->username)->first();
+
+
+        //判断用户是否被查封
+        if($res->status == 1){
+            return back()->with(['info'=>'您的账号已经被停封，请联系管理员']);
+        }
 
     	//获取密码
     	$password = $data['password'];

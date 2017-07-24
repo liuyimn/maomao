@@ -81,7 +81,9 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 		<div class="container">
 
 				<div class="topbar-nav">
-						<a rel="nofollow" href="#" >当前城市：{{ session('city') }}</a><span class="sep">|</span><a rel="nofollow" href="{{ url('/') }}" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="http://www.miui.com/" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/favorite/index') }}" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="http://game.xiaomi.com/" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/complaint/index') }}" >联系客服</a>
+
+						<a rel="nofollow" href="#" >当前城市：{{ session('city') }}</a><span class="sep">|</span><a rel="nofollow" href="{{ url('/') }}" >大脸猫首页</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/mygoods/index') }}" target="_blank">我的商品</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/favorite/index') }}" target="_blank">收藏夹</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/mygoods/mysold') }}" target="_blank">卖家中心</a><span class="sep">|</span><a rel="nofollow" href="{{ url('home/complaint/index') }}" >联系客服</a>
+
 				</div>
 				<div class="topbar-cart" id="J_miniCartTrigger">
 						<a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href="{{ url('/home/details/shopcar') }}"><i class="iconfont"></i>购物车</a>
@@ -191,7 +193,7 @@ KISSY.use('widget/header5/index');
                                 <li><a href="{{ url('home/shopping/index') }}" >我的购物车</a></li>
                                 <li><a href="{{ url('home/complaint/index') }}" >联系客服</a></li>
                                 <li><a href="{{ url('home/int/index') }}" >我的积分</a></li>
-                                <li><a href="{{ url('home/comment/index') }}" >我的评论</a></li>
+                               <li><a href="{{ url('home/comment/index') }}" >我的评论</a></li>
                             </ul>
                         </div>
                     </div>

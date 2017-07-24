@@ -7,13 +7,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        广告管理 
-        <small>添加</small>
+        广告管理
+        <small>修改</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{ url('/admin/index') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">广告管理</a></li>
-        <li class="active">添加广告</li>
+        <li class="active">修改广告</li>
       </ol>
     </section>
 
@@ -26,14 +26,14 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">快速添加</h3>
+              <h3 class="box-title">快速修改</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ url('/admin/advert/insert') }}" method="post" enctype="multipart/form-data">
+            <form role="form" action="{{ url('/admin/advert/update') }}" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div class="box-body"  style="width:50%">
-              
+              <input type="hidden" name="id" value="{{ $data->id }}">
               @if(session('info'))
               <div class="alert alert-danger">
                   {{ session('info') }}
@@ -52,37 +52,35 @@
                 
                 <div class="form-group">
                   <label for="exampleInputName">广告标题</label>
-                  <input type="text" name="title" class="form-control" value="{{ old('title') }}" id="exampleInputName" placeholder="请输入广告名">
+                  <input type="text" name="title" class="form-control" value="{{ $data->title }}" id="exampleInputName" placeholder="请输入广告名">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">广告内容</label>
-                  <input type="text" name="connect" class="form-control" value="{{ old('connect') }}" id="exampleInputEmail1" placeholder="请输入广告内容">
+                  <input type="text" name="connect" class="form-control" value="{{ $data->connect }}" id="exampleInputEmail1" placeholder="请输入广告内容">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword6">广告开始时间</label>
-                  <input class="form_datetime form-control" name="s_time" id="exampleInputPassword6" type="text" value="{{ date('Y-m-d') }}" size="16">
+                  <input class="form_datetime form-control" style="width:500px;" name="s_time" id="exampleInputPassword6" type="text" value="{{ $data->s_time }}" size="16">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword4">广告结束时间</label>
-                  <input class="form_datetime form-control" name="e_time" id="exampleInputPassword4" type="text" value="{{ date('Y-m-d') }}" size="16">
-                </div>
-               <div class="form-group">
-                  <label for="exampleInputPassword5">是否开启</label>
-                  <select class="form-control" id="exampleInputPassword5" name="status">
-                      <option value="0">开启</option>
-                      <option value="1">关闭</option>
-                  </select>
+                  <input class="form_datetime form-control" style="width:500px;" name="e_time" id="exampleInputPassword4" type="text" value="{{ $data->e_time }}" size="16">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">广告图片上传:</label><br/>
                   <a href="javascript:;" class="file">请选择图片<input type="file" name="pic" id="exampleInputPassword1"></a>
                 </div>
+                <div class="form-group">
+                  <label for="imgpic">当前广告图片:</label><br/>
+                  <img src="{{ asset('/uploads/advert') }}/{{ $data->pic }}" width="60px;" style="margin-left:50px;">
+                  </div>
               </div>
+
               <!-- /.box-body -->
 
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">添加</button>
+                <button type="submit" class="btn btn-primary">修改</button>
               </div>
             </form>
           </div>

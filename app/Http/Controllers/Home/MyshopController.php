@@ -9,6 +9,7 @@ class MyshopController extends Controller
 {
     //index
     public function index(){
+
         // 判断用户是否登录
         if (!session('user')) {
             return redirect()->with(['info' => '请登录']);
