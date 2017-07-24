@@ -12,7 +12,7 @@ class UserdetailController extends Controller
     {
         // 判断是否有session
     	if (!session('user')) {
-    		return redirect('home/login/index');
+    		return redirect('home/login/index')->with(['info' => '请登录']);
     	}
     	// 获取用户的id
     	$uid = session('user')->id;
@@ -40,7 +40,13 @@ class UserdetailController extends Controller
     }
 
     // 执行修改页面
-    public function update(Request $request){
+    public function update(Request $request)
+    {
+        // 判断用户是的登录
+        if(!session('user')) 
+        {
+            return redirect('home/login/index')->with(['info' => '请登录']);
+        }
 
     	// 验证表单
     	$this->validate($request, [
@@ -104,12 +110,21 @@ class UserdetailController extends Controller
 
     //添加邮箱email
     public function email(){
-
+        // 判断是否有用户
+        if (!session('user')) 
+        {
+            return redirect('home/login/index')->with(['info' => '请登录']);
+        }
         return view('home.userdetail.email');
     }
 
     //执行发送邮件
     public function doemail(Request $request){
+        // 判断用户是否登登录
+        if (!session('user')) 
+        {
+            return redirect('home/login/index')->with(['info' => '请登录']);
+        }
 
         //获取email
         $email = $request->except('_token');
@@ -139,19 +154,29 @@ class UserdetailController extends Controller
 
     //验证验证码页面
     public function con($str,$email){
+        // 判断用户是否登录
+        if(!session('user')) 
+        {
+            return redirect()->with(['info' => '请登录']);
+        }
      
         return view('home.userdetail.cons',['str'=>$str,'email'=>$email]);
     }
 
     //执行验证
     public function docon(Request $request){
+        // 判断用户是否登录
+        if(!session('user'))
+        {
+            return redirect()->with(['info' => '请登录']);
+        }
 
         //获取传递过来的数据
         $data = $request->except('_token');
 
         //判断验证码是否正确
         if($data['con'] != $data['str']){
-            return back() -> with(['info'=>'验证码错误']);
+            return back() -> with(['info' => '验证码错误']);
         }
 
         //获取用户id
@@ -170,6 +195,10 @@ class UserdetailController extends Controller
 
     //ajax验证邮箱
     public function ajax(Request $request){
+        if (!session('user')) 
+        {
+            return redirect()->with(['info' => '请登录']);
+        }
 
         //获取输入的邮箱
         $email = $request->input('email');

@@ -13,7 +13,7 @@
                     </ul>
                 </div>
             </div>
-            @if(empty($data) | empty($w))
+            @if(empty($data) | empty($max))
                 <div class="box-bd">
                     <p class="empty">您暂无订单。</p>
                     <div class="xm-pagenavi"></div>  
@@ -30,24 +30,18 @@
                                 <th>商品总价</th>
                                 <th>送货地址</th>
                                 <th>商品状态</th>
+                                <th>下单时间</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($data as $val)
                             <tr>
                             <th>{{ $val->num }}</th>
-                            <td>
-                                @foreach($w as $v)
-                                    @foreach($v as $r)
-                                        {{ mb_substr($r->name, 0,9).'...' }}
-                                    @endforeach
-                                @endforeach
-                            </td>
+                            <td>{{ mb_substr($val->name, 0, 8).'     等...' }}</td>
                             <td>{{ $val->page }}</td>
                             <td>{{ mb_substr($val->address, 0, 8).'...' }}</td>
-                            
                             <td>{{ $arr[$val->status] }}</td>
-                            
+                            <td>{{ $val->time }}</td>
                             </tr>
                             @endforeach
 
@@ -56,6 +50,7 @@
                     </div>
                 </div>
             </div>
+            {{ $data->links('vendor.pagination.simple-default', ["max" => $max]) }}
             @endif
 
             

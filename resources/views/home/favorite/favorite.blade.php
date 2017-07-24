@@ -17,7 +17,7 @@
             <div class="box-bd">
                 <div class="xm-goods-list-wrap">
                     <ul class="xm-goods-list clearfix">
-                    @if(empty($date))
+                    @if(empty($date) | empty($data) | empty($max))
                         <div class="box-bd">
                             <p class="empty">您暂未收藏任何商品。</p>
                             <div class="xm-pagenavi"></div>  
@@ -37,11 +37,13 @@
                                 </li>
                             @endforeach
                         @endforeach
-                    @endif
+                    
                     </ul>
                 </div>
                 <div class="xm-pagenavi"></div>
             </div>
+            {{ $data->links('vendor.pagination.simple-default', ["max" => $max]) }}
+            @endif
         </div>
     </div>
 </div>

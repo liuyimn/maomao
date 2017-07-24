@@ -9,13 +9,17 @@ class MyshopController extends Controller
 {
     //index
     public function index(){
+        // 判断用户是否登录
+        if (!session('user')) {
+            return redirect()->with(['info' => '请登录']);
+        }
 
     	//获取用户id
     	$id = session('user')->id;
 
     	//查找数据库
     	$res = \DB::table('shop')->where('uid',$id)->simplePaginate(3);
-
+        
     	//查找总数据条数
     	$max = \DB::table('shop')->where('uid',$id)->count();
 
