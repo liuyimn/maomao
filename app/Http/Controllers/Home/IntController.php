@@ -10,6 +10,7 @@ class IntController extends Controller
     //积分页面
     public function index()
     {
+
     	// 查询个人积分
     	$num = \DB::table('userdetail')->where('uid', session('user')->id)->first()->num;
     	
@@ -33,7 +34,6 @@ class IntController extends Controller
     		return view('home/int/index', ['num' => $num]);
     	}
 
-    	
     }
 
 

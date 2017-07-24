@@ -41,7 +41,9 @@
 
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
+        
             <a href="{{ $paginator->nextPageUrl() }}" rel="next">下一页</a>
+
             <a href="{{ $paginator->url($max) }}" class="disabled">尾页</a>
         @else
             <a href="{{ $paginator->url($max) }}" class="disabled">尾页</a>

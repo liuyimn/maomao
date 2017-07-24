@@ -2,7 +2,6 @@
 
 @section('content')	
 
-		<link rel="stylesheet" href="{{ asset('/home/index/bootstrap/bootstrap.min.css') }}">
 		<div class="nav">
 			<a href="#">北京大脸猫</a>
 			<a href='#'>大脸猫二手市场</a>
@@ -78,7 +77,7 @@
 							    	
 				<iframe src="about:blank" id="searchResult" name="searchResult" frameBorder="0" width="100%" scrolling="no" height="40"></iframe>
 				<div class="pager">
-					{{ $data->links() }}
+					{{ $data->links('vendor.pagination.simple-default', ["max" => $max]) }}
 				</div>
 				<div id="infocont" class="infocont">
 						共 <span style="color: red"><b>{{ $obj }}</b></span> 条信息，

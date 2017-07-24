@@ -49,7 +49,7 @@ class MygoodsController extends Controller
     	}else{
     		
     		// 如果没有数据直接引入页面
-    		return view('home/mygoods/index');
+    		return view('home/mygoods/index', ['data' => $data, 'max' => $max]);
     	}
     }
 
@@ -83,6 +83,7 @@ class MygoodsController extends Controller
 
     		// 把数据发送到页面
        		return view('home/mygoods/mysold');
+
     	}
     	
     }

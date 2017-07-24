@@ -39,8 +39,14 @@ class ShoppingController extends Controller
             
     	}else
     	{
+            // 查询分页
+            $data = \DB::table('nums_user')->where('uid', session('user')->id)->simplePaginate(3);
+            // 查询总条数
+            $max = \DB::table('nums_user')->where('uid', session('user')->id)->count();
+            // 进一取整
+            $max = ceil($max/3);
     		// 如果没有数据跳到页面不发送值
-    		return view('home.shopping.index');
+    		return view('home.shopping.index', ['data' => $data, 'max' => $max]);
     	}
     }
 

@@ -6,6 +6,7 @@
     <div class="uc-box uc-main-box">
         <div class="uc-content-box">
             <div class="box-hd">
+
                 <h1 class="title">我的积分</h1>
             </div>
                 

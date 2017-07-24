@@ -496,4 +496,6 @@ Route::get('home/myshop/delete/{id}', 'Home\MyshopController@delete');
 
 //---------------------我的优品----------------------------
 
+//----------------------评论----------------------------
+Route::post('home/add/commit', 'Home\CommitController@add');
 

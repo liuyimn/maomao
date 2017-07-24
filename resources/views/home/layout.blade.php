@@ -5,7 +5,6 @@
 	<meta name="360-site-verification" content="0d4ec208337c4c03706dbb76fccd784e" />
 	<meta name="sogou_site_verification" content="dMhEpiNZxp"/>
 	<meta name="baidu-site-verification" content="CrHL5lkDw2" />
-	
 	<meta name="spm-id" content="2007.1000261"/>
 	<meta chaarset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
@@ -109,7 +108,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 			<div class="idle-menu">
 				<ul>
 					<li class="m-home"><a href="{{ url('/') }}">首页</a></li>
-					<li class="m-auction"><a href="">降降降</a></li>
+					<li class="m-auction"><a href="{{ url('/home/auct') }}">降降降</a></li>
 				</ul>
 			</div>
 
@@ -163,7 +162,7 @@ KISSY.use('widget/header5/index');
 				<a href="#nogo" target="_self" class="idle-footer-link-auth">卖家实名认证</a>
 				<a href="#nogo" target="_self" class="idle-footer-link-alipay">支付宝担保交易</a>
 				<a href="#nogo" target="_self" class="idle-footer-link-team">专业团队支撑</a>
-				<a href="http://weibo.com/taoershou" class="idle-footer-link-weibo">官方微博</a>
+				<a href="#nogo" class="idle-footer-link-weibo" style="cursor: default;">官方微博</a>
 			</div>
 		</div>
 	</div>
