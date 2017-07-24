@@ -139,17 +139,7 @@
 								<span class="talk_button download_button">联系卖家</span>
 								<a href="{{ url('/home/num/my') }}/{{ $data->id }}"><span class="buy_button download_button">我要购买</span></a>
 							</div>
-
-							<div class="want_li">
-								<span class="want_left">
-									<img src="{{asset('/home/Picture/want.png')}}">
-									收藏
-								</span>
-								<span class="want_right">
-									<span class="want_no">宝贝还没有被收藏，快来抢沙发</span>
-								</span>
-							</div>
-
+												
 						</div>
 
 					</div>    

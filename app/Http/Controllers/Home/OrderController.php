@@ -28,8 +28,11 @@ class OrderController extends Controller
             ->select('nums_list.*', 'shop.name')
             ->simplePaginate(3);
 
+            // 查询总条数
             $max = \DB::table('nums_list')->where('uid', session('user')->id)->count();
-
+            // 进一取整
+            $max = ceil($max/3);
+            
             // 状态按钮
             $arr = ['0' => '未支付', '1' => '支付'];
 

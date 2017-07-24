@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="Shortcut Icon" href="//img.58cdn.com.cn/n/tuan/v3/favicon.ico" type="image/x-icon" /> 
     <meta charset="UTF-8">
     <title>大脸猫二手交易-用户登录</title>
     <script type="text/javascript">document.domain = '58.com';try{var ____json4fe = {catentry:{dispid:'',name:'',listname:''},locallist:{dispid:'',name:'',listname:''},modules:'passport'}}catch(e){};</script>

@@ -191,6 +191,7 @@ KISSY.use('widget/header5/index');
                                 <li><a href="{{ url('home/shopping/index') }}" >我的购物车</a></li>
                                 <li><a href="{{ url('home/complaint/index') }}" >联系客服</a></li>
                                 <li><a href="{{ url('home/int/index') }}" >我的积分</a></li>
+                                <li><a href="{{ url('home/comment/index') }}" >我的评论</a></li>
                             </ul>
                         </div>
                     </div>

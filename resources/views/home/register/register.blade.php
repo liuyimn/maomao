@@ -14,7 +14,7 @@
     <div id="overlay"></div>
     <div id="regContent">
         <div id="outregBox">
-            <div id="backtoindex"><a href="http://www.58.com">返回首页</a></div>
+            <div id="backtoindex"><a href="{{ url('/') }}">返回首页</a></div>
             <div id="goLogin">已有账户？<a href="{{ url('/home/login/index') }}">去登录</a></div>
         </div>
         <div class="wrap">

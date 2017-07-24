@@ -8,7 +8,6 @@
             <div class="box-hd">
                 <h1 class="title">我卖出商品</h1>
             </div>
-
             <div class="box-bd">
                 <div class="xm-goods-list-wrap">
                     <ul class="xm-goods-list clearfix">

@@ -33,20 +33,15 @@
                             <a href="{{ url('home/shopping/index') }}" >查看待支付订单<i class="iconfont"></i></a>
                             <a href="{{ url('home/shopping/index') }}" ><img src="{{ asset('/home/user/portal-icon-1.png') }}" alt=""></a>
                         </li>
-                        <li>
-                            <h3>待收货的订单：<span class="num">0</span></h3>
-                            <a href="" >查看待收货订单<i class="iconfont"></i></a>
-                            <img src="{{ asset('/home/user/portal-icon-2.png') }}" alt="">
-                        </li>
-                        <li>
-                            <h3>待评价商品数：<span class="num">0</span></h3>
-                            <a href="" >查看待评价商品<i class="iconfont"></i></a>
-                            <img src="{{ asset('/home/user/portal-icon-3.png') }}" alt="">
-                        </li>
+                       
                         <li>
                             <h3>喜欢的商品：<span class="num">{{ $favorite }}</span></h3>
                             <a href="{{ url('home/favorite/index') }}">查看喜欢的商品<i class="iconfont"></i></a>
                             <a href="{{ url('home/favorite/index') }}"><img src="{{ asset('/home/user/portal-icon-4.png') }}" alt=""></a>
+                        </li>
+                         <li>
+                        </li>
+                        <li>
                         </li>
                     </ul>
                 </div>
