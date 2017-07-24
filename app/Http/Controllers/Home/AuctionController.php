@@ -27,8 +27,6 @@ class AuctionController extends Controller
                     ->select('auction.*', 'userdetail.nickname', 'userdetail.photo')
                     ->paginate($num);
 
-
-
         //遍历出数据值;
         foreach ($data as $key => $value) {
             
@@ -62,7 +60,7 @@ class AuctionController extends Controller
         // 进一取整
         $max = ceil($obj/3);
 
-        return view('home.auct.index', ['title' => '商品拍卖', 'data' => $data, 'res' => $res, 'obj' => $obj,'max'=>$max]);
+        return view('home.auct.index', ['title' => '商品拍卖', 'data' => $data, 'request' => $request->all(), 'res' => $res, 'obj' => $obj, 'max' => $max]);
 
     }
 
@@ -177,9 +175,8 @@ class AuctionController extends Controller
         // 处理图片
         if($request->hasFile('pic')){
 
-
+            
             if($request->file('pic')->isValid()){
-
 
                 // 获取扩展名
                 $ext = $request->file('pic')->extension();
