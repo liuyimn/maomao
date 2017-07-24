@@ -13,25 +13,14 @@
 		</div>
 		<section id="selection">
 			<div>
-				<dl class="secitem clearfix" >
-					<dt>类别 ：</dt>
-					<dd zwname="类别" zwnameid="35">
-						<a class='select' href="">全部</a>
-						<a name='b_link' para='custom' cl='?zz=zz' href="">台式机</a>
-						<a name='b_link' para='custom' cl='?zz=zz' href="">硬件</a>
-					</dd>
-				</dl>
-				
 				<form action="{{ url('/home/list/index') }}">
 					<dl class="secitem clearfix" >
 						<dt>价格 ：</dt>
 						<dd zwname="价格" zwnameid="5621">
 							<a class='select' href="">全部</a>
-							<a name='b_link' para='custom' href="">100元以下</a>
-							<a name='b_link' para='custom' href="">100-200元</a>
-							<a name='b_link' para='custom' href="">200-500元</a>
-							<a name='b_link' para='custom' href="">500-1000元</a>
-									
+							价钱:<a name='b_link' para='custom' href="">1000-2000</a>
+							价钱:<a name='b_link' para='custom' href="">2000-3000</a>
+							价钱:<a name='b_link' para='custom' href="">3000-5000</a>
 							<span class="prifilter">
 								<span class="text">
 									<input type="text" id="price_start" para="minprice" size="3" muti="1" min="0" max="999999" name="b_k" autocomplete="off">

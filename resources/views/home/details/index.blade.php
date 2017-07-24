@@ -141,7 +141,7 @@
 							</div>
 
 							<div class="biaoqian_li">
-								<span style="width: 150px;">{{ $data->connect }}</span>
+								<span style="width: 150px;">{{ mb_substr($data->connect, 0, 12).'..' }}</span>
 							</div>
 
 							<div class="button_li">
@@ -194,10 +194,10 @@
 							<input type="hidden" name="uid" value="{{ session('user')->id }}">
 							<input id="btn" style="width:75px; height:29px;border-radius:5px; background-color:#f0f0f0;color:#FF472E;font-weight:bold;" type="submit" value="评论">
 							@if(session('info'))
-							        <div style="color:#FF472E" class="alert alert-danger">
-							            {{ session('info') }}
-							        </div>
-						     	@endif
+						        <div style="color:#FF472E" class="alert alert-danger">
+						            {{ session('info') }}
+						        </div>
+					     	@endif
 						</form>
 						@endif
 						

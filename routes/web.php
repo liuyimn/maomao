@@ -499,3 +499,11 @@ Route::get('home/myshop/delete/{id}', 'Home\MyshopController@delete');
 //----------------------评论----------------------------
 Route::post('home/add/commit', 'Home\CommitController@add');
 
+
+//====================商品价格搜索===========================
+
+//获取价格区间
+Route::get('/home/list/research', 'Home\ListController@Research');
+
+//获取地址区间
+Route::get('/home/list/search', 'Home\ListController@Search');

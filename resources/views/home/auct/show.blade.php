@@ -132,7 +132,7 @@
 							</div>
 
 							<div class="biaoqian_li">
-								<span style="width: 150px;">{{ $data->connect }}</span>
+								<span style="width: 150px;">{{ mb_substr($data->connect, 0, 15).'..' }}</span>
 							</div>
 
 							<div class="button_li">

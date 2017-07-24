@@ -137,14 +137,14 @@ class ShopcarController extends Controller
     //删除
     public function delete($key, Request $request){
 
-        //获取下标
-        // $key = $request->input('key');
-
         //判断是否存在用户
         if(session('user')){
 
+            //获取当前用户id
+            $id = session('user')->id;
+
             //存在删除表中数据
-            $res = \DB::table('nums_user')->where('sid', $key)->delete();
+            $res = \DB::table('nums_user')->where('uid', $id)->where('sid', $key)->delete();
 
             //判断
             if($res)

@@ -14,37 +14,14 @@
 	</div>
 	<section id="selection">
 		<div>
-			<dl class="secitem clearfix" >
-				<dt>类别 ：</dt>
-				<dd zwname="类别" zwnameid="35">
-					<a class='select' href="">全部</a>
-					<a name='b_link' para='custom' cl='?zz=zz' href="">台式机</a>
-					<a name='b_link' para='custom' cl='?zz=zz' href="">硬件</a>
-				</dd>
-			</dl>
-			
 			<form action="{{ url('/home/list/show') }}">
 				<dl class="secitem clearfix" >
 					<dt>价格 ：</dt>
 					<dd zwname="价格" zwnameid="5621">
-						<a class='select' href="">全部</a>
-						<a name='b_link' para='custom' href="">100元以下</a>
-						<a name='b_link' para='custom' href="">100-200元</a>
-						<a name='b_link' para='custom' href="">200-500元</a>
-						<a name='b_link' para='custom' href="">500-1000元</a>
-								
-						<span class="prifilter">
-							<span class="text">
-								<input type="text" id="price_start" para="minprice" size="3" muti="1" min="0" max="999999" name="b_k" autocomplete="off">
-							</span>
-							<span class="dev"> - </span>
-							<span class="text">
-								<input class="mr5" type="text" id="price_end" para="minprice" size="3" muti="1" min="0" max="999999" name="b_q" autocomplete="off">元
-							</span>
-							<span class="btn"">
-								<input id="price_search" type="submit" value="价格筛选">
-							</span>
-						</span>
+						<a name='b_link' class='b_link' href="#">不限</a>
+						<a name='b_link' class='b_link' href="#">1000-2000</a>
+						<a name='b_link' class='b_link' href="#">2000-3000</a>
+						<a name='b_link' class='b_link' href="#">3000-5000</a>
 					</dd>
 				</dl>
 			</form>
@@ -52,12 +29,12 @@
 			<dl class="secitem secitem_area clearfix">
 				<dt>区域 ：</dt>
 				<dd zwnameid="quyu" zwname="区域" >
-					<a href='#' data-finalurl='#' class='select'>全国</a>
-					<a href='#' data-finalurl='#' >全北京</a>
-					<a href='#' data-finalurl="#">朝阳</a>
-					<a href='#' data-finalurl="#">海淀</a>
-					<a href='#' data-finalurl="#">东城</a>
-					<a href='#' data-finalurl="#">西城</a>
+					<a href='#' class='b_address' data-finalurl='#'>不限</a>
+					<a href='#' class='b_address' data-finalurl='#'>天津市</a>
+					<a href='#' class='b_address' data-finalurl="#">石家庄市</a>
+					<a href='#' class='b_address' data-finalurl="#">内蒙古自治区</a>
+					<a href='#' class='b_address' data-finalurl="#">沈阳市</a>
+					<a href='#' class='b_address' data-finalurl="#">白城市</a>
 				</dd>
 			</dl>
 		</div>
@@ -75,14 +52,14 @@
 			</div>
 			<div class="infocon zhiding">
 				<table class="tbimg" cellspacing="0" cellpadding="0" id="zhiding">
-					<colgroup>
+					<colgroup id="col">
 						<col class="w130"></col>
 			            <col class="w550"></col>
 			            <col class="w100"></col>
 			            <col class="w100"></col>
 			            <col class="w100"></col>
 					</colgroup>
-					<tbody>
+					<tbody id="tbody">
 						@foreach($data as $key => $val)
 							<tr class="zzinfo" logr="z_2_22418388680711_28541506662583_1_2_0" _pos="1" sortid="552662188">
 			                    <td class="img">
@@ -131,7 +108,7 @@
 						    	
 			<iframe src="about:blank" id="searchResult" name="searchResult" frameBorder="0" width="100%" scrolling="no" height="40"></iframe>
 			<div class="pager">
-				 {{ $data->links('vendor.pagination.simple-default', ["max" => $max]) }}
+				 {{ $data->appends($request)->links('vendor.pagination.simple-default', ["max" => $max]) }}
 			</div>
 			<div id="infocont" class="infocont">
 			
@@ -171,5 +148,51 @@
 	</div>
 
 	<div id="direct_ad_bottom"></div>
+
+	<script type="text/javascript">
+
+		//遍历价钱区间
+		$('.b_link').each(function(){
+
+			//当前选中区间
+			$(this).click(function(){
+
+				//获取到价钱值
+				var page = $(this).html();
+
+				//get请求ajax
+				$.get('/home/list/research', {page:page}, function(data){
+
+					$('#infolist').empty();
+
+					$('#infolist').append(data);
+
+				},'html');
+
+			});
+
+		});
+
+
+		$('.b_address').each(function(){
+
+			$(this).click(function(){
+
+				var address = $(this).html();
+
+				$.get('/home/list/search', {address:address}, function(address){
+
+					$('#infolist').empty();
+
+					$('#infolist').append(address);
+
+				}, 'html');
+
+			});
+
+		});
+
+
+	</script>
 
 @endsection
