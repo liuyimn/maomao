@@ -38,15 +38,9 @@ class FavoriteController extends Controller
             return view('home/favorite/favorite', ['date' => $date, 'data' => $data, 'max' => $max]);
 
     	}else{
-            // 查询数据
-            $data = \DB::table('favorite')->where('uid', session('user')->id)->simplePaginate(3);
-            // 查询总条数
-            $max = \DB::table('favorite')->where('uid', session('user')->id)->count();
-            // 进一取整
-            $max = ceil($max/3);
 
             // 引入页面
-    		return view('home/favorite/favorite', ['data' => $data, 'max' => $max]);
+    		return view('home/favorite/favorite');
     	}
 
     	
@@ -63,10 +57,13 @@ class FavoriteController extends Controller
         }
     	// 取出商品id
     	$sid = $request->input('sid');
+        
     	// 取出用户id
     	$data['uid'] = session('user')->id;
+
     	// 取出商品id
     	$data['sid'] = $sid;
+
     	// 去数据库查询
     	$res = \DB::table('favorite')->where('sid', $sid)->first();
     	

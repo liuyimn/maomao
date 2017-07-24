@@ -13,7 +13,8 @@
                     </ul>
                 </div>
             </div>
-            @if(empty($data))
+            @if(empty($data) | empty($max))
+
                 <div class="box-bd">
                     <p class="empty">您暂无订单。</p>
                     <div class="xm-pagenavi"></div>  
@@ -50,6 +51,7 @@
                     </div>
                 </div>
             </div>
+            {{ $data->links('vendor.pagination.simple-default', ["max" => $max]) }}
             @endif
 
             

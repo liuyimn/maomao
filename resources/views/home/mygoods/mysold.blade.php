@@ -33,12 +33,16 @@
                                 </div>
                             </li>
                         @endforeach
-                    @endif
+
+                    
+
                     </ul>
                 </div>
                 <div class="xm-pagenavi"></div>
             </div>
             {{ $data->links('vendor.pagination.simple-default', ["max" => $max]) }}
+
+            @endif
         </div>
     </div>
 </div>

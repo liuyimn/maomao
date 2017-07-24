@@ -6,53 +6,51 @@
     <div class="uc-box uc-main-box">
         <div class="uc-content-box">
             <div class="box-hd">
-                <h1 class="title">我的订单</h1>
-                <div class="more clearfix hide">
-                    <ul class="filter-list J_addrType">
-                        <li class="first active">卖出的商品</li>
-                    </ul>
-                </div>
-            </div>
-            
-                <!-- <div class="box-bd">
-                    <p class="empty">您暂无订单。</p>
-                    <div class="xm-pagenavi"></div>  
-                </div> -->
-            
-            <div class="xm-exchange-content mail" data-class="mail" style="padding:0px;width:100%;">
-                <div class="text mail">
-                    <div class="exchange_bd">
-                        <table>
-                        <thead>
-                            <tr>
-                                <th>订单号</th>
-                                <th>商品名称</th>
-                                <th>商品总价</th>
-                                <th>送货地址</th>
-                                <th>商品状态</th>
-                                <th>下单时间</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                            <tr>
-                            <th>1</th>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>12</td>
-                            </tr>
-                            
 
-                        </tbody>
-                        </table>
+                <h1 class="title">我的积分</h1>
+            </div>
+                
+                
+            <div class="address-item J_addressItem" style="width:200px;height:50px;">
+                <dl>
+                    <dt>
+                    <em class="utel" style="text-align:center;"><b>我的积分</b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>{{ $num }}</b></em>
+                    </dt>
+                </dl>
+             </div>
+                
+                @if(empty($data) | empty($max))
+                 <div class="box-bd">
+                    <p class="empty">您暂无新加入的积分。</p>
+                    <div class="xm-pagenavi"></div>  
+                </div>
+                @else
+                <div class="xm-exchange-content mail" data-class="mail" style="width:100%;margin-top:20px;">
+                    <div class="text mail">
+                        <div class="exchange_bd">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>订单号</th>
+                                        <th>加入积分</th>
+                                        <th>时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($data as $val)
+                                    <tr>
+                                    <th>{{ $val->num }}</th>
+                                    <td>{{ round($val->page * 0.1) }}</td>
+                                    <td>{{ $val->time }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-
-            
+            {{ $data->links('vendor.pagination.simple-default', ["max" => $max]) }}
+            @endif
         </div>
     </div>
 </div>

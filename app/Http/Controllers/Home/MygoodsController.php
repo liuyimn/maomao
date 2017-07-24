@@ -80,16 +80,10 @@ class MygoodsController extends Controller
        		return view('home/mygoods/mysold', ['data' => $data, 'max' => $max]);
 
     	}else{
-    		// 查询分页
-    		$data = \DB::table('shop')->where('uid', session('user')->id)->where('status', 1)->simplePaginate(3);
-
-    		// 查询总条数
-    		$max = \DB::table('shop')->where('uid', session('user')->id)->count();
-            // 进一取整
-            $max = ceil($max/3);
 
     		// 把数据发送到页面
-       		return view('home/mygoods/mysold', ['data' => $data, 'max' => $max]);
+       		return view('home/mygoods/mysold');
+
     	}
     	
     }
