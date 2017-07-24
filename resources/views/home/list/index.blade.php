@@ -173,7 +173,7 @@
 
 		});
 
-
+		//遍历地址
 		$('.b_address').each(function(){
 
 			$(this).click(function(){

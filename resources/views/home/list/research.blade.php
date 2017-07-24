@@ -66,7 +66,7 @@
 				    	
 	<iframe src="about:blank" id="searchResult" name="searchResult" frameBorder="0" width="100%" scrolling="no" height="40"></iframe>
 	<div class="pager">
-		{{ $data->appends($request)->links('vendor.pagination. -default', ["max" => $max]) }}
+		<!-- {{ $data->appends($request)->links('vendor.pagination.simple-default', ["max" => $max]) }} -->
 	</div>
 	<div id="infocont" class="infocont">
 

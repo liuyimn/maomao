@@ -10,6 +10,9 @@ class ListController extends Controller
     //商品页
     public function index(Request $request){
 
+        session()->forget('address');
+        session()->forget('page');
+
     	//定义分页
     	$num = '8';
 
@@ -32,10 +35,7 @@ class ListController extends Controller
 		$obj = \DB::table('shop')->count();
 
 	   // 进一取整
-        $max = ceil($obj/3);
-
-        session()->forget('address');
-        session()->forget('page');
+        $max = ceil($obj/8);
 
     	return view('home.list.index',['title' => '商品列表', 'data'=> $data, 'request' => $request->all(), 'res' => $res, 'obj' => $obj,'max'=>$max]);
 
@@ -69,7 +69,7 @@ class ListController extends Controller
         $res = \DB::table('auction')->where('status', 0)->limit(5)->get();
 
         //查询商品总条数
-		$obj = \DB::table('shop')->count();
+		$obj = count($data);
 
     	return view('home.list.show',['title' => '商品列表', 'data'=> $data, 'res' => $res, 'request' => $request->all(), 'obj' => $obj]);
 
@@ -178,84 +178,190 @@ class ListController extends Controller
 	//商品价格搜索ajax
 	public function Research(Request $request){
 
-		//判断session中是否满足一个
-		if(session('page') || session('address')){
-
-			//删除价格
-			session()->forget('page');
-
-		}
-
 		//获取到传值过来价格
 		$pag = $request->input('page');
 
-		//判断是否等于不限
-		if($pag == '不限'){
+		//价格存入session
+		session(['page' => $pag]);
 
-			//删除session中价格
-			session()->forget('page');
+		//判断session中是否满足
+		if(session('address')){
 
-			//取出session中的地址
-			$address = session('address');
+			//判断session中地址
+			if(session('address') == '不限'){
 
-			// 多表关联查询
-			$data = \DB::table('shop')
-			            ->join('user', 'shop.uid', '=', 'user.id')
-			            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
-			            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
-			            ->where('shop.address', 'like', '%'.$address.'%')
-			            ->paginate(8);
+				//遗忘session中地址
+				session()->forget('address');
 
-			//查询总条数
-			$obj = count($data);
+				//判断是否等于不限
+				if($pag == '不限'){
 
-		   // 进一取整
-	        $max = ceil($obj/3);
+					//删除session中价格
+					session()->forget('page');
 
-	        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
-		}
-		
-		//取出session中的地址
-		$address = session('address');
+					// 多表关联查询
+					$data = \DB::table('shop')
+					            ->join('user', 'shop.uid', '=', 'user.id')
+					            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+					            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+					            ->paginate(8);
 
-		//获取到价格区间
-		$npage = $request->input('page');
+					//查询总条数
+					$obj = count($data);
 
-		//存入session
-		session(['page' => $npage]);
+				   // 进一取整
+			        $max = ceil($obj/3);
 
-		//赋值容易操作
-		$page = session('page');
+			        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
 
-		//判断
-		if($page){
+				}else{
 
-			//拆分
-			$newpage = explode('-', $page);
+					//获取到session中价格
+					$pag = session('page');
 
-			//赋值起始价格
-			$start = $newpage[0];
+					//拆分
+					$newpage = explode('-', $pag);
 
-			//赋值结束价格
-			$end = $newpage[1];
+					//赋值起始价格
+					$start = $newpage[0];
 
-			// 多表关联查询
-			$data = \DB::table('shop')
-			            ->join('user', 'shop.uid', '=', 'user.id')
-			            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
-			            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
-			            ->where('shop.address', 'like', '%'.$address.'%')
-			            ->wherebetween('shop.newpage',[$start, $end])
-			            ->paginate(8);
+					//赋值结束价格
+					$end = $newpage[1];
 
-			//查询总条数
-			$obj = count($data);
+					// 多表关联查询
+					$data = \DB::table('shop')
+					            ->join('user', 'shop.uid', '=', 'user.id')
+					            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+					            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+					            ->wherebetween('shop.newpage',[$start, $end])
+					            ->paginate(8);
 
-		   // 进一取整
-	        $max = ceil($obj/3);
+					//查询总条数
+					$obj = count($data);
 
-	        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
-		}
+				   // 进一取整
+			        $max = ceil($obj/3);
+
+			        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
+				}
+
+			}else{
+
+				//判断是否等于不限
+				if($pag == '不限'){
+
+					//删除session中价格
+					session()->forget('page');
+
+					//取出session中的地址
+					$address = session('address');
+
+					// 多表关联查询
+					$data = \DB::table('shop')
+					            ->join('user', 'shop.uid', '=', 'user.id')
+					            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+					            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+					            ->where('shop.address', 'like', '%'.$address.'%')
+					            ->paginate(8);
+
+					//查询总条数
+					$obj = count($data);
+
+				   // 进一取整
+			        $max = ceil($obj/3);
+
+			        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
+
+				}else{
+
+					//获取到session中价格
+					$pag = session('page');
+
+					//拆分
+					$newpage = explode('-', $pag);
+
+					//赋值起始价格
+					$start = $newpage[0];
+
+					//赋值结束价格
+					$end = $newpage[1];
+
+					//取出session中的地址
+					$address = session('address');
+
+					// 多表关联查询
+					$data = \DB::table('shop')
+					            ->join('user', 'shop.uid', '=', 'user.id')
+					            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+					            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+					            ->where('shop.address', 'like', '%'.$address.'%')
+					            ->wherebetween('shop.newpage',[$start, $end])
+					            ->paginate(8);
+
+					//查询总条数
+					$obj = count($data);
+
+				   // 进一取整
+			        $max = ceil($obj/3);
+
+			        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
+				}
+			}
+
+		}else{
+
+			//判断是否等于不限
+			if($pag == '不限'){
+
+				//删除session中价格
+				session()->forget('page');
+
+				// 多表关联查询
+				$data = \DB::table('shop')
+				            ->join('user', 'shop.uid', '=', 'user.id')
+				            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+				            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+				            ->paginate(8);
+
+				//查询总条数
+				$obj = count($data);
+
+			   // 进一取整
+		        $max = ceil($obj/3);
+
+		        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
+
+			}else{
+
+				//获取到session中价格
+				$pag = session('page');
+
+				//拆分
+				$newpage = explode('-', $pag);
+
+				//赋值起始价格
+				$start = $newpage[0];
+
+				//赋值结束价格
+				$end = $newpage[1];
+
+				// 多表关联查询
+				$data = \DB::table('shop')
+				            ->join('user', 'shop.uid', '=', 'user.id')
+				            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+				            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+				            ->wherebetween('shop.newpage',[$start, $end])
+				            ->paginate(8);
+
+				//查询总条数
+				$obj = count($data);
+
+			   // 进一取整
+		        $max = ceil($obj/3);
+
+		        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
+			}
+		}	
 	}
 
 	//判断地址
@@ -268,95 +374,173 @@ class ListController extends Controller
 		session(['address' => $address]);
 
 		//判断
-		if($address == '不限'){
-
-			//删除session中的地址
-			session()->forget('address');
-
-			//获取session中的价格
-			$page = session('page');
-
-			//拆分
-			$newpage = explode('-', $page);
-
-			//赋值起始价格
-			$start = $newpage[0];
-
-			//赋值结束价格
-			$end = $newpage[1];
-
-			// 多表关联查询
-			$data = \DB::table('shop')
-			            ->join('user', 'shop.uid', '=', 'user.id')
-			            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
-			            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
-			            ->wherebetween('shop.newpage',[$start, $end])
-			            ->paginate(8);
-
-			//查询总条数
-			$obj = count($data);
-
-		   // 进一取整
-	        $max = ceil($obj/3);
-
-	        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);die();
-		}
-
-		//判断
 		if(session('page')){
 
-			//定义分页
-			$num = '8';
+			if(session('page') == '不限'){
 
-			//获取session中的价格
-			$page = session('page');
+				session()->forget('page');
 
-			//拆分
-			$newpage = explode('-', $page);
+				//判断
+				if($address == '不限'){
 
-			//赋值起始价格
-			$start = $newpage[0];
+					//删除session中的地址
+					session()->forget('address');
 
-			//赋值结束价格
-			$end = $newpage[1];
+					//多表关联查询
+					$data = \DB::table('shop')
+					            ->join('user', 'shop.uid', '=', 'user.id')
+					            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+					            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+					            ->paginate(8);
 
-			// 多表关联查询
-			$data = \DB::table('shop')
-			            ->join('user', 'shop.uid', '=', 'user.id')
-			            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
-			            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
-			            ->where('shop.address', 'like', '%'.$address.'%')
-			            ->wherebetween('shop.newpage',[$start, $end])
-			            ->paginate($num);
+					//查询总条数
+					$obj = count($data);
 
-			//查询总条数
-			$obj = count($data);
+				   // 进一取整
+			        $max = ceil($obj/3);
 
-		   // 进一取整
-	        $max = ceil($obj/3);
+			        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);die();
+				
+				}else{
 
-	        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
+					//取出session中的地址
+					$address = session('address');
+				
+					//定义分页
+					$num = '8';
 
+					// 多表关联查询
+					$data = \DB::table('shop')
+					            ->join('user', 'shop.uid', '=', 'user.id')
+					            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+					            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+					            ->where('shop.address', 'like', '%'.$address.'%')
+					            ->paginate($num);
+
+					//查询总条数
+					$obj = count($data);
+
+				   	// 进一取整
+			        $max = ceil($obj/3);
+
+			        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
+
+		        }
+
+			}else{
+
+				//获取session中的价格
+				$page = session('page');
+
+				//判断
+				if($address == '不限'){
+
+					//删除session中的地址
+					session()->forget('address');
+
+					//拆分
+					$newpage = explode('-', $page);
+
+					//赋值起始价格
+					$start = $newpage[0];
+
+					//赋值结束价格
+					$end = $newpage[1];
+
+					//多表关联查询
+					$data = \DB::table('shop')
+					            ->join('user', 'shop.uid', '=', 'user.id')
+					            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+					            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+					            ->wherebetween('shop.newpage',[$start, $end])
+					            ->paginate(8);
+
+					//查询总条数
+					$obj = count($data);
+
+				   // 进一取整
+			        $max = ceil($obj/3);
+
+			        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);die();
+				
+				}else{
+
+					//拆分
+					$newpage = explode('-', $page);
+
+					//赋值起始价格
+					$start = $newpage[0];
+
+					//赋值结束价格
+					$end = $newpage[1];
+
+					//定义分页
+					$num = '8';
+
+					// 多表关联查询
+					$data = \DB::table('shop')
+					            ->join('user', 'shop.uid', '=', 'user.id')
+					            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+					            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+					            ->where('shop.address', 'like', '%'.$address.'%')
+					            ->wherebetween('shop.newpage',[$start, $end])
+					            ->paginate($num);
+
+					//查询总条数
+					$obj = count($data);
+
+				   	// 进一取整
+			        $max = ceil($obj/3);
+
+			        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
+
+		        }
+			}
 		}else{
 
-			//定义分页
-			$num = '8';
+			//判断
+			if($address == '不限'){
 
-			// 多表关联查询
-			$data = \DB::table('shop')
-			            ->join('user', 'shop.uid', '=', 'user.id')
-			            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
-			            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
-			            ->where('shop.address', 'like', '%'.$address.'%')
-			            ->paginate($num);
+				//删除session中的地址
+				session()->forget('address');
 
-			//查询总条数
-			$obj = count($data);
+				//多表关联查询
+				$data = \DB::table('shop')
+				            ->join('user', 'shop.uid', '=', 'user.id')
+				            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+				            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+				            ->paginate(8);
 
-		   // 进一取整
-	        $max = ceil($obj/3);
+				//查询总条数
+				$obj = count($data);
 
-	        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
+			   // 进一取整
+		        $max = ceil($obj/3);
+
+		        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);die();
+			
+			}else{
+			
+				//定义分页
+				$num = '8';
+
+				// 多表关联查询
+				$data = \DB::table('shop')
+				            ->join('user', 'shop.uid', '=', 'user.id')
+				            ->join('userdetail', 'user.id', '=', 'userdetail.uid')
+				            ->select('shop.*', 'userdetail.nickname', 'userdetail.photo')
+				            ->where('shop.address', 'like', '%'.$address.'%')
+				            ->paginate($num);
+
+				//查询总条数
+				$obj = count($data);
+
+			   	// 进一取整
+		        $max = ceil($obj/3);
+
+		        return view('home.list.research', ['data' => $data,'request' => $request->all(), 'obj' => $obj , 'max'=>$max]);
+
+	        }
 		}
 	}
 }
