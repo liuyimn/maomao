@@ -284,16 +284,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ asset('uploads/user') }}/{{ session('detail')->photo }}" class="user-image" alt="User Image">
-              <span class="hidden-xs">{{ session('detail')->nickname }}</span>
+              <img src="{{ asset('uploads/user') }}/{{ session('userdetail')->photo }}" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ session('userdetail')->nickname }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
 
-                <img src="{{ asset('uploads/user') }}/{{ session('detail')->photo }}" class="img-circle" alt="User Image">
+                <img src="{{ asset('uploads/user') }}/{{ session('userdetail')->photo }}" class="img-circle" alt="User Image">
                 <p>
-                {{ session('detail')->nickname }}
+                {{ session('userdetail')->nickname }}
                   <small>自2012年十一月起</small>
                 </p>
               </li>
@@ -338,10 +338,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('uploads/user') }}/{{ session('detail')->photo }}" class="img-circle" alt="User Image">
+          <img src="{{ asset('uploads/user') }}/{{ session('userdetail')->photo }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>{{ session('detail')->nickname }}</p>
+          <p>{{ session('userdetail')->nickname }}</p>
 
           <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
         </div>
@@ -372,20 +372,6 @@
             <li class="active"><a href="{{ url('/admin/user/index') }}"><i class="fa fa-circle-o"></i> 用户列表</a></li>
             <li><a href="{{ url('/admin/user/add') }}"><i class="fa fa-circle-o"></i> 用户添加</a></li>
             <li><a href="{{ url('/admin/user/manage') }}"><i class="fa fa-circle-o"></i> 管理员</a></li>
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>鱼塘管理</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>鱼塘信息</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>鱼塘商品管理</a></li>
           </ul>
         </li>
 

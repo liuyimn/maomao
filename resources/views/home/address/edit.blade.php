@@ -7,6 +7,11 @@
         <div class="uc-content-box">
             <div class="box-hd">
                 <h1 class="title">修改收货地址</h1>
+                @if(session('info'))
+                  <div class="alert alert-danger">
+                    {{ session('info') }}
+                  </div>
+                  @endif
             </div>
                 <div class="box-bd">
                         <form action="{{ url('home/address/update') }}" method="post">

@@ -10,6 +10,11 @@ class CommitController extends Controller
     //执行添加评论
     public function add(Request $request){
 
+        // 判断是否有session
+        if(!session('user')){
+            return redirect('home/login/index');
+        }
+
 
         //获取用户名
         $name = session('user')->username;
@@ -42,6 +47,11 @@ class CommitController extends Controller
     // 个人中心
     public function index()
     {
+        // 判断是否有session
+        if(!session('user')){
+            return redirect('home/login/index');
+        }
+        
         // 获取去用户id
         $uid = session('user')->id;
 

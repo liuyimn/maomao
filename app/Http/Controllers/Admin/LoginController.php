@@ -100,7 +100,7 @@ class LoginController extends Controller
         $detail = \DB::table('userdetail')->where('uid', $user->id)->first();
 
         // 将用户数据存入session
-        session(['detail' => $detail]);
+        session(['userdetail' => $detail]);
 
         // 判断用户是否被禁用
         if($user->status == 1){
@@ -120,14 +120,11 @@ class LoginController extends Controller
     // logout退出登录
     public function logout(Request $request)
     {
-<<<<<<< HEAD
+
         // 清除session
         $request->session()->forget('user');
 
         // 引入页面
-=======
-        $request->session()->forget('user');
->>>>>>> ls
         return redirect('/admin/login')->with(['info' => '退出成功']);
     }
 
