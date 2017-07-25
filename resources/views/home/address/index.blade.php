@@ -8,10 +8,10 @@
             <div class="box-hd">
                 <h1 class="title">收货地址</h1>
                 @if(session('info'))
-                  <div class="alert alert-danger">
-                    {{ session('info') }}
-                  </div>
-                  @endif
+                    <div class="alert alert-danger">
+                        {{ session('info') }}
+                    </div>
+                 @endif
             </div>
                 <div class="box-bd">
                     <div class="user-address-list J_addressList clearfix">
@@ -36,7 +36,7 @@
                                 <a class="modify J_addressModify" href="{{ url('home/address/edit') }}/{{ $val->id }}" >修改</a>
                                 <a class="modify J_addressDel" href="{{ url('home/address/delete') }}/{{ $val->id }}" >删除</a>
                             </div>
-                         </div>
+                        </div>
                          @endforeach
 
                     </div>

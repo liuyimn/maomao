@@ -221,292 +221,304 @@ Route::group(['middleware' => 'adminlogin'], function(){
 */
 
 
-// -----------------------前台投诉----------------------------
+// 路由群组
+Route::group(['middleware' => 'homeconfig'], function(){
 
-// 前台联系客服 
-Route::get('home/complaint/index', 'Home\ComplaintController@index');
+	// -----------------------前台投诉----------------------------
 
-// 执行添加
-Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
+	// 前台联系客服 
+	Route::get('home/complaint/index', 'Home\ComplaintController@index');
 
+	// 执行添加
+	Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
 
-// -----------------------前台投诉----------------------------
 
-// ----------------------前台拍卖-------------------------------
+	// -----------------------前台投诉----------------------------
 
-// 前台拍卖路由
-Route::get('home/auct/add', 'Home\AuctionController@add');
+	// ----------------------前台拍卖-------------------------------
 
-// 执行添加页面
-Route::post('home/auct/insert', 'Home\AuctionController@insert');
+	// 前台拍卖路由
+	Route::get('home/auct/add', 'Home\AuctionController@add');
 
-// ----------------------前台拍卖结束--------------------------
+	// 执行添加页面
+	Route::post('home/auct/insert', 'Home\AuctionController@insert');
 
-// -----------------------前台收货地址---------------------------
+	// ----------------------前台拍卖结束--------------------------
 
-// 收货地址列表
-Route::get('home/address/index', 'Home\AddressController@index');
+	// -----------------------前台收货地址---------------------------
 
-// 添加收货地址
-Route::get('home/address/add', 'Home\AddressController@add');
+	// 收货地址列表
+	Route::get('home/address/index', 'Home\AddressController@index');
 
-// 执行添加方法
-Route::post('home/address/insert', 'Home\AddressController@insert');
+	// 添加收货地址
+	Route::get('home/address/add', 'Home\AddressController@add');
 
-// 修改收货地址
-Route::get('home/address/edit/{id}', 'Home\AddressController@edit');
+	// 执行添加方法
+	Route::post('home/address/insert', 'Home\AddressController@insert');
 
-// 执行修改
-Route::post('home/address/update', 'Home\AddressController@update');
+	// 修改收货地址
+	Route::get('home/address/edit/{id}', 'Home\AddressController@edit');
 
-// 执行删除
-Route::get('home/address/delete/{id}', 'Home\AddressController@delete');
+	// 执行修改
+	Route::post('home/address/update', 'Home\AddressController@update');
 
-//----------------------广告管理---------------------
+	// 执行删除
+	Route::get('home/address/delete/{id}', 'Home\AddressController@delete');
 
+	//----------------------广告管理---------------------
 
 
-//-------------------------主页----------------------
 
-//主页
-Route::get('/','Home\IndexController@index');
+	//-------------------------主页----------------------
 
-//副主页
-Route::get('home/next/index','Home\IndexController@next');
+	//主页
+	Route::get('/','Home\IndexController@index');
 
-//推荐页
-Route::get('home/tuijian/index','Home\IndexController@tuijian');
+	//副主页
+	Route::get('home/next/index','Home\IndexController@next');
 
-//服务页
-Route::get('home/fuwu/index', 'Home\IndexController@fuwu');
+	//推荐页
+	Route::get('home/tuijian/index','Home\IndexController@tuijian');
 
-//-------------------------主页----------------------
+	//服务页
+	Route::get('home/fuwu/index', 'Home\IndexController@fuwu');
 
-//-------------------------登录部分-----------------
+	//-------------------------主页----------------------
 
-//登录主页路由
-Route::get('home/login/index','Home\LoginController@login');
+	//-------------------------登录部分-----------------
 
-//登录动作路由
-Route::post('home/login/dologin','Home\LoginController@dologin');
+	//登录主页路由
+	Route::get('home/login/index','Home\LoginController@login');
 
-//表单验证ajax
-Route::get('home/login/ajax','Home\LoginController@ajax');
+	//登录动作路由
+	Route::post('home/login/dologin','Home\LoginController@dologin');
 
-//注销登录
-Route::get('home/login/outlogin','Home\LoginController@outlogin');
+	//表单验证ajax
+	Route::get('home/login/ajax','Home\LoginController@ajax');
 
-//-------------------------登录部分-----------------
+	//注销登录
+	Route::get('home/login/outlogin','Home\LoginController@outlogin');
 
-//------------------------密码找回---------------------
+	//-------------------------登录部分-----------------
 
-//找回密码页面
-Route::get('home/forgetpass','Home\ForgetController@forget');
+	//------------------------密码找回---------------------
 
-//找回密码动作
-Route::post('home/forget/forget','Home\ForgetController@doforget');
+	//找回密码页面
+	Route::get('home/forgetpass','Home\ForgetController@forget');
 
-//检查邮箱是否存在ajax
-Route::get('home/forget/ajax','Home\ForgetController@ajax');
+	//找回密码动作
+	Route::post('home/forget/forget','Home\ForgetController@doforget');
 
-//声明验证token路由
-Route::get('home/link/{token}','Home\ForgetController@link');
+	//检查邮箱是否存在ajax
+	Route::get('home/forget/ajax','Home\ForgetController@ajax');
 
-//不合法来源路由
-Route::get('home/info','Home\ForgetController@info');
+	//声明验证token路由
+	Route::get('home/link/{token}','Home\ForgetController@link');
 
-//修改密码模板路由
-Route::get('home/newpass/{id}','Home\ForgetController@newpass');
+	//不合法来源路由
+	Route::get('home/info','Home\ForgetController@info');
 
-//执行修改密码路由
-Route::post('home/forget/updatepass','Home\ForgetController@updatepass');
+	//修改密码模板路由
+	Route::get('home/newpass/{id}','Home\ForgetController@newpass');
 
-//------------------------密码找回---------------------
+	//执行修改密码路由
+	Route::post('home/forget/updatepass','Home\ForgetController@updatepass');
 
+	//------------------------密码找回---------------------
 
-//-------------------------注册部分-----------------
-Route::get('home/register/register','Home\RegisterController@register');
 
-//验证手机号是否存在ajax路由
-Route::get('home/register/pajax','Home\RegisterController@pajax');
+	//-------------------------注册部分-----------------
+	Route::get('home/register/register','Home\RegisterController@register');
 
-//验证用户名是否存在
-Route::get('home/register/name','Home\RegisterController@name');
+	//验证手机号是否存在ajax路由
+	Route::get('home/register/pajax','Home\RegisterController@pajax');
 
-//用户添加路由
-Route::post('home/register/insert','Home\RegisterController@insert');
+	//验证用户名是否存在
+	Route::get('home/register/name','Home\RegisterController@name');
 
+	//用户添加路由
+	Route::post('home/register/insert','Home\RegisterController@insert');
 
-// -----------------------前台收货地址结束---------------------------
 
+	// -----------------------前台收货地址结束---------------------------
 
 
 
 
-// -----------------------前台投诉----------------------------
 
-// 前台联系客服 
-Route::get('home/complaint/index', 'Home\ComplaintController@index');
+	// -----------------------前台投诉----------------------------
 
+	// 前台联系客服 
+	Route::get('home/complaint/index', 'Home\ComplaintController@index');
 
-// 执行添加
-Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
 
-// -----------------------前台投诉----------------------------
+	// 执行添加
+	Route::post('home/complaint/insert', 'Home\ComplaintController@insert');
 
-// ----------------------前台拍卖-------------------------------
+	// -----------------------前台投诉----------------------------
 
-// 前台拍卖路由
-Route::get('home/auct/index', 'Home\AuctionController@index');
+	// ----------------------前台拍卖-------------------------------
 
-// 执行添加页面
-Route::post('home/auct/insert', 'Home\AuctionController@insert');
+	// 前台拍卖路由
+	Route::get('home/auct/index', 'Home\AuctionController@index');
 
+	// 执行添加页面
+	Route::post('home/auct/insert', 'Home\AuctionController@insert');
 
 
-// ----------------------前台拍卖结束--------------------------
 
+	// ----------------------前台拍卖结束--------------------------
 
-//-----------------------用户添加出售商品-------------
 
-//展示页面路由
-Route::get('home/addshop/index','Home\AddshopController@index');
+	//-----------------------用户添加出售商品-------------
 
-//查询二级分类
-Route::get('home/addshop/ajaxone','Home\AddshopController@ajaxone');
+	//展示页面路由
+	Route::get('home/addshop/index','Home\AddshopController@index');
 
-//查询三级分类
-Route::get('home/addshop/ajaxtwo','Home\AddshopController@ajaxtwo');
+	//查询二级分类
+	Route::get('home/addshop/ajaxone','Home\AddshopController@ajaxone');
 
-//执行添加动作
-Route::post('home/addshop/insert','Home\AddshopController@insert');
+	//查询三级分类
+	Route::get('home/addshop/ajaxtwo','Home\AddshopController@ajaxtwo');
 
-//--------------------------------------------------------
+	//执行添加动作
+	Route::post('home/addshop/insert','Home\AddshopController@insert');
 
-//--------------------个人信息----------------------------
+	//--------------------------------------------------------
 
-Route::get('home/user/index','Home\UserController@index');
+	//--------------------个人信息----------------------------
 
-// 修改页面
-Route::get('home/userdetail/edit', 'Home\UserdetailController@edit');
+	Route::get('home/user/index','Home\UserController@index');
 
-// 执行修改页
-Route::post('home/userdetail/update', 'Home\UserdetailController@update');
+	// 修改页面
+	Route::get('home/userdetail/edit', 'Home\UserdetailController@edit');
 
-// 个人收藏页面
-Route::get('home/favorite/index', 'Home\FavoriteController@index');
+	// 执行修改页
+	Route::post('home/userdetail/update', 'Home\UserdetailController@update');
 
-// 商品列表收藏ajax
-Route::get('home/favorite/getajax', 'Home\FavoriteController@getajax');
+	// 个人收藏页面
+	Route::get('home/favorite/index', 'Home\FavoriteController@index');
 
-// 个人收藏删除页
-Route::get('home/favorite/delete/{id}', 'Home\FavoriteController@delete');
+	// 商品列表收藏ajax
+	Route::get('home/favorite/getajax', 'Home\FavoriteController@getajax');
 
-// 个人中心购物车表
-Route::get('home/shopping/index', 'Home\ShoppingController@index');
+	// 个人收藏删除页
+	Route::get('home/favorite/delete/{id}', 'Home\FavoriteController@delete');
 
-//绑定邮箱
-Route::get('home/email/index', 'Home\UserdetailController@email');
+	// 个人中心购物车表
+	Route::get('home/shopping/index', 'Home\ShoppingController@index');
 
-//执行绑定邮箱
-Route::post('home/email/insert', 'Home\UserdetailController@doemail');
+	//绑定邮箱
+	Route::get('home/email/index', 'Home\UserdetailController@email');
 
-//邮箱验证ajax
-Route::get('home/email/ajax', 'Home\UserdetailController@ajax');
+	//执行绑定邮箱
+	Route::post('home/email/insert', 'Home\UserdetailController@doemail');
 
-//验证验证码页面
-Route::get('home/email/con/{str}/{email}', 'Home\UserdetailController@con');
+	//邮箱验证ajax
+	Route::get('home/email/ajax', 'Home\UserdetailController@ajax');
 
-//执行验证
-Route::post('home/cons/insert', 'Home\UserdetailController@docon');
+	//验证验证码页面
+	Route::get('home/email/con/{str}/{email}', 'Home\UserdetailController@con');
 
-// 个人中心我的商品
-Route::get('home/mygoods/index', 'Home\MygoodsController@index');
+	//执行验证
+	Route::post('home/cons/insert', 'Home\UserdetailController@docon');
 
-// 个人中心卖的商品
-Route::get('home/mygoods/mysold', 'Home\MygoodsController@mysold');
+	// 个人中心我的商品
+	Route::get('home/mygoods/index', 'Home\MygoodsController@index');
 
-// 个人中心订单表
-Route::get('home/order/index', 'Home\OrderController@index');
+	// 个人中心卖的商品
+	Route::get('home/mygoods/mysold', 'Home\MygoodsController@mysold');
 
-// 积分
-Route::get('home/int/index', 'Home\IntController@index');
+	// 个人中心订单表
+	Route::get('home/order/index', 'Home\OrderController@index');
 
-// 个人中心评论页面
-Route::get('home/comment/index', 'Home\CommitController@index');
+	// 积分
+	Route::get('home/int/index', 'Home\IntController@index');
 
-// ----------------------------个人详情-------------------------
+	// 个人中心评论页面
+	Route::get('home/comment/index', 'Home\CommitController@index');
 
+	// ----------------------------个人详情-------------------------
 
 
-//======================前台购物流程========================
 
-//商品搜索
-Route::get('/home/list/index', 'Home\ListController@index');
+	//======================前台购物流程========================
 
-//商品价格搜索
-Route::get('/home/list/show', 'Home\ListController@show');
+	//商品搜索
+	Route::get('/home/list/index', 'Home\ListController@index');
 
-//商品添加session列表
-Route::get('/home/list/create/{id}', 'Home\ListController@create');
+	//商品价格搜索
+	Route::get('/home/list/show', 'Home\ListController@show');
 
-//购物车表
-Route::get('/home/details/shopcar', 'Home\ShopcarController@index');
+	//商品添加session列表
+	Route::get('/home/list/create/{id}', 'Home\ListController@create');
 
-//删除session商品
-Route::get('/home/details/shopcar/del/{key}', 'Home\ShopcarController@delete');
+	//购物车表
+	Route::get('/home/details/shopcar', 'Home\ShopcarController@index');
 
-//商品详细列表
-Route::get('/home/details/{id}', 'Home\DetailController@index');
+	//删除session商品
+	Route::get('/home/details/shopcar/del/{key}', 'Home\ShopcarController@delete');
 
-//拍卖列表
-Route::get('/home/auct', 'Home\AuctionController@index');
+	//商品详细列表
+	Route::get('/home/details/{id}', 'Home\DetailController@index');
 
-//拍卖商品详情列表
-Route::get('/home/auct/details/{id}', 'Home\AuctionController@show');
+	//拍卖列表
+	Route::get('/home/auct', 'Home\AuctionController@index');
 
-//我的订单
-Route::get('/home/num/my', 'Home\NumController@myding');
+	//拍卖商品详情列表
+	Route::get('/home/auct/details/{id}', 'Home\AuctionController@show');
 
-//拍卖商品订单
-Route::get('/home/num/my/{id}', 'Home\NumController@auct');
+	//我的订单
+	Route::get('/home/num/my', 'Home\NumController@myding');
 
-//商品选中ajax事件
-Route::get('/home/num/dajax', 'Home\NumController@dajax');
+	//拍卖商品订单
+	Route::get('/home/num/my/{id}', 'Home\NumController@auct');
 
-//商品全选或全不选ajax事件
-Route::get('/home/num/allajax', 'Home\NumController@allajax');
+	//商品选中ajax事件
+	Route::get('/home/num/dajax', 'Home\NumController@dajax');
 
-//生成订单
-Route::post('/home/num/my/insert', 'Home\NumController@insert');
+	//商品全选或全不选ajax事件
+	Route::get('/home/num/allajax', 'Home\NumController@allajax');
 
-//拍卖商品订单
-Route::post('/home/num/my/inserts', 'Home\NumController@inserts');
+	//生成订单
+	Route::post('/home/num/my/insert', 'Home\NumController@insert');
 
-//订单成功生成页面
-Route::get('/home/shopcar/active', 'Home\NumController@active');
+	//拍卖商品订单
+	Route::post('/home/num/my/inserts', 'Home\NumController@inserts');
 
+	//订单成功生成页面
+	Route::get('/home/shopcar/active', 'Home\NumController@active');
 
-//======================前台购物流程=========================
 
-//---------------------我的优品----------------------------
+	//======================前台购物流程=========================
 
-//展示页面路由
-Route::get('home/myshop/index', 'Home\MyshopController@index');
+	//---------------------我的优品----------------------------
 
-//删除
-Route::get('home/myshop/delete/{id}', 'Home\MyshopController@delete');
+	//展示页面路由
+	Route::get('home/myshop/index', 'Home\MyshopController@index');
 
-//---------------------我的优品----------------------------
+	//删除
+	Route::get('home/myshop/delete/{id}', 'Home\MyshopController@delete');
 
-//----------------------评论----------------------------
-Route::post('home/add/commit', 'Home\CommitController@add');
+	//---------------------我的优品----------------------------
 
+	//----------------------评论----------------------------
+	Route::post('home/add/commit', 'Home\CommitController@add');
 
-//====================商品价格搜索===========================
 
-//获取价格区间
-Route::get('/home/list/research', 'Home\ListController@Research');
+	//====================商品价格搜索===========================
 
-//获取地址区间
-Route::get('/home/list/search', 'Home\ListController@Search');
+	//获取价格区间
+	Route::get('/home/list/research', 'Home\ListController@Research');
+
+	//获取地址区间
+	Route::get('/home/list/search', 'Home\ListController@Search');
+
+});
+
+
+Route::get('home/config/index', function(){
+
+	return view('home/config/index');
+
+});

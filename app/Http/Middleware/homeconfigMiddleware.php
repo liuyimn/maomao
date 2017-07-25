@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class adminloginMiddleware
+class homeconfigMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,16 +15,11 @@ class adminloginMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!session('user'))
-        {
-            return redirect('admin/login')->with(['info' => '尚未登录']);
-        }
+        $res = \DB::table('config')->first()->status;
 
-        $res = \DB::table('user')->where('id', session('user')->id)->first()->auth;
-
-        if ($res == 1) 
+        if($res == 0)
         {
-            return redirect('/');
+            return redirect('home/config/index');   
         }
 
         return $next($request);

@@ -26,7 +26,7 @@ class AuctionController extends Controller
                     ->where('auction.name', 'like', '%'.$keywords.'%')
                     ->select('auction.*', 'userdetail.nickname', 'userdetail.photo')
                     ->paginate($num);
-        
+
         //遍历出数据值;
         foreach ($data as $key => $value) {
             
