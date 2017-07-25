@@ -26,12 +26,7 @@ class AuctionController extends Controller
                     ->where('auction.name', 'like', '%'.$keywords.'%')
                     ->select('auction.*', 'userdetail.nickname', 'userdetail.photo')
                     ->paginate($num);
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ls
+        
         //遍历出数据值;
         foreach ($data as $key => $value) {
             
@@ -63,14 +58,10 @@ class AuctionController extends Controller
         $obj = \DB::table('auction')->where('status', '0')->count();
 
         // 进一取整
-        $max = ceil($obj/3);
+        $max = ceil($obj/10);
 
-<<<<<<< HEAD
+
         return view('home.auct.index', ['title' => '商品拍卖', 'data' => $data, 'request' => $request->all(), 'res' => $res, 'obj' => $obj, 'max' => $max]);
-=======
-        return view('home.auct.index', ['title' => '商品拍卖', 'data' => $data, 'res' => $res, 'obj' => $obj,'max'=>$max]);
->>>>>>> ls
-
     }
 
 
@@ -184,16 +175,8 @@ class AuctionController extends Controller
         // 处理图片
         if($request->hasFile('pic')){
 
-<<<<<<< HEAD
-            
             if($request->file('pic')->isValid()){
 
-=======
-
-            if($request->file('pic')->isValid()){
-
-
->>>>>>> ls
                 // 获取扩展名
                 $ext = $request->file('pic')->extension();
                 // dd($ext);
@@ -226,8 +209,5 @@ class AuctionController extends Controller
         }else{
             return back()->with(['info' => '添加失败']);
         }
-
-
     }
-
 }

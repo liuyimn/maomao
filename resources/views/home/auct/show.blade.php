@@ -56,7 +56,7 @@
 	   	<div id="topbar"></div>
 	  	<div class="header">
 		    <div class="header_top wrapper clearfix">
-				<a class="header_top_logo" href="{{ url('/home/index') }}" title="大脸猫二手市场">
+				<a class="header_top_logo" href="{{ url('/') }}" title="大脸猫二手市场">
 					<img src="{{asset('/home/Picture/logo.png') }}" style="width: 100px; height: 100px; margin-top: -3px;margin-left: 5px;" alt="大脸猫二手市场">
 					<div class="header_top_intro">
 						<div class="intro_top">专业的二手交易平台<i class="line"></i></div>
@@ -78,7 +78,7 @@
 								<a href="{{ url('/') }}">首页</a>
 							</span>
 							<span class="crb_i">
-								<a href='#'>大脸猫市场</a>
+								<a href='{{ url("/home/auct/index") }}'>大脸猫拍卖列表</a>
 							</span>
 						</div>
 					</div>    

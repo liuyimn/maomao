@@ -34,8 +34,8 @@ class ListController extends Controller
 		//查询总条数
 		$obj = \DB::table('shop')->count();
 
-	   // 进一取整
-        $max = ceil($obj/8);
+	   	// 进一取整
+        $max = floor ($obj/8);
 
     	return view('home.list.index',['title' => '商品列表', 'data'=> $data, 'request' => $request->all(), 'res' => $res, 'obj' => $obj,'max'=>$max]);
 
