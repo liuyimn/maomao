@@ -56,7 +56,6 @@ class NumController extends Controller
 
                 //提示买家选商品
                 return back()->with(['info' => '请选择商品']);
-
             }
 
         }else{
@@ -318,7 +317,10 @@ class NumController extends Controller
     //成功下订单页面
     public function active(Request $request){
 
-        return view('home.shopcar.active');
+        //查询数据库
+        $range = \DB::table('config')->first()
+
+        return view('home.shopcar.active', ['range' => $range]);
 
     }
 

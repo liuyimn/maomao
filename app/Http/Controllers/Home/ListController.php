@@ -13,6 +13,9 @@ class ListController extends Controller
         session()->forget('address');
         session()->forget('page');
 
+        //查询数据库
+        $range = \DB::table('config')->first()
+
     	//定义分页
     	$num = '8';
 
@@ -37,12 +40,15 @@ class ListController extends Controller
 	   	// 进一取整
         $max = floor ($obj/8);
 
-    	return view('home.list.index',['title' => '商品列表', 'data'=> $data, 'request' => $request->all(), 'res' => $res, 'obj' => $obj,'max'=>$max]);
+    	return view('home.list.index',['title' => '商品列表', 'range' => $range, 'data'=> $data, 'request' => $request->all(), 'res' => $res, 'obj' => $obj,'max'=>$max]);
 
     }
 
     //搜索价格
 	public function show(Request $request){
+
+		//查询数据库
+        $range = \DB::table('config')->first()
 
 		//定义分页
     	$num = '8';
@@ -71,7 +77,7 @@ class ListController extends Controller
         //查询商品总条数
 		$obj = count($data);
 
-    	return view('home.list.show',['title' => '商品列表', 'data'=> $data, 'res' => $res, 'request' => $request->all(), 'obj' => $obj]);
+    	return view('home.list.show',['title' => '商品列表', 'range' => $range, 'data'=> $data, 'res' => $res, 'request' => $request->all(), 'obj' => $obj]);
 
 	}
 
