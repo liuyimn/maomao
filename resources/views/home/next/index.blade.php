@@ -307,7 +307,7 @@ regBarNode.style.display = "block";
 <a href="{{ url('home/myshop/index') }}" name="PcYoupin_none_center_MyPublish">我发布的</a>
 <a href="{{ url('home/mygoods/mysold') }}" name="PcYoupin_none_center_MySellPcYoupinOrder">我卖出的</a>
 <a href="{{ url('home/mygoods/index') }}" name="PcYoupin_none_center_MyBuyPcYoupinOrder">我买到的</a>
-<a href="//2.suning.com/myEvaluate/showMyEvaluate.do" name="PcYoupin_none_center_MyEvaluation">我的评价</a>
+<a href="{{ url('home/comment/index') }}" name="PcYoupin_none_center_MyEvaluation">我的评价</a>
 <a href="{{ url('home/favorite/index') }}" name="PcYoupin_none_center_MyCollection">我的收藏</a>
 </div>
 </li>

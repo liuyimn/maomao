@@ -22,8 +22,11 @@
     <div class="title-item t_c">
       <h4 class="title_big30">回复买家</h4>
     </div>
-    <form action="{{ url('home/talk/send') }}" method="post" id="forgetpwd_form">
+    <form action="{{ url('home/talkback/send') }}" method="post" id="forgetpwd_form">
     {{ csrf_field() }}
+    <input type="hidden" name="mid" value="{{ $mid }}">
+    <input type="hidden" name="sid" value="{{ $sid }}">
+    <input type="hidden" name="uid" value="{{ $uid }}">
     <div class="regbox">
       <h5 class="n_tit_msg">请输入内容：</h5>      
       <div class="inputbg">

@@ -142,8 +142,8 @@ class ShopcarController extends Controller
             //查询总共多少个
             $res = count($data);
 
-            //展示界面
-            return view('home.shopcar.index',['title' => '大脸猫', 'data' => $data, 'res' => $res, 'range' => $range]);
+        	return view('home.shopcar.index',['title' => '大脸猫', 'data' => $data, 'res' => $res, 'range' => $range]);
+
         }
     }
 

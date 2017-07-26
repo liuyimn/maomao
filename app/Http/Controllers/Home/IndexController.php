@@ -86,7 +86,9 @@ class IndexController extends Controller
                 //查询是否存在消息
                 $talk = \DB::table('talking')->where('mid',session('user')->id)->where('status',0)->count();
 
-                session(['talk'=>$talk]);
+                $talkback = \DB::table('talkback')->where('uid',session('user')->id)->where('status',0)->count();
+        
+                session(['talk'=>$talk,'talkback'=>$talkback]);
 
             }
         }

@@ -54,8 +54,6 @@ class TalkController extends Controller
             //修改状态
             $res = \DB::table('talking')->where('mid',session('user')->id)->update(['status'=>1]);
 
-            $res = \DB::table('talkback')->where('uid',session('user')->id)->update(['status'=>1]);
-
         }else{
 
             return redirect('home/login/index');
@@ -64,7 +62,7 @@ class TalkController extends Controller
         
         //查询
         $data = \DB::table('talking')
-                    ->where('mid',session('user')->id)
+                    ->where('talking.mid',session('user')->id)
                     ->join('userdetail','talking.uid','=','userdetail.uid')
                     ->join('shop','talking.sid','=','shop.id')
                     ->select('talking.*','userdetail.nickname','userdetail.photo','shop.pic','shop.name','shop.id')
@@ -74,7 +72,7 @@ class TalkController extends Controller
 
         //查出共有多少条信息
          $max = \DB::table('talking')
-                    ->where('mid',session('user')->id)
+                    ->where('talking.mid',session('user')->id)
                     ->join('userdetail','talking.uid','=','userdetail.uid')
                     ->join('shop','talking.sid','=','shop.id')
                     ->select('talking.*','userdetail.nickname','shop.pic')
@@ -85,7 +83,7 @@ class TalkController extends Controller
 
         //查出数据用于判断
         $date = \DB::table('talking')
-                    ->where('mid',session('user')->id)
+                    ->where('talking.mid',session('user')->id)
                     ->join('userdetail','talking.uid','=','userdetail.uid')
                     ->join('shop','talking.sid','=','shop.id')
                     ->select('talking.*','userdetail.nickname','shop.pic')
@@ -99,7 +97,69 @@ class TalkController extends Controller
     }
 
     //引入模型
-    public function model(){
-        return view('home.talk.model');
+    public function model($uid,$mid,$sid){
+        
+        return view('home.talk.model',['uid'=>$uid,'mid'=>$mid,'sid'=>$sid]);
+    }
+
+    //talkback 执行
+    public function talkback(Request $request){
+
+        //获取所有数据
+        $data = $request->except('_token');
+
+        $res = \DB::table('talkback')->insert($data);
+
+        if($res){
+
+            return back()->with(['info'=>'回复成功']);
+        }
+    }
+
+    public function listing(Request $request){
+        //判断
+        if(session('user')){
+            //修改状态
+             $res = \DB::table('talkback')->where('uid',session('user')->id)->update(['status'=>1]);
+        }else{
+
+            return redirect('home/login/index');
+
+        }
+
+          //查询
+        $data = \DB::table('talkback')
+                    ->where('talkback.uid',session('user')->id)
+                    ->join('userdetail','talkback.uid','=','userdetail.uid')
+                    ->join('shop','talkback.sid','=','shop.id')
+                    ->select('talkback.*','userdetail.nickname','userdetail.photo','shop.pic','shop.name','shop.id')
+                    ->simplePaginate(3);
+
+
+        //查出共有多少条信息
+         $max = \DB::table('talkback')
+                    ->where('talkback.uid',session('user')->id)
+                    ->join('userdetail','talkback.uid','=','userdetail.uid')
+                    ->join('shop','talkback.sid','=','shop.id')
+                    ->select('talkback.*','userdetail.nickname','shop.pic')
+                    ->count();
+
+        //进一取整
+        $max = ceil($max/3);
+
+        //查出数据用于判断
+        $date = \DB::table('talkback')
+                    ->where('talkback.uid',session('user')->id)
+                    ->join('userdetail','talkback.uid','=','userdetail.uid')
+                    ->join('shop','talkback.sid','=','shop.id')
+                    ->select('talkback.*','userdetail.nickname','shop.pic')
+                    ->first();
+
+        //销毁session
+        $request->session()->forget('talkback');
+
+        //引入页面
+        return view('home.talk.listing',['data'=>$data,'date'=>$date,'max'=>$max]);
+        
     }
 }

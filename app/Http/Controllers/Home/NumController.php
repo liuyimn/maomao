@@ -222,7 +222,7 @@ class NumController extends Controller
                 \DB::table('userdetail')->where('uid', $uid)->update($array);
 
                 //删除关于当前用户的商品
-                \DB::table('nums_user')->where('uid', $uid)->delete();
+                \DB::table('nums_user')->where('uid', $uid)->where('status', 1)->delete();
 
                 return view('home.shopcar.active', ['stmt' => $stmt, 'newp' => $newp, 'range'=>$range]);
 

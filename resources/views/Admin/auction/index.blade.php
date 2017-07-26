@@ -77,7 +77,6 @@
 						              <th style="text-align: center;">商品图片</th>
 						              <th style="text-align: center;">商品描述</th>
 						              <th style="text-align: center;">开始时间</th>
-						              <th style="text-align: center;">结束时间</th>
 						              <th style="text-align: center;">操作</th>
 						            </tr>
 						        </thead>
@@ -86,7 +85,7 @@
 									@foreach($data as $key=>$val)
 							        <tr class="parent">
 							            <td class="ids" style="line-height: 50px;">{{ $val->id }}</td>
-							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->name }}</td>
+							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ mb_substr($val->name, 0, 12) }}</td>
 							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->oldpage }}元</td>
 							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->newpage }}元</td>
 							            <td><img style="height: 50px;text-overflow:ellipsis;" src="{{ url('/uploads/auction') }}/{{ $val->pic }}"></td>
@@ -96,19 +95,6 @@
 											@if($val->status == 0)
 
 							            		{{ date('Y-m-d H:i:s', $val->starttime) }}
-											
-											@elseif($val->status == 1)
-											
-												已过期
-
-											@endif
-
-							            	</td>
-							            <td style="line-height: 50px;text-overflow:ellipsis;">
-										
-											@if($val->status == 0)
-
-							            		{{ $val->endtime }}分钟
 											
 											@elseif($val->status == 1)
 											

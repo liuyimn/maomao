@@ -75,10 +75,6 @@
                     <textarea name="connect" style="resize: none; height: 100px;"  class="form-control" id="exampleInputName" placeholder="请输入拍卖名">{{ $data->connect }}</textarea>
                   </div>
 
-                  <div class="form-group">
-                    <label for="exampleInputName">拍卖时间</label>
-                    <input type="text" name="endtime" class="form-control" id="exampleInputName" placeholder="请输入拍卖名" value="{{ $data->endtime }}">
-                  </div>
                 </div>
               <!-- /.box-body -->
 

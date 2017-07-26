@@ -90,6 +90,9 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 						@if(session('talk'))
 							<a href="{{ url('home/talk/list') }}">您当前收到：{{ session('talk') }}条消息，请回复</a>
 						@endif
+						@if(session('talkback'))
+							<a href="{{ url('home/talkback/list') }}">您当前收到：{{ session('talkback') }}条消息，请查看</a>
+						@endif
 						<a  rel="nofollow" class="link" href="{{ url('home/user/index') }}" data-needlogin="true">{{ session('userdetail')->nickname }}</a>
 						<span class="sep">|</span>
 						<a  id="out" rel="nofollow" class="link" href="{{ url('/home/login/outlogin') }}" >退出</a>
