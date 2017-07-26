@@ -11,7 +11,10 @@ class NumController extends Controller
     //订单页面
     public function index(){
 
-    	return view('home.num.index');
+        //查询数据库
+        $range = \DB::table('config')->first();
+
+    	return view('home.num.index',['range'=>$range]);
     }
 
     //订单下单
@@ -49,8 +52,11 @@ class NumController extends Controller
                         $r[] = $k;
 
                 }
+
+                //查询数据库
+                $range = \DB::table('config')->first();
                 
-                return view('home.num.my', ['title' => '订单详情', 'data' => $data, 'r' => $r]);
+                return view('home.num.my', ['title' => '订单详情', 'data' => $data, 'r' => $r,'range'=>$range]);
 
             }else{
 
@@ -106,8 +112,10 @@ class NumController extends Controller
                         $r[] = $k;
 
                 }
-                
-                return view('home.num.index', ['title' => '订单详情', 'data' => $data, 'r' => $r]);
+                //查询数据库
+                $range = \DB::table('config')->first();
+
+                return view('home.num.index', ['title' => '订单详情', 'data' => $data, 'r' => $r,'range'=>$range]);
 
             }else{
 

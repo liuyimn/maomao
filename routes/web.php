@@ -510,3 +510,12 @@ Route::get('/home/list/research', 'Home\ListController@Research');
 
 //获取地址区间
 Route::get('/home/list/search', 'Home\ListController@Search');
+
+//====================商品价格搜索===========================
+
+//--------------------联系卖家----------------------------
+//载入页面
+Route::get('/home/talk/index/{sid}/{mid}', 'Home\TalkController@index');
+
+//发送消息
+Route::post('home/talk/send', 'Home\TalkController@send');

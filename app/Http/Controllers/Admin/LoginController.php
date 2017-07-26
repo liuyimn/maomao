@@ -120,14 +120,11 @@ class LoginController extends Controller
     // logout退出登录
     public function logout(Request $request)
     {
-<<<<<<< HEAD
+
         // 清除session
         $request->session()->forget('user');
 
         // 引入页面
-=======
-        $request->session()->forget('user');
->>>>>>> ls
         return redirect('/admin/login')->with(['info' => '退出成功']);
     }
 

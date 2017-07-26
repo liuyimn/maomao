@@ -55,7 +55,7 @@
                   <td style="text-overflow:ellipsis;text-align:center;">{{ $val->title }}</td>
                   <td style="text-overflow:ellipsis;text-align:center;">{{ $val->connect }}</td>
                   <td style="text-overflow:ellipsis;text-align:center;"><img src="/uploads/advert/{{ $val->pic }}" width="50px"></td>
-                  <td style="text-overflow:ellipsis;text-align:center;">{{ date('Y-m-d H:i:s',$val->s_time) }}</td>
+                  <td style="text-overflow:ellipsis;text-align:center;">{{ $val->s_time }}</td>
                   <td style="text-overflow:ellipsis;text-align:center;">{{ $val->e_time }}</td>
                   <td style="text-overflow:ellipsis;text-align:center;">{{ $arr[$val->status] }}</td>
                   <td style="text-overflow:ellipsis;text-align:center;"><a href="{{ url('/admin/advert/edit') }}/{{ $val->id }}">编辑</a> | 

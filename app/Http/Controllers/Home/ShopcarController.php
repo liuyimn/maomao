@@ -66,13 +66,20 @@ class ShopcarController extends Controller
                     //查询到条数
                     $res = count($data);
 
+                    //查询数据库
+                    $range = \DB::table('config')->first();
+            
+
                     //展示界面
-                    return view('home.shopcar.index',['title' => '大脸猫', 'ka' => $ka, 'res' => $res]);
+                    return view('home.shopcar.index',['title' => '大脸猫', 'ka' => $ka, 'res' => $res,'range'=>$range]);
 
                 }else{
 
+                    //查询数据库
+                    $range = \DB::table('config')->first();
+
                     //展示界面
-                    return view('home.shopcar.index',['title' => '大脸猫']);
+                    return view('home.shopcar.index',['title' => '大脸猫','range'=>$range]);
                 }
 
             }else{
@@ -107,8 +114,11 @@ class ShopcarController extends Controller
                     //查询到条数
                     $res = count($data);
 
+                    //查询数据库
+                    $range = \DB::table('config')->first();
+
                     //展示界面
-                    return view('home.shopcar.index',['title' => '大脸猫', 'ka' => $ka, 'res' => $res]);
+                    return view('home.shopcar.index',['title' => '大脸猫', 'ka' => $ka, 'res' => $res,'range'=>$range]);
 
                 }else{
 

@@ -4,9 +4,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head><script async="" src="{{ asset('home/hindex') }}/ipQuery.do"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="keywords" content="二手手机,二手笔记本,二手iPhone,二手数码,二手相机">
 <meta name="description" content="苏宁易购苏宁二手优品专业提供二手手机，二手笔记本，二手iPhone，二手数码，二手相机的最新报价、促销、评论、导购、图片等相关信息！">
-<title>二手优品-【二手手机_二手笔记本_二手iPhone_二手数码_二手相机】-苏宁易购</title>
 <link rel="stylesheet" href="{{ asset('home/hindex') }}/a.css">
 <script type="text/javascript" src="{{ asset('home/hindex') }}/a"></script>
 <script>
@@ -179,11 +177,6 @@ VIVO
 <div class="banner">
 <!--计算banner个数-->
 <ul>
-<li class="show" style="background-color: rgb(0, 141, 255); display: block; opacity: 0.256375;">
-<a href="" target="_blank" name="PcYoupin_shppcind_36725313979_pic01" title="">
-<img src="{{ asset('home/hindex') }}/149941973751247627.png">
-</a>
-</li>
 <li class="show" style="background-color: rgb(218, 48, 77); display: none;">
 <a href="" target="_blank" name="PcYoupin_shppcind_36725313979_pic02" title="">
 <img src="{{ asset('home/hindex') }}/149983197985185344.jpg">
@@ -615,7 +608,7 @@ VIVO
 <!-- 楼层1 代码结束 -->
 <!-- 推广广告 代码开始 -->
 <div class="extensionBanner">
-<a href="http://tcbang.suning.com/index.html" target="_blank" name="PcYoupin_shppcind_42133414119_pic01" title="">
+<a href="#" target="_blank" name="PcYoupin_shppcind_42133414119_pic01" title="">
 <img src="{{ asset('home/hindex') }}/149915533218167818.jpg" class="err-product">
 </a>
 </div>
@@ -730,7 +723,7 @@ VIVO
 <!-- 楼层1 代码结束 -->
 <!-- 推广广告 代码开始 -->
 <div class="extensionBanner">
-<a href="http://youdemai.suning.com/" target="_blank" name="PcYoupin_shppcind_36726114119_pic01" title="">
+<a href="" target="_blank" name="PcYoupin_shppcind_36726114119_pic01" title="">
 <img src="{{ asset('home/hindex') }}/149276747152592483.png" class="err-product">
 </a>
 </div>

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>大脸猫二手商城-密码找回</title>
+	<title>大脸猫二手商城-绑定邮箱</title>
 </head>
 <body>
-	<h3>大脸猫二手商城-密码找回</h3>
+	<h3>大脸猫二手商城-绑定邮箱</h3>
 	尊敬的：{{$user->username}} 您好<br/>
 	<p>您正在绑定邮箱</p>
 	<ul>
