@@ -44,4 +44,62 @@ class TalkController extends Controller
     		return redirect('home/details/'.$data['sid'])->with(['info'=>'发送成功']);
     	}
     }
+
+    //list
+    public function list(Request $request){
+
+        //判断
+        if(session('user')){
+
+            //修改状态
+            $res = \DB::table('talking')->where('mid',session('user')->id)->update(['status'=>1]);
+
+            $res = \DB::table('talkback')->where('uid',session('user')->id)->update(['status'=>1]);
+
+        }else{
+
+            return redirect('home/login/index');
+
+        }
+        
+        //查询
+        $data = \DB::table('talking')
+                    ->where('mid',session('user')->id)
+                    ->join('userdetail','talking.uid','=','userdetail.uid')
+                    ->join('shop','talking.sid','=','shop.id')
+                    ->select('talking.*','userdetail.nickname','userdetail.photo','shop.pic','shop.name','shop.id')
+                    ->simplePaginate(3);
+
+        // dd($data);
+
+        //查出共有多少条信息
+         $max = \DB::table('talking')
+                    ->where('mid',session('user')->id)
+                    ->join('userdetail','talking.uid','=','userdetail.uid')
+                    ->join('shop','talking.sid','=','shop.id')
+                    ->select('talking.*','userdetail.nickname','shop.pic')
+                    ->count();
+
+        //进一取整
+        $max = ceil($max/3);
+
+        //查出数据用于判断
+        $date = \DB::table('talking')
+                    ->where('mid',session('user')->id)
+                    ->join('userdetail','talking.uid','=','userdetail.uid')
+                    ->join('shop','talking.sid','=','shop.id')
+                    ->select('talking.*','userdetail.nickname','shop.pic')
+                    ->first();
+
+        //销毁session
+        $request->session()->forget('talk');
+
+        //引入页面
+        return view('home.talk.list',['data'=>$data,'date'=>$date,'max'=>$max]);
+    }
+
+    //引入模型
+    public function model(){
+        return view('home.talk.model');
+    }
 }

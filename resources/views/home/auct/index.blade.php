@@ -93,7 +93,7 @@
 						
 						@foreach($res as $v)
 						<li logr="q_2_48459556635405_30570495766351_4_2_0" _pos="10" sortid="552175998">
-							<a  href=""   target="_blank" >
+							<a  href="{{ url('/home/details/') }}/{{ $v->id }}"   target="_blank" >
 								<div class="imgcon">
 									<img src="{{ url('/uploads/shop') }}/{{ $v->pic }}" alt="" >
 								</div>

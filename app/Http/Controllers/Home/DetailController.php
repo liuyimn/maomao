@@ -10,6 +10,9 @@ class DetailController extends Controller
     //商品购买表
 	public function index($id){
 
+		 //查询数据库
+         $range = \DB::table('config')->first();
+
 		//商品信息查询
 		$data = \DB::table('shop')->where('id', $id)->first();
 		
@@ -62,7 +65,7 @@ class DetailController extends Controller
 		$adv = \DB::table('advert')->where('id', 1)->get();
 
 
-		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx, 'sta' => $sta, 'adv' => $adv ,'com'=>$com, 'max'=>$max]);
+		return view('home.details.index',['title' => '商品详情', 'data' => $data, 'res' => $res, 'user' => $user, 'jx' => $jx, 'sta' => $sta, 'adv' => $adv ,'com'=>$com, 'max'=>$max,'range'=>$range]);
 
 	}
 

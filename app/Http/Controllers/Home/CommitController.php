@@ -21,7 +21,7 @@ class CommitController extends Controller
 
         //根据用户名查看是否被禁言
         $sta = \DB::table('gog')->where('name',$name)->first();
-
+      
         if($sta->status == 1){
             return back()->with(['info'=>'您已经被禁言请联系管理员解禁']);
         }

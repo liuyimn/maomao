@@ -77,6 +77,22 @@ class IndexController extends Controller
         //查询数据库
         $range = \DB::table('config')->first();
 
+        //判断
+
+        if(session('user')){
+            
+            if(!session('talk')){
+
+                //查询是否存在消息
+                $talk = \DB::table('talking')->where('mid',session('user')->id)->where('status',0)->count();
+
+                session(['talk'=>$talk]);
+
+            }
+        }
+     
+        
+     
     	//加载模板
     	return view('home.index.index',['city'=>$value,'apple'=>$apple,'an'=>$an,'pho'=>$pho,'ss'=>$ss,'com'=>$com,'photo'=>$photo,'phone'=>$phone,'auction'=>$auction,'small'=>$small,'two'=>$two,'three'=>$three,'pop'=>$pop,'ord'=>$ord,'range'=>$range]);
     }
