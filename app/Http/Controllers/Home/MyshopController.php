@@ -12,7 +12,7 @@ class MyshopController extends Controller
 
         // 判断用户是否登录
         if (!session('user')) {
-            return redirect()->with(['info' => '请登录']);
+            return redirect('/home/login/index')->with(['info' => '请登录']);
         }
 
     	//获取用户id

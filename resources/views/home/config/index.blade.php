@@ -19,7 +19,7 @@
 .btn_back1{background: dodgerblue; color: #ffffff;}
 .btn_back2{ margin-left:25px;background: #CCCCCC;}
 			
-			 .btn {
+.btn {
     width: 40px;
     height: 38px;
     cursor: pointer;

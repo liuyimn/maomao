@@ -179,10 +179,10 @@ regBarNode.style.display = "block";
 </li>
 <li>
 <em class="nav-icon nav-icon-9"></em>
-<a name="PcYoupin_none_list0901" href="http://s2.suning.com/search/0-1000000070-1000000074-P1.htm" target="_blank">券</a>
-<a name="PcYoupin_none_list0902" href="http://s2.suning.com/search/0-1000000070-1000000076-P1.htm" target="_blank">门票</a>
-<a name="PcYoupin_none_list0903" href="http://s2.suning.com/search/0-1000000070-1000000071-P1.htm" target="_blank">礼品卡</a>
-<a name="PcYoupin_none_list0904" href="http://s2.suning.com/search/0-1000000070-1000000079-P1.htm" target="_blank">租房租车</a>
+<a name="PcYoupin_none_list0901" href="{{ url('home/list/index/') }}?keywords=券" target="_blank">券</a>
+<a name="PcYoupin_none_list0902" href="{{ url('home/list/index/') }}?keywords=门票" target="_blank">门票</a>
+<a name="PcYoupin_none_list0903" href="{{ url('home/list/index/') }}?keywords=礼品卡" target="_blank">礼品卡</a>
+<a name="PcYoupin_none_list0904" href="{{ url('home/list/index/') }}?keywords=租房租车" target="_blank">租房租车</a>
 </li>
 </ul>
 <div class="nmc-sort-detail">
@@ -304,11 +304,11 @@ regBarNode.style.display = "block";
 <li class="dropdown"><a class="ng-nav-title" href="javascript:;" onclick="myPublish()" name="PcYoupin_none_list_MyCenter">我的二手优品<i class="ci-right"><s>◇</s></i></a>
 <div class="ng-nav-box">
 <div class="white-cover"></div>
-<a href="{{ url('home/myshop/index') }}" name="PcYoupin_none_center_MyPublish">我发布的</a>
-<a href="{{ url('home/mygoods/mysold') }}" name="PcYoupin_none_center_MySellPcYoupinOrder">我卖出的</a>
-<a href="{{ url('home/mygoods/index') }}" name="PcYoupin_none_center_MyBuyPcYoupinOrder">我买到的</a>
-<a href="//2.suning.com/myEvaluate/showMyEvaluate.do" name="PcYoupin_none_center_MyEvaluation">我的评价</a>
-<a href="{{ url('home/favorite/index') }}" name="PcYoupin_none_center_MyCollection">我的收藏</a>
+<a href="{{ url('home/myshop/index') }}" >我发布的</a>
+<a href="{{ url('home/mygoods/mysold') }}" >我卖出的</a>
+<a href="{{ url('home/mygoods/index') }}" >我买到的</a>
+<a href="{{ url('home/comment/index') }}" >我的评价</a>
+<a href="{{ url('home/favorite/index') }}" >我的收藏</a>
 </div>
 </li>
 </ul>
