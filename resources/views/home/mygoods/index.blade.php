@@ -23,7 +23,7 @@
                             <div class="xm-pagenavi"></div>  
                         </div>
                     @else
-                        @foreach($w as $key => $v)
+                        @foreach($w as $v)
                             
                                 <li class="xm-goods-item">
                                     <div class="figure figure-img"><a href="{{ url('home/details') }}/{{ $v->id }}" ><img src="{{ asset('uploads/shop') }}/{{ $v->pic }}"></a></div>

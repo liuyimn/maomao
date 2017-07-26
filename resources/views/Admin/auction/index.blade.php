@@ -77,7 +77,6 @@
 						              <th style="text-align: center;">商品图片</th>
 						              <th style="text-align: center;">商品描述</th>
 						              <th style="text-align: center;">开始时间</th>
-						              <th style="text-align: center;">结束时间</th>
 						              <th style="text-align: center;">操作</th>
 						            </tr>
 						        </thead>
@@ -104,19 +103,6 @@
 											@endif
 
 							            	</td>
-							            <td style="line-height: 50px;text-overflow:ellipsis;">
-										
-											@if($val->status == 0)
-
-							            		{{ $val->endtime }}分钟
-											
-											@elseif($val->status == 1)
-											
-												已过期
-
-											@endif
-
-							            </td>
 							            <td style="line-height: 50px;text-overflow:ellipsis;">
 											<a href="{{ url('/admin/auct') }}/{{ $val->id }}/edit">编辑</a>  
 											<a href="#" class="del">删除</a>
