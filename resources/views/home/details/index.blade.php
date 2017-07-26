@@ -145,7 +145,7 @@
 							</div>
 
 							<div class="button_li">
-								<span class="talk_button download_button">联系卖家</span>
+								<a href="{{ url('/home/talk/index') }}/{{ $data->id }}/{{ $res->id }}"><span class="talk_button download_button">联系卖家</span></a>
 								<a href="{{ url('/home/list/create') }}/{{ $data->id }}"><span class="buy_button download_button">我要购买</span></a>
 							</div>
 							

@@ -73,9 +73,12 @@ class IndexController extends Controller
     		//存入session
     		session(['userdetail'=>$data]);
     	}
+        
+        //查询数据库
+        $range = \DB::table('config')->first();
 
     	//加载模板
-    	return view('home.index.index',['city'=>$value,'apple'=>$apple,'an'=>$an,'pho'=>$pho,'ss'=>$ss,'com'=>$com,'photo'=>$photo,'phone'=>$phone,'auction'=>$auction,'small'=>$small,'two'=>$two,'three'=>$three,'pop'=>$pop,'ord'=>$ord]);
+    	return view('home.index.index',['city'=>$value,'apple'=>$apple,'an'=>$an,'pho'=>$pho,'ss'=>$ss,'com'=>$com,'photo'=>$photo,'phone'=>$phone,'auction'=>$auction,'small'=>$small,'two'=>$two,'three'=>$three,'pop'=>$pop,'ord'=>$ord,'range'=>$range]);
     }
 
       // 递归查询所有分类
@@ -96,15 +99,19 @@ class IndexController extends Controller
 
     //引入推荐页
     public function tuijian(){
+        //查询数据库
+        $range = \DB::table('config')->first();
 
         //加载视图
-        return view('home.tuijian.index');
+        return view('home.tuijian.index',['range'=>$range]);
     }
 
     public function fuwu(){
+        //查询数据库
+        $range = \DB::table('config')->first();
 
         //加载视图
-        return view('home.fuwu.index');
+        return view('home.fuwu.index',['range'=>$range]);
     }
 
     public function next(){
@@ -178,8 +185,11 @@ class IndexController extends Controller
         //汽车养护
         $car = \DB::table('shop')->where('tid',198)->orwhere('tid',205)->orwhere('tid',203)->orwhere('tid',204)->orwhere('tid', 199)->limit(10)->get();
 
+        //查询数据库
+        $range = \DB::table('config')->first();
+
           //加载视图
-        return view('home.next.index',['one'=>$one,'two'=>$two,'three'=>$three,'four'=>$four,'fif'=>$fif,'six'=>$six,'seven'=>$seven,'eight'=>$eight, 'nine' => $nine,'num'=>$num,'phone'=>$phone,'baby'=>$baby,'bby'=>$bby,'shut'=>$shut,'shirt'=>$shirt,'but'=>$but,'ful'=>$ful,'bbc'=>$bbc, 'fur' => $fur, 'fuw' => $fuw, 'mmd'=>$mmd,'ins'=>$ins,'car'=>$car]);
+        return view('home.next.index',['one'=>$one,'two'=>$two,'three'=>$three,'four'=>$four,'fif'=>$fif,'six'=>$six,'seven'=>$seven,'eight'=>$eight, 'nine' => $nine,'num'=>$num,'phone'=>$phone,'baby'=>$baby,'bby'=>$bby,'shut'=>$shut,'shirt'=>$shirt,'but'=>$but,'ful'=>$ful,'bbc'=>$bbc, 'fur' => $fur, 'fuw' => $fuw, 'mmd'=>$mmd,'ins'=>$ins,'car'=>$car,'range'=>$range]);
 
     }
 }

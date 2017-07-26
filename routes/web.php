@@ -514,11 +514,17 @@ Route::group(['middleware' => 'homeconfig'], function(){
 	//获取地址区间
 	Route::get('/home/list/search', 'Home\ListController@Search');
 
+	//--------------------联系卖家----------------------------
+	//载入页面
+	Route::get('/home/talk/index/{sid}/{mid}', 'Home\TalkController@index');
+
+	//发送消息
+	Route::post('home/talk/send', 'Home\TalkController@send');
+
 });
 
 
 Route::get('home/config/index', function(){
 
 	return view('home/config/index');
-
 });

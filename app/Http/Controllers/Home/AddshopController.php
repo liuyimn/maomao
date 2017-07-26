@@ -17,11 +17,14 @@ class AddshopController extends Controller
     		return redirect('/home/login/index');
     	}
 
+        //查询数据库
+        $range = \DB::table('config')->first();
+
     	//查询顶级父类分类
     	$res = \DB::table('type')->where('pid',0)->get();
    	
    		//引入页面发送数据
-    	return view('home.addshop.add',['res'=>$res]);
+    	return view('home.addshop.add',['res'=>$res,'range'=>$range]);
     }
 
     //ajaxjone

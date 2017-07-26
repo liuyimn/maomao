@@ -11,7 +11,10 @@ class NumController extends Controller
     //订单页面
     public function index(){
 
-    	return view('home.num.index');
+        //查询数据库
+        $range = \DB::table('config')->first();
+
+    	return view('home.num.index',['range'=>$range]);
     }
 
     //订单下单
@@ -49,8 +52,11 @@ class NumController extends Controller
                         $r[] = $k;
 
                 }
+
+                //查询数据库
+                $range = \DB::table('config')->first();
                 
-                return view('home.num.my', ['title' => '订单详情', 'data' => $data, 'r' => $r]);
+                return view('home.num.my', ['title' => '订单详情', 'data' => $data, 'r' => $r,'range'=>$range]);
 
             }else{
 
@@ -105,8 +111,10 @@ class NumController extends Controller
                         $r[] = $k;
 
                 }
-                
-                return view('home.num.index', ['title' => '订单详情', 'data' => $data, 'r' => $r]);
+                //查询数据库
+                $range = \DB::table('config')->first();
+
+                return view('home.num.index', ['title' => '订单详情', 'data' => $data, 'r' => $r,'range'=>$range]);
 
             }else{
 
@@ -125,6 +133,9 @@ class NumController extends Controller
 
     //订单添加
     public function insert(Request $request){
+
+        //查询数据库
+        $range = \DB::table('config')->first();
 
         //判断是否存在用户
         if(isset(session('user')->id)){
@@ -213,7 +224,7 @@ class NumController extends Controller
                 //删除关于当前用户的商品
                 \DB::table('nums_user')->where('uid', $uid)->delete();
 
-                return view('home.shopcar.active', ['stmt' => $stmt, 'newp' => $newp]);
+                return view('home.shopcar.active', ['stmt' => $stmt, 'newp' => $newp, 'range'=>$range]);
 
             }else{
 
@@ -228,6 +239,9 @@ class NumController extends Controller
 
     //拍卖订单添加
     public function inserts(Request $request){
+
+        //查询数据库
+        $range = \DB::table('config')->first();
 
         //判断是否存在用户
         if(isset(session('user')->id)){
@@ -300,7 +314,7 @@ class NumController extends Controller
                 //修改当前拍卖商品的状态
                 \DB::table('auction')->where('id', $sid)->update($sta);
 
-                return view('/home/shopcar/active', ['stmt' => $stmt, 'newp' => $newp]);
+                return view('/home/shopcar/active', ['stmt' => $stmt, 'newp' => $newp,'range'=>$range]);
  
             }else{
 
@@ -318,7 +332,7 @@ class NumController extends Controller
     public function active(Request $request){
 
         //查询数据库
-        $range = \DB::table('config')->first()
+        $range = \DB::table('config')->first();
 
         return view('home.shopcar.active', ['range' => $range]);
 

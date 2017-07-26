@@ -151,13 +151,6 @@
 
 					<div class="info_liuyan clearfix">
 
-						<div class="box_title clearfix liuyan_title">
-							<h3 class="box_title_h3 left">宝贝留言（<i>0</i>）</h3>
-						</div>
-
-						<div class="liuyan_ewm">
-							<img style="margin-top: -8px; margin-right: -10px;" src="{{asset('/home/Picture/9b8a52486f214173a1935e022676e60d.gif')}}">
-						</div>
 					</div>
 
 					<div class="info_baby">

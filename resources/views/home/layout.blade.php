@@ -6,9 +6,10 @@
 	<meta name="sogou_site_verification" content="dMhEpiNZxp"/>
 	<meta name="baidu-site-verification" content="CrHL5lkDw2" />
 	<meta name="spm-id" content="2007.1000261"/>
+	<meta name="keywords" content="{{ $range->keywords }}">
 	<meta chaarset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-	<title >大脸猫二手购物网</title>
+	<title >{{ $range->webname }}</title>
 	
 	<!-- S GLOBAL CSS -->
 	<link rel="stylesheet" href="{{ asset('/home/index/Css/global-min.css') }}">
@@ -102,7 +103,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 
 		<h1 class="idle-logo">
 			<a href="{{ url('/') }}" target="_top">
-				<img src="{{ asset('/home/index/Images/logoko.png') }}"  width="100px" height="100px" style="margin-top:-25px;margin-left:40px" />
+				<img src="/home/config/{{ $range->logo }}"  width="100px" height="100px" style="margin-top:-25px;margin-left:40px" />
 			</a>
 		</h1>
 
