@@ -86,7 +86,7 @@
 							            <td>{{ $val->id }}</td>
 							            <td>{{ $val->uid }}</td>
 							            <td>{{ $val->nickname }}</td>
-							            <td>{{ mb_substr($val->content, 0, 20)."..." }}</td>
+							            <td>{{ mb_substr($val->content, 0, 9)."..." }}</td>
 							            <td>
 											<a href="{{ url('/admin/cpt/delete') }}/{{ $val->id }}">删除</a>
 							            </td>

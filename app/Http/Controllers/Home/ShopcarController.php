@@ -10,6 +10,9 @@ class ShopcarController extends Controller
     //购物车页
     public function index(){
 
+        //查询数据库
+        $range = \DB::table('config')->first();
+
         //判断是否有当前用户
         if(session('user')){
 
@@ -71,7 +74,7 @@ class ShopcarController extends Controller
             
 
                     //展示界面
-                    return view('home.shopcar.index',['title' => '大脸猫', 'ka' => $ka, 'res' => $res,'range'=>$range]);
+                    return view('home.shopcar.index',['title' => '大脸猫', 'ka' => $ka, 'range' => $range, 'res' => $res,'range'=>$range]);
 
                 }else{
 
@@ -79,7 +82,7 @@ class ShopcarController extends Controller
                     $range = \DB::table('config')->first();
 
                     //展示界面
-                    return view('home.shopcar.index',['title' => '大脸猫','range'=>$range]);
+                    return view('home.shopcar.index',['title' => '大脸猫', 'range' => $range]);
                 }
 
             }else{
@@ -123,7 +126,7 @@ class ShopcarController extends Controller
                 }else{
 
                     //展示界面
-                    return view('home.shopcar.index',['title' => '大脸猫']);
+                    return view('home.shopcar.index',['title' => '大脸猫', 'range' => $range]);
                 }
                 
             }
@@ -140,7 +143,7 @@ class ShopcarController extends Controller
             $res = count($data);
 
         	//展示界面
-        	return view('home.shopcar.index',['title' => '大脸猫', 'data' => $data, 'res' => $res]);
+        	return view('home.shopcar.index',['title' => '大脸猫', 'data' => $data, 'res' => $res, 'range' => $range]);
         }
     }
 

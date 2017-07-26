@@ -14,7 +14,7 @@ class ListController extends Controller
         session()->forget('page');
 
         //查询数据库
-        $range = \DB::table('config')->first()
+        $range = \DB::table('config')->first();
 
     	//定义分页
     	$num = '8';
@@ -48,7 +48,7 @@ class ListController extends Controller
 	public function show(Request $request){
 
 		//查询数据库
-        $range = \DB::table('config')->first()
+        $range = \DB::table('config')->first();
 
 		//定义分页
     	$num = '8';

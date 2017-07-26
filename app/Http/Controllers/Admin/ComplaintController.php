@@ -16,20 +16,12 @@ class ComplaintController extends Controller
     	//定义默认关键字为空
         $keywords = $request->input('keywords', ''); 
 
-        //设置缓存时间
-        $minutes = 20;
-
-        //启用缓存系统
-        $data = \Cache::remember('complaint', $minutes, function(){
-
-            //查询数据
-            return \DB::table('complaint')->get();
-
-        });
-
-
-    	//调用数据库中的模糊查询
-    	$data = \DB::table('complaint')->where('content', 'like', '%'.$keywords.'%')->paginate($num);
+        //查询数据
+        $data = \DB::table('complaint')
+                    ->join('userdetail', 'userdetail.uid', '=', 'complaint.uid')
+                    ->select('complaint.*', 'userdetail.nickname')
+                    ->where('complaint.content', 'like', '%'.$keywords.'%')
+                    ->paginate($num);
 
     	//将数据发送到页面
     	return view('admin.complaint.index', ['title' => '投诉列表', 'request' => $request->all(), 'data' => $data]);
