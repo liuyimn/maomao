@@ -335,9 +335,7 @@ class NumController extends Controller
         $range = \DB::table('config')->first();
 
         return view('home.shopcar.active', ['range' => $range]);
-
     }
-
 
     //商品选中ajax事件
     public function dajax(Request $request){
@@ -425,7 +423,5 @@ class NumController extends Controller
             //修改商品状态为0
             \DB::table('nums_user')->where('uid', $id)->where('sid', $sid)->update($r);
         }
-
     }
-
 }

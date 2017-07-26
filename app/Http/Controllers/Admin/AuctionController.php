@@ -36,8 +36,14 @@ class AuctionController extends Controller
         //获取搜索字段
         $data = \DB::table('auction')->where('name', 'like', '%'.$keywords.'%')->paginate($num);
 
+
+        $obj = count($data);
+
+        // 进一取整
+        $max = ceil($obj/$num);
+
         //将数据返回到页面
-        return view('admin.auction.index', ['title' => '拍卖列表', 'request' => $request->all(), 'data' => $data]);
+        return view('admin.auction.index', ['title' => '拍卖列表', 'request' => $request->all(), 'data' => $data, 'max' => $max]);
     }
 
     /**

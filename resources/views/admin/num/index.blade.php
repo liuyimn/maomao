@@ -90,43 +90,42 @@
 								            
 								            <!-- 判断显示信息 -->
 								            @if($val->num_status == '0')
-									            <td style="line-height: 50px;text-overflow:ellipsis;">正常</td>
+									        <td style="line-height: 50px;text-overflow:ellipsis;">正常</td>
 											@elseif($val->num_status == '1')
-												<td style="line-height: 50px;text-overflow:ellipsis;">已冻结</td>
+											<td style="line-height: 50px;text-overflow:ellipsis;">已冻结</td>
 											@endif
 								            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->num_p }}</td>
 											
-											<div id="put">
-												<div id="zhan"></div>
-												<form action="{{ url('/admin/num/edit') }}" method="post">
-													{{ csrf_field() }}
-													<input type="hidden" name="id" value="{{ $val->id }}">
-													<label>冻结多少</label>
-													<input class="form-control-xs" type="text" name="num_p">
-								                    <button type="submit" class="btn btn-primary">确定</button>
-												</form>
-											</div>
+											
 
 								            <td style="line-height: 50px;text-overflow:ellipsis;">
 												<!-- 判断显示信息 -->
 												@if($val->num_status == '0')
 													<a href="{{ url('/admin/nums/update') }}/{{ $val->id }}">冻结</a>  
 												@elseif($val->num_status == '1')
-													<a href="{{ url('/admin/nums/update') }}/{{ $val->id }}">启用</a>  
+													<a href="{{ url('/admin/nums/update') }}/{{ $val->id }}">恢复</a>  
 												@endif
-
-												| <a id="num_p" href="#">异常积分冻结</a>
+												|   <a class="num_p" href="#">异常积分冻结</a>
 								            </td>
 								        </tr>	
 									@endforeach
 
 						        </tbody>
 						  	</table>
-							{{ $data->appends($request)->links() }}
+							{{ $data->appends($request)->links('vendor.pagination.simple-default', ["max" => $max]) }}
 						</div>
 						<!-- /.box-body -->
 					</div>
-					
+					<div class="put">
+						<div class="zhan"></div>
+						<form action="{{ url('/admin/num/edit') }}" method="post">
+							<input class="hidden" type="hidden" name="id" value="">
+							{{ csrf_field() }}
+							<label>冻结多少</label>
+							<input class="form-control-xs" type="text" name="num_p">
+		                    <button type="submit" class="btn btn-primary">确定</button>
+						</form>
+					</div>
 					<!-- /.box -->
 				</div>
 				<!-- /.box -->
@@ -139,15 +138,16 @@
 @endsection
 
 @section('js')
-
 	<script type="text/javascript">
+		$('.num_p').each(function(){
+			$(this).on('click', function(){
 
-		$('#num_p').on('click', function(){
-		
-			$('#put').css('display', 'block');
+				var id = $(this).parent().parent().children().first().html();
 
+				$('.put').css('display', 'block');
+
+				$('.hidden').val(id);
+			});
 		});
-
 	</script>
-
 @endsection
