@@ -23,8 +23,13 @@ class ComplaintController extends Controller
                     ->where('complaint.content', 'like', '%'.$keywords.'%')
                     ->paginate($num);
 
+        $obj = count($data);
+
+        // 进一取整
+        $max = ceil($obj/$num);
+
     	//将数据发送到页面
-    	return view('admin.complaint.index', ['title' => '投诉列表', 'request' => $request->all(), 'data' => $data]);
+    	return view('admin.complaint.index', ['title' => '投诉列表', 'request' => $request->all(), 'data' => $data, 'max' => $max]);
 
     }
 

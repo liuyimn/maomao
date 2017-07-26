@@ -112,7 +112,7 @@
 
 						        </tbody>
 						  	</table>
-							{{ $data->appends($request)->links() }}
+							{{ $data->appends($request)->links('vendor.pagination.simple-default', ["max" => $max]) }}
 						</div>
 						<!-- /.box-body -->
 					</div>

@@ -29,9 +29,15 @@ class NumController extends Controller
 
     	//调用数据库中的模糊查询
     	$data = \DB::table('userdetail')->where('nickname', 'like', '%'.$keywords.'%')->paginate($num);
+
+
+        $obj = count($data);
+
+        // 进一取整
+        $max = ceil($obj/$num);
         
 
-    	return view('admin.num.index', ['title' => '用户积分',  'request' => $request->all(), 'data' => $data]);
+    	return view('admin.num.index', ['title' => '用户积分',  'request' => $request->all(), 'data' => $data, 'max' => $max]);
 
     }
 
