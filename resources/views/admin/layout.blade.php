@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -67,14 +67,14 @@
       color: #004974;
       text-decoration: none;
     }
-    #put{
-      height: 300px;
+    .put{
       position: absolute;
       right: 50%;
+      top:30%;
       display: none;
       text-align: center;
     }
-    #zhan{
+    .zhan{
       height: 140px;
     }
   </style>

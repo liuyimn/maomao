@@ -84,35 +84,45 @@ class NumController extends Controller
         //根据传递的用户id查找数据
         $data = \DB::table('userdetail')->where('id', $res['id'])->first();
 
-        //将用户中积分减去传递的积分
-        $jian = $data->num - $num_p;
+        //判断积分是否能减成功
+        if($num_p > $data->num){
 
-        //将减完的积分放到用户数据里面
-        $data->num = $jian;
-
-        //将用户中冻结积分加上传递的积分
-        $jia = $data->num_p + $num_p;
-
-        //将减完积分放到数组中
-        $da = ['num' => $jian];
-
-        //将加完积分放到数组中
-        $dat = ['num_p' => $jia];
-
-        //执行根据用户id进行更新积分
-        $data = \DB::table('userdetail')->where('id', $res['id'])->update($da);
-
-        //执行根据用户id进行更新冻结积分
-        $data = \DB::table('userdetail')->where('id', $res['id'])->update($dat);
-
-        //判断是否成功
-        if ($data) {
-
-            \Cache::forget('userdetail');
-            return redirect('/admin/nums/index')->with(['info' => '冻结成功']);
+            return back()->with(['info' => '积分不够冻结的']);
+            
         }else{
-            return back()->with(['info'=>'冻结失败']);
+
+            //将用户中积分减去传递的积分
+            $jian = $data->num - $num_p;
+
+            //将减完的积分放到用户数据里面
+            $data->num = $jian;
+
+            //将用户中冻结积分加上传递的积分
+            $jia = $data->num_p + $num_p;
+
+            //将减完积分放到数组中
+            $da = ['num' => $jian];
+
+            //将加完积分放到数组中
+            $dat = ['num_p' => $jia];
+
+            //执行根据用户id进行更新积分
+            $data = \DB::table('userdetail')->where('id', $res['id'])->update($da);
+
+            //执行根据用户id进行更新冻结积分
+            $data = \DB::table('userdetail')->where('id', $res['id'])->update($dat);
+
+            //判断是否成功
+            if ($data) {
+
+                \Cache::forget('userdetail');
+
+                return redirect('/admin/nums/index')->with(['info' => '冻结成功']);
+
+            }else{
+
+                return back()->with(['info'=>'冻结失败']);
+            }
         }
     }
-
 }
