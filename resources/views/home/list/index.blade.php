@@ -82,7 +82,7 @@
 									</span>
 			                        <i class="clear"></i>
 			                        <span class="fl">
-			                        	<span>北京</span>
+			                        	<span>{{ mb_substr($val->address, 0, 6).'...' }}</span>
 			                        	&nbsp;
 			                        	<a href="{{ url('/home/list/create') }}/{{ $val->id }}"><span>添加到购物车</span></a>
 			                        	&nbsp;

@@ -51,8 +51,6 @@
 										</span>
 				                        <i class="clear"></i>
 				                        <span class="fl">
-				                        	<span>北京</span>
-				                        	&nbsp;
 				                        	<a href="{{ url('/home/num/my') }}/{{ $val->id }}">我要购买</a>
 				                        	<span  class="pricebiao">
 				                        	</span>

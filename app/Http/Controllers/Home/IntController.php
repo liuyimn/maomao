@@ -10,6 +10,10 @@ class IntController extends Controller
     //积分页面
     public function index()
     {
+        // 判断用户是否登录
+        if(!session('user')){
+            return redirect('home/login/index')->with(['info' => '请登录']);
+        }
 
     	// 查询个人积分
     	$num = \DB::table('userdetail')->where('uid', session('user')->id)->first()->num;

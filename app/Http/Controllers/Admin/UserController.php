@@ -83,8 +83,29 @@ class UserController extends Controller
             'phone.max' => '电话号码必须11位',
         ]);
 
-
+        // 过滤字符
         $data = $request->except('_token','re_password');
+
+        // 正则不能有特殊符号
+        $red = preg_match_all("/^[a-zA-Z0-9]+$/",$data['username']);
+
+        // 判断用户名
+        if(!$red)
+        {
+            return back()->with(['info' => '用户名不能有特殊符号']);
+        }
+
+        // 正则手机号码
+        $reg = '/^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/';
+
+        // 验证手机是否正确
+        $reb = preg_match_all($reg, $data['phone']);
+
+        // 判断
+        if(!$reb) 
+        {
+            return back()->with(['info' => '请输入正确的手机号']);
+        }
 
         // 处理密码加密
         $data['password'] = \Hash::make($data['password']);
@@ -93,8 +114,6 @@ class UserController extends Controller
         $data['remember_token'] = str_random(50);
         // 处理时间
         $data['lastlogin'] = time();
-
-        // dd($data);
 
         // 执行添加
         $res = \DB::table('user')->insertGetId($data);
@@ -158,7 +177,8 @@ class UserController extends Controller
     public function upstatus($id, $status){
 
         // 判断用户不能修改自己状态
-        if($id == session('user')->id){
+        if($id == session('user')->id)
+        {
             return back()->with(['info' => '对不起不能修改自己状态']);
         }
 
@@ -189,11 +209,21 @@ class UserController extends Controller
     */
     // 执行删除
     public function delete($id){
-
+        
         // 判断
         if($id == session('user')->id){
             return back()->with(['info' => '对不起你不能删除自己']);
         }
+
+        //  查询权限
+        $data = \DB::table('user')->where('id', $id)->first();
+
+        // 判断是否大于等于2
+        if($data->auth >= 2)
+        {
+            return back()->with(['info' => '对不起你没有权限删除']);
+        }
+
         // 删除用户详情表中的的信息
     	\DB::table('userdetail')->where('uid', $id)->delete();
 

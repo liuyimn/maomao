@@ -19,7 +19,6 @@ class AuctionController extends Controller
         //默认显示10条
         $num = $request->input('num', 10);
         
-
         //默认关键字为空
         $keywords = $request->input('keywords', '');   
 

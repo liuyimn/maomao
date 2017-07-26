@@ -100,7 +100,7 @@ class LoginController extends Controller
         $detail = \DB::table('userdetail')->where('uid', $user->id)->first();
 
         // 将用户数据存入session
-        session(['detail' => $detail]);
+        session(['userdetail' => $detail]);
 
         // 判断用户是否被禁用
         if($user->status == 1){
