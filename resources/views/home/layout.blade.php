@@ -6,10 +6,10 @@
 	<meta name="sogou_site_verification" content="dMhEpiNZxp"/>
 	<meta name="baidu-site-verification" content="CrHL5lkDw2" />
 	<meta name="spm-id" content="2007.1000261"/>
-	<meta name="keywords" content="{{ $range->keywords }}">
+	<meta name="keywords" content="@if($range){{ $range->keywords }}@else 大脸猫二手商城 @endif">
 	<meta chaarset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-	<title >{{ $range->webname }}</title>
+	<title >@if($range){{ $range->webname }}@else 大脸猫二手商城 @endif</title>
 	
 	<!-- S GLOBAL CSS -->
 	<link rel="stylesheet" href="{{ asset('/home/index/Css/global-min.css') }}">
@@ -87,6 +87,12 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 					</div>
 				@else
 					<div class="topbar-info" id="J_userInfo">
+						@if(session('talk'))
+							<a href="{{ url('home/talk/list') }}">您当前收到：{{ session('talk') }}条消息，请回复</a>
+						@endif
+						@if(session('talkback'))
+							<a href="{{ url('home/talkback/list') }}">您当前收到：{{ session('talkback') }}条消息，请查看</a>
+						@endif
 						<a  rel="nofollow" class="link" href="{{ url('home/user/index') }}" data-needlogin="true">{{ session('userdetail')->nickname }}</a>
 						<span class="sep">|</span>
 						<a  id="out" rel="nofollow" class="link" href="{{ url('/home/login/outlogin') }}" >退出</a>
@@ -103,7 +109,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 
 		<h1 class="idle-logo">
 			<a href="{{ url('/') }}" target="_top">
-				<img src="/home/config/{{ $range->logo }}"  width="100px" height="100px" style="margin-top:-25px;margin-left:40px" />
+				<img src="/home/config/@if($range){{ $range->logo }}@else default.jpg @endif"  width="100px" height="100px" style="margin-top:-25px;margin-left:40px" />
 			</a>
 		</h1>
 

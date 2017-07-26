@@ -66,10 +66,6 @@
                     <label for="exampleInputName5">商品描述</label>
                     <textarea name="connect" style="resize: none; height: 100px;" class="form-control" id="exampleInputName5" placeholder="请输入商品描述">{{ old('connect') }}</textarea>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputName6">拍卖时间</label>
-                    <input type="text" name="endtime" class="form_datetime form-control" id="exampleInputName6" placeholder="请输入拍卖时间" value="{{ old('endtime') }}">
-                  </div>
                     <input id="lefile" name="pic" type="file" style="display:none">
                    <div class="form-group">
                   <label for="exampleInputPassword1">商品图片:</label><br/>

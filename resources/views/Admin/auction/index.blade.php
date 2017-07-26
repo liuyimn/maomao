@@ -85,7 +85,7 @@
 									@foreach($data as $key=>$val)
 							        <tr class="parent">
 							            <td class="ids" style="line-height: 50px;">{{ $val->id }}</td>
-							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->name }}</td>
+							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ mb_substr($val->name, 0, 12) }}</td>
 							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->oldpage }}元</td>
 							            <td style="line-height: 50px;text-overflow:ellipsis;">{{ $val->newpage }}元</td>
 							            <td><img style="height: 50px;text-overflow:ellipsis;" src="{{ url('/uploads/auction') }}/{{ $val->pic }}"></td>
@@ -102,7 +102,9 @@
 
 											@endif
 
+
 							            	</td>
+
 							            <td style="line-height: 50px;text-overflow:ellipsis;">
 											<a href="{{ url('/admin/auct') }}/{{ $val->id }}/edit">编辑</a>  
 											<a href="#" class="del">删除</a>
@@ -116,7 +118,7 @@
 
 						        </tbody>
 						  	</table>
-							{{ $data->appends($request)->links() }}
+							{{ $data->appends($request)->links('vendor.pagination.simple-default', ["max" => $max]) }}
 						</div>
 						<!-- /.box-body -->
 					</div>

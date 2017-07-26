@@ -82,7 +82,7 @@
 								<a href="{{ url('/') }}">首页</a>
 							</span>
 							<span class="crb_i">
-								<a href='#'>大脸猫市场</a>
+								<a href='{{ url("/home/list/index") }}'>大脸猫市场</a>
 							</span>
 						</div>
 					</div>    

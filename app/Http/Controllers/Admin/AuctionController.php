@@ -29,15 +29,21 @@ class AuctionController extends Controller
         $data = \Cache::remember('auction', $minutes, function(){
 
             //拍卖列表
-            return \DB::table('auction')->orderBy('starttime','desc')->get();
+            return \DB::table('auction')->where('starttime','desc')->get();
 
         });
 
         //获取搜索字段
         $data = \DB::table('auction')->where('name', 'like', '%'.$keywords.'%')->paginate($num);
 
+
+        $obj = count($data);
+
+        // 进一取整
+        $max = ceil($obj/$num);
+
         //将数据返回到页面
-        return view('admin.auction.index', ['title' => '拍卖列表', 'request' => $request->all(), 'data' => $data]);
+        return view('admin.auction.index', ['title' => '拍卖列表', 'request' => $request->all(), 'data' => $data, 'max' => $max]);
     }
 
     /**
@@ -69,7 +75,6 @@ class AuctionController extends Controller
                 'newpage' => 'required',
                 'pic' => 'required',
                 'connect' => 'required',
-                'endtime' => 'required',
             ],[
                 'name.required' => '商品名不能为空',
                 'name.unique' => '商品名已存在',
@@ -77,14 +82,13 @@ class AuctionController extends Controller
                 'newpage.required' => '现价名不能为空',
                 'pic.required' => '商品图片不能为空',
                 'connect.required' => '商品描述不能为空',
-                'endtime.required' => '拍卖时间不能为空',
             ]);
 
 
         $rep = '/^[0-9]+$/';
 
 
-        if(!preg_match_all($rep, $request->oldpage) || !preg_match_all($rep, $request->newpage) || !preg_match_all($rep, $request->endtime)){
+        if(!preg_match_all($rep, $request->oldpage) || !preg_match_all($rep, $request->newpage)){
 
             return back()->with(['info' => '价格或时间请输入数字']);
 
@@ -175,30 +179,24 @@ class AuctionController extends Controller
     {   
         //检测是否合法
         $this->validate($request, [
-            'name' => 'required|unique:auction|max:18',
+            'name' => 'max:18',
             'oldpage' => 'required',
             'newpage' => 'required',
-            'pic' => 'required',
             'connect' => 'required',
-            'endtime' => 'required',
         ],[
             'name.max' => '商品名最长18个字符',
-            'name.required' => '商品名不能为空',
-            'name.unique' => '请修改商品名',
             'oldpage.required' => '原价不能为空',
             'newpage.required' => '现价名不能为空',
-            'pic.required' => '商品图片不能为空',
             'connect.required' => '商品描述不能为空',
-            'endtime.required' => '拍卖时间不能为空',
         ]);
         
 
         $rep = '/^[0-9]+$/';
 
 
-        if(!preg_match_all($rep, $request->oldpage) || !preg_match_all($rep, $request->newpage) || !preg_match_all($rep, $request->endtime)){
+        if(!preg_match_all($rep, $request->oldpage) || !preg_match_all($rep, $request->newpage)){
 
-            return back()->with(['info' => '价格或时间请输入数字']);
+            return back()->with(['info' => '价格请输入数字']);
 
         }
 
@@ -247,7 +245,7 @@ class AuctionController extends Controller
             return redirect('/admin/auct')->with(['info' => '更新成功']);
         }else
         {
-            return back()->with(['info' => '更新失败']);
+            return back()->with(['info' => '更新失败,清修改内容']);
         }
     }
 

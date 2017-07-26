@@ -521,10 +521,23 @@ Route::group(['middleware' => 'homeconfig'], function(){
 	//发送消息
 	Route::post('home/talk/send', 'Home\TalkController@send');
 
+	//展示消息
+	Route::get('home/talk/list', 'Home\TalkController@list');
+
+	//展示消息
+	Route::get('home/talkback/list', 'Home\TalkController@listing');
+
+	//模型
+	Route::get('home/model/index/{uid}/{mid}/{sid}','Home\TalkController@model');
+
+	//执行回复
+	Route::post('home/talkback/send','Home\TalkController@talkback');
+
 });
 
 
 Route::get('home/config/index', function(){
 
 	return view('home/config/index');
+
 });

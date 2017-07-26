@@ -190,6 +190,7 @@ KISSY.use('widget/header5/index');
                             <ul class="uc-nav-list" id="uid">
                                 <li><a href="{{ url('home/user/index') }}">我的个人中心</a></li>
                                 <li><a href="{{ url('home/address/index') }}" >收货地址</a></li>
+                                <li><a href="{{ url('home/talk/list') }}" >收到的消息</a></li>
                                 <li><a href="{{ url('home/shopping/index') }}" >我的购物车</a></li>
                                 <li><a href="{{ url('home/complaint/index') }}" >联系客服</a></li>
                                 <li><a href="{{ url('home/int/index') }}" >我的积分</a></li>

@@ -222,7 +222,7 @@ class NumController extends Controller
                 \DB::table('userdetail')->where('uid', $uid)->update($array);
 
                 //删除关于当前用户的商品
-                \DB::table('nums_user')->where('uid', $uid)->delete();
+                \DB::table('nums_user')->where('uid', $uid)->where('status', 1)->delete();
 
                 return view('home.shopcar.active', ['stmt' => $stmt, 'newp' => $newp, 'range'=>$range]);
 
@@ -335,9 +335,7 @@ class NumController extends Controller
         $range = \DB::table('config')->first();
 
         return view('home.shopcar.active', ['range' => $range]);
-
     }
-
 
     //商品选中ajax事件
     public function dajax(Request $request){
@@ -425,7 +423,5 @@ class NumController extends Controller
             //修改商品状态为0
             \DB::table('nums_user')->where('uid', $id)->where('sid', $sid)->update($r);
         }
-
     }
-
 }

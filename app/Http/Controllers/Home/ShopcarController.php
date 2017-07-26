@@ -144,6 +144,7 @@ class ShopcarController extends Controller
 
             //展示界面
             return view('home.shopcar.index',['title' => '大脸猫', 'data' => $data, 'res' => $res, 'range' => $range]);
+
         }
     }
 
