@@ -13,7 +13,7 @@ class AuctionController extends Controller
     public function index(Request $request){
 
         //查询数据库
-        $range = \DB::table('config')->first()
+        $range = \DB::table('config')->first();
 
         //定义分页
         $num = '10';
@@ -102,7 +102,7 @@ class AuctionController extends Controller
     public function add()
     {
         //查询数据库
-        $range = \DB::table('config')->first()
+        $range = \DB::table('config')->first();
 
         return view('home.auct.add',['range' => $range]);
     }
