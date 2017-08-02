@@ -102,10 +102,17 @@ class LoginController extends Controller
 
     public function outlogin(Request $request){
 
-        //销毁session
-        $request->session()->forget('user');
+        if($request->session('user')){
 
-        //重定向
-        return back()->with(['info'=>'退出成功']);
+            //销毁session
+            $request->session()->forget('user');
+
+            //重定向
+            return back()->with(['info'=>'退出成功']);
+
+        }else{
+
+            return view('/');
+        }
     }
 }
